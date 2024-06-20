@@ -1,0 +1,22 @@
+#Chart_mainDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    row-gap: 40px;
+    width: 38.43rem;
+    height: 400px;
+    border-radius: 25px;
+    border: 2px solid #F0F0F0;
+    margin: 30px 0 0 30px;
+}
+
+#PayoutsText {
+    display: flex;
+    margin: 0 30px;
+    box-sizing: border-box;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1.5px solid #E3E3E3;
+    font-size: 1.125rem;
+    color: #003E79;
+}

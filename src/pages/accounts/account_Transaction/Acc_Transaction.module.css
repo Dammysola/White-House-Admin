@@ -1,0 +1,135 @@
+#mainDiv{
+    width: 100vw;
+}
+#All_Accounts_AccountTextDiv{
+    height: 240px;
+    background: linear-gradient(120deg, #0B9FE1, #003E79);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 0px 100px;
+    box-sizing: border-box;
+}
+#All_Accounts_AccountTextDiv #homeText{
+    color: #A1E2FF;
+    font-size: 0.62rem;   
+    text-transform: uppercase;
+    margin-top: -20px;
+}
+#All_Accounts_AccountTextDiv #homeText span{
+    color: #75CBF1;
+}
+#All_Accounts_AccountTextDiv p{
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    height: 30px;
+    margin-top: 20px;
+}
+#list_of_AccountText{
+    color: #A1E2FF;
+}
+#Add_AccountDiv div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    width: 11.8rem;
+    height: 39px;
+    background-color: #FFFFFF;
+    color: #003E79;
+    font-size: 0.9rem;
+    border-radius: 7px;
+}
+#No_Account_mainDiv{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -50px;
+}
+#No_Account_wrapperDiv{
+    width: 87%;
+    height: 70vh;
+    background-color: #FFFFFF;
+    border: 1px solid #F0F0F0;
+    border-radius: 14px;
+}
+#No_AccountDiv{
+    margin-top: 34px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 34px;
+}
+#No_accountText{
+    color: #003E79;
+    font-size: 1.2rem;
+}
+#gridDiv{
+    width: 135px;
+    height: 33px;
+    border: 1px solid #E3E3E3;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding-right: 25px;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+#gridDiv div{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    column-gap: 10px;
+    background-color: #0B9FE1;
+    height: 27px;
+    width: 75px;
+    font-size: 0.8rem;
+    color: #FFFFFF;
+    border-radius: 6px;
+}
+
+table{
+    box-sizing: border-box;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+#headerTable{
+    background-color: #F1F1F1;
+    height: 43px;
+}
+#descriptionText{
+    width: 250px;
+}
+/* #actionText{
+    width: 100px;
+} */
+th, td{
+    padding: 0 40px;
+
+}
+th{
+    text-align: left;
+}
+#action_field{
+    display: flex;
+    column-gap: 10px;
+}
+#last_Table_Line{
+    border-bottom: none;
+}
+button{
+    height: 26px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+.Acc_Transaction_btn1{
+    background-color: #E4F7FF;
+    color: #0B9FE1;
+    border: 1px solid #A1E2FF
+}
+.Acc_Transaction_btn2{
+    background-color:#FFEFEF;
+    border: 1px solid #EB3333;
+    color: #EB3333;
+}

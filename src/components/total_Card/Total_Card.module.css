@@ -1,0 +1,58 @@
+#Total_Card_Wrapper{
+    width: 15rem;
+    height: 144px;
+    background-color: aliceblue;
+    /* background-color: #FFFFFF; */
+    border-radius: 14px;
+    position: relative;
+    margin-top: -40px;
+}
+#Total_Card_firstLine_Div{
+    height: 46px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px 0px 24px;
+    align-items: center;
+}
+#Total_Card_firstLine_ImgDiv{
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Total_Card_firstLine_ImgDiv p{
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+    background-color: #E9F0FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Total_Card_imgDiv{
+    width: 3.88rem;
+    height: 32px;
+    border: 1px solid #0B9FE1;
+    border-radius: 7px;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    color: #0B9FE1;
+}
+#Total_Card_line{
+    width: 14rem;
+    height: 2px;
+    margin: 0px 5px;
+    background-color: #F0F0F0;
+}
+#Total_Card_Wrapper p{
+    font-size: 1.87rem;
+    color: #353535;
+    text-align: center;
+}
+#Total_Card_Wrapper span{
+    color: #0B9FE1;
+}

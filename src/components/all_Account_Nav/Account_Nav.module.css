@@ -1,0 +1,49 @@
+#nav{
+    background-color: #FAFAFA;
+    width: 100vw;
+}
+#Nav_Bar_Wrapper{
+    height: 5rem;
+    padding: 0px 37px;
+    background:url('../../assets/svg/Bright_NavBackground.png') no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #E4F7FF;
+    box-sizing: border-box;
+}
+#Nav_Dashboard_button{
+    background-color: transparent;
+    align-items: center;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    width: 6.56rem;
+    height: 35px;
+    border-radius: 7px;
+}
+#NavBar_textDiv{
+    display: flex;
+    column-gap: 35px;
+    align-items: center;
+}
+#NavBar_ContactDiv{
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+#NavBar_ContactDiv button{
+    width:  4.88rem;
+    height: 33px;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius:7px;
+    cursor: pointer;
+    color: #003E79;
+}
+#NavBar_ContactDiv div{
+    width: 2px;
+    height: 40px;
+    background-color: #D9D9D9;
+}
+
