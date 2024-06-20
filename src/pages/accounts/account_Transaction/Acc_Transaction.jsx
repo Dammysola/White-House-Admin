@@ -9,7 +9,6 @@ import plus_blue from '../../assets/svg/Plus_blue.svg'
 const Acc_Transaction = () => {
   return (
     <>
-      {/* <Account_Nav /> */}
       <div id={Style.mainDiv}>
         <div id={Style.All_Accounts_AccountTextDiv}>
           <div>
