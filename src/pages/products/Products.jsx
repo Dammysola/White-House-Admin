@@ -8,14 +8,23 @@ import No_Documents from '../../assets/svg/NoDocuments_img.svg'
 import product_edit from '../../assets/svg/products_edit.svg'
 import product_delete from '../../assets/svg/product_delete.svg'
 import Account_Nav from '../../components/all_Account_Nav/Account_Nav'
+import { PopupContextHook } from '../../PopupContext '
 
 
 const Products = () => {
+    const {updateAddProductsPopup, updateCreateProductsPopup } = PopupContextHook()
+
+    const addProduct = ()=>{
+        updateAddProductsPopup(true)
+    }
+    const createProduct = ()=>{
+        updateCreateProductsPopup(true)
+    }
 
     let arr = [];
     return (
-        <div>
-            {/* <Account_Nav/> */}
+        <div id={Style.ProductsMainDiv}>
+          
             <div id={Style.ProductsTextDiv}>
                 <div>
                     <div id={Style.homeText}><span>Home</span>{'>'}Products</div>
@@ -23,8 +32,8 @@ const Products = () => {
                     <div id={Style.list_of_AccountText}>Here’s a list of all your Products on XCel Merchant</div>
                 </div>
                 <div id={Style.Products_additionDiv}>
-                    <div id={Style.Products_CreateProductDiv}><img src={plus_blue} alt="" />Create Product</div>
-                    <div id={Style.Products_AddproductDiv}><img src={plus_white} alt="" /> Add Product Category</div>
+                    <button id={Style.Products_CreateProductDiv} onClick={createProduct}><img src={plus_blue} alt="" />Create Product</button>
+                    <button id={Style.Products_AddproductDiv} onClick={addProduct}><img src={plus_white} alt="" /> Add Product Category</button>
                 </div>
             </div>
 

@@ -4,18 +4,26 @@ import InputField from '../../components/input/InputField'
 import Button from '../../components/button/Button'
 import Select_field from '../../components/select_field/Select_field'
 import { Link } from 'react-router-dom'
+import { PopupContextHook } from '../../PopupContext '
 
 
 
 
 
 const Create_Product = () => {
+    const { updateProductConfirmPopup, updateCreateProductsPopup} = PopupContextHook()
+
+    const confirmation = ()=>{
+        updateProductConfirmPopup(true)
+    }
+
+
     return (
         <div id={Style.Create_Product_mainDiv}>
             <div id={Style.Create_Product_WrapperDiv}>
                 <div id={Style.cancelDiv}>
                     <div></div>
-                    <img src={cancel} alt="" />
+                    <img onClick={()=>updateCreateProductsPopup(false)} src={cancel} alt="" />
                 </div>
 
 
@@ -70,12 +78,13 @@ const Create_Product = () => {
                     </form>
 
                     <div id={Style.BtnDiv}>
-                        <Link to={'/confirmation'}>
+                        {/* <Link to={'/confirmation'}> */}
                             <Button
                                 type={"submit"}
                                 text={"Create Product"}
+                                onClick = {confirmation}
                             />
-                        </Link>
+                        {/* </Link> */}
                     </div>
 
                 </div>

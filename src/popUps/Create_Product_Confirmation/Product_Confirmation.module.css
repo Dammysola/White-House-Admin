@@ -1,23 +1,23 @@
 #Product_Confirm_mainDiv{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:rgba(0, 0, 0, 0.3);
-    padding-top: 2rem;
+    margin-top: -555px;
     box-sizing: border-box;
     min-height: 100vh;
     position: absolute;
     top: 0;
     bottom: 0;
-    z-index: 99;
+    z-index: 999;
 }
 
 #Product_Confirm_Wrapper{
-    width: 32.25rem;
+    width: 35.25rem;
     height: 210px;
     background-color: #FFFFFF;
     border-radius: 9px;
-    box-sizing: border-box;
 }
 #Product_Confirm_header{
     height: 46px;
@@ -35,6 +35,9 @@
     flex-direction: column;
     row-gap: 2.2rem;
     padding: 0 1.5rem;
+}
+#Product_Confirm_TextDiv p{
+    color: #969696;
 }
 #Product_Confirm_WrapperDiv #BtnDiv{
     display: flex;

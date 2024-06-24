@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from '../accounts/All_Accounts.module.css'
 import plus_blue from '../../assets/svg/Plus_blue.svg'
 import category_grid from '../../assets/svg/Category_Grid.svg'
@@ -12,6 +12,19 @@ import { PopupContextHook } from '../../PopupContext '
 
 
 const All_Accounts = () => {
+
+    const [active, setActive] = useState(false)
+
+  const faqs = document.getElementsByClassName(Style.FAQ_questions)
+
+  const faqActive = (index) => {
+
+    if (index == 1) {
+
+      setActive(!active)
+
+    }
+    }
 
     const {updateAdd_AccountPopup} = PopupContextHook()
 

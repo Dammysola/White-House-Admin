@@ -19,6 +19,7 @@ const Add_Card = (props) => {
             <div id={Style.BtnDiv}>
                 <button
                 type={type}
+                onClick={onClick}
                 onSubmit={onSubmit}>{btnText}</button>
 
 

@@ -3,14 +3,15 @@ import Style from '../button/Button.module.css'
 
 
 const Button = (props) => {
-    const { type, text, onSubmit} = props
+    const { type, text, onSubmit, onClick} = props
     
   return (
     <div>
        <button
       className={Style.button}
       type={type}
-      onSubmit={onSubmit}>
+      onSubmit={onSubmit}
+      onClick={onClick}>
       {text}
     </button> 
     </div>

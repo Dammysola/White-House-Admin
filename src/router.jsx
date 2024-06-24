@@ -8,6 +8,8 @@ import Congratulation from "./pages/newAccount/congratulation_message/Congratula
 import All_Accounts from "./pages/accounts/All_Accounts";
 import MainLayout_Two from "./mainLayout2/MainLayout_Two"
 import PopupContext from "./PopupContext ";
+import SignIn from "./pages/signUp/SignIn"
+import Products from "./pages/products/Products";
 // import Acc_Transaction from './'
 
 
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
             {
                 path: "/success",
                 element: <Congratulation/>
+            },
+            {
+                path: "/signIn",
+                element: <SignIn/>
             }
         ]
 
@@ -54,8 +60,8 @@ const router = createBrowserRouter([
                 // element: <Acc_Transaction/>
             },
             {
-                path: "/businessTransaction",
-                element: <Business_Transaction/>
+                path: "/products",
+                element: <Products/>
             },
             {
                 path: "/directorDetails",

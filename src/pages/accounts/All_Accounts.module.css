@@ -95,18 +95,28 @@
     box-sizing: border-box;
     /* column-gap: 25px; */
     border-radius: 7px;
+    position: relative;
 }
-#gridDiv div{
+#gridDiv::before{  
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 10px;
+    position: absolute;
+    content: "Grid";
+    color: #003E79;
     background-color: #0B9FE1;
     height: 27px;
     width: 75px;
+    border-radius: 6px;
+    /* transform: translateY(-50%); */
+
+    /*column-gap: 10px;
     font-size: 0.8rem;
     color: #FFFFFF;
-    border-radius: 6px;
+    border-radius: 6px; */
+}
+#gridDiv:active::before{
+    left: calc(100%);
 }
 #All_AccountCardDiv{
     margin-top: 30px;

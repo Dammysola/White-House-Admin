@@ -1,39 +1,33 @@
-#ProductsMainDiv{
-    min-height: 100vh;
-    width: 100%;
-}
-#ProductsTextDiv{
+#PayrollTextDiv{
     height: 240px;
     background: linear-gradient(120deg, #0B9FE1, #003E79);
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
     justify-content: space-between;
     align-items: center;
     color: #FFFFFF;
     padding: 0px 100px;
 }
-#ProductsTextDiv #homeText{
+#PayrollTextDiv #homeText{
     color: #A1E2FF;
     font-size: 0.62rem;   
     text-transform: uppercase;
     margin-top: -20px;
 }
-#ProductsTextDiv p{
+#PayrollTextDiv p{
     font-size: 2.5rem;
     color: #FFFFFF;
-    height: 30px;
+    height: 20px;
     margin-top: 20px;
 }
 #list_of_AccountText{
     color: #A1E2FF;
 }
-#Products_additionDiv{
+#Payroll_additionDiv{
     display: flex;
     column-gap: 10px;
     font-size: 0.9rem;
 }
-#Products_CreateProductDiv{
+#Payroll_CreateProductDiv{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,10 +37,8 @@
     background-color: #FFFFFF;
     color: #003E79;
     border-radius: 7px;
-    border: none;
-    cursor: pointer;
 }
-#Products_AddproductDiv{
+#Payroll_AddproductDiv{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,17 +49,16 @@
     border: 1px solid #FFFFFF;
     color: #FFFFFF;
     border-radius: 7px;
-    cursor: pointer;
 }
 
-#Products_mainDiv{
+#Payroll_mainDiv{
     display: flex;
     justify-content: center;
     position: relative;
     margin-top: -50px;
 }
-#Products_wrapperDiv{
-    width: 87%;
+#Payroll_wrapperDiv{
+    width: 89%;
     height: 70vh;
     background-color: #FFFFFF;
     border: 1px solid #F0F0F0;
@@ -81,22 +72,53 @@
     border-radius: 6px;
     border: 1px solid #E3E3E3;
 }
-#ProductsDiv{ 
+#PayrollDiv{ 
     margin-top: 34px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 34px;
 }
-#ProductsText{
+#PayrollText{
     color: #003E79;
     font-size: 1.2rem;
+    padding-bottom: 0.7rem;
+    box-sizing: border-box;
+}
+#PayrollText span{
+    color: #0B9FE1;
+}
+#All_StaffText{
+    height: 35px;
+    width: 5.5rem;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #003E79;
+}
+#All_Staff_toggle{
+    width: 20rem;
+    height: 39px;
+    border: 1px solid #DBDBDB;
+    border-radius: 9px;
+    background-color:rgb(219, 219, 219, 0.3);
+    color: #666666;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2.1rem;
+    padding-right: 10px;
+    box-sizing: border-box;
 }
 table{
-    /* border-spacing: 80px 32px; */
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
     margin-top: 1.5rem;
+    
 }
 #headerTable{
     background-color: #F1F1F1;
@@ -107,20 +129,41 @@ table{
 }
 th, td{
     padding: 0 40px;
-
+    font-size: 0.8rem;
+    
 }
 th{
+    font-size: 0.7rem;
     text-align: left;
-    /* color: #353535;
-    font-size: 0.93; */
+    color: #353535;
+}
+#ActiveDiv{
+    width:58px;
+    height: 26px;
+    background-color:rgb(49, 195, 100, .3);
+    color: #31C364;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#SuspendedDiv{
+    width: 70px;
+    height: 26px;
+    background-color: rgb(11, 159, 225, 0.3);
+    color: #0B9FE1;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 tr{
-    height: 58px;
+    height: 54px;
     border-bottom: 1px solid #E3E3E3;
 }
 #action_field{
     display: flex;
-    column-gap: 10px;
+    column-gap: 5px;
 }
 th input {
     border: 1px solid #E3E3E3;
@@ -128,21 +171,4 @@ th input {
 #last_Table_Line{
     border-bottom: none;
 }
-#No_Account_DisplayDiv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-#No_Account_DisplayDiv p{
-    font-size: 1.3rem;
-    color: #353535;
-    height: 13px;
-    margin-top: 1px;
-}
-#No_Account_DisplayDiv div{
-    width: 406px;
-    color: #777777;
-    font-size: 0.98rem;
-}
+

@@ -128,7 +128,7 @@ const Director_Details = () => {
                             </div>
                         </div>
                     </form>
-                    <div id={Style.SignIn}>Already have an account? Sign In</div>
+                    <div id={Style.SignIn}>Already have an account? <Link to={'/signIn'}>Sign In</Link> </div>
                 </div>
             </div>
         </div>

@@ -21,19 +21,19 @@ const CreateNew_Account = () => {
         town: '',
         zipcode: ''
     })
-    const accountDetails = (e)=>{
+    const accountDetails = (e) => {
         const name = e.target.name
         const value = e.target.value
     }
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault(e)
     }
 
     return (
         <div>
             <div id={Style.CreateNew_Account_form_MainDiv}>
-               
+
                 <div id={Style.CreateNew_Account_LineDiv}>
                     <div className={Style.CreateNew_Account_Line} id={Style.line}></div>
                     <div className={Style.CreateNew_Account_Line}></div>
@@ -55,18 +55,18 @@ const CreateNew_Account = () => {
                                     placeholder={"Select Country"}
                                     type={"text"}
                                     name={"countryIncorporation"}
-                                 value={createAccount.countryIncorporation}
-                                // error={validation.email}
-                                 OnChange={accountDetails}
+                                    value={createAccount.countryIncorporation}
+                                    // error={validation.email}
+                                    OnChange={accountDetails}
                                 />
                                 <Input
                                     label={"Password"}
                                     placeholder={"......."}
                                     type={"password"}
                                     name={"password"}
-                                 value={createAccount.password}
-                                // error={validation.email}
-                                 OnChange={accountDetails}
+                                    value={createAccount.password}
+                                    // error={validation.email}
+                                    OnChange={accountDetails}
                                 />
                             </div>
                             <div className={Style.inputDiv}>
@@ -75,18 +75,18 @@ const CreateNew_Account = () => {
                                     placeholder={"Issuer Code"}
                                     type={"text"}
                                     name={"issuerCode"}
-                                 value={createAccount.issuerCode}
-                                // error={validation.email}
-                                OnChange={accountDetails}
+                                    value={createAccount.issuerCode}
+                                    // error={validation.email}
+                                    OnChange={accountDetails}
                                 />
                                 <Input
                                     label={"Sub-Issuer Code"}
                                     placeholder={"Sub-Issuer Code"}
                                     type={"text"}
                                     name={"subCode"}
-                                 value={createAccount.subCode}
-                                // error={validation.email}
-                                 OnChange={accountDetails}
+                                    value={createAccount.subCode}
+                                    // error={validation.email}
+                                    OnChange={accountDetails}
                                 />
                             </div>
                             <Input
@@ -94,18 +94,18 @@ const CreateNew_Account = () => {
                                 placeholder={"Registration Name"}
                                 type={"text"}
                                 name={"registrationName"}
-                             value={createAccount.registrationName}
-                            // error={validation.email}
-                             OnChange={accountDetails}
+                                value={createAccount.registrationName}
+                                // error={validation.email}
+                                OnChange={accountDetails}
                             />
                             <Input
                                 label={"Address"}
                                 placeholder={"Address"}
                                 type={"text"}
                                 name={"address"}
-                             value={createAccount.address}
-                            // error={validation.email}
-                             OnChange={accountDetails}
+                                value={createAccount.address}
+                                // error={validation.email}
+                                OnChange={accountDetails}
                             />
                             <div id={Style.inputDiv} className={Style.inputDiv}>
                                 <Input
@@ -113,27 +113,27 @@ const CreateNew_Account = () => {
                                     placeholder={"State/Province"}
                                     type={"text"}
                                     name={"state"}
-                                 value={createAccount.state}
-                                // error={validation.email}
-                                 OnChange={accountDetails}
+                                    value={createAccount.state}
+                                    // error={validation.email}
+                                    OnChange={accountDetails}
                                 />
                                 <Input
                                     label={"Town/City"}
                                     placeholder={"Town/City"}
                                     type={"text"}
                                     name={"town"}
-                                 value={createAccount.town}
-                                // error={validation.email}
-                                 OnChange={accountDetails}
+                                    value={createAccount.town}
+                                    // error={validation.email}
+                                    OnChange={accountDetails}
                                 />
                                 <Input
                                     label={"Post/ZipCode"}
                                     placeholder={"Post/ZipCode"}
                                     type={"tel"}
                                     name={"zipcode"}
-                                 value={createAccount.zipcode}
-                                // error={validation.email}
-                                 OnChange={accountDetails}
+                                    value={createAccount.zipcode}
+                                    // error={validation.email}
+                                    OnChange={accountDetails}
                                 />
                             </div>
                             <div id={Style.Checkbox_div}>
@@ -145,7 +145,7 @@ const CreateNew_Account = () => {
                                     <Button
                                         type={"submit"}
                                         text={"Proceed"}
-                                        onSubmit= {handleSubmit} />
+                                        onSubmit={handleSubmit} />
                                 </Link>
                             </div>
                         </div>
