@@ -4,11 +4,38 @@ import filter_img from '../../assets/svg/Complete_filter_img.svg'
 import calendar from '../../assets/svg/Calendar.svg'
 import download from '../../assets/svg/download_img.svg'
 import green_eye from '../../assets/svg/green_eyes.svg'
+import Total_Card from '../../components/total_Card/Total_Card'
 
 
 const Transaction = () => {
+
+    const total_Card2 = [
+        {
+            image1: './src/assets/svg/Activity.svg',
+            image2: './src/assets/svg/arrow_down-dark.svg',
+            text: 'Total Value',
+            divText: 'USD',
+            price: '$25,052,985'
+        },
+        {
+            image1: './src/assets/svg/Activity.svg',
+            image2: './src/assets/svg/arrow_down-dark.svg',
+            text: 'Total Volume',
+            divText: 'USD',
+            price: '8,789,086'
+        },
+        {
+            image1: './src/assets/svg/Activity.svg',
+            image2: './src/assets/svg/arrow_down-dark.svg',
+            text: 'Total Products',
+            divText: 'USD',
+            price: '3'
+        },
+    ]
+
     return (
         <div>
+
             <div id={Style.Transaction_WrapperDiv}>
                 <div id={Style.Transaction_welcomeText_Div}>
                     <div>
@@ -32,6 +59,24 @@ const Transaction = () => {
                     </div>
                 </div>
             </div>
+
+            <div id={Style.CardDiv}>
+                {
+                    total_Card2.map((object) => {
+
+                        return (
+                            <Total_Card
+                                image1={object.image1}
+                                image2={object.image2}
+                                text={object.text}
+                                divText={object.divText}
+                                price={object.price} />
+
+                        )
+                    })
+                }
+            </div>
+
 
             <div id={Style.Transaction_mainDiv}>
                 <div id={Style.Transaction_wrapperDiv}>
@@ -58,7 +103,7 @@ const Transaction = () => {
                             <th>Reference No</th>
                             <th>Action</th>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>1</td>
                             <td>2/10/2023  9:30am</td>
                             <td>Sarah Adejumo</td>
@@ -176,9 +221,9 @@ const Transaction = () => {
                                 </div>
                             </td>
                         </tr>
-                
+
                     </table>
-                 
+
                 </div>
             </div>
         </div>

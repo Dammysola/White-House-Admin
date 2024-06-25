@@ -74,12 +74,18 @@
     align-items: center;
     column-gap: 11px;
 }
+#CardDiv{
+    display: flex;
+    column-gap: 20px;
+    height: 150px;
+    margin-left: 100px;
+    box-sizing: border-box;
+}
 
 #Transaction_mainDiv{
     display: flex;
     justify-content: center;
     position: relative;
-    margin-top: -50px;
 }
 #Transaction_wrapperDiv{
     width: 87%;

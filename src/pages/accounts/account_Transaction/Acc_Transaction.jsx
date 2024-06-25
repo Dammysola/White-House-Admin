@@ -59,7 +59,6 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>Current</td>
                 <td>789756442423</td>
-                <td></td>
                 <td>
                                 <div id={Style.action_field}>
                                 <button className={Style.Acc_Transaction_btn1}>View Balance</button>
@@ -73,7 +72,6 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>Current</td>
                 <td>789756442423</td>
-                <td></td>
                 <td>
                                 <div id={Style.action_field}>
                                 <button className={Style.Acc_Transaction_btn1}>View Balance</button>
@@ -87,7 +85,6 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>Current</td>
                 <td>789756442423</td>
-                <td></td>
                 <td>
                   <div id={Style.action_field}>
                                 <button className={Style.Acc_Transaction_btn1}>View Balance</button>
@@ -101,7 +98,6 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>Current</td>
                 <td>789756442423</td>
-                <td></td>
                 <td>
                   <div id={Style.action_field}>
                                   <button className={Style.Acc_Transaction_btn1}>View Balance</button>
@@ -115,7 +111,6 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>Current</td>
                 <td>789756442423</td>
-                <td></td>
                 <td>
                   <div id={Style.action_field}>
                                 <button className={Style.Acc_Transaction_btn1}>View Balance</button>
@@ -129,7 +124,6 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>Current</td>
                 <td>789756442423</td>
-                <td></td>
                 <td>
                   <div id={Style.action_field}>
                                 <button className={Style.Acc_Transaction_btn1}>View Balance</button>

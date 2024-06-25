@@ -3,7 +3,7 @@ import Style from '../accounts/All_Accounts.module.css'
 import plus_blue from '../../assets/svg/Plus_blue.svg'
 import category_grid from '../../assets/svg/Category_Grid.svg'
 import document_img from '../../assets/svg/Document_img.svg'
-// import All_AccountCard from '../components/all_AccountCard/All_AccountCard'
+import All_AccountCard from '../../components/all_AccountCard/All_AccountCard'
 import No_Documents from '../../assets/svg/NoDocuments_img.svg'
 import { PopupContextHook } from '../../PopupContext '
 
@@ -13,18 +13,18 @@ import { PopupContextHook } from '../../PopupContext '
 
 const All_Accounts = () => {
 
-    const [active, setActive] = useState(false)
+//     const [active, setActive] = useState(false)
 
-  const faqs = document.getElementsByClassName(Style.FAQ_questions)
+//   const faqs = document.getElementsByClassName(Style.FAQ_questions)
 
-  const faqActive = (index) => {
+//   const faqActive = (index) => {
 
-    if (index == 1) {
+//     if (index == 1) {
 
-      setActive(!active)
+//       setActive(!active)
 
-    }
-    }
+//     }
+//     }
 
     const {updateAdd_AccountPopup} = PopupContextHook()
 
@@ -32,30 +32,30 @@ const All_Accounts = () => {
         updateAdd_AccountPopup(true)
     }
     const All_Account_Card = [
-        // {
-        //     accNumber: "780520985"
-        // },
-        // {
-        //     accNumber: "780520985"
-        // },
-        // {
-        //     accNumber: "780520985"
-        // },
-        // {
-        //     accNumber: "780520985"
-        // },
-        // {
-        //     accNumber: "780520985"
-        // },
-        // {
-        //     accNumber: "780520985"
-        // },
-        // {
-        //     accNumber: "780520985"
-        // },
-        // {
-        //     accNumber: "780520985"
-        // }
+        {
+            accNumber: "780520985"
+        },
+        {
+            accNumber: "780520985"
+        },
+        {
+            accNumber: "780520985"
+        },
+        {
+            accNumber: "780520985"
+        },
+        {
+            accNumber: "780520985"
+        },
+        {
+            accNumber: "780520985"
+        },
+        {
+            accNumber: "780520985"
+        },
+        {
+            accNumber: "780520985"
+        }
     ]
     return (
         <>
@@ -80,23 +80,15 @@ const All_Accounts = () => {
                         </div>
                     </div>
                     <div id={Style.All_AccountCardDiv}>
-                        {/* {
+                        {
                             All_Account_Card.map((object) => {
                                 return (
                                     <All_AccountCard
                                         accNumber={object.accNumber} />
                                 )
                             })
-                        } */}
-                        {
-                            // All_Account_Card.map((obj) => {
-
-                            //     return (
-                            //         <All_AccountCard
-                            //             accNumber={obj.accNumber} />
-                            //     )
-                            // })
                         }
+                        
                     </div>
                     {
                         All_Account_Card.length == 0 ?

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 import Style from '../dashboard/Dashboard.module.css'
-import calendar from '../assets/svg/Calendar.svg'
-import emoji from '../assets/svg/Smiling_Face_with_Halo.svg'
-import Total_Card from '../components/total_Card/Total_Card'
-import gamePad from '../assets/svg/gamePad.svg'
-import NavBar from '../components/navBar/NavBar'
-import arrow_down from '../assets/svg/arrow_down.svg'
-import axios from 'axios';
-import Chart from '../components/chart/Chart';
+import calendar from '../../assets/svg/Calendar.svg'
+import emoji from '../../assets/svg/Smiling_Face_with_Halo.svg'
+import Total_Card from '../../components/total_Card/Total_Card'
+import gamePad from '../../assets/svg/gamePad.svg'
+import arrow_down from '../../assets/svg/arrow_down.svg'
+import Chart from '../../components/chart/Chart'
+
+
+
 
 const dashboard = () => {
     const [data, setData]= useState()
@@ -57,7 +57,6 @@ const dashboard = () => {
     ]
     return (
         <div id={Style.Dashboard_mainDiv}>
-            <NavBar/>
             <div id={Style.Dashboard_WrapperDiv}>
                 <div id={Style.Dashboard_welcomeText_Div}>
                     <div>

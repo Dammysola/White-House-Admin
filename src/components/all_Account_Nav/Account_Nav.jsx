@@ -13,6 +13,7 @@ const Account_Nav = () => {
   const [activeLink2, setActiveLink2] = useState(false)
   const [activeLink3, setActiveLink3] = useState(false)
   const [activeLink4, setActiveLink4] = useState(false)
+  const [activeLink5, setActiveLink5] = useState(false)
 
   const handleClick = (index) => {
     if (index == 1) {
@@ -32,6 +33,10 @@ const Account_Nav = () => {
     else if (index == 4) {
 
       setActiveLink4(!activeLink4)
+    }
+    else if (index == 5) {
+
+      setActiveLink5(!activeLink5)
     }
   };
 
@@ -54,15 +59,16 @@ const Account_Nav = () => {
               <p>Accounts</p>
             </NavLink>
 
-
-
-            <NavLink id='account' to={'/products'} className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
+            <NavLink to={'/products'} className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
               <p>Products</p>
             </NavLink>
 
-            <p>Payment <img src={arrowDown} alt="" /></p>
+            <NavLink to={'/payment'} className={`${activeLink4 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
+              <p>Payment <img src={arrowDown} alt="" /></p>
+            </NavLink>
+            
 
-            <NavLink id='transactions' to={'/transactions'} className={`${activeLink4 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
+            <NavLink id='transactions' to={'/transactions'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(5)}>
               <p>Transactions</p>
             </NavLink>
             

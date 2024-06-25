@@ -10,8 +10,9 @@ import MainLayout_Two from "./mainLayout2/MainLayout_Two"
 import PopupContext from "./PopupContext ";
 import SignIn from "./pages/signUp/SignIn"
 import Products from "./pages/products/Products";
-import Dashboard from "./dashboard/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 import Transaction from "./pages/transaction/Transaction";
+import Payment from "./pages/payments/Payment";
 // import Acc_Transaction from './'
 
 
@@ -74,8 +75,8 @@ const router = createBrowserRouter([
                 element:  <Transaction/>
             },
             {
-                path: "/success",
-                element: <Congratulation/>
+                path: "/payment",
+                element: <Payment/>
             }
         ]
 

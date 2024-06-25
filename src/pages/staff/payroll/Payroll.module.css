@@ -127,7 +127,7 @@ table{
 #priceText{
     width: 214px;
 }
-th, td{
+#Payroll_mainDiv th, td{
     padding: 0 40px;
     font-size: 0.8rem;
     
