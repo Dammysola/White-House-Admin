@@ -10,6 +10,8 @@ import MainLayout_Two from "./mainLayout2/MainLayout_Two"
 import PopupContext from "./PopupContext ";
 import SignIn from "./pages/signUp/SignIn"
 import Products from "./pages/products/Products";
+import Dashboard from "./dashboard/Dashboard";
+import Transaction from "./pages/transaction/Transaction";
 // import Acc_Transaction from './'
 
 
@@ -52,6 +54,10 @@ const router = createBrowserRouter([
         element: <PopupContext><MainLayout_Two/></PopupContext> ,
         children: [
             {
+                path: "/dashboard",
+                element: <Dashboard/>
+            },
+            {
                 path: "/allAccounts",
                 element: <All_Accounts/>
             },
@@ -64,8 +70,8 @@ const router = createBrowserRouter([
                 element: <Products/>
             },
             {
-                path: "/directorDetails",
-                element: <Director_Details/>
+                path: "/transactions",
+                element:  <Transaction/>
             },
             {
                 path: "/success",

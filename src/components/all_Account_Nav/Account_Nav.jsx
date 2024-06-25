@@ -12,6 +12,7 @@ const Account_Nav = () => {
   const [activeLink1, setActiveLink1] = useState(false)
   const [activeLink2, setActiveLink2] = useState(false)
   const [activeLink3, setActiveLink3] = useState(false)
+  const [activeLink4, setActiveLink4] = useState(false)
 
   const handleClick = (index) => {
     if (index == 1) {
@@ -28,6 +29,10 @@ const Account_Nav = () => {
 
       setActiveLink3(!activeLink3)
     }
+    else if (index == 4) {
+
+      setActiveLink4(!activeLink4)
+    }
   };
 
 
@@ -41,7 +46,7 @@ const Account_Nav = () => {
             <img src={alphaBet_logo} alt="" />
           </div>
           <div id={Style.NavBar_textDiv}>
-            <NavLink id='account' to={'/allAccounts'} className={`${activeLink1 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(1)}>
+            <NavLink id='dashboard' to={'/dashboard'} className={`${activeLink1 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(1)}>
               <p>Dashboard</p>
             </NavLink>
 
@@ -56,7 +61,11 @@ const Account_Nav = () => {
             </NavLink>
 
             <p>Payment <img src={arrowDown} alt="" /></p>
-            <p>Transactions</p>
+
+            <NavLink id='transactions' to={'/transactions'} className={`${activeLink4 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
+              <p>Transactions</p>
+            </NavLink>
+            
             <p>Customers</p>
             <p>Staff <img src={arrowDown} alt="" /></p>
             <p>Dev/API</p>
