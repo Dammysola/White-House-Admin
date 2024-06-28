@@ -1,9 +1,16 @@
 import React from 'react'
 import Style from '../payments/Payment.module.css'
+import { PopupContextHook } from '../../PopupContext '
 
 
 
 const Payment = () => {
+
+    const {updateMoveToBank } = PopupContextHook()
+
+     const ShowBank = ()=>{
+        updateMoveToBank(true)
+     }
     return (
         <div id={Style.ProductsMainDiv}>
 
@@ -40,7 +47,7 @@ const Payment = () => {
                             <td>
                                 <div id={Style.action_field}>
                                     <button className={Style.Acc_Transaction_btn1}>View Transaction</button>
-                                    <button className={Style.Acc_Transaction_btn2} >Move to Bank</button>
+                                    <button onClick={ShowBank} className={Style.Acc_Transaction_btn2} >Move to Bank</button>
                                 </div>
                             </td>
                         </tr>

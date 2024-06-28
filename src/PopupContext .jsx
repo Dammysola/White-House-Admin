@@ -15,6 +15,7 @@ const PopupContext  = ({ children }) => {
     const [deleteProductsPopup, setDeleteProductsPopup] = useState(false)
     const [successAccountPopup, setsuccessAccountPopup] = useState(false)
     const [successProductPopup, setsuccessProductPopup] = useState(false)
+    const [moveToBankPopup, setMoveToBankPopup] = useState(false)
 
 
     const updateAdd_AccountPopup = (data)=>{
@@ -42,6 +43,10 @@ const PopupContext  = ({ children }) => {
     const updateSuccessProductPopup = (data)=>{
         setsuccessProductPopup(data)
     }
+    const updateMoveToBank = (data)=>{
+        setMoveToBankPopup(data)
+    }
+    
 
   return (
     <myContext.Provider value={{
@@ -60,8 +65,9 @@ const PopupContext  = ({ children }) => {
         successAccountPopup,
         updateSuccessAccountPopup,
         successProductPopup,
-        updateSuccessProductPopup
-
+        updateSuccessProductPopup,
+        moveToBankPopup,
+        updateMoveToBank
     }}>
         { children }
     </myContext.Provider>

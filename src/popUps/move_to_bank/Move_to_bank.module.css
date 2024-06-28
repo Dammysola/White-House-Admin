@@ -5,6 +5,7 @@
     background-color:rgba(0, 0, 0, 0.3);
     padding-top: 3rem;
     box-sizing: border-box;
+    margin-top: -100px;
     min-height: 100vh;
     width: 100%;
     position: absolute;

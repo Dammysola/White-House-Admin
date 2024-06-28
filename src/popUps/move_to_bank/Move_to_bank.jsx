@@ -4,15 +4,18 @@ import cancel from '../../assets/svg/cancel_img.svg'
 import Select_field from '../../components/select_field/Select_field'
 import InputField from '../../components/input/InputField'
 import Button from '../../components/button/Button'
+import { PopupContextHook } from '../../PopupContext '
 
 
 const Move_to_bank = () => {
+  const { updateMoveToBank} = PopupContextHook()
+
   return (
     <div id={Style.Create_Product_mainDiv}>
     <div id={Style.Create_Product_WrapperDiv}>
         <div id={Style.cancelDiv}>
             <div></div>
-            <img src={cancel} alt="" />
+            <img onClick={()=>updateMoveToBank(false)} src={cancel} alt="" />
         </div>
 
 

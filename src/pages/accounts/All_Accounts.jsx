@@ -75,7 +75,7 @@ const All_Accounts = () => {
                 <div>
                     <div id={Style.homeText}><span>Home</span>{'>'}Accounts</div>
                     <p>Accounts</p>
-                    <div id={Style.list_of_AccountText}>Here’s a list of all your accounts on XCel Merchant</div>
+                    <div id={Style.list_of_AccountText}>Here’s a list of all your accounts on AlphaBet</div>
                 </div>
                 <div id={Style.Add_AccountDiv}>
                     <button onClick={createAcc}><img src={plus_blue} alt="" /> Add Current Account</button>

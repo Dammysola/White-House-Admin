@@ -11,22 +11,24 @@ import Delete_Products from '../popUps/delete_Products/Delete_Products'
 import Add_Product from '../popUps/add_product/Add_Product'
 import Create_Product from '../popUps/create_Product/Create_Product'
 import Product_Confirmation from '../popUps/Create_Product_Confirmation/Product_Confirmation'
-
+import Move_to_bank from '../popUps/move_to_bank/Move_to_bank'
 
 
 const MainLayout_Two = () => {
-  const {addAccountsPopup, successAccountPopup, deleteProductsPopup, productConfirmPopup, createProductsPopup, addProductsPopup, successProductPopup} = PopupContextHook()
+
+  const { addAccountsPopup, successAccountPopup, moveToBankPopup, deleteProductsPopup, productConfirmPopup, createProductsPopup, addProductsPopup, successProductPopup, } = PopupContextHook()
   return (
     <div id={Style.wrapper}>
-        <Account_Nav/>
-        {addAccountsPopup && <Add_CurrentAccount/>}
-        {successAccountPopup && <Successful_AccCreation/>}
-        {deleteProductsPopup && <Delete_Products/>}
-        {addProductsPopup && <Add_Product/>}
-        {successProductPopup && <Successful_Product/>}
-        {createProductsPopup && <Create_Product/>}
-        {productConfirmPopup && <Product_Confirmation/>}
-        <div><Outlet/></div>
+      <Account_Nav />
+      {addAccountsPopup && <Add_CurrentAccount />}
+      {successAccountPopup && <Successful_AccCreation />}
+      {deleteProductsPopup && <Delete_Products />}
+      {addProductsPopup && <Add_Product />}
+      {successProductPopup && <Successful_Product />}
+      {createProductsPopup && <Create_Product />}
+      {productConfirmPopup && <Product_Confirmation />}
+      {moveToBankPopup && <Move_to_bank/>}
+      <div><Outlet /></div>
     </div>
   )
 }

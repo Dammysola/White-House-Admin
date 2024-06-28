@@ -72,7 +72,7 @@ const Account_Nav = () => {
                 <p id={Style.payment}>Payment <img src={arrowDown} alt="" /></p>
                 <div id={Style.dropdown}>
                   <ul>
-                    <li> <img src={Bank} alt="" /> Move to Bank</li>
+                    <NavLink to={'/payment'}><li> <img src={Bank} alt="" /> Move to Bank</li></NavLink>
                     <li> <img src={arrow_square} alt="" /> Bulk Pay</li>
                     <li> <img src={phone} alt="" /> Top Up</li>
                     <li> <img src={Send} alt="" /> Make Payment</li>
@@ -98,7 +98,7 @@ const Account_Nav = () => {
             <div></div>
             <img src={mail} alt="" />
             <img src={user} alt="" />
-            <p>XCel Inc. Limited <img src={arrowDown} alt="" /></p>
+            <p>AlphaBet <img src={arrowDown} alt="" /></p>
           </div>
         </div>
       </nav>
