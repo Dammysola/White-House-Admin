@@ -1,9 +1,11 @@
+#AllAccount_WholeTextDiv{
+    width: 100%;
+    min-height: 100vh;
+}
 #All_Accounts_AccountTextDiv{
     height: 240px;
     background: linear-gradient(120deg, #0B9FE1, #003E79);
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
     justify-content: space-between;
     align-items: center;
     color: #FFFFFF;
@@ -27,6 +29,7 @@
 #list_of_AccountText{
     color: #A1E2FF;
 }
+
 #Add_AccountDiv button{
     display: flex;
     justify-content: center;
@@ -69,7 +72,7 @@
 }
 #All_Account_wrapperDiv{
     width: 87%;
-    height: 70vh;
+    height: 75vh;
     background-color: #FFFFFF;
     border: 1px solid #F0F0F0;
     border-radius: 14px;
@@ -85,38 +88,27 @@
     font-size: 1.2rem;
 }
 #gridDiv{
-    width: 135px;
+    width: 180px;
     height: 33px;
     border: 1px solid #E3E3E3;
     display: flex;
-    justify-content: space-between;
+    column-gap: 10px;
     align-items: center;
-    padding-right: 25px;
+    justify-content: center; 
     box-sizing: border-box;
-    /* column-gap: 25px; */
     border-radius: 7px;
-    position: relative;
 }
-#gridDiv::before{  
+#gridDiv button{  
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: absolute;
-    content: "Grid";
+    align-items: center;
+    column-gap: 5px;
+    border: none;
     color: #003E79;
     background-color: #0B9FE1;
+    width: 80px;
     height: 27px;
-    width: 75px;
     border-radius: 6px;
-    /* transform: translateY(-50%); */
-
-    /*column-gap: 10px;
-    font-size: 0.8rem;
-    color: #FFFFFF;
-    border-radius: 6px; */
-}
-#gridDiv:active::before{
-    left: calc(100%);
 }
 #All_AccountCardDiv{
     margin-top: 30px;

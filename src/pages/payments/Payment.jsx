@@ -39,8 +39,8 @@ const Payment = () => {
                             <td>8756485390</td>
                             <td>
                                 <div id={Style.action_field}>
-                                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                    <button className={Style.Acc_Transaction_btn2} >View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn1}>View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn2} >Move to Bank</button>
                                 </div>
                             </td>
                         </tr>
@@ -53,8 +53,8 @@ const Payment = () => {
                             <td>8756485390</td>
                             <td>
                                 <div id={Style.action_field}>
-                                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                    <button className={Style.Acc_Transaction_btn2} >View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn1}>View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn2} >Move to Bank</button>
                                 </div>
                             </td>
                         </tr>
@@ -67,8 +67,8 @@ const Payment = () => {
                             <td>8756485390</td>
                             <td>
                                 <div id={Style.action_field}>
-                                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                    <button className={Style.Acc_Transaction_btn2} >View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn1}>View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn2} >Move to Bank</button>
                                 </div>
                             </td>
                         </tr>
@@ -81,8 +81,8 @@ const Payment = () => {
                             <td>8756485390</td>
                             <td>
                                 <div id={Style.action_field}>
-                                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                    <button className={Style.Acc_Transaction_btn2} >View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn1}>View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn2} >Move to Bank</button>
                                 </div>
                             </td>
                         </tr>
@@ -95,8 +95,8 @@ const Payment = () => {
                             <td>8756485390</td>
                             <td>
                                 <div id={Style.action_field}>
-                                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                    <button className={Style.Acc_Transaction_btn2} >View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn1}>View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn2} >Move to Bank</button>
                                 </div>
                             </td>
                         </tr>
@@ -109,8 +109,8 @@ const Payment = () => {
                             <td>8756485390</td>
                             <td>
                                 <div id={Style.action_field}>
-                                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                    <button className={Style.Acc_Transaction_btn2} >View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn1}>View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn2} >Move to Bank</button>
                                 </div>
                             </td>
                         </tr>
@@ -123,8 +123,8 @@ const Payment = () => {
                             <td>8756485390</td>
                             <td>
                                 <div id={Style.action_field}>
-                                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                    <button className={Style.Acc_Transaction_btn2} >View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn1}>View Transaction</button>
+                                    <button className={Style.Acc_Transaction_btn2} >Move to Bank</button>
                                 </div>
                             </td>
                         </tr>

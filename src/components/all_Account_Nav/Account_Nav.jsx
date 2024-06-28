@@ -5,6 +5,10 @@ import arrowDown from '../../assets/svg/arrow_down.svg'
 import mail from '../../assets/svg/mail.svg'
 import user from '../../assets/svg/user.svg'
 import { NavLink } from 'react-router-dom';
+import Bank from '../../assets/svg/bank.svg'
+import arrow_square from '../../assets/svg/arrow_square.svg'
+import phone from '../../assets/svg/phone.svg'
+import Send from '../../assets/svg/Send.svg'
 
 
 
@@ -64,14 +68,26 @@ const Account_Nav = () => {
             </NavLink>
 
             <NavLink to={'/payment'} className={`${activeLink4 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
-              <p>Payment <img src={arrowDown} alt="" /></p>
+              <div id={Style.paymentDiv}>
+                <p id={Style.payment}>Payment <img src={arrowDown} alt="" /></p>
+                <div id={Style.dropdown}>
+                  <ul>
+                    <li> <img src={Bank} alt="" /> Move to Bank</li>
+                    <li> <img src={arrow_square} alt="" /> Bulk Pay</li>
+                    <li> <img src={phone} alt="" /> Top Up</li>
+                    <li> <img src={Send} alt="" /> Make Payment</li>
+
+                  </ul>
+                </div>
+              </div>
+
             </NavLink>
-            
+
 
             <NavLink id='transactions' to={'/transactions'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(5)}>
               <p>Transactions</p>
             </NavLink>
-            
+
             <p>Customers</p>
             <p>Staff <img src={arrowDown} alt="" /></p>
             <p>Dev/API</p>

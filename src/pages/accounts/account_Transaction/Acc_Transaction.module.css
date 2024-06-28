@@ -1,5 +1,6 @@
 #mainDiv{
     width: 100vw;
+    min-height: 100vh;
 }
 #All_Accounts_AccountTextDiv{
     height: 240px;
@@ -42,17 +43,17 @@
     border-radius: 7px;
 }
 #No_Account_mainDiv{
-    display: flex;
+    /* display: flex;
     justify-content: center;
     position: relative;
-    margin-top: -50px;
+    margin-top: -50px; */
 }
 #No_Account_wrapperDiv{
-    width: 87%;
-    height: 70vh;
-    background-color: #FFFFFF;
+    width: 87%; 
+    /* height: 70vh;
+    /* background-color: #FFFFFF;
     border: 1px solid #F0F0F0;
-    border-radius: 14px;
+    border-radius: 14px; */
 }
 #No_AccountDiv{
     margin-top: 34px;

@@ -1,8 +1,8 @@
 import React from 'react'
 import Style from '../account_Transaction/Acc_Transaction.module.css'
-import category_grid from '../../assets/svg/Category_Grid.svg'
-import document_img from '../../assets/svg/Document_img.svg'
-import plus_blue from '../../assets/svg/Plus_blue.svg'
+// import category_grid from '../../assets/svg/Category_Grid.svg'
+// import document_img from '../../assets/svg/Document_img.svg'
+// import plus_blue from '../../assets/svg/Plus_blue.svg'
 
 
 
@@ -10,7 +10,7 @@ const Acc_Transaction = () => {
   return (
     <>
       <div id={Style.mainDiv}>
-        <div id={Style.All_Accounts_AccountTextDiv}>
+        {/* <div id={Style.All_Accounts_AccountTextDiv}>
           <div>
             <div id={Style.homeText}><span>Home</span>{'>'}Accounts</div>
             <p>Accounts</p>
@@ -19,17 +19,17 @@ const Acc_Transaction = () => {
           <div id={Style.Add_AccountDiv}>
             <div><img src={plus_blue} alt="" /> Add Current Account</div>
           </div>
-        </div>
+        </div> */}
         <div id={Style.No_Account_mainDiv}>
           <div id={Style.No_Account_wrapperDiv}>
-            <div id={Style.No_AccountDiv}>
+            {/* <div id={Style.No_AccountDiv}>
               <div id={Style.No_accountText}>All Accounts</div>
               <div id={Style.gridDiv}>
                 <div><img src={category_grid} alt="" /> Grid</div>
                 <img src={document_img} alt="" />
 
               </div>
-            </div>
+            </div> */}
             <table>
               <tr id={Style.headerTable}>
                 <th><input type="checkbox" name="" id="" /></th>
@@ -45,13 +45,12 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>Current</td>
                 <td>789756442423</td>
-                <td></td>
                 <td>
-                                <div id={Style.action_field}>
-                                <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                <button className={Style.Acc_Transaction_btn2} >View Transaction</button>
-                                </div>
-                            </td>
+                  <div id={Style.action_field}>
+                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
+                    <button className={Style.Acc_Transaction_btn2} >View Transaction</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td><input type="checkbox" name="" id="" /></td>
@@ -60,11 +59,11 @@ const Acc_Transaction = () => {
                 <td>Current</td>
                 <td>789756442423</td>
                 <td>
-                                <div id={Style.action_field}>
-                                <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
-                                </div>
-                            </td>
+                  <div id={Style.action_field}>
+                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
+                    <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <th><input type="checkbox" name="" id="" /></th>
@@ -73,11 +72,11 @@ const Acc_Transaction = () => {
                 <td>Current</td>
                 <td>789756442423</td>
                 <td>
-                                <div id={Style.action_field}>
-                                <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
-                                </div>
-                            </td>
+                  <div id={Style.action_field}>
+                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
+                    <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td><input type="checkbox" name="" id="" /></td>
@@ -87,9 +86,9 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>
                   <div id={Style.action_field}>
-                                <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
-                                </div>
+                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
+                    <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -100,9 +99,9 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>
                   <div id={Style.action_field}>
-                                  <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                  <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
-                                </div>
+                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
+                    <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -113,9 +112,9 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>
                   <div id={Style.action_field}>
-                                <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
-                                </div>
+                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
+                    <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
+                  </div>
                 </td>
               </tr>
               <tr id={Style.last_Table_Line}>
@@ -126,9 +125,9 @@ const Acc_Transaction = () => {
                 <td>789756442423</td>
                 <td>
                   <div id={Style.action_field}>
-                                <button className={Style.Acc_Transaction_btn1}>View Balance</button>
-                                <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
-                                </div>
+                    <button className={Style.Acc_Transaction_btn1}>View Balance</button>
+                    <button className={Style.Acc_Transaction_btn2}>View Transaction</button>
+                  </div>
                 </td>
               </tr>
             </table>

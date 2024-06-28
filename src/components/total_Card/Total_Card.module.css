@@ -1,8 +1,9 @@
 #Total_Card_Wrapper{
     width: 15rem;
     height: 144px;
-    background-color: aliceblue;
-    /* background-color: #FFFFFF; */
+    border: 1px solid #f0f0f0;
+    /* background-color: aliceblue; */
+    background-color: #FFFFFF;
     border-radius: 14px;
     position: relative;
     margin-top: -40px;
@@ -44,7 +45,7 @@
 }
 #Total_Card_line{
     width: 14rem;
-    height: 2px;
+    height: 1.4px;
     margin: 0px 5px;
     background-color: #F0F0F0;
 }
