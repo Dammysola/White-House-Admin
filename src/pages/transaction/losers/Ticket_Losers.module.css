@@ -1,0 +1,49 @@
+table{
+    box-sizing: border-box;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+#statusText{
+    width: 3.2rem;
+    height: 26px;
+    background-color: rgba(49, 195, 100, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 5px; 
+    box-sizing: border-box;
+    color: #31C364;
+}
+#statusText_lost{
+    width: 3.2rem;
+    height: 26px;
+    background-color: rgba(17, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 5px; 
+    box-sizing: border-box;
+    color: #110000;
+}
+th, td{
+    padding: 0 40px;
+    color: #666666;
+
+}
+th{
+    text-align: left;
+}
+tr{
+    height: 58px;
+    border-bottom: 1px solid #E3E3E3;
+}
+#line{
+    border-bottom: none;
+}
+#action_field{
+    display: flex;
+    column-gap: 4px;
+}

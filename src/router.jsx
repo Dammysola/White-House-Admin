@@ -13,6 +13,7 @@ import Products from "./pages/products/Products";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Transaction from "./pages/transaction/Transaction";
 import Payment from "./pages/payments/Payment";
+import Bulk_Payment from "./pages/payments/bulk_Payment/Bulk_Payment";
 // import Acc_Transaction from './'
 
 
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
             {
                 path: "/payment",
                 element: <Payment/>
+            },
+            {
+                path: "/bulkPayment",
+                element: <Bulk_Payment/>
             }
         ]
 

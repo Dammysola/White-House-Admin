@@ -73,7 +73,7 @@ const Account_Nav = () => {
                 <div id={Style.dropdown}>
                   <ul>
                     <NavLink to={'/payment'}><li> <img src={Bank} alt="" /> Move to Bank</li></NavLink>
-                    <li> <img src={arrow_square} alt="" /> Bulk Pay</li>
+                    <NavLink to={'/bulkPayment'}><li> <img src={arrow_square} alt="" /> Bulk Pay</li></NavLink>
                     <li> <img src={phone} alt="" /> Top Up</li>
                     <li> <img src={Send} alt="" /> Make Payment</li>
 

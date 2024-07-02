@@ -90,7 +90,8 @@ const All_Accounts = () => {
                             <button onClick={() => allAccountToggle(0)} style={{ backgroundColor: toggleIndex == 0 ? "#003E79": "transparent" }}>
                                 {toggleIndex == 0 ? <img src={category_grid} alt="" /> : <img src={Category_grey} alt="" />}</button>
                             <button onClick={() => allAccountToggle(1)} style={{ backgroundColor: toggleIndex == 1 ? "#003E79" : "transparent" }}>
-                                {toggleIndex == 1 ? <img src={Document_white} alt="" /> : <img src={document_img} alt="" />} </button>
+                                {toggleIndex == 1 ?
+                                 <img src={Document_white} alt="" /> : <img src={document_img} alt="" />} </button>
                         </div>
                     </div>
                     <div>

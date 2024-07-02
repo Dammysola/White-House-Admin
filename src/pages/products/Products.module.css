@@ -1,8 +1,9 @@
-#ProductsMainDiv{
+#ProductsMainDiv {
     min-height: 100vh;
     width: 100%;
 }
-#ProductsTextDiv{
+
+#ProductsTextDiv {
     height: 240px;
     background: linear-gradient(120deg, #0B9FE1, #003E79);
     display: flex;
@@ -13,28 +14,33 @@
     color: #FFFFFF;
     padding: 0px 100px;
 }
-#ProductsTextDiv #homeText{
+
+#ProductsTextDiv #homeText {
     color: #A1E2FF;
-    font-size: 0.62rem;   
+    font-size: 0.62rem;
     text-transform: uppercase;
     margin-top: -20px;
 }
-#ProductsTextDiv p{
+
+#ProductsTextDiv p {
     font-size: 2.5rem;
     color: #FFFFFF;
     height: 30px;
     margin-top: 20px;
 }
-#list_of_AccountText{
+
+#list_of_AccountText {
     color: #A1E2FF;
     font-size: 0.9rem;
 }
-#Products_additionDiv{
+
+#Products_additionDiv {
     display: flex;
     column-gap: 10px;
     font-size: 0.9rem;
 }
-#Products_CreateProductDiv{
+
+#Products_CreateProductDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +53,8 @@
     border: none;
     cursor: pointer;
 }
-#Products_AddproductDiv{
+
+#Products_AddproductDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,89 +68,127 @@
     cursor: pointer;
 }
 
-#Products_mainDiv{
+#Products_mainDiv {
     display: flex;
     justify-content: center;
     position: relative;
     margin-top: -50px;
 }
-#Products_wrapperDiv{
+
+#Products_wrapperDiv {
     width: 87%;
     height: 70vh;
     background-color: #FFFFFF;
     border: 1px solid #F0F0F0;
     border-radius: 14px;
 }
-#input_FilterDiv{
+
+#input_FilterDiv {
     display: flex;
+    justify-content: center;
     column-gap: 6px;
 }
-#input_FilterDiv input{
+#input_FilterDiv img{
+    height: 39px;
+}
+/* #input_FilterDiv input {
     border-radius: 6px;
     border: 1px solid #E3E3E3;
-}
-#ProductsDiv{ 
+} */
+
+#ProductsDiv {
     margin-top: 34px;
     display: flex;
     justify-content: space-between;
     padding: 0 34px;
 }
-#ProductsText{
+
+#ProductsText {
     color: #003E79;
     font-size: 1.2rem;
 }
-table{
+
+table {
     /* border-spacing: 80px 32px; */
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
     margin-top: 1.5rem;
 }
-#headerTable{
+
+#headerTable {
     background-color: #F1F1F1;
     height: 43px;
 }
-#priceText{
+
+#priceText {
     width: 214px;
 }
-th, td{
+
+th,
+td {
     padding: 0 40px;
 
 }
-th{
+
+th {
     text-align: left;
     /* color: #353535;
     font-size: 0.93; */
 }
-tr{
+
+tr {
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
 }
-#action_field{
+
+#action_field {
     display: flex;
     column-gap: 10px;
 }
+
 th input {
     border: 1px solid #E3E3E3;
 }
-#last_Table_Line{
+
+#last_Table_Line {
     border-bottom: none;
 }
-#No_Account_DisplayDiv{
+
+#No_Account_DisplayDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-#No_Account_DisplayDiv p{
+
+#No_Account_DisplayDiv p {
     font-size: 1.3rem;
     color: #353535;
     height: 13px;
     margin-top: 1px;
 }
-#No_Account_DisplayDiv div{
+
+#No_Account_DisplayDiv div {
     width: 406px;
     color: #777777;
     font-size: 0.98rem;
+}
+#searchDiv{
+    margin-top: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#searchDiv img{
+    position: absolute;
+    top: 1rem;
+    width: 15px;
+    left: 1rem;
+    fill: #9e9ea7;   
+}
+#searchDiv input{
+    height: 39px;
 }

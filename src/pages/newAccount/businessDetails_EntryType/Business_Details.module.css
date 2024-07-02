@@ -70,6 +70,7 @@ select.Select_Option{
 }
 #BtnDiv button{
     width: 16rem;
+    height: 46px;
     border-radius: 16px;
     font-size: 0.9rem;
 }
