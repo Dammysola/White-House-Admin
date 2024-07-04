@@ -113,13 +113,13 @@
     padding-right: 10px;
     box-sizing: border-box;
 }
-table{
+/* table{
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
     margin-top: 1.5rem;
     
-}
+} */
 #headerTable{
     background-color: #F1F1F1;
     height: 43px;
@@ -132,11 +132,11 @@ table{
     font-size: 0.8rem;
     
 }
-th{
+/* th{
     font-size: 0.7rem;
     text-align: left;
     color: #353535;
-}
+} */
 #ActiveDiv{
     width:58px;
     height: 26px;
@@ -157,17 +157,17 @@ th{
     justify-content: center;
     align-items: center;
 }
-tr{
+/* tr{
     height: 54px;
     border-bottom: 1px solid #E3E3E3;
-}
+} */
 #action_field{
     display: flex;
     column-gap: 5px;
 }
-th input {
+/* th input {
     border: 1px solid #E3E3E3;
-}
+} */
 #last_Table_Line{
     border-bottom: none;
 }

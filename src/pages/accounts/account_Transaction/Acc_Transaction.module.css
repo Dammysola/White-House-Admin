@@ -42,18 +42,9 @@
     font-size: 0.9rem;
     border-radius: 7px;
 }
-#No_Account_mainDiv{
-    /* display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: -50px; */
-}
+
 #No_Account_wrapperDiv{
     width: 87%; 
-    /* height: 70vh;
-    /* background-color: #FFFFFF;
-    border: 1px solid #F0F0F0;
-    border-radius: 14px; */
 }
 #No_AccountDiv{
     margin-top: 34px;
@@ -89,12 +80,12 @@
     border-radius: 6px;
 }
 
-table{
+/* table{
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
     margin-top: 1.5rem;
-}
+} */
 #headerTable{
     background-color: #F1F1F1;
     height: 43px;
@@ -102,16 +93,14 @@ table{
 #descriptionText{
     width: 250px;
 }
-/* #actionText{
-    width: 100px;
-} */
-th, td{
+
+/* th, td{
     padding: 0 40px;
 
 }
 th{
     text-align: left;
-}
+} */
 #action_field{
     display: flex;
     column-gap: 10px;

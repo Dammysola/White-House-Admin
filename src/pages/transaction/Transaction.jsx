@@ -22,13 +22,13 @@ const Transaction = () => {
         <div id={Style.Transaction_Div}>
 
             <div id={Style.Transaction_WrapperDiv}>
-                <div id={Style.Transaction_welcomeText_Div}>
+          
                     <div>
-                        <div id={Style.homeText}>Home <span>{'>'} Tickets</span> </div>
+                        <div id={Style.homeText}>Home {'>'}Bet MGT<span>{'>'} Tickets</span> </div>
                         <div id={Style.Transaction_header}>Transactions</div>
                         <p>Here is a list of all transactions</p>
                     </div>
-                </div>
+
             </div>
             <div id={Style.Transaction_mainDiv}>
                 <div id={Style.Transaction_tableWrapperDiv}>
@@ -155,21 +155,6 @@ const Transaction = () => {
                                 </td>
                             </tr>
 
-                            {/* <tr id={Style.line}>
-                            <td>7</td>
-                            <td>SA 123476689</td>
-                            <td>8012345678</td>
-                            <td>₦100.00</td>
-                            <td>₦10,000.00</td>
-                            <td>ID12535408</td>
-                            <td>Nigeria</td>
-                            <td>
-                                <div id={Style.action_field}>
-                                    <div id={Style.statusText}>Won</div>
-                                </div>
-                            </td>
-                        </tr> */}
-
                         </table> : ""}
 
                     <div>
@@ -184,6 +169,7 @@ const Transaction = () => {
 
 
             </div>
+
             {toggleIndex == 0 ?
                 <Ticket_Winners /> : ""
             }

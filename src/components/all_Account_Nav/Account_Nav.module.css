@@ -64,7 +64,7 @@
     color: #353535;
     background: url("../../assets/svg/Payment_background.svg") ;
 }
-.Nav_styled_Link hover #dropdown{
+/* .Nav_styled_Link hover #dropdown{
     display: block;
     width: 200px;
     display: flex;
@@ -72,7 +72,7 @@
     margin-left: -100px;
     color: #353535;
     background: url("../../assets/svg/Payment_background.svg") ;
-}
+} */
 
 ul{
     display: flex;

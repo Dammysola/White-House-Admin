@@ -14,7 +14,7 @@ const Chart = ({ data }) => {
 
     <div>
       <div id={Style.Chart_mainDiv}>
-        <div id={Style.PayoutsText}>PayOuts</div>
+        <div id={Style.PayoutsText}>Bet Placed</div>
         <ResponsiveContainer
           width="100%"
           height={300}>
@@ -25,16 +25,16 @@ const Chart = ({ data }) => {
             margin={{
               top: 5,
               right: 30,
-              left: 20,
-              bottom: 5,
+              left: 1,
+              bottom: 10,
             }}
           >
 
             <CartesianGrid strokeDasharray="3 4 " vertical={false}></CartesianGrid>
-            <XAxis dataKey="name"></XAxis>
-            <YAxis></YAxis>
+            <XAxis dataKey="name" fontSize={"0.8rem"}></XAxis>
+            <YAxis fontSize={"0.7rem"}></YAxis>
             <Tooltip></Tooltip>
-            <Legend />
+            <Legend/>
             <Bar dataKey="vwap24Hr" stackId='a' fill='#0B9FE1'></Bar>
             <Bar dataKey="priceUsd" stackId='a' fill='#003E79'></Bar>
             {/* verticalAlign='top' */}

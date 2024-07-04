@@ -1,26 +1,22 @@
 #Nav_Bar_Wrapper{
     height: 5rem;
-    padding: 0px 37px;
+    padding: 0px 7.5rem 0 1.125rem;
     background:url('../../assets/svg/rectangle.png') no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: space-between;
+    column-gap: 294px;
+    /* justify-content: space-between; */
     align-items: center;
     color: #E4F7FF;
 }
-#Nav_Dashboard_button{
-    background-color: transparent;
-    align-items: center;
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    width: 6.56rem;
-    height: 35px;
-    border-radius: 7px;
-}
+
 #NavBar_textDiv{
     display: flex;
-    column-gap: 35px;
+    column-gap: 32px;
     align-items: center;
+}
+#NavBar_textDiv img{
+    margin-right: 47px;
 }
 #NavBar_ContactDiv{
     display: flex;
@@ -28,6 +24,7 @@
     align-items: center;
 }
 #NavBar_ContactDiv button{
+    margin-left: 25px;
     width:  4.88rem;
     height: 33px;
     background-color: #FFFFFF;
@@ -40,4 +37,26 @@
     width: 2px;
     height: 40px;
     background-color: #D9D9D9;
+}
+#settingDiv{
+    display: flex;
+
+}
+.NavBar_text{
+    color: #FFFFFF;
+}
+#dropdown{
+    display: none;
+}
+.Nav_styled_Link{
+    background-color: rgba(255, 255, 255, .2);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    width: 6.56rem;
+    height: 35px;
+    border-radius: 7px;
 }

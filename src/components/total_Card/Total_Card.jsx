@@ -10,8 +10,8 @@ const Total_Card = (props) => {
       <div id={Style.Total_Card_Wrapper}>
         <div id={Style.Total_Card_firstLine_Div}>
           <div id={Style.Total_Card_firstLine_ImgDiv}>
-            <p>  <img src={image1} alt="" /></p>
-            <div>{text}</div>
+              <img src={image1} alt="" />
+            <div id={Style.Total_CardText}>{text}</div>
           </div>
           <div id={Style.Total_Card_imgDiv}>
             <div>
@@ -20,7 +20,6 @@ const Total_Card = (props) => {
         </div>
         <div id={Style.Total_Card_line}></div>
         <p>
-          {/* <span>$</span>25,052,985 */}
           {price}
         </p>
       </div>

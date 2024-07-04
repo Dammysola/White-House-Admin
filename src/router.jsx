@@ -14,6 +14,8 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Transaction from "./pages/transaction/Transaction";
 import Payment from "./pages/payments/Payment";
 import Bulk_Payment from "./pages/payments/bulk_Payment/Bulk_Payment";
+import PlaceBet from "./pages/WhiteHouse/placeBet/PlaceBet";
+import WhiteHouse_Dashboard from "./pages/WhiteHouse/dashboard/WhiteHouse_Dashboard";
 // import Acc_Transaction from './'
 
 
@@ -60,6 +62,10 @@ const router = createBrowserRouter([
                 element: <Dashboard/>
             },
             {
+                path: "/whiteHouseDashboard",
+                element: <WhiteHouse_Dashboard/>
+            },
+            {
                 path: "/allAccounts",
                 element: <All_Accounts/>
             },
@@ -82,7 +88,12 @@ const router = createBrowserRouter([
             {
                 path: "/bulkPayment",
                 element: <Bulk_Payment/>
+            },
+            {
+                path: "/placebet",
+                element: <PlaceBet/>
             }
+            
         ]
 
     }

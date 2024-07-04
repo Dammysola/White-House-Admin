@@ -91,10 +91,7 @@
 #input_FilterDiv img{
     height: 39px;
 }
-/* #input_FilterDiv input {
-    border-radius: 6px;
-    border: 1px solid #E3E3E3;
-} */
+
 
 #ProductsDiv {
     margin-top: 34px;
@@ -108,13 +105,12 @@
     font-size: 1.2rem;
 }
 
-table {
-    /* border-spacing: 80px 32px; */
+/* table {
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
     margin-top: 1.5rem;
-}
+} */
 
 #headerTable {
     background-color: #F1F1F1;
@@ -125,31 +121,29 @@ table {
     width: 214px;
 }
 
-th,
+/* th,
 td {
     padding: 0 40px;
 
-}
+} */
 
-th {
+/* th {
     text-align: left;
-    /* color: #353535;
-    font-size: 0.93; */
-}
+} */
 
-tr {
+/* tr {
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
-}
+} */
 
 #action_field {
     display: flex;
     column-gap: 10px;
 }
 
-th input {
+/* th input {
     border: 1px solid #E3E3E3;
-}
+} */
 
 #last_Table_Line {
     border-bottom: none;

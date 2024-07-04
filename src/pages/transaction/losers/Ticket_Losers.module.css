@@ -1,9 +1,9 @@
-table{
+/* table{
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
     margin-top: 1.5rem;
-}
+} */
 #statusText{
     width: 3.2rem;
     height: 26px;
@@ -28,7 +28,7 @@ table{
     box-sizing: border-box;
     color: #110000;
 }
-th, td{
+/* th, td{
     padding: 0 40px;
     color: #666666;
 
@@ -42,7 +42,7 @@ tr{
 }
 #line{
     border-bottom: none;
-}
+} */
 #action_field{
     display: flex;
     column-gap: 4px;

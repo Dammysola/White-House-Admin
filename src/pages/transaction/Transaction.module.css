@@ -12,12 +12,13 @@
     padding: 0px 100px;
 }
 #Transaction_WrapperDiv #homeText{
+    margin-top: -18px;
     color: #A1E2FF;
     font-size: 0.62rem;   
     text-transform: uppercase;
 }
 #Transaction_WrapperDiv #homeText span{
-    color: #75CBF1;
+    color: #FFFFFF;
 }
 #Transaction_header{
     font-size: 2.5rem;
@@ -32,13 +33,8 @@
     margin: 0 1.5rem;
    
 }
-#Transaction_welcomeText_Div{
-    height: 110px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#Transaction_welcomeText_Div p{
+
+#Transaction_WrapperDiv p{
     font-size: 0.9rem;
     color: #A1E2FF;
     line-height: 50px;
@@ -112,12 +108,12 @@
 #TransactionText span{
     color: #0B9FE1;
 }
-table{
+/* table{
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
     margin-top: 1.5rem;
-}
+} */
 #statusText{
     width: 3.2rem;
     height: 26px;
@@ -142,7 +138,7 @@ table{
     box-sizing: border-box;
     color: #110000;
 }
-th, td{
+/* th, td{
     padding: 0 40px;
     color: #666666;
 
@@ -153,7 +149,7 @@ th{
 tr{
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
-}
+} */
 #line{
     border-bottom: none;
 }

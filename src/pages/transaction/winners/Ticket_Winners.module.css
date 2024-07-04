@@ -138,12 +138,12 @@
 #TransactionText span{
     color: #0B9FE1;
 }
-table{
+/* table{
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
     margin-top: 1.5rem;
-}
+} */
 #statusText{
     width: 3.2rem;
     height: 26px;
@@ -168,7 +168,7 @@ table{
     box-sizing: border-box;
     color: #110000;
 }
-th, td{
+/* th, td{
     padding: 0 40px;
     color: #666666;
 
@@ -179,7 +179,7 @@ th{
 tr{
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
-}
+} */
 #line{
     border-bottom: none;
 }
