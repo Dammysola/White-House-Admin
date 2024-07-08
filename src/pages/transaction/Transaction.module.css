@@ -1,37 +1,28 @@
 #Transaction_Div{
     width: 100%;
     height: 100vh;
+    background-color: #F9F9F9;
 }
 #Transaction_WrapperDiv{
-    height: 240px;
+    height: 8.12rem;
     background: linear-gradient(120deg, #0B9FE1, #003E79);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     color: #FFFFFF;
-    padding: 0px 100px;
-}
-#Transaction_WrapperDiv #homeText{
-    margin-top: -18px;
-    color: #A1E2FF;
-    font-size: 0.62rem;   
-    text-transform: uppercase;
-}
-#Transaction_WrapperDiv #homeText span{
-    color: #FFFFFF;
+    padding: 0px 120px;
 }
 #Transaction_header{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #FFFFFF;
-    height: 30px;
-    margin-top: 20px;
+    height: 10px;
+    padding-top: 46px;
+}
+#Transaction_mainDiv{
+    margin-top: 6.8rem;
 }
 #Transaction_listCalendar_Div{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 1.5rem;
-   
 }
 
 #Transaction_WrapperDiv p{
@@ -46,21 +37,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 21.25rem;
-    height: 39px;
-    background-color: rgba(219, 219, 219, .3);
-    border: 1px solid #DBDBDB;
+    width: 23.37rem;
+    height: 49px;
+    background-color: #EFEFEF;
     column-gap: 16px;
-    border-radius: 7px;
+    border-radius: 8px;
 }
-#Transaction_listDiv button{
+.Transaction_listDiv_button{
     border: none;
     color: #666666;
     font-size: 0.9rem;
-    border-radius: 6px;
-    height: 36px;
-    padding: 7px;
-    box-sizing: border-box;
+    background-color: transparent;
+}
+.toggleDiv_buttonActive{
+    min-width: 50px;
+    background-color: #003E79;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 33px;
+    font-size: 0.9rem;
 }
 #CardDiv{
     display: flex;
@@ -72,11 +69,9 @@
 #Transaction_mainDiv{
     display: flex;
     justify-content: center;
-    position: relative;
-    margin-top: -55px;
 }
 #Transaction_tableWrapperDiv{
-    width: 87%;
+    width: 85%;
     height: 70vh;
     background-color: #FFFFFF;
     border: 1px solid #F0F0F0;
@@ -108,12 +103,12 @@
 #TransactionText span{
     color: #0B9FE1;
 }
-/* table{
+#Transaction_tableWrapperDiv table{
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
     margin-top: 1.5rem;
-} */
+} 
 #statusText{
     width: 3.2rem;
     height: 26px;
@@ -138,19 +133,18 @@
     box-sizing: border-box;
     color: #110000;
 }
-/* th, td{
+#Transaction_tableWrapperDiv th, td{
     padding: 0 40px;
     color: #666666;
-
 }
-th{
+#Transaction_tableWrapperDiv th{
     text-align: left;
 }
-tr{
+#Transaction_tableWrapperDiv tr{
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
-} */
-#line{
+}
+#Transaction_tableWrapperDiv #line{
     border-bottom: none;
 }
 

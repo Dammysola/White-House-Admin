@@ -1,0 +1,128 @@
+#CustomerCare_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#PlaceBet_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#PlaceBet_HeaderDiv{
+    height: 8.12rem;
+    background: linear-gradient(120deg, #0B9FE1, #003E79);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFFFFF;
+    padding: 0px 120px;
+}
+
+#PlaceBet_header{
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    height: 30px;
+    margin-top: 20px;
+}
+#PlaceBet_HeaderDiv p{
+    font-size: 0.9rem;
+    color: #A1E2FF;
+    line-height: 8px;
+}
+#CustomerCare_Div{
+    padding:0px 120px; ;
+}
+#Total_Card_mapDiv{
+    display: flex;
+    column-gap: 32px;
+}
+#PlaceBet_summaryText{
+    color: #1A1A1A;
+    font-size: 1.55rem;
+    line-height: 38px;
+}
+#CustomerCare_Progress_mainDiv{
+    display: flex;
+    column-gap: 37px;
+    margin-top: 32px;
+}
+#CustomerCare_Progress_Wrapper{
+    background-color: #FFFFFF;
+    width: 53.25rem;
+    height: 414px;
+    padding: 32px;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+#CustomerCare_textDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+#monthDiv{
+    width: 8.25rem;
+    height: 36px;
+    border-radius: 8px;
+    border: 2px solid #C7C2C2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #000000;
+    column-gap: 20px;
+}
+.Staff_progress{
+   width: 49.62rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#Staff_details{
+    display: flex;
+    justify-content: space-between;
+}
+#imgDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 16px;
+    font-size: 1rem;
+    color: #000000;
+}
+.Staff_progress #progressDiv{
+    height: 10px;
+    width: 100%;
+    background-color: #003E79;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 46px;
+}
+#CustomerCare_SatisfactionDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 25px;
+    width: 23.56rem;
+    height: 414px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+
+}
+#CustomerCare_Satisfaction_GradeDiv{
+    display: flex;
+    column-gap: 75px;
+    font-size: 1rem;
+    color: #000000;
+}
+#CustomerCare_SatisfactionDiv .CustomerCare_Satisfaction_GradeDiv{
+    display: flex;
+    column-gap: 75px;
+    margin-left: -60px;
+    font-size: 1rem;
+    color: #000000;
+}
+.percentage{
+    color: #EB5757;
+}

@@ -138,6 +138,10 @@
 #TransactionText span{
     color: #0B9FE1;
 }
+#action_field{
+    display: flex;
+    column-gap: 4px;
+}
 /* table{
     box-sizing: border-box;
     border-collapse: collapse;
@@ -167,6 +171,13 @@
     padding: 5px; 
     box-sizing: border-box;
     color: #110000;
+}
+ #headerTable{
+    background-color: #F1F1F1;
+    height: 44px;
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: lighter;
 }
 /* th, td{
     padding: 0 40px;

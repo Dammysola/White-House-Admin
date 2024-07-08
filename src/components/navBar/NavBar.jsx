@@ -50,9 +50,21 @@ const NavBar = () => {
 
           <NavLink to={'/placebet'} className={`${activeLink2 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(2)}>
             <p>Bet Placed</p>
+          </NavLink >
+
+          <NavLink className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
+            <div>
+              <p id={Style.game}>Games <img src={arrowDown} alt="" /></p>
+              <div id={Style.dropdown}>
+                <ul>
+                  <NavLink to={'/dice'}><li>Dice</li></NavLink>
+                  <NavLink><li>Lorem</li></NavLink>
+                </ul>
+              </div>
+
+            </div>
           </NavLink>
 
-          <p>Games</p>
           <p>Users</p>
           <NavLink id='transactions' to={'/transactions'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(5)}>
             <p>Transactions</p>
@@ -60,7 +72,9 @@ const NavBar = () => {
           <p>Reports</p>
         </div>
         <div id={Style.NavBar_ContactDiv}>
-          <p>Settings</p>
+        <NavLink  to={'/customerCare'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
+          <p>Customer Care</p>
+          </NavLink>
           <p>Mgt</p>
           <button>English <img src={arrowDown} alt="" /></button>
           <div></div>

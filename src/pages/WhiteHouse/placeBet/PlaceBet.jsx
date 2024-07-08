@@ -8,6 +8,7 @@ import search from '../../../assets/svg/Search.svg'
 import InputField from '../../../components/input/InputField'
 import filter_img from '../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../assets/svg/download_img.svg'
+import Countries from './countries/Countries'
 
 const PlaceBet = () => {
     const [data, setData] = useState()
@@ -52,6 +53,7 @@ const PlaceBet = () => {
 
     const texts = [
         "",
+        "countries",
         "Total Bets Placed",
         "Total Players",
     ];
@@ -93,7 +95,7 @@ const PlaceBet = () => {
                         currentIndex == 0 ? <img onClick={handleNextClick} src={arrow_side} alt="" /> : <img onClick={handlePrevClick} src={arrow_side} alt="" />
                     }
 
-                    <button onClick={() => placeBetToggle(2)[currentIndex]} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.toggleDiv_Button}>{texts[currentIndex]}</button>
+                    <button onClick={() => placeBetToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.toggleDiv_Button}>{texts[currentIndex]}</button>
 
                     {
                         currentIndex !== 0 ? <img onClick={handleNextClick} src={arrow_side} alt="" /> : ""
@@ -128,124 +130,12 @@ const PlaceBet = () => {
 
             </div>
 
-            {
-                toggleIndex == 2 ?
-                    <div id={Style.TotalBet_mainDiv}>
-                        <div id={Style.input_FilterDiv}>
-                            <p>3rd July, 2024</p>
-                            <div id={Style.searchDiv}>
-                                <img src={search} alt="" />
-                                <InputField
-                                    placeholder={"Search tickets"} />
-                            </div>
+            {/* { */}
+                {/* // toggleIndex == 2 ? */}
+                    
+                    {/* //  : ""} */}
 
-                            <img src={filter_img} alt="" />
-                            <img src={download} alt="" />
-                        </div>
-
-                        <div id={Style.TotalBet_wrapper}>
-                            <div id={Style.PlaceBet_tableDiv}>
-                                <table>
-                                    <tr id={Style.headerTable}>
-                                        <th>S/N</th>
-                                        <th>User ID</th>
-                                        <th>Ticket ID</th>
-                                        <th>Amount Staked</th>
-                                        <th>Status</th>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>SA 123476689</td>
-                                        <td>8012345678</td>
-                                        <td>₦100.00</td>
-                                        <td>
-                                            <div id={Style.statusText}>Won</div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td>SA 123476689</td>
-                                        <td>8012345678</td>
-                                        <td>₦100.00</td>
-                                        <td>
-                                            <div id={Style.action_field}>
-                                                <div id={Style.statusText}>Won</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td>SA 123476689</td>
-                                        <td>8012345678</td>
-                                        <td>₦100.00</td>
-                                        <td>
-                                            <div id={Style.action_field}>
-                                                <div id={Style.statusText}>Won</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>SA 123476689</td>
-                                        <td>8012345678</td>
-                                        <td>₦100.00</td>
-                                        <td>
-                                            <div id={Style.action_field}>
-                                                <div id={Style.statusText}>Won</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>SA 123476689</td>
-                                        <td>8012345678</td>
-                                        <td>₦100.00</td>
-                                        <td>
-                                            <div id={Style.action_field}>
-                                                <div id={Style.statusText}>Won</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>SA 123476689</td>
-                                        <td>8012345678</td>
-                                        <td>₦100.00</td>
-                                        <td>
-                                            <div id={Style.action_field}>
-                                                <div id={Style.statusText}>Won</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>SA 123476689</td>
-                                        <td>8012345678</td>
-                                        <td>₦100.00</td>
-                                        <td>
-                                            <div id={Style.action_field}>
-                                                <div id={Style.statusText}>Won</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr id={Style.lastline}>
-                                        <td>8</td>
-                                        <td>SA 123476689</td>
-                                        <td>8012345678</td>
-                                        <td>₦100.00</td>
-                                        <td>
-                                            <div id={Style.action_field}>
-                                                <div id={Style.statusText}>Won</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div> : ""}
+                     {toggleIndex == 2 ? <Countries/>: ""}
 
             <div id={Style.Total_Player_mainDiv}>
                 <div id={Style.TotalPlayer_input_FilterDiv}>
@@ -302,7 +192,21 @@ const PlaceBet = () => {
                                         <td>johndoe@gmail.com</td>
                                         <td>+2344816273888</td>
                                         <td>Nigeria</td>
-                                        <td></td>
+                                        <td>
+                                        <div id={Style.BankDetails_Div}>
+                                                <div>
+                                                    <p>Bank</p>
+                                                    <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                                </div>
+                                                <div>
+                                                    <p>Account Number</p>
+                                                    <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                                </div><div>
+                                                    <p>Account Name</p>
+                                                    <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <div id={Style.action_field}>
                                                 <div id={Style.statusText}>Online</div>

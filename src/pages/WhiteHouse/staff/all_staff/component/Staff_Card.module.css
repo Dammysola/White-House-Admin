@@ -1,0 +1,29 @@
+#Staff_Card_WrapperDiv{
+    /* background-color: #075070; */
+    border-radius: 1rem;
+    width: 25.12rem;
+    height: 11.25rem;
+    column-gap: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #000000;
+
+}
+#Staff_Card_WrapperDiv button{
+    width: 6.93rem;
+    height: 30px;
+    background-color: #075070;
+    font-size: 0.75rem;
+    color: #FFFFFF;
+    padding: 7px;
+    box-sizing: border-box;
+}
+#Staff_Card_careRep{
+    height: 8px;
+}
+.Staff_Card_nameText{
+    font-size: 1.25rem;
+    height: 8px; 
+}

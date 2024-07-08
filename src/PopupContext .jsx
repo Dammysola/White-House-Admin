@@ -16,7 +16,10 @@ const PopupContext  = ({ children }) => {
     const [successAccountPopup, setsuccessAccountPopup] = useState(false)
     const [successProductPopup, setsuccessProductPopup] = useState(false)
     const [moveToBankPopup, setMoveToBankPopup] = useState(false)
+    const [suspensionPopup, setSuspensionPopup] = useState(false)
+    const [confirmSuspensionPopup, setconfirmSuspensionPopup] = useState(false)
 
+    
 
     const updateAdd_AccountPopup = (data)=>{
         setAddAccountsPopup(data)
@@ -46,6 +49,8 @@ const PopupContext  = ({ children }) => {
     const updateMoveToBank = (data)=>{
         setMoveToBankPopup(data)
     }
+
+
     
 
   return (

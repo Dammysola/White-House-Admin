@@ -1,0 +1,27 @@
+#All_Staff_Card_wrapper{
+
+}
+#All_Staff_Card_wrapper{
+    display: flex;
+    column-gap: 19px;
+    
+}
+.All_Staff_CardDiv{
+    width: 18.62rem;
+    /* width: 298px; */
+    height: 111px;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+}
+.Card_figure{
+    color: #000000;
+    font-size: 1.5rem;
+    height: 8px;
+}
+.Card_text{
+    font-size: 1.2rem;
+    color: #717171;
+}

@@ -22,23 +22,22 @@ const Transaction = () => {
         <div id={Style.Transaction_Div}>
 
             <div id={Style.Transaction_WrapperDiv}>
-          
-                    <div>
-                        <div id={Style.homeText}>Home {'>'}Bet MGT<span>{'>'} Tickets</span> </div>
-                        <div id={Style.Transaction_header}>Transactions</div>
-                        <p>Here is a list of all transactions</p>
-                    </div>
+
+            
+                    <div id={Style.Transaction_header}>Transactions</div>
+                    <p>Here is a list of all transactions</p>
+                
 
             </div>
             <div id={Style.Transaction_mainDiv}>
                 <div id={Style.Transaction_tableWrapperDiv}>
-                    <div id={Style.TransactionText}>Staff Lists <span>(1,355)</span></div>
+                    <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>
 
                     <div id={Style.Transaction_listCalendar_Div}>
                         <div id={Style.Transaction_listDiv}>
-                            <button onClick={() => transactionToggle(0)} style={{ backgroundColor: toggleIndex == 0 ? "#003E79" : "transparent" }}>Winning transaction</button>
-                            <button onClick={() => transactionToggle(1)} style={{ backgroundColor: toggleIndex == 1 ? "#003E79" : "transparent" }}>Losing transaction</button>
-                            <button onClick={() => transactionToggle(3)} style={{ backgroundColor: toggleIndex == 3 ? "#003E79" : "transparent" }}>All</button>
+                            <button onClick={() => transactionToggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>All</button>
+                            <button onClick={() => transactionToggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>Winning transaction</button>
+                            <button onClick={() => transactionToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>Losing transaction</button>
 
                         </div>
 
@@ -55,7 +54,7 @@ const Transaction = () => {
                         </div>
                     </div>
 
-                    {toggleIndex == 3 ?
+                    {toggleIndex == 0 ?
                         <table>
                             <tr id={Style.headerTable}>
                                 <th>S/N</th>
@@ -89,8 +88,8 @@ const Transaction = () => {
                                 <td>ID12535408</td>
                                 <td>Nigeria</td>
                                 <td>
-                                    <div id={Style.action_field}>
-                                        <div id={Style.statusText}>Won</div>
+                                <div id={Style.action_field}>
+                                        <div id={Style.statusText_lost}>lost</div>
                                     </div>
                                 </td>
                             </tr>
@@ -158,8 +157,13 @@ const Transaction = () => {
                         </table> : ""}
 
                     <div>
-                        {toggleIndex == 1 ?
+                        {toggleIndex == 2 ?
                             <Ticket_Losers /> : ""
+                        }
+
+                        {
+                            toggleIndex == 1 ?
+                                <Ticket_Winners /> : ""
                         }
 
 
@@ -169,10 +173,6 @@ const Transaction = () => {
 
 
             </div>
-
-            {toggleIndex == 0 ?
-                <Ticket_Winners /> : ""
-            }
         </div>
     )
 }
