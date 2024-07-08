@@ -68,13 +68,13 @@ const NavBar = () => {
           </NavLink>
 
           <p>Users</p>
-          <NavLink id='transactions' to={'/transactions'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(5)}>
+          <NavLink id='transactions' to={'/transactions'} className={`${activeLink4 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
             <p>Transactions</p>
           </NavLink>
           <p>Reports</p>
         </div>
         <div id={Style.NavBar_ContactDiv}>
-          <NavLink to={'/customerCare'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
+          <NavLink to={'/customerCare'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(5)}>
             <p>Customer Care</p>
           </NavLink>
           <p>Mgt</p>

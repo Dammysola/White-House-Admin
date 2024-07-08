@@ -5,15 +5,10 @@ import Business_Details from "./pages/newAccount/businessDetails_EntryType/Busin
 import Business_Transaction from "./pages/newAccount/businessDetails_EntryType/Business_Transaction";
 import Director_Details from "./pages/newAccount/director_LoginDetails/Director_Details";
 import Congratulation from "./pages/newAccount/congratulation_message/Congratulation";
-import All_Accounts from "./pages/accounts/All_Accounts";
 import MainLayout_Two from "./mainLayout2/MainLayout_Two"
 import PopupContext from "./PopupContext ";
 import SignIn from "./pages/signUp/SignIn"
-import Products from "./pages/products/Products";
-import Dashboard from "./pages/dashboard/Dashboard";
-import Transaction from "./pages/transaction/Transaction";
-import Payment from "./pages/payments/Payment";
-import Bulk_Payment from "./pages/payments/bulk_Payment/Bulk_Payment";
+import Transaction from "./pages/WhiteHouse/transaction/Transaction";
 import PlaceBet from "./pages/WhiteHouse/placeBet/PlaceBet";
 import WhiteHouse_Dashboard from "./pages/WhiteHouse/dashboard/WhiteHouse_Dashboard";
 import Dice from "./pages/WhiteHouse/games/Dice"
@@ -59,10 +54,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <PopupContext><MainLayout_Two/></PopupContext> ,
         children: [
-            {
-                path: "/dashboard",
-                element: <Dashboard/>
-            },
+            // {
+            //     path: "/dashboard",
+            //     element: <Dashboard/>
+            // },
             {
                 path: "/whiteHouseDashboard",
                 element: <WhiteHouse_Dashboard/>
@@ -83,14 +78,14 @@ const router = createBrowserRouter([
                 path: "/transactions",
                 element:  <Transaction/>
             },
-            {
-                path: "/payment",
-                element: <Payment/>
-            },
-            {
-                path: "/bulkPayment",
-                element: <Bulk_Payment/>
-            },
+            // {
+            //     path: "/payment",
+            //     element: <Payment/>
+            // },
+            // {
+            //     path: "/bulkPayment",
+            //     element: <Bulk_Payment/>
+            // },
             {
                 path: "/placebet",
                 element: <PlaceBet/>

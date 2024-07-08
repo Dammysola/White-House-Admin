@@ -1,25 +1,62 @@
-#PlaceBet_HeaderDiv{
-    height: 8.12rem;
-    background: linear-gradient(120deg, #0B9FE1, #003E79);
+#DiceGame_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+.PlaceBet_headerText{
+    color: #1A1A1A;
+    font-size: 1.55rem;
+    line-height: 38px;
+}
+#Total_Card_mapDiv{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #FFFFFF;
-    padding: 0px 120px;
+    column-gap: 32px;
 }
-
-#PlaceBet_header{
+#Dashboard_Card_wrapper{
+    width: 38.43rem;
+    height: 15.37rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 22px;
+}
+.Dashboard_CardDiv{
+    width: 18.62rem;
+    height: 111px;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+}
+.Card_figure{
+    color: #000000;
     font-size: 1.5rem;
-    color: #FFFFFF;
-    height: 30px;
-    margin-top: 20px;
+    height: 8px;
 }
-#PlaceBet_HeaderDiv p{
-    font-size: 0.9rem;
-    color: #A1E2FF;
-    line-height: 8px;
+.Card_text{
+    font-size: 1.2rem;
+    color: #717171;
 }
-
-#PlaceBet_HeaderDiv{
-    width: 260px;
+#DiceGame_cardGraph_wrapper{
+    display: flex;
+    column-gap: 2rem;
+}
+#graph_imgDiv{
+    display: flex;
+}
+#DiceGame_lastline_graphDiv{
+    height: 38.3rem;
+    display: flex;
+    align-items: center;
+    column-gap: 2.3rem;
+    
+}
+#DiceGame_graph{
+    width: 40rem;
+    height: 19rem;
+    margin-top: 6rem;
+}
+#DiceGame_wrapperDiv{
+  padding: 0 120px;
 }

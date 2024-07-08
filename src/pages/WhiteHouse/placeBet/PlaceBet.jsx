@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Style from '../placeBet/PlaceBet.module.css'
-import arrow_side from '../../../assets/svg/arrow_side.svg'
 import Total_Card from '../../../components/total_Card/Total_Card'
 import line_graph from '../../../assets/images/line_Graph.png'
 import Chart from '../../../components/chart/Chart'
-import search from '../../../assets/svg/Search.svg'
-import InputField from '../../../components/input/InputField'
-import filter_img from '../../../assets/svg/Complete_filter_img.svg'
-import download from '../../../assets/svg/download_img.svg'
-import Countries from './countries/Countries'
 import Header from '../../../components/header/Header'
 
 const PlaceBet = () => {
@@ -82,7 +76,7 @@ const PlaceBet = () => {
                         <Chart data={data}></Chart>
                         <img src={line_graph} alt="" />
                     </div>
-                </div> : ""
+                </div>
 
             </div>
 

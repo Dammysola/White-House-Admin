@@ -1,9 +1,9 @@
 import React from 'react'
-import Style from '../losers/Ticket_Losers.module.css'
-import status_img from '../../../assets/svg/status_img.svg'
-import green_eyes from '../../../assets/svg/green_eyes.svg'
-import warning from '../../../assets/svg/yellow_warning.svg'
-import delete_list from '../../../assets/svg/product_delete.svg'
+import Style from './Ticket_Losers.module.css'
+import status_img from '../../../../assets/svg/status_img.svg'
+import green_eyes from '../../../../assets/svg/green_eyes.svg'
+import warning from '../../../../assets/svg/yellow_warning.svg'
+import delete_list from '../../../../assets/svg/product_delete.svg'
 const Ticket_Losers = () => {
     return (
         <div>

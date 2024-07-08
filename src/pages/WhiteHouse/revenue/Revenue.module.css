@@ -1,0 +1,9 @@
+#Revenue_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#Total_Card_mapDiv{
+    display: flex;
+    column-gap: 32px;
+}

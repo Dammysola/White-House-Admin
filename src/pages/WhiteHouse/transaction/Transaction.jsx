@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import Style from '../transaction/Transaction.module.css'
-import filter_img from '../../assets/svg/Complete_filter_img.svg'
-import download from '../../assets/svg/download_img.svg'
-import status_img from '../../assets/svg/status_img.svg'
-import InputField from '../../components/input/InputField'
+import Style from './Transaction.module.css'
+import filter_img from '../../../assets/svg/Complete_filter_img.svg'
+import download from '../../../assets/svg/download_img.svg'
+import status_img from '../../../assets/svg/status_img.svg'
+import InputField from '../../../components/input/InputField'
 import Ticket_Losers from './losers/Ticket_Losers'
 import Ticket_Winners from './winners/Ticket_Winners'
-import Search from '../../assets/svg/Search.svg'
-import Header from '../../components/header/Header'
+import Search from '../../../assets/svg/Search.svg'
+import Header from '../../../components/header/Header'
+
 
 
 const Transaction = () => {
@@ -19,6 +20,7 @@ const Transaction = () => {
 
     }
 
+    
     return (
         <div id={Style.Transaction_Div}>
             <Header
