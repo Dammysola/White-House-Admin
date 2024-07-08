@@ -9,7 +9,7 @@ const Ticket_Winners = () => {
 
     return (
 
-        <div>
+        <div id={Style.Ticket_Winners_TableDiv}>
             <table>
                 <tr id={Style.headerTable}>
                     <th>S/N</th>

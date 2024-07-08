@@ -6,6 +6,8 @@ import person from '../../../assets/svg/person.svg'
 import arrow_side from '../../../assets/svg/arrow_side.svg'
 import line_graph from '../../../assets/images/line_Graph.png'
 import Chart from '../../../components/chart/Chart'
+import NavBar from '../../../components/navBar/NavBar'
+import Header from '../../../components/header/Header'
 
 const WhiteHouse_Dashboard = () => {
     const [data, setData] = useState()
@@ -22,11 +24,9 @@ const WhiteHouse_Dashboard = () => {
     }, [])
     return (
         <div id={Style.Dashboard_MainDiv}>
-            <div id={Style.Dashboard_HeaderDiv}>
-
-                <div id={Style.Dashboard_header}>Welcome, Admin</div>
-                <p>Here’s an overview of White House</p>
-            </div>
+            <Header
+            headerText = {"Welcome, Admin"}
+            headerInfo ={"Here’s an overview of White House"}/>
 
             <div id={Style.Dashboard_CardGraph_Wrapper}>
                 <div id={Style.Dashboard_Card_wrapper}>
@@ -41,16 +41,16 @@ const WhiteHouse_Dashboard = () => {
                     <div className={Style.Dashboard_CardDiv}>
                         <img src={person} alt="" />
                         <div>
-                            <p className={Style.Card_figure}>200k</p>
-                            <p className={Style.Card_text}>Bet Placed</p>
+                            <p className={Style.Card_figure}>2m</p>
+                            <p className={Style.Card_text}>All Users</p>
                         </div>
                         <img src={arrow_side} alt="" />
                     </div>
                     <div className={Style.Dashboard_CardDiv}>
                         <img src={flag} alt="" />
                         <div>
-                            <p className={Style.Card_figure}>200k</p>
-                            <p className={Style.Card_text}>Bet Placed</p>
+                            <p className={Style.Card_figure}>14</p>
+                            <p className={Style.Card_text}>Reg Countries</p>
                         </div>
                         <img src={arrow_side} alt="" />
                     </div>

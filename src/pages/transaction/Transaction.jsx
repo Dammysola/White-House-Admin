@@ -7,6 +7,7 @@ import InputField from '../../components/input/InputField'
 import Ticket_Losers from './losers/Ticket_Losers'
 import Ticket_Winners from './winners/Ticket_Winners'
 import Search from '../../assets/svg/Search.svg'
+import Header from '../../components/header/Header'
 
 
 const Transaction = () => {
@@ -20,15 +21,9 @@ const Transaction = () => {
 
     return (
         <div id={Style.Transaction_Div}>
-
-            <div id={Style.Transaction_WrapperDiv}>
-
-            
-                    <div id={Style.Transaction_header}>Transactions</div>
-                    <p>Here is a list of all transactions</p>
-                
-
-            </div>
+            <Header
+            headerText = {"Transactions"}
+            headerInfo ={"Here is a list of all transactions"}/>
             <div id={Style.Transaction_mainDiv}>
                 <div id={Style.Transaction_tableWrapperDiv}>
                     <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>

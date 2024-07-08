@@ -15,9 +15,8 @@ function App() {
 
   return (
     <> 
-      {/* <RouterProvider router={router}/> */}
-      {/* <All_Staff/> */}
-      <Staff_Card/>
+      <RouterProvider router={router}/>
+      <Ticket_Winners/>
     </>
   )
 }

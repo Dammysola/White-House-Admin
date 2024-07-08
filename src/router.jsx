@@ -18,6 +18,7 @@ import PlaceBet from "./pages/WhiteHouse/placeBet/PlaceBet";
 import WhiteHouse_Dashboard from "./pages/WhiteHouse/dashboard/WhiteHouse_Dashboard";
 import Dice from "./pages/WhiteHouse/games/Dice"
 import CustomerCare from "./pages/WhiteHouse/staff/CustomerCare";
+import All_Staff from "./pages/WhiteHouse/staff/all_staff/All_Staff";
 
 
 
@@ -75,8 +76,8 @@ const router = createBrowserRouter([
                 element: <CustomerCare/>
             },
             {
-                path: "/products",
-                element: <Products/>
+                path: "/allStaffs",
+                element: <All_Staff/>
             },
             {
                 path: "/transactions",

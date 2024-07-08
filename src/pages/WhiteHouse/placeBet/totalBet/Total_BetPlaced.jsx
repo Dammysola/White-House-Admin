@@ -3,12 +3,17 @@ import Style from '../totalBet/Total_BetPlaced.module.css'
 import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../../assets/svg/download_img.svg'
 import InputField from '../../../../components/input/InputField'
+import Header from '../../../../components/header/Header'
 
 
 
 const Total_BetPlaced = () => {
   return (
     <div>
+      <Header
+        headerText={"Total Bet Placed"}
+        headerInfo={"Here’s an information on all placed bets"} />
+
       <div id={Style.TotalBet_mainDiv}>
         <div id={Style.input_FilterDiv}>
           <p>3rd July, 2024</p>

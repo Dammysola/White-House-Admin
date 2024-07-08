@@ -3,6 +3,7 @@ import Style from '../staff/CustomerCare.module.css'
 import Total_Card from '../../../components/total_Card/Total_Card'
 import arrow_down from '../../../assets/svg/arrow_down-dark.svg'
 import person_img from '../../../assets/images/person_img.png'
+import Header from '../../../components/header/Header'
 
 
 const CustomerCare = () => {
@@ -10,7 +11,8 @@ const CustomerCare = () => {
         {
             image1: './src/assets/svg/Activity.svg',
             text: 'All Staff',
-            divText: 'View Details',
+            divText: 'View all',
+            link: '/allStaffs',
             price: '200'
         },
         {
@@ -34,14 +36,14 @@ const CustomerCare = () => {
     ]
     return (
         <div id={Style.CustomerCare_mainDiv}>
-            <div id={Style.PlaceBet_HeaderDiv}>
-                <div id={Style.PlaceBet_header}>Bet Placed</div>
-                <p>Here’s an information on all placed bets</p>
-            </div>
+            
+            <Header
+            headerText = {"Welcome, Admin"}
+            headerInfo ={"Here’s an overview of all Staff"}/>
 
             <div id={Style.CustomerCare_Div}>
             <div>
-                <p id={Style.PlaceBet_summaryText}>Today's Summary</p>
+                <p id={Style.PlaceBet_summaryText}>Customer Care Summary</p>
                 <div id={Style.Total_Card_mapDiv}>
                     {
                         total_Card2.map((object) => {

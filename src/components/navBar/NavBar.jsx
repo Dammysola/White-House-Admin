@@ -8,6 +8,8 @@ import { NavLink } from 'react-router-dom'
 
 
 const NavBar = () => {
+ 
+
   const [activeLink1, setActiveLink1] = useState(false)
   const [activeLink2, setActiveLink2] = useState(false)
   const [activeLink3, setActiveLink3] = useState(false)
@@ -72,8 +74,8 @@ const NavBar = () => {
           <p>Reports</p>
         </div>
         <div id={Style.NavBar_ContactDiv}>
-        <NavLink  to={'/customerCare'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
-          <p>Customer Care</p>
+          <NavLink to={'/customerCare'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
+            <p>Customer Care</p>
           </NavLink>
           <p>Mgt</p>
           <button>English <img src={arrowDown} alt="" /></button>
@@ -83,6 +85,7 @@ const NavBar = () => {
           <p>AlphaBet Limited <img src={arrowDown} alt="" /></p>
         </div>
       </div>
+     
     </div>
   )
 }

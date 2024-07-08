@@ -1,153 +1,8 @@
-#Transaction_Div{
-    width: 100%;
-    height: 100vh;
-}
-#Transaction_WrapperDiv{
-    height: 240px;
-    background: linear-gradient(120deg, #0B9FE1, #003E79);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #FFFFFF;
-    padding: 0px 100px;
-}
-#Transaction_WrapperDiv #homeText{
-    color: #A1E2FF;
-    font-size: 0.62rem;   
-    text-transform: uppercase;
-}
-#Transaction_WrapperDiv #homeText span{
-    color: #75CBF1;
-}
-#Transaction_header{
-    font-size: 2.5rem;
-    color: #FFFFFF;
-    height: 30px;
-    margin-top: 20px;
-}
-#Transaction_listCalendar_Div{
-    /* height: 50px; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 1.5rem;
-   
-}
-#Transaction_welcomeText_Div{
-    /* margin: -50px -90px 0 0; */
-    height: 110px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#Transaction_welcomeText_Div p{
-    font-size: 0.9rem;
-    color: #A1E2FF;
-    line-height: 50px;
-}
-#Transaction_welcomeText{
-    font-size: 25px;
-}
-#Transaction_listDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 21.25rem;
-    height: 39px;
-    background-color: rgba(219, 219, 219, .3);
-    border: 1px solid #DBDBDB;
-    column-gap: 16px;
-    border-radius: 7px;
-}
-#Transaction_listDiv button{
-    border: none;
-    color: #666666;
-    font-size: 0.9rem;
-    border-radius: 6px;
-    height: 36px;
-    padding: 7px;
-    box-sizing: border-box;
-}
-#CardDiv{
-    display: flex;
-    column-gap: 20px;
-    height: 150px;
-    margin-left: 100px;
-    box-sizing: border-box;
-}
-#Transaction_mainDiv{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top: -30px;
-}
-#bgImage_Div{
-    display: flex;
-    justify-content: center;
-}
-#background{
-    width: 1400px;
-    position: absolute;
-}
-#ladyImg{
-    position: relative;
-    margin-right: -1000px;
-    /* padding-top: -200px; */
-    box-sizing: border-box;
-}
-#Transaction_tableWrapperDiv{
-    position: relative;
-    margin-top: -70px;
-    width: 87%;
-    height: 70vh;
-    background-color: #FFFFFF;
-    border: 1px solid #F0F0F0;
-    border-radius: 14px;
-}
-#input_FilterDiv{
-    display: flex;
-    align-items: center;
-    column-gap: 6px;
-}
-#input_FilterDiv p{
-    font-size: 0.932rem;
-    color: #707070;
-    width: 120px;
-}
-#input_FilterDiv div{
-    margin-top: -9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#input_FilterDiv input{
-    width: 18.87rem;
-    height: 39px;
-}
-#input_FilterDiv img{
-    height: 39px;
-}
-#TransactionText{
-    color: #003E79;
-    font-size: 1.2rem;
-    padding:1.6rem 1.5rem 0.7rem ;
-    box-sizing: border-box;
-}
-#TransactionText span{
-    color: #0B9FE1;
-}
 #action_field{
     display: flex;
     column-gap: 4px;
 }
-/* table{
-    box-sizing: border-box;
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 1.5rem;
-} */
+
 #statusText{
     width: 3.2rem;
     height: 26px;
@@ -179,18 +34,18 @@
     font-size: 0.9rem;
     font-weight: lighter;
 }
-/* th, td{
+#Ticket_Winners_TableDiv th, td{
     padding: 0 40px;
     color: #666666;
 
 }
-th{
+#Ticket_Winners_TableDiv th{
     text-align: left;
 }
-tr{
+#Ticket_Winners_TableDiv tr{
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
-} */
+}
 #line{
     border-bottom: none;
 }

@@ -3,18 +3,6 @@
     height: 100vh;
     background-color: #F9F9F9;
 }
-#Transaction_WrapperDiv{
-    height: 8.12rem;
-    background: linear-gradient(120deg, #0B9FE1, #003E79);
-    color: #FFFFFF;
-    padding: 0px 120px;
-}
-#Transaction_header{
-    font-size: 1.5rem;
-    color: #FFFFFF;
-    height: 10px;
-    padding-top: 46px;
-}
 #Transaction_mainDiv{
     margin-top: 6.8rem;
 }
@@ -25,11 +13,6 @@
     margin: 0 1.5rem;
 }
 
-#Transaction_WrapperDiv p{
-    font-size: 0.9rem;
-    color: #A1E2FF;
-    line-height: 50px;
-}
 #Transaction_welcomeText{
     font-size: 25px;
 }

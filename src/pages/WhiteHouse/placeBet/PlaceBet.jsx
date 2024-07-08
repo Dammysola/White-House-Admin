@@ -9,6 +9,7 @@ import InputField from '../../../components/input/InputField'
 import filter_img from '../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../assets/svg/download_img.svg'
 import Countries from './countries/Countries'
+import Header from '../../../components/header/Header'
 
 const PlaceBet = () => {
     const [data, setData] = useState()
@@ -51,172 +52,38 @@ const PlaceBet = () => {
         },
     ]
 
-    const texts = [
-        "",
-        "countries",
-        "Total Bets Placed",
-        "Total Players",
-    ];
-
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const handlePrevClick = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? texts.length - 1 : prevIndex - 1));
-    };
-
-    const handleNextClick = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === texts.length - 1 ? 0 : prevIndex + 1));
-    };
-
-    let [toggleIndex, setToggleIndex] = useState(0);
-
-    const placeBetToggle = (index) => {
-
-        setToggleIndex(index)
-
-    }
-
     return (
         <div id={Style.PlaceBet_mainDiv}>
-            <div id={Style.PlaceBet_HeaderDiv}>
 
-                <div id={Style.PlaceBet_header}>Bet Placed</div>
-                <p>Here’s an information on all placed bets</p>
-            </div>
+            <Header
+                headerText={"Bet Placed"}
+                headerInfo={"Here’s an information on all placed bets"} />
 
             <div id={Style.PlaceBet_wrapperDiv}>
-                <div id={Style.toggleDiv}>
 
-                    <button onClick={() => placeBetToggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.toggleDiv_Button}>Dashboard </button><img src={arrow_side} alt="" />
 
-                    <button onClick={() => placeBetToggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.toggleDiv_Button}>Bets Placed</button>
-                    
-                    {
-                        currentIndex == 0 ? <img onClick={handleNextClick} src={arrow_side} alt="" /> : <img onClick={handlePrevClick} src={arrow_side} alt="" />
-                    }
-
-                    <button onClick={() => placeBetToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.toggleDiv_Button}>{texts[currentIndex]}</button>
-
-                    {
-                        currentIndex !== 0 ? <img onClick={handleNextClick} src={arrow_side} alt="" /> : ""
-                    }
-
-                </div>
-
-                {
-                    toggleIndex == 1 ?
-                        <div>
-                            <p id={Style.PlaceBet_summaryText}>Today's Summary</p>
-                            <div id={Style.Total_Card_mapDiv}>
-                                {
-                                    total_Card1.map((object) => {
-                                        return (
-                                            <Total_Card
-                                                image1={object.image1}
-                                                text={object.text}
-                                                divText={object.divText}
-                                                price={object.price}
-                                            />
-                                        )
-                                    })
-                                }
-                            </div>
-                            <div id={Style.ChartDiv}>
-                                <Chart data={data}></Chart>
-                                <img src={line_graph} alt="" />
-                            </div>
-                        </div> : ""
-                }
-
-            </div>
-
-            {/* { */}
-                {/* // toggleIndex == 2 ? */}
-                    
-                    {/* //  : ""} */}
-
-                     {toggleIndex == 2 ? <Countries/>: ""}
-
-            <div id={Style.Total_Player_mainDiv}>
-                <div id={Style.TotalPlayer_input_FilterDiv}>
-                    <div id={Style.searchDiv}>
-                        <img src={search} alt="" />
-                        <InputField />
+                <div>
+                    <p id={Style.PlaceBet_summaryText}>Today's Summary</p>
+                    <div id={Style.Total_Card_mapDiv}>
+                        {
+                            total_Card1.map((object) => {
+                                return (
+                                    <Total_Card
+                                        image1={object.image1}
+                                        text={object.text}
+                                        divText={object.divText}
+                                        price={object.price}
+                                    />
+                                )
+                            })
+                        }
                     </div>
+                    <div id={Style.ChartDiv}>
+                        <Chart data={data}></Chart>
+                        <img src={line_graph} alt="" />
+                    </div>
+                </div> : ""
 
-                    <img src={filter_img} alt="" />
-                </div>
-                <div id={Style.Total_Player_tableDiv}>
-                                <table>
-                                    <tr id={Style.headerTable}>
-                                        <th>S/N</th>
-                                        <th>User ID</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Country</th>
-                                        <th>Bank Detail</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>SA 123476689</td>
-                                        <td>johndoe@gmail.com</td>
-                                        <td>+2344816273888</td>
-                                        <td>Nigeria</td>
-                                        <td>
-                                            <div id={Style.BankDetails_Div}>
-                                                <div>
-                                                    <p>Bank</p>
-                                                    <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                                </div>
-                                                <div>
-                                                    <p>Account Number</p>
-                                                    <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                                </div><div>
-                                                    <p>Account Name</p>
-                                                    <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div id={Style.statusText}>Online</div>
-                                        </td>
-                                        <td><button style={{backgroundColor:"#075070", border: "none", color: "#FFFFFF",fontSize: "0.7rem",borderRadius:"8px"}}>Suspend Action</button></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td>SA 123476689</td>
-                                        <td>johndoe@gmail.com</td>
-                                        <td>+2344816273888</td>
-                                        <td>Nigeria</td>
-                                        <td>
-                                        <div id={Style.BankDetails_Div}>
-                                                <div>
-                                                    <p>Bank</p>
-                                                    <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                                </div>
-                                                <div>
-                                                    <p>Account Number</p>
-                                                    <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                                </div><div>
-                                                    <p>Account Name</p>
-                                                    <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div id={Style.action_field}>
-                                                <div id={Style.statusText}>Online</div>
-                                            </div>
-                                        </td>
-                                        <td><button style={{backgroundColor:"#075070", border: "none", color: "#FFFFFF",fontSize: "0.7rem",borderRadius:"8px"}}>Suspend Action</button></td>
-                                    </tr>
-
-                                </table>
-                            </div>
             </div>
 
         </div>
