@@ -1,52 +1,46 @@
 import React from 'react'
-import Style from '../winner/Winner_loser.module.css'
+import Style from '../user_placebets/Users_placedbets.module.css'
+import Header from '../../../../components/header/Header'
+import search from '../../../../assets/svg/Search.svg'
+import InputField from '../../../../components/input/InputField'
 import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../../assets/svg/download_img.svg'
-import search from '../../../../assets/svg/Search.svg'
-import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
-import InputField from '../../../../components/input/InputField'
-import Header from '../../../../components/header/Header'
 
-
-const Winner_loser = () => {
+const Users_placedbets = () => {
     return (
-        <div id={Style.Winner_loser_mainDiv}>
+        <div id={Style.Users_placedbets_mainDiv}>
             <Header
-                headerText={"Winners"}
-                headerInfo={"Here’s an information on all Winners"} />
+                headerText={"Placed Bet"}
+                headerInfo={"Here’s an information on all bets placed by John Doe"} />
 
-            <div id={Style.Winner_loser_wrapperDiv}>
+            <div id={Style.TotalBet_mainDiv}>
                 <div id={Style.input_FilterDiv}>
-                    <p>3rd July, 2024 <img src={arrow_down} alt="" /></p>
+                    <p>3rd July, 2024</p>
                     <div id={Style.searchDiv}>
                         <img src={search} alt="" />
                         <InputField
                             placeholder={"Search tickets"} />
                     </div>
 
-                    <div id={Style.InputField_images}>
-                        <img src={filter_img} alt="" />
-                        <img src={download} alt="" />
-                    </div>
+                    <img src={filter_img} alt="" />
+                    <img src={download} alt="" />
                 </div>
 
-                <div id={Style.Winner_loser_wrapper}>
-                    <div id={Style.Winner_loser_tableDiv}>
+                <div id={Style.TotalBet_wrapper}>
+                    <div id={Style.PlaceBet_tableDiv}>
                         <table>
                             <tr id={Style.headerTable}>
                                 <th>S/N</th>
                                 <th>User ID</th>
                                 <th>Ticket ID</th>
-                                <th id={Style.amount_TableText}>Amount Staked</th>
-                                <th>Amount Won</th>
+                                <th>Amount Staked</th>
                                 <th>Status</th>
                             </tr>
                             <tr>
                                 <td>1</td>
                                 <td>SA 123476689</td>
                                 <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td>400.00</td>
+                                <td>200</td>
                                 <td>
                                     <div id={Style.statusText}>Won</div>
                                 </td>
@@ -56,8 +50,7 @@ const Winner_loser = () => {
                                 <td>2</td>
                                 <td>SA 123476689</td>
                                 <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td>400.00</td>
+                                <td>200</td>
                                 <td>
                                     <div id={Style.action_field}>
                                         <div id={Style.statusText}>Won</div>
@@ -69,8 +62,7 @@ const Winner_loser = () => {
                                 <td>3</td>
                                 <td>SA 123476689</td>
                                 <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td></td>
+                                <td>200</td>
                                 <td>
                                     <div id={Style.action_field}>
                                         <div id={Style.statusText}>Won</div>
@@ -81,11 +73,10 @@ const Winner_loser = () => {
                                 <td>4</td>
                                 <td>SA 123476689</td>
                                 <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td></td>
+                                <td>200</td>
                                 <td>
                                     <div id={Style.action_field}>
-                                        <div id={Style.statusText}>Won</div>
+                                        <div id={Style.statusText_loss}>Loss</div>
                                     </div>
                                 </td>
                             </tr>
@@ -93,8 +84,7 @@ const Winner_loser = () => {
                                 <td>5</td>
                                 <td>SA 123476689</td>
                                 <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td></td>
+                                <td>200</td>
                                 <td>
                                     <div id={Style.action_field}>
                                         <div id={Style.statusText}>Won</div>
@@ -105,11 +95,10 @@ const Winner_loser = () => {
                                 <td>6</td>
                                 <td>SA 123476689</td>
                                 <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td></td>
+                                <td>200</td>
                                 <td>
                                     <div id={Style.action_field}>
-                                        <div id={Style.statusText}>Won</div>
+                                        <div id={Style.statusText_loss}>Loss</div>
                                     </div>
                                 </td>
                             </tr>
@@ -117,8 +106,7 @@ const Winner_loser = () => {
                                 <td>7</td>
                                 <td>SA 123476689</td>
                                 <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td></td>
+                                <td>200</td>
                                 <td>
                                     <div id={Style.action_field}>
                                         <div id={Style.statusText}>Won</div>
@@ -129,11 +117,10 @@ const Winner_loser = () => {
                                 <td>8</td>
                                 <td>SA 123476689</td>
                                 <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td></td>
+                                <td>200</td>
                                 <td>
                                     <div id={Style.action_field}>
-                                        <div id={Style.statusText}>Won</div>
+                                        <div id={Style.statusText_loss}>Loss</div>
                                     </div>
                                 </td>
                             </tr>
@@ -142,9 +129,8 @@ const Winner_loser = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
 
-export default Winner_loser
+export default Users_placedbets

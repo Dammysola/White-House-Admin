@@ -24,25 +24,29 @@ const PlaceBet = () => {
             image1: './src/assets/svg/Activity.svg',
             text: 'Total Bet Placed',
             divText: 'View all',
-            price: '$25,052,985'
+            price: '$25,052,985',
+            to: '/totalBetPlaced'
         },
         {
             image1: './src/assets/svg/Activity.svg',
             text: 'Total Players',
             divText: 'View all',
-            price: '2m'
+            price: '2m',
+            to: "/totalPlayers"
         },
         {
             image1: './src/assets/svg/Work.svg',
             text: 'Winners',
             divText: 'View all',
-            price: '345,000'
+            price: '345,000',
+            to: '/winners'
         },
         {
             image1: './src/assets/svg/Activity.svg',
             text: 'Loosers',
             divText: 'View all',
-            price: '23,000'
+            price: '23,000',
+            to: "/staffDetails"
         },
     ]
 
@@ -67,6 +71,7 @@ const PlaceBet = () => {
                                         text={object.text}
                                         divText={object.divText}
                                         price={object.price}
+                                        to = {object.to}
                                     />
                                 )
                             })

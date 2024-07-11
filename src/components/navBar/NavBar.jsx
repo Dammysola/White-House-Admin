@@ -8,36 +8,69 @@ import { NavLink } from 'react-router-dom'
 
 
 const NavBar = () => {
- 
 
   const [activeLink1, setActiveLink1] = useState(false)
   const [activeLink2, setActiveLink2] = useState(false)
   const [activeLink3, setActiveLink3] = useState(false)
   const [activeLink4, setActiveLink4] = useState(false)
   const [activeLink5, setActiveLink5] = useState(false)
+  const [activeLink6, setActiveLink6] = useState(false)
 
   const handleClick = (index) => {
+
     if (index == 1) {
 
-      setActiveLink1(!activeLink1)
+      setActiveLink1(true)
+      setActiveLink2(false)
+      setActiveLink3(false)
+      setActiveLink4(false)
+      setActiveLink5(false)
+      setActiveLink6(false)
 
-    } else if
-      (index == 2) {
+    } else if (index == 2) {
 
-      setActiveLink2(!activeLink2)
+      setActiveLink1(false)
+      setActiveLink2(true)
+      setActiveLink3(false)
+      setActiveLink4(false)
+      setActiveLink5(false)
+      setActiveLink6(false)
 
-    }
-    else if (index == 3) {
+    } else if (index == 3) {
 
-      setActiveLink3(!activeLink3)
+      setActiveLink1(false)
+      setActiveLink2(false)
+      setActiveLink3(true)
+      setActiveLink4(false)
+      setActiveLink5(false)
+      setActiveLink6(false)
     }
     else if (index == 4) {
 
-      setActiveLink4(!activeLink4)
+      setActiveLink1(false)
+      setActiveLink2(false)
+      setActiveLink3(false)
+      setActiveLink4(true)
+      setActiveLink5(false)
+      setActiveLink6(false)
     }
     else if (index == 5) {
 
-      setActiveLink5(!activeLink5)
+      setActiveLink1(false)
+      setActiveLink2(false)
+      setActiveLink3(false)
+      setActiveLink4(false)
+      setActiveLink5(true)
+      setActiveLink6(false)
+    }
+    else if (index == 6) {
+
+      setActiveLink1(false)
+      setActiveLink2(false)
+      setActiveLink3(false)
+      setActiveLink4(false)
+      setActiveLink5(false)
+      setActiveLink6(true)
     }
   };
 
@@ -54,7 +87,7 @@ const NavBar = () => {
             <p>Bet Placed</p>
           </NavLink >
 
-          <NavLink className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
+          <NavLink to={'/dice'} className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
             <div>
               <p id={Style.game}>Games <img src={arrowDown} alt="" /></p>
               <div id={Style.dropdown}>
@@ -67,7 +100,10 @@ const NavBar = () => {
             </div>
           </NavLink>
 
-          <p>Users</p>
+          <NavLink to={'/allusers'} className={`${activeLink6 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(6)}>
+            <p>Users</p>
+          </NavLink>
+
           <NavLink id='transactions' to={'/transactions'} className={`${activeLink4 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
             <p>Transactions</p>
           </NavLink>
@@ -85,7 +121,7 @@ const NavBar = () => {
           <p>AlphaBet Limited <img src={arrowDown} alt="" /></p>
         </div>
       </div>
-     
+
     </div>
   )
 }

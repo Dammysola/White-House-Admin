@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 const Total_Card = (props) => {
-  const { image1, text, divText, price, link } = props
+  const { image1, text, divText, price, to } = props
   return (
     <div>
       <div id={Style.Total_Card_Wrapper}>
@@ -15,11 +15,11 @@ const Total_Card = (props) => {
             <div id={Style.Total_CardText}>{text}</div>
           </div>
           <div id={Style.Total_Card_imgDiv}>
-           {/* <Link to={'/allStaffs'}> */}
+           <Link to={to}>
            <div>
               {divText}
             </div>
-           {/* </Link> */}
+           </Link>
           </div>
         </div>
         <div id={Style.Total_Card_line}></div>

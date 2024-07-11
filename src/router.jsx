@@ -14,7 +14,19 @@ import WhiteHouse_Dashboard from "./pages/WhiteHouse/dashboard/WhiteHouse_Dashbo
 import Dice from "./pages/WhiteHouse/games/Dice"
 import CustomerCare from "./pages/WhiteHouse/staff/CustomerCare";
 import All_Staff from "./pages/WhiteHouse/staff/all_staff/All_Staff";
-
+import Logged_sessions from "./pages/WhiteHouse/logged_session/Logged_sessions";
+import Conversation from "./pages/WhiteHouse/conversation/Conversation";
+import All_Users from "./pages/WhiteHouse/all_UsersDetails/all_users/All_Users";
+import Personal_Info from "./pages/WhiteHouse/all_UsersDetails/personal_info/Personal_Info";
+import Users_placedbets from "./pages/WhiteHouse/all_UsersDetails/user_placebets/Users_placedbets";
+import Complain_Details from "./pages/WhiteHouse/all_UsersDetails/complain_details/Complain_Details";
+import Staff_Details from "./pages/WhiteHouse/staff/staff_details/Staff_Details";
+import Total_Players from "./pages/WhiteHouse/total_players/Total_Players";
+import Total_BetPlaced from "./pages/WhiteHouse/placeBet/totalBet/Total_BetPlaced"
+import Winner_loser from "./pages/WhiteHouse/placeBet/winner/Winner_loser"
+import Countries from "./pages/WhiteHouse/placeBet/countries/Countries"
+import Department from "./pages/WhiteHouse/staff/department/Department";
+import User_Friends from "./pages/WhiteHouse/all_UsersDetails/user_friends/User_Friends";
 
 
 
@@ -78,17 +90,61 @@ const router = createBrowserRouter([
                 path: "/transactions",
                 element:  <Transaction/>
             },
-            // {
-            //     path: "/payment",
-            //     element: <Payment/>
-            // },
-            // {
-            //     path: "/bulkPayment",
-            //     element: <Bulk_Payment/>
-            // },
+            {
+                path: "/loggedsession",
+                element: <Logged_sessions/>
+            },
+            {
+                path: "/conversation",
+                element: <Conversation/>
+            },
             {
                 path: "/placebet",
                 element: <PlaceBet/>
+            },
+            {
+                path: "/allusers",
+                element: <All_Users/>
+            },
+            {
+                path: "/userDetails",
+                element: <Personal_Info/>
+            },
+            {
+                path: "/userplacedbet",
+                element: <Users_placedbets/>
+            },
+            {
+                path: "/complainDetails",
+                element: <Complain_Details/>
+            },
+            {
+                path: "/staffDetails",
+                element: <Staff_Details/>
+            },
+            {
+                path: "/totalPlayers",
+                element: <Total_Players/>
+            },
+            {
+                path: "/totalBetPlaced",
+                element: <Total_BetPlaced/>
+            },
+            {
+                path: "/winners",
+                element: <Winner_loser/>
+            },
+            {
+                path: "/countries",
+                element: <Countries/>
+            },
+            {
+                path: "/department",
+                element: <Department/>
+            },
+            {
+                path: "/userFriends",
+                element: <User_Friends/>
             }
             
         ]

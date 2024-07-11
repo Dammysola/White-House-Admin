@@ -3,8 +3,8 @@ import Style from '../revenue/Revenue.module.css'
 import Header from '../../../components/header/Header'
 import Total_Card from '../../../components/total_Card/Total_Card'
 import graph from '../../../assets/images/graph.jpg'
-
-
+import smiley from '../../../assets/svg/blue_smiley.svg'
+import line_Graph from '../../../assets/images/line_Graph.png'
 
 const Revenue = () => {
 
@@ -28,11 +28,11 @@ const Revenue = () => {
 
             <Header
                 headerText={"Revenue"}
-                headerInfo={"Here’s an information on all Revenue"} 
+                headerInfo={"Here’s an information on all Revenue"}
             />
 
-            <div>
-                <div>
+            <div id={Style.Revenue_wrapperDiv}>
+                <div id={Style.Revenue_weeklyReport_Div}>
                     <div id={Style.Total_Card_mapDiv}>
                         {
                             total_Card2.map((object) => {
@@ -49,15 +49,37 @@ const Revenue = () => {
                     </div>
                     <img src={graph} alt="" />
                 </div>
-                <div>
-                    <div>
-                        <p>Daily Revenue</p>
-                        <p>$3,000</p>
-                        <div></div>
-                        <img src="" alt="" />
-                        <p>70% more earning than last month, keep
-                        watching t find out more</p>
+
+                <div id={Style.Revenue_earning_wrapperDiv}>
+                    <div id={Style.Revenue_total_EarningDiv}>
+                        <div className={Style.Revenue_earningDiv}>
+
+                            <p className={Style.earningText}>Daily Revenue</p>
+                            <p className={Style.priceText}>$3,000</p>
+
+                            <div id={Style.Revenue_progressDiv}>
+                                <div id={Style.Revenue_progressBar}></div>
+                                <img src={smiley} alt="" />
+                            </div>
+                            <p className={Style.Revenue_infoText}>70% more earning than last month, keep
+                                watching t find out more</p>
+                        </div>
+
+                        <div className={Style.Revenue_earningDiv}>
+
+                            <p className={Style.earningText}>Earnings this month</p>
+                            <p className={Style.priceText}>$23,000</p>
+
+                            <div id={Style.Revenue_progressDiv}>
+                                <div id={Style.Revenue_progressBar_two}></div>
+                                <p id={Style.Revenue_percentText}>45%</p>
+                            </div>
+                            <p className={Style.Revenue_infoText}>70% more earning than last month, keep
+                                watching t find out more</p>
+                        </div>
+
                     </div>
+                    <img id={Style.Revenue_graph} src={line_Graph} alt="" />
                 </div>
             </div>
         </div>

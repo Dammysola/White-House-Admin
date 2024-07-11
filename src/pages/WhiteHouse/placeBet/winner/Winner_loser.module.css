@@ -1,12 +1,15 @@
 #Winner_loser_mainDiv{
-    margin-top: 2.1rem;
-    padding-bottom: 50px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
 }
-
+#Winner_loser_wrapperDiv{
+    padding: 5rem 0;
+}
 #input_FilterDiv{
     display: flex;
     justify-content: center;
-    margin-left: -450px;
+    margin-left: -500px;
     align-items: center;
     column-gap: 30px;
 }
@@ -17,7 +20,8 @@
     column-gap: 8px;
     font-size: 0.932rem;
     color: #707070;
-    width: 130px;
+    width: 150px;
+    margin-right: -2rem;
 }
 #input_FilterDiv p img{
     width: 20px;
@@ -72,6 +76,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 4px;
+    font-size: 0.8rem;
     padding: 5px; 
     box-sizing: border-box;
     color: #31C364;
@@ -84,7 +89,7 @@
     background-color: #F1F1F1;
     height: 44px;
     color: #000000;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: lighter;
     /* text-align: left; */
 }
@@ -93,7 +98,17 @@
     color: #666666;
     height: 58px;
     border-bottom: 1px solid #B1B1B1;
+    font-size: 0.95rem;
 } 
+#Winner_loser_tableDiv th,
+td {
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+#Winner_loser_tableDiv th {
+    text-align: left;
+}
 #amount_TableText{
     width: 200px;
 }

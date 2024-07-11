@@ -4,17 +4,18 @@ import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../../assets/svg/download_img.svg'
 import InputField from '../../../../components/input/InputField'
 import Header from '../../../../components/header/Header'
+import search from '../../../../assets/svg/Search.svg'
 
 
 
 const Total_BetPlaced = () => {
   return (
-    <div>
+    <div id={Style.Total_BetPlaced_mainDiv}>
       <Header
         headerText={"Total Bet Placed"}
         headerInfo={"Here’s an information on all placed bets"} />
 
-      <div id={Style.TotalBet_mainDiv}>
+      <div id={Style.TotalBet_wrapperDiv}>
         <div id={Style.input_FilterDiv}>
           <p>3rd July, 2024</p>
           <div id={Style.searchDiv}>

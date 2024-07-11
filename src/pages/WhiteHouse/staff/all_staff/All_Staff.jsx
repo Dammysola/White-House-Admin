@@ -8,6 +8,8 @@ import InputField from '../../../../components/input/InputField'
 import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
 import search from '../../../../assets/svg/Search.svg'
 import Header from '../../../../components/header/Header'
+import { Link } from 'react-router-dom'
+
 
 
 const All_Staff = () => {
@@ -15,37 +17,38 @@ const All_Staff = () => {
         {
             img: person,
             name: "John Doe",
-            positon: "Customer care representative",
+            position: "Customer care representative",
+            status: "Online",
+            to: "/staffDetails"
+        },
+        {
+            img: person,
+            name: "John Doe",
+            position: "Customer care representative",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            positon: "Customer care representative",
+            position: "Customer care representative",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            positon: "Customer care representative",
+            position: "Customer care representative",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            positon: "Customer care representative",
+            position: "Customer care representative",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            positon: "Customer care representative",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            positon: "Customer care representative",
+            position: "Customer care representative",
             status: "Online"
         },
 
@@ -54,9 +57,9 @@ const All_Staff = () => {
         <div id={Style.All_Staff_mainDiv}>
 
             <Header
-            headerText = {"All Staffs"}
-            headerInfo ={"Here’s an overview of all Staff"}/>
-            
+                headerText={"All Staffs"}
+                headerInfo={"Here’s an overview of all Staff"} />
+
             <div id={Style.All_Staff_EntireCard_Wrapper}>
                 <div id={Style.All_Staff_Card_wrapper}>
                     <div className={Style.All_Staff_CardDiv}>
@@ -65,7 +68,9 @@ const All_Staff = () => {
                             <p className={Style.Card_figure}>200k</p>
                             <p className={Style.Card_text}>All Staff</p>
                         </div>
-                        <img src={arrow_side} alt="" />
+                       
+                            <img src={arrow_side} alt="" />
+                
                     </div>
                     <div className={Style.All_Staff_CardDiv}>
                         <img src={rise} alt="" />
@@ -73,7 +78,9 @@ const All_Staff = () => {
                             <p className={Style.Card_figure}>14</p>
                             <p className={Style.Card_text}>Department</p>
                         </div>
+                        <Link to={'/department'}>
                         <img src={arrow_side} alt="" />
+                        </Link>
                     </div>
                     <div className={Style.All_Staff_CardDiv}>
                         <img src={rise} alt="" />
@@ -111,7 +118,8 @@ const All_Staff = () => {
                                     img={object.img}
                                     status={object.status}
                                     name={object.name}
-                                    Positon={object.Positon} />
+                                    position={object.position}
+                                    to = {object.to} />
                             )
                         })
                     }

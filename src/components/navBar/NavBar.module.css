@@ -1,6 +1,6 @@
 #Nav_Bar_Wrapper{
     height: 5rem;
-    padding: 0px 7rem 0 1.125rem;
+    padding: 0px 6rem 0 1.125rem;
     background:url('../../assets/svg/rectangle.png') no-repeat;
     background-size: cover;
     display: flex;
@@ -8,7 +8,6 @@
     align-items: center;
     color: #E4F7FF;
 }
-
 #NavBar_textDiv{
     display: flex;
     column-gap: 32px;
@@ -44,16 +43,17 @@
     height: 40px;
     background-color: #D9D9D9;
 }
-#settingDiv{
+/* #settingDiv{
     display: flex;
 
-}
+} */
 .NavBar_text{
     color: #FFFFFF;
+    font-size: 1rem;
 }
-#dropdown{
+/* #dropdown{
     display: none;
-}
+} */
 .Nav_styled_Link{
     background-color: rgba(255, 255, 255, .2);
     align-items: center;
@@ -62,11 +62,13 @@
     align-items: center;
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
-    width: 6.56rem;
+    font-size: 1rem;
+    min-width: 6.56rem;
+    padding: 1rem;
+    box-sizing: border-box;
     height: 35px;
     border-radius: 7px;
 }
-
 
 #dropdown{
     display: none;

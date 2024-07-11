@@ -1,18 +1,19 @@
 import React from 'react'
 import Style from '../total_players/Total_Players.module.css'
-import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
-import InputField from '../../../../components/input/InputField'
+import filter_img from '../../../assets/svg/Complete_filter_img.svg'
+import InputField from '../../../components/input/InputField'
 import Header from '../../../components/header/Header'
+import search from '../../../assets/svg/Search.svg'
 
 
 const Total_Players = () => {
     return (
-        <div>
+        <div id={Style.Total_Player_mainDiv}>
             <Header
-                headerText={"Bet Placed"}
-                headerInfo={"Here’s an information on all placed bets"} />
+                headerText={"Total Players"}
+                headerInfo={"Here’s an information on Total players"} />
 
-            <div id={Style.Total_Player_mainDiv}>
+            <div id={Style.Total_Player_wrapperDiv}>
                 <div id={Style.TotalPlayer_input_FilterDiv}>
                     <div id={Style.searchDiv}>
                         <img src={search} alt="" />
@@ -58,7 +59,7 @@ const Total_Players = () => {
                             <td>
                                 <div id={Style.statusText}>Online</div>
                             </td>
-                            <td><button style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px" }}>Suspend Action</button></td>
+                            <td><button style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px", height: "1.37rem" }}>Suspend Action</button></td>
                         </tr>
 
                         <tr>
@@ -87,7 +88,7 @@ const Total_Players = () => {
                                     <div id={Style.statusText}>Online</div>
                                 </div>
                             </td>
-                            <td><button style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px" }}>Suspend Action</button></td>
+                            <td><button style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px", height: "1.37rem" }}>Suspend Action</button></td>
                         </tr>
 
                     </table>
