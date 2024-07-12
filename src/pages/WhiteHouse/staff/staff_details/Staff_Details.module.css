@@ -59,49 +59,98 @@
     box-sizing: border-box;
     color: #31C364;
 }
+#Staff_Details_BarChart{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    width: 38.87rem;
+    height: 20rem;
+}
+#Staff_Details_BarChart p{
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    box-sizing: border-box;
+
+}
+
 #Staff_details_Daily_CallDiv{
     width: 37.62rem;
     height: 29.37rem;
     background-color: #FFFFFF;
     border-radius: 1rem; 
     color: #767676;
-    padding: 1.5rem 2rem;
     box-sizing: border-box;
 }
 #Daily_Call_headerDiv{
     display: flex;
     justify-content: space-between;
     font-size: 1.1rem;
+    padding: 0 2rem;
+    box-sizing: border-box;
     color: #003E79;
 }
 #Daily_Call_headerDiv #dateText{
     font-size: 0.95rem;
     color:#767676 ;
 }
-.Daily_Call_tableDiv{
+/* .Daily_Call_tableDiv{
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.25rem;
     text-align: left;
     height: 3rem;
+} */
+
+#Staff_details_Daily_CallDiv tr{
+    color: #767676;
+    font-size: 1.2rem;
+    height: 3rem;
 }
-.Daily_Call_tableDiv div{
-    display: flex;
-    width: 10rem;
-    text-align: center;
-    justify-content: space-between;
-    /* column-gap: 4rem; */
+
+.Daily_CallText{
     color: #075070;
     font-weight: bold;
+}
+#Staff_Details_Card_wrapper{
+    width: 38.43rem;
+    height: 15.37rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 22px;
+    margin-top: 2.3rem;
+}
+.Staff_Details_CardDiv{
+    width: 18.62rem;
+    height: 111px;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+}
+.Card_figure{
+    color: #000000;
+    font-size: 1.5rem;
+    height: 8px;
+}
+.Card_text{
+    font-size: 1.2rem;
+    color: #717171;
+}
+#Staff_Details_hoursDaily_logDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.62rem;
+}
 
-}
-.Daily_Call_tableDiv button{
-    width: 5.12rem;
-    height: 1.87rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: #075070;
-    font-size: 0.75rem;
-    color: #FFFFFF;
-}
+.react-calendar-heatmap .color-scale-1 { fill: #d6e685; }
+.react-calendar-heatmap .color-scale-2 { fill: #8cc665; }
+.react-calendar-heatmap .color-scale-3 { fill: #44a340; }
+.react-calendar-heatmap .color-scale-4 { fill: #1e6823; }

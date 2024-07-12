@@ -15,16 +15,7 @@
     padding: 0 120px;
     margin-top: 80px; 
 }
-#img{
-    width: 615px;
-    height: 17.5rem;
-}
-.img{
-    width: 630px;
-    height: 340px;
-    margin-top: -10px;
-    margin-right: 10px;
-}
+
 #Dashboard_Card_wrapper{
     width: 38.43rem;
     height: 15.37rem;
@@ -32,11 +23,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 22px;
-    /* margin-top: 80px; */
 }
 .Dashboard_CardDiv{
     width: 18.62rem;
-    /* width: 298px; */
     height: 111px;
     justify-content:space-around;
     align-items: center;
@@ -56,8 +45,66 @@
 #BarChart_Div{
     width: 100%;
     display: flex;
-    /* column-gap: 34px; */
-    /* align-items: center;
-    justify-content: center; */
+    column-gap: 34px; 
+    align-items: center;
+    padding-bottom: 2rem;
+}
+#Dashboard_lineChart{
+ display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    border: 1px solid #F0F0F0;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    width: 38.43rem;
+    height: 15.5rem;
+}
 
+#Dashboard_RevenueText {
+    display: flex;
+    /* margin: 0  1rem; */
+    box-sizing: border-box;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1.5px solid #E3E3E3;
+    font-size: 1.125rem;
+    color: #003E79;
+    margin-bottom: 1rem;
+}
+#Dashboard_lineChart_Two{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    border: 1px solid #F0F0F0;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    width: 38.43rem;
+    height: 19.56rem;
+}
+
+#Chart_mainDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    width: 38.43rem;
+    height: 19.56rem;
+    border-radius: 25px;
+    border: 1px solid #F0F0F0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+#PayoutsText {
+    display: flex;
+    /* margin: 0 30px; */
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1.5px solid #E3E3E3;
+    font-size: 1.125rem;
+    color: #003E79;
+    
 }

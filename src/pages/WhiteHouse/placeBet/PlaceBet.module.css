@@ -9,7 +9,7 @@
 
 #Total_Card_mapDiv{
     display: flex;
-    column-gap: 32px;
+    column-gap: 2rem;
 }
 #PlaceBet_summaryText{
     color: #1A1A1A;
@@ -17,7 +17,7 @@
     line-height: 38px;
 }
 #ChartDiv{
-    width: 1290px;
+    width: 79.68rem;
     display: flex;
     justify-content: space-between;
     margin-top: 48px;
@@ -26,4 +26,26 @@
     margin-top: -13px;
     width: 615px;
     height: 350px;
+}
+#Dashboard_RevenueText {
+    display: flex;
+    /* margin: 0  1rem; */
+    box-sizing: border-box;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1.5px solid #E3E3E3;
+    font-size: 1.125rem;
+    color: #003E79;
+    margin-bottom: 1rem;
+}
+#Dashboard_lineChart_Two{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    border: 1px solid #F0F0F0;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    width: 38.43rem;
+    height: 19.56rem;
 }
