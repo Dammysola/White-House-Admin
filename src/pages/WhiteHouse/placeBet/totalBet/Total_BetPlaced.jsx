@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from '../totalBet/Total_BetPlaced.module.css'
 import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../../assets/svg/download_img.svg'
@@ -9,6 +9,28 @@ import search from '../../../../assets/svg/Search.svg'
 
 
 const Total_BetPlaced = () => {
+  const [searchItem, setSearchItem] = useState({
+    age: ""
+  })
+
+  const searchDetails = (e) => {
+    const value = e.target.value
+    const name = e.target.name
+
+
+    setSearchItem(
+      (prevState) => ({
+        ...prevState,
+        [name]:value
+      }
+      ))
+  }
+  console.log(searchItem.age);
+
+  // const handleSubmit = (e) =>{
+  //   e.preventDefault(e)
+  // }
+
   return (
     <div id={Style.Total_BetPlaced_mainDiv}>
       <Header
@@ -19,9 +41,18 @@ const Total_BetPlaced = () => {
         <div id={Style.input_FilterDiv}>
           <p>3rd July, 2024</p>
           <div id={Style.searchDiv}>
-            <img src={search} alt="" />
-            <InputField
-              placeholder={"Search tickets"} />
+            <img src={search} alt=""/>
+            <form>
+              {/* <InputField
+                placeholder={"Search tickets"}
+                type={"text"}
+                value={searchItem}
+                onChange={searchDetails} /> */}
+
+                <input type="text" value={searchItem.age}
+                onChange={searchDetails} name={"age"}
+                />
+            </form>
           </div>
 
           <img src={filter_img} alt="" />
@@ -38,6 +69,7 @@ const Total_BetPlaced = () => {
                 <th>Amount Staked</th>
                 <th>Status</th>
               </tr>
+              
               <tr>
                 <td>1</td>
                 <td>SA 123476689</td>

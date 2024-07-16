@@ -40,23 +40,83 @@
 }
 #DiceGame_cardGraph_wrapper{
     display: flex;
-    column-gap: 2rem;
+    /* column-gap: 2rem; */
+    justify-content: space-between;
 }
-#graph_imgDiv{
-    display: flex;
+#DiceGame_cardGraph_wrapper img{
+    margin-left: 2rem;
 }
+
 #DiceGame_lastline_graphDiv{
     height: 38.3rem;
     display: flex;
     align-items: center;
-    column-gap: 2.3rem;
+    justify-content: space-between;
     
 }
-#DiceGame_graph{
+#BarChart_TextWrapperDiv{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-top: 8.5rem;
+}
+/* #DiceGame_graph{
     width: 40rem;
     height: 19rem;
     margin-top: 6rem;
-}
+} */
 #DiceGame_wrapperDiv{
   padding: 0 120px;
+}
+
+#AreaChartDiv {
+    width: 38.37rem;
+    height: 27rem;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    padding: 2.5rem 3rem;
+    box-sizing: border-box;
+}
+
+#AreaChartDiv #AreaChart_TextDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+    box-sizing: border-box;
+}
+
+#AreaChart_weeklyText {
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#AreaChart_dateText {
+    color: #707070;
+    font-size: 0.95rem;
+}
+
+#Chart_mainDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    width: 38.43rem;
+    height: 19.56rem;
+    border-radius: 25px;
+    /* border: 1px solid #F0F0F0; */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+#PayoutsText {
+    display: flex;
+    /* margin: 0 30px; */
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1.5px solid #E3E3E3;
+    font-size: 1.125rem;
+    color: #003E79;
+    
 }

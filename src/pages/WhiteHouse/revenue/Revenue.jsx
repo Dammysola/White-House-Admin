@@ -1,12 +1,20 @@
 import React from 'react'
 import Style from '../revenue/Revenue.module.css'
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import Header from '../../../components/header/Header'
 import Total_Card from '../../../components/total_Card/Total_Card'
-import graph from '../../../assets/images/graph.jpg'
 import smiley from '../../../assets/svg/blue_smiley.svg'
 import line_Graph from '../../../assets/images/line_Graph.png'
+import arrow_down from '../../../assets/svg/arrow_down-dark.svg'
+
+
+
 
 const Revenue = () => {
+
+    const customTickFormatter = (tick) => {
+        return `${tick}k`;
+    }
 
     const total_Card2 = [
         {
@@ -23,6 +31,84 @@ const Revenue = () => {
         }
     ]
 
+
+    const data = [
+        {
+            name: 'Mon',
+            month: "Jan",
+            uv: 50,
+            pv: 40,
+            amt: 2400,
+        },
+        {
+            name: 'Tue',
+            month: "Feb",
+            uv: 70,
+            pv: 60,
+            amt: 2210,
+        },
+        {
+            name: 'Wed',
+            month: "Mar",
+            uv: 80,
+            pv: 40,
+            amt: 2290,
+        },
+        {
+            name: 'Thur',
+            month: "Apr",
+            uv: 65,
+            pv: 20,
+            amt: 2000,
+        },
+        {
+            name: 'Fri',
+            month: "May",
+            uv: 84,
+            pv: 50,
+            amt: 2181,
+        },
+        {
+            name: 'Sat',
+            month: "Jun",
+            uv: 100,
+            pv: 60,
+            amt: 2500,
+        },
+        {
+            name: 'Sun',
+            month: "Jul",
+            uv: 60,
+            pv: 40,
+            amt: 2100,
+        },
+        // {
+        //     month: "Aug",
+        //     pv: 4300,
+        //     amt: 2100,
+        //   },
+        //   {
+        //     month: "Sep",
+        //     pv: 4300,
+        //     amt: 2100,
+        //   },
+        //   {
+        //     month: "Oct",
+        //     pv: 4300,
+        //     amt: 2100,
+        //   },
+        //   {
+        //     month: "Nov",
+        //     pv: 4300,
+        //     amt: 2100,
+        //   },
+        //   {
+        //     month: "Dec",
+        //     pv: 4300,
+        //     amt: 2100,
+        //   },
+
+    ];
     return (
         <div id={Style.Revenue_mainDiv}>
 
@@ -47,7 +133,34 @@ const Revenue = () => {
                             })
                         }
                     </div>
-                    <img src={graph} alt="" />
+                    {/* <img src={graph} alt="" /> */}
+
+                    <div id={Style.AreaChartDiv}>
+                        <div id={Style.AreaChart_TextDiv}>
+                            <p id={Style.AreaChart_weeklyText}>Weekly Revenue Report</p>
+                            <p id={Style.AreaChart_dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
+                        </div>
+                        <ResponsiveContainer width="100%" height="70%">
+                            <AreaChart
+                                width={500}
+                                height={300}
+                                data={data}
+                                margin={{
+                                    top: 0,
+                                    right: 0,
+                                    left: -20,
+                                    bottom: 0,
+                                }}
+
+                            >
+                                {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                                <XAxis dataKey="name" axisLine={false} tickLine={false} />
+                                <YAxis axisLine={false} tickLine={false} tickFormatter={customTickFormatter} />
+                                <Tooltip />
+                                <Area type="normal" dataKey="uv" dot={true} stroke="#003E79" fill="#003e79cc" />
+                            </AreaChart>
+                        </ResponsiveContainer>
+                    </div>
                 </div>
 
                 <div id={Style.Revenue_earning_wrapperDiv}>
@@ -79,7 +192,25 @@ const Revenue = () => {
                         </div>
 
                     </div>
-                    <img id={Style.Revenue_graph} src={line_Graph} alt="" />
+                    {/* <img id={Style.Revenue_graph} src={line_Graph} alt="" /> */}
+
+                    <div id={Style.Dashboard_lineChart}>
+                        <p id={Style.Dashboard_RevenueText}>Revenue</p>
+                        <ResponsiveContainer width="100%" height="100%">
+                            <LineChart width={300} height={100} data={data} margin={{
+                                top: 5,
+                                // right: 30,
+                                left: -20,
+                                bottom: 10,
+                            }} >
+                                <CartesianGrid strokeDasharray="3 4 " vertical={false}></CartesianGrid>
+                                <Line type="monotone" dot={false} dataKey="pv" stroke="#113353" backgr strokeWidth={4} />
+                                <XAxis dataKey="month" fontSize={"0.8rem"}></XAxis>
+                                {/* <legend ></legend> */}
+                                <YAxis dataKey="uv" fontSize={"0.7rem"}></YAxis>
+                            </LineChart>
+                        </ResponsiveContainer>
+                    </div>
                 </div>
             </div>
         </div>

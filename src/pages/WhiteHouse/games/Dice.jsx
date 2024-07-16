@@ -1,5 +1,6 @@
 import React from 'react'
 import Style from '../games/Dice.module.css'
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Bar, BarChart, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import dice from '../../../assets/svg/Dice.svg'
 import Header from '../../../components/header/Header'
 import Total_Card from '../../../components/total_Card/Total_Card'
@@ -10,7 +11,16 @@ import flag from '../../../assets/svg/flag.svg'
 import curve_line from '../../../assets/images/curve_line.png'
 import graph from '../../../assets/images/graph.jpg'
 import line_Graph from '../../../assets/images/line_Graph.png'
+import arrow_down from '../../../assets/svg/arrow_down-dark.svg'
+
+
+
+
 const DiceGame = () => {
+
+  const customTickFormatter = (tick) => {
+    return `${tick}k`;
+  }
 
   const total_Card2 = [
     {
@@ -36,6 +46,58 @@ const DiceGame = () => {
       text: 'Loosers',
       divText: 'View all',
       price: '23,000'
+    },
+  ]
+
+  const data = [
+    {
+      name: 'Mon',
+      month: "Jan",
+      uv: 50,
+      pv: 40,
+      amt: 2400,
+    },
+    {
+      name: 'Tue',
+      month: "Feb",
+      uv: 70,
+      pv: 60,
+      amt: 2210,
+    },
+    {
+      name: 'Wed',
+      month: "Mar",
+      uv: 80,
+      pv: 40,
+      amt: 2290,
+    },
+    {
+      name: 'Thur',
+      month: "Apr",
+      uv: 65,
+      pv: 20,
+      amt: 2000,
+    },
+    {
+      name: 'Fri',
+      month: "May",
+      uv: 84,
+      pv: 50,
+      amt: 2181,
+    },
+    {
+      name: 'Sat',
+      month: "Jun",
+      uv: 100,
+      pv: 60,
+      amt: 2500,
+    },
+    {
+      name: 'Sun',
+      month: "Jul",
+      uv: 60,
+      pv: 40,
+      amt: 2100,
     },
   ]
   return (
@@ -104,14 +166,70 @@ const DiceGame = () => {
               </div>
             </div>
 
-            <img src={curve_line} alt="" />
-            <img src={curve_line} alt="" />
+            <div>
+              <img src={curve_line} alt="" />
+              <img src={curve_line} alt="" />
+            </div>
           </div>
 
           <div id={Style.DiceGame_lastline_graphDiv}>
-            <img src={graph} alt="" />
-            <div>
-              <img id={Style.DiceGame_graph} src={line_Graph} alt="" />
+
+            <div id={Style.AreaChartDiv}>
+              <div id={Style.AreaChart_TextDiv}>
+                <p id={Style.AreaChart_weeklyText}>Weekly Revenue Report</p>
+                <p id={Style.AreaChart_dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
+              </div>
+              <ResponsiveContainer width="100%" height="70%">
+                <AreaChart
+                  width={500}
+                  height={300}
+                  data={data}
+                  margin={{
+                    top: 0,
+                    right: 0,
+                    left: -20,
+                    bottom: 0,
+                  }}
+
+                >
+                  {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                  <XAxis dataKey="name" axisLine={false} tickLine={false} />
+                  <YAxis axisLine={false} tickLine={false} tickFormatter={customTickFormatter} />
+                  <Tooltip />
+                  <Area type="normal" dataKey="uv" dot={true} stroke="#003E79" fill="#003e79cc" />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+
+            <div id={Style.BarChart_TextWrapperDiv}>
+
+              <div id={Style.Chart_mainDiv}>
+                <div id={Style.PayoutsText}>Bet Placed</div>
+                <ResponsiveContainer
+                  width="100%"
+                  height="100%">
+                  <BarChart
+                    width={300}
+                    height={100}
+                    data={data}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: -20,
+                      bottom: 10,
+                    }}
+                  >
+
+                    <XAxis dataKey="name" fontSize={"0.8rem"} axisLine={false} tickLine={false}></XAxis>
+                    <YAxis fontSize={"0.7rem"} axisLine={false} tickLine={false}></YAxis>
+                    <Tooltip></Tooltip>
+                    <Bar dataKey="uv" stroke='none' stackId='a' fill='#0B9FE1'></Bar>
+                    <Bar dataKey="pv" stackId='a' fill='#003E79'></Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+
+              </div>
+
 
               <div id={Style.Dashboard_Card_wrapper}>
 

@@ -128,11 +128,11 @@ td {
     height:22.56rem;
     border-radius: 1.25rem;
     background-color: #FFFFFF;
-    padding:0.2rem 2rem;
+    padding:0.6rem 2rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 0.9rem;
     margin-top: 1rem;
 }
 #Personal_Info_ReportTextDiv{
@@ -148,6 +148,11 @@ td {
 #Personal_Info_ReportTextDiv #dateText{
     font-size: 0.95rem;
     color: #707070;
+}
+#Personal_Info_ReportWrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9rem;
 }
 .Personal_Info_ReportDiv{
     width: 100%;
@@ -188,4 +193,38 @@ td {
 #graph{
     width: 39rem;
     height:25rem;
+}
+#no_complaintDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#no_complaintDiv p{
+    color: #000000;
+    font-size: 1.5rem;
+    line-height: 0.1rem;
+}
+
+#Dashboard_RevenueText {
+    display: flex;
+    /* margin: 0  1rem; */
+    box-sizing: border-box;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1.5px solid #E3E3E3;
+    font-size: 1.125rem;
+    color: #003E79;
+    margin-bottom: 1rem;
+}
+#Dashboard_lineChart_Two{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    border: 1px solid #F0F0F0;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    width: 39rem;
+    height: 22.56rem;
 }

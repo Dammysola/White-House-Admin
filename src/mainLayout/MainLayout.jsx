@@ -13,7 +13,8 @@ const MainLayout = () => {
   return (
     
     <div id={Style.wrapper}>
-      {showNavbar && <Create_AccountNav />}
+      {/* {showNavbar && <Create_AccountNav />} */}
+
       (<div><Outlet /></div >)
     </div>
   )

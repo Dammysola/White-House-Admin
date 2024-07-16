@@ -1,5 +1,6 @@
 import React from 'react'
 import Style from '../personal_info/Personal_Info.module.css'
+import { BarChart, LineChart, Line, YAxis, XAxis, Bar, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import Header from '../../../../components/header/Header'
 import chat from '../../../../assets/svg/chat.svg'
 import clock from '../../../../assets/svg/clock.svg'
@@ -9,9 +10,91 @@ import arrow_side from '../../../../assets/svg/arrow_side.svg'
 import line_graph from '../../../../assets/images/line_Graph.png'
 import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
 import Button from '../../../../components/button/Button'
+import no_complaint from '../../../../assets/svg/no_complaint.svg'
 import { Link } from 'react-router-dom'
 
+
+
+
+
 const Personal_Info = () => {
+    const arr = []
+
+    const line_data = [
+        {
+            name: 'jan',
+            uv: 4000,
+            pv: 20,
+            amt: 2400,
+        },
+        {
+            name: 'Feb',
+            uv: 3000,
+            pv: 50,
+            amt: 2210,
+        },
+        {
+            name: 'Mar',
+            uv: 2000,
+            pv: 30,
+            amt: 2290,
+        },
+        {
+            name: 'Apr',
+            uv: 2780,
+            pv: 40,
+            amt: 2000,
+        },
+        {
+            name: 'May',
+            uv: 1890,
+            pv: 70,
+            amt: 2181,
+        },
+        {
+            name: 'Jun',
+            uv: 2390,
+            pv: 60,
+            amt: 2500,
+        },
+        {
+            name: 'Jul',
+            uv: 3490,
+            pv: 50,
+            amt: 2100,
+        },
+        {
+            name: 'Aug',
+            uv: 3490,
+            pv: 30,
+            amt: 2100,
+        },
+        {
+            name: 'Sep',
+            uv: 3490,
+            pv: 60,
+            amt: 2100,
+        },
+        {
+            name: 'Oct',
+            uv: 3490,
+            pv: 80,
+            amt: 2100,
+        },
+        {
+            name: 'Nov',
+            uv: 3490,
+            pv: 50,
+            amt: 2100,
+        },
+        {
+            name: 'Dec',
+            uv: 3490,
+            pv: 70,
+            amt: 2100,
+        },
+    ];
+
 
     return (
         <div id={Style.Personal_Info_mainDiv}>
@@ -91,9 +174,9 @@ const Personal_Info = () => {
                             <p className={Style.Card_text}>Friends</p>
                         </div>
                         <Link to={'/userFriends'}>
-                        <img src={arrow_side} alt="" />
+                            <img src={arrow_side} alt="" />
                         </Link>
-                        
+
                     </div>
 
                     <div className={Style.Personal_Info_CardDiv}>
@@ -111,56 +194,90 @@ const Personal_Info = () => {
                             <p className={Style.Card_figure}>2k</p>
                             <p className={Style.Card_text}>Placed Bets</p>
                         </div>
-                       <Link to={'/userplacedbet'}>
-                       <img src={arrow_side} alt="" />
-                       </Link>
+                        <Link to={'/userplacedbet'}>
+                            <img src={arrow_side} alt="" />
+                        </Link>
                     </div>
                 </div>
 
                 <div id={Style.Personal_Info_graphReport_Div}>
-                    <img id={Style.graph} src={line_graph} alt="" />
+                    {/* <img id={Style.graph} src={line_graph} alt="" /> */}
+
+                    <div id={Style.Dashboard_lineChart_Two}>
+                        <p id={Style.Dashboard_RevenueText}>Revenue</p>
+                        <ResponsiveContainer width="100%" height="70%">
+                        <BarChart width={150} height={40} data={line_data} margin={{
+                                top: 5,
+                                right: 30,
+                                left: -20,
+                                bottom: 10,
+                            }}>
+                                
+                               
+                                <XAxis dataKey="name"  
+                                axisLine={false} tickLine={false} fontSize={"0.8rem"}
+                                />
+                                <YAxis 
+                                axisLine={false} tickLine={false} fontSize={"0.7rem"}
+                                />
+                                 {/* <Legend/> */}
+                                <Tooltip/>
+                                <Bar dataKey="pv" fill="#113353" />
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
 
                     <div id={Style.Personal_Info_Report_mainDiv}>
                         <div id={Style.Personal_Info_ReportTextDiv}>
                             <p id={Style.ReportHeader}>Complaints</p>
                             <p id={Style.dateText}>3rd of October, 2024 <img src={arrow_down} alt="" /></p>
                         </div>
-                        <div className={Style.Personal_Info_ReportDiv}>
-                            <p>1</p>
-                            <p>1/3/2024</p>
-                            <div id={Style.TextDiv}>
-                                <p className={Style.Report_Header2}>Lorem ipsum dolo</p>
-                                <p className={Style.ReportText}>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate...</p>
 
-                            </div>
-                            <Button
-                                text={"View Details"} />
-                        </div>
-                        <div className={Style.Personal_Info_ReportDiv}>
-                            <p>1</p>
-                            <p>1/3/2024</p>
-                            <div id={Style.TextDiv}>
-                                <p className={Style.Report_Header2}>Lorem ipsum dolo</p>
-                                <p className={Style.ReportText}>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate...</p>
+                        {
+                            arr.length == 0 ?
+                                <div id={Style.no_complaintDiv}>
+                                    <img src={no_complaint} alt="" />
+                                    <p>No Recent Complaint</p>
+                                </div> :
 
-                            </div>
-                            <Button
-                                text={"View Details"} />
-                        </div>
-                        <div className={Style.Personal_Info_ReportDiv}>
-                            <p>1</p>
-                            <p>1/3/2024</p>
-                            <div id={Style.TextDiv}>
-                                <p className={Style.Report_Header2}>Lorem ipsum dolo</p>
-                                <p className={Style.ReportText}>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate...</p>
+                                <div id={Style.Personal_Info_ReportWrapper}>
+                                    <div className={Style.Personal_Info_ReportDiv}>
+                                        <p>1</p>
+                                        <p>1/3/2024</p>
+                                        <div id={Style.TextDiv}>
+                                            <p className={Style.Report_Header2}>Lorem ipsum dolo</p>
+                                            <p className={Style.ReportText}>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate...</p>
 
-                            </div>
-                            <Link to={'/complainDetails'}>
-                            <Button
-                                text={"View Details"} />
-                            </Link>
-                        </div>
-                
+                                        </div>
+                                        <Button
+                                            text={"View Details"} />
+                                    </div>
+                                    <div className={Style.Personal_Info_ReportDiv}>
+                                        <p>1</p>
+                                        <p>1/3/2024</p>
+                                        <div id={Style.TextDiv}>
+                                            <p className={Style.Report_Header2}>Lorem ipsum dolo</p>
+                                            <p className={Style.ReportText}>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate...</p>
+
+                                        </div>
+                                        <Button
+                                            text={"View Details"} />
+                                    </div>
+                                    <div className={Style.Personal_Info_ReportDiv}>
+                                        <p>1</p>
+                                        <p>1/3/2024</p>
+                                        <div id={Style.TextDiv}>
+                                            <p className={Style.Report_Header2}>Lorem ipsum dolo</p>
+                                            <p className={Style.ReportText}>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate...</p>
+
+                                        </div>
+                                        <Link to={'/complainDetails'}>
+                                            <Button
+                                                text={"View Details"} />
+                                        </Link>
+                                    </div>
+                                </div>
+                        }
                     </div>
                 </div>
             </div>

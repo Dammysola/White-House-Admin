@@ -60,6 +60,14 @@ const Staff_Details = () => {
         },
     ];
 
+    function getDate() {
+        const today = new Date();
+        const month = today.getMonth() + 1;
+        const year = today.getFullYear();
+        const date = today.getDate();
+        return `${month}/${date}/${year}`;
+      }
+
     return (
         <div id={Style.Staff_Details_mainDiv}>
             <Header
@@ -121,21 +129,20 @@ const Staff_Details = () => {
 
                                 values={[
                                     { date: '2024-04-01', count: 1 },
-                                    { date: '2024-01-03', count: 5 },
+                                    { date: '2024-01-03', count: 2 },
                                     { date: '2024-01-06', count: 3 },
-                                    { date: '2024-01-09', count: 3 },
+                                    { date: '2024-01-09', count: 4 },
                                     { date: '2024-01-09', count: 2 },
                                     { date: '2024-01-09', count: 4 },
-                                    { date: '2024-01-09', count: 6 },
-                                    { date: '2024-01-09', count: 2 },
-                                    // ...and so on
+                                    { date: '2024-07-15', count: 3 },
+                                    { date: '2024-01-09', count: 4 }, 
                                 ]}
-                                classForValue={(value) => {
-                                    if (!value) {
-                                        return 'color-empty';
-                                    }
-                                    return `color-scale-${value.count}`;
-                                }}
+                                // classForValue={(value) => {
+                                //     if (!value) {
+                                //         return 'color-empty';
+                                //     }
+                                //     return `color-scale-${value.count}`;
+                                // }}
                             />
                         </div>
 

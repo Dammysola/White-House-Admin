@@ -27,6 +27,9 @@ import Winner_loser from "./pages/WhiteHouse/placeBet/winner/Winner_loser"
 import Countries from "./pages/WhiteHouse/placeBet/countries/Countries"
 import Department from "./pages/WhiteHouse/staff/department/Department";
 import User_Friends from "./pages/WhiteHouse/all_UsersDetails/user_friends/User_Friends";
+import First_page from "./pages/WhiteHouse/first_page/First_page";
+import Chat_History from "./pages/WhiteHouse/chat_history/Chat_History";
+import Revenue from "./pages/WhiteHouse/revenue/Revenue";
 
 
 
@@ -37,6 +40,11 @@ const router = createBrowserRouter([
         children: [
             {
                 index:true,
+                element: <First_page/>
+            },
+            {
+                // index:true,
+                path: "/newAccount",
                 element: <CreateNew_Account/>
             },
             {
@@ -145,6 +153,14 @@ const router = createBrowserRouter([
             {
                 path: "/userFriends",
                 element: <User_Friends/>
+            },
+            {
+                path: "/chatHistory",
+                element: <Chat_History/>
+            },
+            {
+                path: "/revenue",
+                element: <Revenue/>
             }
             
         ]

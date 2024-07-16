@@ -12,7 +12,6 @@ const Payroll = () => {
     return (
         <>
 
-
             <div id={Style.PayrollTextDiv}>
                 <div>
                     <div id={Style.homeText}><span>Home</span>{'>'}Staff {'>'} Payroll</div>

@@ -1,0 +1,69 @@
+#First_page_mainDiv{
+    width: 100%;
+    height: 100vh;
+    background-color: #F9F9F9;
+    display: flex;
+    margin-top: -1.25rem;
+    padding: 2.3rem  1.93rem;
+    box-sizing: border-box;
+}
+#First_page_wrapperDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+#First_page_wrapperDiv p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #003E79;
+    height: 7.5rem;
+}
+#First_page_wrapperDiv button{
+    width: 11rem;
+    height: 8.43rem;
+    border-radius: 1rem;
+    background-color: #FFFFFF;
+    border: none;
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 2.5rem;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, .3);
+}
+#First_page_WhiteHouse_textDiv{
+    background: url("../../../assets//svg/first_page_background.svg") no-repeat center;
+    height: 100%;
+    background-size: cover;
+    border-radius: 2.5rem;
+    width: 50%;
+}
+
+#headerText_Div{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.75rem;
+    align-items: center;
+}
+#headerText_Div #WhiteHouseText{
+    width: 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+#headerText_Div #englishText{
+    width: 4.87rem;
+    height: 2.06rem;
+    border-radius: 0.4rem;
+    border: 1px solid #E3E3E3;
+    color: #003E79;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.4rem;
+    font-size: 0.75rem;
+    background-color: #FFFFFF;
+
+}
