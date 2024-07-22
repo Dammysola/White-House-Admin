@@ -1,16 +1,14 @@
 import React from 'react'
 import Style from '../staff_details/Staff_Details.module.css'
-import { BarChart, Bar, ResponsiveContainer, YAxis, XAxis } from 'recharts';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
 import Header from '../../../../components/header/Header'
 import person from '../../../../assets/images/Person1.png'
 import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
-import Barchart2 from '../../../../assets/images/Barchart2.png'
 import rise from '../../../../assets/svg/rise.svg'
 import arrow_side from '../../../../assets/svg/arrow_side.svg'
 import users from '../../../../assets/svg/users.svg'
-
+import '../staff_details/Staff_Details.css'
 
 
 const Staff_Details = () => {
@@ -60,13 +58,34 @@ const Staff_Details = () => {
         },
     ];
 
-    function getDate() {
-        const today = new Date();
-        const month = today.getMonth() + 1;
-        const year = today.getFullYear();
-        const date = today.getDate();
-        return `${month}/${date}/${year}`;
-      }
+
+    const today = new Date();
+    const getRange = (startDate, endDate) => {
+        const date = new Date(startDate.getTime());
+        const dates = [];
+
+        while (date <= endDate) {
+            dates.push(new Date(date));
+            date.setDate(date.getDate() + 1);
+        }
+        return dates;
+    };
+
+    const randomValues = getRange(
+        new Date(today.getFullYear(), today.getMonth() - 3, today.getDate()),
+        today
+    ).map((date) => ({
+        date: date.toISOString().split('T')[0],
+        count: Math.floor(Math.random() * 4),
+    }));
+
+    // function getDate() {
+    //     const today = new Date();
+    //     const month = today.getMonth() + 1;
+    //     const year = today.getFullYear();
+    //     const date = today.getDate();
+    //     return `${month}/${date}/${year}`;
+    //   }
 
     return (
         <div id={Style.Staff_Details_mainDiv}>
@@ -122,28 +141,39 @@ const Staff_Details = () => {
                 <div id={Style.Staff_Details_hoursDaily_logDiv}>
                     <div>
                         <div id={Style.Staff_Details_BarChart}>
+                            <div id={Style.Staff_Details_workingHours_TextDiv}>
                             <p>Working Hours</p>
+                            <button>View Details</button>
+                            </div>
+
                             <CalendarHeatmap
+
                                 startDate={new Date('2024-01-01')}
                                 endDate={new Date('2024-12-01')}
-
-                                values={[
-                                    { date: '2024-04-01', count: 1 },
-                                    { date: '2024-01-03', count: 2 },
-                                    { date: '2024-01-06', count: 3 },
-                                    { date: '2024-01-09', count: 4 },
-                                    { date: '2024-01-09', count: 2 },
-                                    { date: '2024-01-09', count: 4 },
-                                    { date: '2024-07-15', count: 3 },
-                                    { date: '2024-01-09', count: 4 }, 
-                                ]}
-                                // classForValue={(value) => {
-                                //     if (!value) {
-                                //         return 'color-empty';
-                                //     }
-                                //     return `color-scale-${value.count}`;
-                                // }}
+                                values={randomValues}
+                                classForValue={(value) => {
+                                    if (!value) {
+                                        return 'color-empty';
+                                    }
+                                    return `color-scale-${value.count}`;
+                                }}
+                                tooltipDataAttrs={(value) => {
+                                    return {
+                                        'data-tip': value.date ? `${value.date}: ${value.count}` : 'No data',
+                                    };
+                                }}
+                                showWeekdayLabels
                             />
+
+                            <div className="legend">
+                                <span className="CalendarText">Less</span>
+                                <span className="color-box color-scale-0"></span>
+                                <span className="color-box color-scale-1"></span>
+                                <span className="color-box color-scale-2"></span>
+                                <span className="color-box color-scale-3"></span>
+                                <span className="color-box color-scale-4"></span>
+                                <span className="CalendarText">More</span>
+                            </div>
                         </div>
 
                         <div id={Style.Staff_Details_Card_wrapper}>

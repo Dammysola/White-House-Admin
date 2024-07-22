@@ -5,6 +5,8 @@ import download from '../../../../assets/svg/download_img.svg'
 import InputField from '../../../../components/input/InputField'
 import Header from '../../../../components/header/Header'
 import search from '../../../../assets/svg/Search.svg'
+import App_Pagination from '../../../../components/app_Pagination/App_Pagination'
+
 
 
 
@@ -162,7 +164,9 @@ const Total_BetPlaced = () => {
             </table>
           </div>
         </div>
+        
       </div>
+      <App_Pagination/>
     </div>
   )
 }

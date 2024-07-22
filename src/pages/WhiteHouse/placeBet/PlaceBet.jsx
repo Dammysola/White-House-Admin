@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Style from '../placeBet/PlaceBet.module.css'
 import Total_Card from '../../../components/total_Card/Total_Card'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
-import Chart from '../../../components/chart/Chart'
+import {Bar, BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
 import Header from '../../../components/header/Header'
+
+
+
 
 const PlaceBet = () => {
     const [data, setData] = useState()
@@ -154,22 +155,45 @@ const PlaceBet = () => {
                         }
                     </div>
                     <div id={Style.ChartDiv}>
-                        <Chart data={data}></Chart>
+                    <div id={Style.Chart_mainDiv}>
+          <div id={Style.PayoutsText}>Bet Placed</div>
+          <ResponsiveContainer
+            width="100%"
+            height= "100%">
+            <BarChart
+              width={300}
+              height={100}
+              data={line_data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: -20,
+                bottom: 10,
+              }}
+            >
+
+              <XAxis dataKey="name" fontSize={"0.8rem"} tickLine={false} axisLine={false}></XAxis>
+              <YAxis fontSize={"0.7rem"} tickLine={false} axisLine={false} ></YAxis>
+              <Tooltip></Tooltip>
+              <Bar dataKey="uv" stroke='none' stackId='a' fill='#0B9FE1'></Bar>
+              <Bar dataKey="amt" stackId='a' fill='#003E79'></Bar>
+            </BarChart>
+          </ResponsiveContainer>
+
+        </div>
                         <div id={Style.Dashboard_lineChart_Two}>
                         <p id={Style.Dashboard_RevenueText}>Revenue</p>
                         <ResponsiveContainer width="100%" height="100%">
-                            <LineChart width={300} height={100} data={line_data} margin={{
+                            <BarChart width={300} height={100} data={line_data} margin={{
                                 top: 5,
                                 right: 30,
                                 left: -30,
                                 bottom: 10,
                             }} >
-                                <CartesianGrid strokeDasharray="3 4 " vertical={false}></CartesianGrid>
-                                <Line type="monotone" dot={false} dataKey="pv" stroke="#113353" backgr strokeWidth={4} />
-                                <XAxis dataKey="name" fontSize={"0.8rem"}></XAxis>
-                                {/* <legend ></legend> */}
-                                <YAxis dataKey="pv" fontSize={"0.7rem"}></YAxis>
-                            </LineChart>
+                                <XAxis dataKey="name" fontSize={"0.8rem"} tickLine={false} axisLine={false}></XAxis>
+                                <YAxis dataKey="pv" fontSize={"0.7rem"} tickLine={false} axisLine={false}></YAxis>
+                                <Bar dataKey="pv" fill="#075070" />
+                            </BarChart>
                         </ResponsiveContainer>
                     </div>
 

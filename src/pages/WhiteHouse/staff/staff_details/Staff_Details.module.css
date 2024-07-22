@@ -157,3 +157,19 @@
 .react-calendar-heatmap .color-scale-4{
     fill: #003E79;
 }
+
+#Staff_Details_workingHours_TextDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Staff_Details_workingHours_TextDiv button{
+    border: none;
+    background-color: #43C22F;
+    width: 7.9rem;
+    height: 2.3rem;
+    border-radius: 0.5rem;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+}
