@@ -1,10 +1,10 @@
-#Transaction_Div{
+#Transaction_mainDiv{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #F9F9F9;
 }
-#Transaction_mainDiv{
-    margin-top: 6.8rem;
+#Transaction_wrapperDiv{
+    padding: 6.8rem 8.5rem 6.8rem 7.5rem ;
 }
 #Transaction_listCalendar_Div{
     display: flex;
@@ -49,12 +49,9 @@
     margin-left: 100px;
     box-sizing: border-box;
 }
-#Transaction_mainDiv{
-    display: flex;
-    justify-content: center;
-}
+
 #Transaction_tableWrapperDiv{
-    width: 85%;
+    width: 100%;
     height: 70vh;
     background-color: #FFFFFF;
     /* border: 1px solid #F0F0F0; */
@@ -117,7 +114,7 @@
     color: #110000;
 }
 #Transaction_tableWrapperDiv th, td{
-    padding: 0 40px;
+    padding: 0 2rem;
     color: #666666;
 }
 #Transaction_tableWrapperDiv th{
@@ -126,6 +123,7 @@
 #Transaction_tableWrapperDiv tr{
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
+    font-size: 0.9rem;
 }
 #Transaction_tableWrapperDiv #line{
     border-bottom: none;

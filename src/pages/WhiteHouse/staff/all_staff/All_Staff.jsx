@@ -21,7 +21,7 @@ const All_Staff = () => {
             status: "Online",
             to: "/staffDetails"
         },
-        {
+         {
             img: person,
             name: "John Doe",
             position: "Customer care representative",

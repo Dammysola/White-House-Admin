@@ -17,58 +17,77 @@ const All_Users = () => {
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Amateur",
             status: "Online",
             to: "/userDetails"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Master",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Novice",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Novice",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Professional",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Master",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Enthusiast",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Amateur",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Professional",
             status: "Online"
-        }
+        },
+        {
+            img: person,
+            name: "John Doe",
+            position: "Master",
+            status: "Online"
+        },
+        {
+            img: person,
+            name: "John Doe",
+            position: "Amateur",
+            status: "Online"
+        },
+        {
+            img: person,
+            name: "John Doe",
+            position: "Professional",
+            status: "Online"
+        },
+
     ]
     return (
         <div id={Style.All_Users_mainDiv}>

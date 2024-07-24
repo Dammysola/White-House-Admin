@@ -1,76 +1,169 @@
-#DiceGame_mainDiv{
+#DiceGame_mainDiv {
     width: 100%;
     min-height: 100vh;
     background-color: #F9F9F9;
 }
-.PlaceBet_headerText{
+
+#DiceGame_wrapperDiv {
+    padding: 0 8rem 0 7.5rem;
+}
+
+.PlaceBet_headerText {
     color: #1A1A1A;
     font-size: 1.55rem;
     line-height: 38px;
 }
-#Total_Card_mapDiv{
+
+#Total_Card_mapDiv {
     display: flex;
-    column-gap: 32px;
+    column-gap: 2rem;
 }
-#Dashboard_Card_wrapper{
-    width: 38.43rem;
-    height: 15.37rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 22px;
-}
-.Dashboard_CardDiv{
-    width: 18.62rem;
+
+.Dashboard_CardDiv {
+    width: 49%;
     height: 111px;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     background-color: #FFFFFF;
     border-radius: 20px;
     display: flex;
 }
-.Card_figure{
+
+#Dashboard_Card_wrapper {
+    /* min-width: 38.43rem; */
+    /*  height: 15.37rem; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 22px;
+}
+
+.Card_figure {
     color: #000000;
     font-size: 1.5rem;
     height: 8px;
 }
-.Card_text{
+
+.Card_text {
     font-size: 1.2rem;
     color: #717171;
 }
-#DiceGame_cardGraph_wrapper{
-    display: flex;
-    /* column-gap: 2rem; */
-    justify-content: space-between;
-}
-#DiceGame_cardGraph_wrapper img{
-    margin-left: 2rem;
-}
 
-#DiceGame_lastline_graphDiv{
-    height: 38.3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-}
-#BarChart_TextWrapperDiv{
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    margin-top: 8.5rem;
-}
 /* #DiceGame_graph{
     width: 40rem;
     height: 19rem;
     margin-top: 6rem;
 } */
-#DiceGame_wrapperDiv{
-  padding: 0 120px;
+.Revenue_earningDiv {
+    width: 100%;
+    height: 15.37rem;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.Revenue_earningDiv img {
+    /* width: 3rem;
+    text-align: center; */
+}
+
+.Revenue_earningDiv #Revenue_percentText {
+    font-size: 1.12rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -2rem;
+}
+
+.Revenue_earningDiv .earningText {
+    font-size: 1rem;
+    color: #989797;
+    height: 0px;
+    line-height: 0.5rem;
+}
+
+.Revenue_earningDiv .priceText {
+    font-size: 1.12rem;
+    color: #000000;
+    font-weight: bold;
+    line-height: 0.1rem;
+}
+
+.Revenue_earningDiv .Revenue_infoText {
+    width: 100%;
+    font-size: 0.9rem;
+    color: #989797;
+    text-align: center;
+    margin-top: 1.3rem;
+}
+
+#Revenue_progressDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* #Revenue_progressDiv img{
+    margin: -3rem;
+} */
+#SmileyImg_Div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+#Revenue_smileyImg{
+    margin-top: -3rem;
+    text-align: center;
+    /* box-sizing: border-box; */
+}
+.Revenue_progressBar {
+    width: 10.62rem;
+    height: 5.3rem;
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+    border: 10px solid #ECEAF8;
+    border-bottom: 0;
+}
+
+#Revenue_total_EarningDiv {
+    display: flex;
+    column-gap: 1.5rem;
+}
+
+#DiceGame_cardGraph_wrapper {
+    display: flex;
+    column-gap: 2rem;
+    /* justify-content: space-between; */
+}
+
+#DiceGame_cardGraph_wrapper img {
+    margin-left: 2rem;
+}
+
+#DiceGame_lastline_graphDiv {
+    width: 100%;
+    height: 38.3rem;
+    display: flex;
+    align-items: center;
+    column-gap: 2.5rem;
+    /* justify-content: space-between; */
+
+}
+
+#BarChart_TextWrapperDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    /* margin-top: 8.5rem; */
 }
 
 #AreaChartDiv {
-    width: 38.37rem;
+    width:100%;
     height: 27rem;
     background-color: #FFFFFF;
     border-radius: 1rem;
@@ -97,13 +190,12 @@
 }
 
 #Chart_mainDiv {
+   width: 100%;
+    height: 19.56rem;
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
-    width: 38.43rem;
-    height: 19.56rem;
     border-radius: 25px;
-    /* border: 1px solid #F0F0F0; */
     padding: 1rem;
     box-sizing: border-box;
 }
@@ -118,5 +210,5 @@
     border-bottom: 1.5px solid #E3E3E3;
     font-size: 1.125rem;
     color: #003E79;
-    
+
 }

@@ -10,6 +10,7 @@ import App_Pagination from '../../../../components/app_Pagination/App_Pagination
 
 
 
+
 const Total_BetPlaced = () => {
   const [searchItem, setSearchItem] = useState({
     age: ""
@@ -23,7 +24,7 @@ const Total_BetPlaced = () => {
     setSearchItem(
       (prevState) => ({
         ...prevState,
-        [name]:value
+        [name]: value
       }
       ))
   }
@@ -43,17 +44,18 @@ const Total_BetPlaced = () => {
         <div id={Style.input_FilterDiv}>
           <p>3rd July, 2024</p>
           <div id={Style.searchDiv}>
-            <img src={search} alt=""/>
+            <img src={search} alt="" />
             <form>
-              {/* <InputField
+              <InputField
                 placeholder={"Search tickets"}
                 type={"text"}
-                value={searchItem}
-                onChange={searchDetails} /> */}
-
-                <input type="text" value={searchItem.age}
-                onChange={searchDetails} name={"age"}
+                // value={searchItem}
+                onChange={searchDetails} 
                 />
+
+              {/* <input type="text" value={searchItem.age}
+                onChange={searchDetails} name={"age"}
+              /> */}
             </form>
           </div>
 
@@ -71,7 +73,7 @@ const Total_BetPlaced = () => {
                 <th>Amount Staked</th>
                 <th>Status</th>
               </tr>
-              
+
               <tr>
                 <td>1</td>
                 <td>SA 123476689</td>
@@ -164,9 +166,12 @@ const Total_BetPlaced = () => {
             </table>
           </div>
         </div>
-        
+            <div>
+              <App_Pagination/>
+            </div>
       </div>
-      <App_Pagination/>
+      
+      
     </div>
   )
 }

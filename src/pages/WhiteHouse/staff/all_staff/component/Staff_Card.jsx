@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const Staff_Card = (props) => {
     const {img, status, position, name, to} = props
     return (
-        <div>
+        <div id={Style.Staff_Card_mainDiv}>
             <div id={Style.Staff_Card_WrapperDiv}>
                 <img src={img} alt="" />
                 <div id={Style.Staff_Card_textDiv}>

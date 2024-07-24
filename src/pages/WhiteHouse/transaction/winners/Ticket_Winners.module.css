@@ -35,14 +35,14 @@
     font-weight: lighter;
 }
 #Ticket_Winners_TableDiv th, td{
-    padding: 0 40px;
+    padding: 0 2rem;
     color: #666666;
 
 }
 #Ticket_Winners_TableDiv th{
     text-align: left;
 }
-#Ticket_Winners_TableDiv tr{
+ tr{
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
 }

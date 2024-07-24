@@ -22,11 +22,11 @@ const Transaction = () => {
 
     
     return (
-        <div id={Style.Transaction_Div}>
+        <div id={Style.Transaction_mainDiv}>
             <Header
             headerText = {"Transactions"}
             headerInfo ={"Here is a list of all transactions"}/>
-            <div id={Style.Transaction_mainDiv}>
+            <div id={Style.Transaction_wrapperDiv}>
                 <div id={Style.Transaction_tableWrapperDiv}>
                     <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>
 

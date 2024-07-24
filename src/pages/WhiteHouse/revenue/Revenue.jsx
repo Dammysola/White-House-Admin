@@ -175,7 +175,7 @@ const Revenue = () => {
                                 <img src={smiley} alt="" />
                             </div>
                             <p className={Style.Revenue_infoText}>70% more earning than last month, keep
-                                watching t find out more</p>
+                                watching to find out more</p>
                         </div>
 
                         <div className={Style.Revenue_earningDiv}>
@@ -188,7 +188,7 @@ const Revenue = () => {
                                 <p id={Style.Revenue_percentText}>45%</p>
                             </div>
                             <p className={Style.Revenue_infoText}>70% more earning than last month, keep
-                                watching t find out more</p>
+                                watching to find out more</p>
                         </div>
 
                     </div>

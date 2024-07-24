@@ -1,11 +1,17 @@
+#Staff_Card_mainDiv{
+    flex: 1;
+}
 #Staff_Card_WrapperDiv{
     background-color: #FFFFFF;
     border-radius: 1rem;
-    width: 25.12rem;
+    /* min-width: 25.12rem; */
+    /* width: 100%; */
+    padding: 2rem;
+    box-sizing: border-box;
     height: 11.25rem;
+    justify-content: space-evenly;
     column-gap: 1.5rem;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 1rem;
     color: #000000;
@@ -18,20 +24,20 @@
 }
 #Staff_Card_WrapperDiv button{
     width: 6.93rem;
-    height: 30px;
+    height: 1.87rem;
     background-color: #075070;
     font-size: 0.75rem;
     color: #FFFFFF;
-    padding: 7px;
+    padding: 0.45rem;
     box-sizing: border-box;
 }
 .Staff_Card_careRep{
-    height: 8px;
+    height: 0.5rem;
     color: #000000;
 }
 .Staff_Card_nameText{
     font-size: 1.25rem;
-    height: 8px; 
+    height: 0.5rem; 
 }
 .Staff_Card_online_signalDiv{
     width: 1rem;
@@ -41,6 +47,6 @@
 }
 .Staff_Card_onlineDiv{
     display: flex;
-    column-gap: 8px;
+    column-gap: 0.5rem;
     align-items: center;
 }

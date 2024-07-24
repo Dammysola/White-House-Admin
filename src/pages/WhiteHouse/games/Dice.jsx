@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from '../games/Dice.module.css'
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Bar, BarChart, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Bar, BarChart, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import dice from '../../../assets/svg/Dice.svg'
 import Header from '../../../components/header/Header'
 import Total_Card from '../../../components/total_Card/Total_Card'
@@ -8,9 +8,7 @@ import rise from '../../../assets/svg/rise.svg'
 import arrow_side from '../../../assets/svg/arrow_side.svg'
 import person from '../../../assets/svg/person.svg'
 import flag from '../../../assets/svg/flag.svg'
-import curve_line from '../../../assets/images/curve_line.png'
-import graph from '../../../assets/images/graph.jpg'
-import line_Graph from '../../../assets/images/line_Graph.png'
+import smiley from '../../../assets/svg/blue_smiley.svg'
 import arrow_down from '../../../assets/svg/arrow_down-dark.svg'
 
 
@@ -102,50 +100,163 @@ const DiceGame = () => {
   ]
   return (
     <div id={Style.DiceGame_mainDiv}>
-      <div id={Style.PlaceBet_HeaderDiv}>
+      {/* <div id={Style.PlaceBet_HeaderDiv}> */}
 
-        <Header
-          headerText={"Dice"}
-          headerInfo={"Here’s an information on Dice"}
-          image={dice} />
+      <Header
+        headerText={"Dice"}
+        headerInfo={"Here’s an information on Dice"}
+        image={dice} />
 
-        <div id={Style.DiceGame_wrapperDiv}>
-          <p className={Style.PlaceBet_headerText}>Today's Summary</p>
-          <div id={Style.Total_Card_mapDiv}>
-            {
-              total_Card2.map((object) => {
-                return (
-                  <Total_Card
-                    image1={object.image1}
-                    text={object.text}
-                    divText={object.divText}
-                    price={object.price}
-                  />
-                )
-              })
-            }
+      <div id={Style.DiceGame_wrapperDiv}>
+        <p className={Style.PlaceBet_headerText}>Today's Summary</p>
+        <div id={Style.Total_Card_mapDiv}>
+          {
+            total_Card2.map((object) => {
+              return (
+                <Total_Card
+                  image1={object.image1}
+                  text={object.text}
+                  divText={object.divText}
+                  price={object.price}
+                />
+              )
+            })
+          }
+        </div>
+        <p className={Style.PlaceBet_headerText}>Overview</p>
+        <div id={Style.DiceGame_cardGraph_wrapper}>
+          <div id={Style.Dashboard_Card_wrapper}>
+
+            <div className={Style.Dashboard_CardDiv}>
+              <img src={rise} alt="" />
+              <div>
+                <p className={Style.Card_figure}>200k</p>
+                <p className={Style.Card_text}>Bet Placed</p>
+              </div>
+              <img src={arrow_side} alt="" />
+            </div>
+
+            <div className={Style.Dashboard_CardDiv}>
+              <img src={person} alt="" />
+              <div>
+                <p className={Style.Card_figure}>2m</p>
+                <p className={Style.Card_text}>All Users</p>
+              </div>
+              <img src={arrow_side} alt="" />
+            </div>
+
+            <div className={Style.Dashboard_CardDiv}>
+              <img src={flag} alt="" />
+              <div>
+                <p className={Style.Card_figure}>14</p>
+                <p className={Style.Card_text}>Reg Countries</p>
+              </div>
+              <img src={arrow_side} alt="" />
+            </div>
+
+            <div className={Style.Dashboard_CardDiv}>
+              <img src={rise} alt="" />
+              <div>
+                <p className={Style.Card_figure}>200k</p>
+                <p className={Style.Card_text}>Bet Placed</p>
+              </div>
+              <img src={arrow_side} alt="" />
+            </div>
           </div>
-          <p className={Style.PlaceBet_headerText}>Overview</p>
-          <div id={Style.DiceGame_cardGraph_wrapper}>
+
+          <div id={Style.Revenue_total_EarningDiv}>
+
+            <div className={Style.Revenue_earningDiv}>
+
+              <p className={Style.earningText}>Daily Revenue</p>
+              <p className={Style.priceText}>$3,000</p>
+
+              <div id={Style.Revenue_progressDiv}>
+                <div className={Style.Revenue_progressBar}></div>
+                <div id={Style.SmileyImg_Div}>
+                  <img id={Style.Revenue_smileyImg} src={smiley} alt="" />
+                </div>
+              </div>
+              <p className={Style.Revenue_infoText}>70% more earning than last month, keep
+                watching to find out more</p>
+            </div>
+
+            <div className={Style.Revenue_earningDiv}>
+
+              <p className={Style.earningText}>Earnings this month</p>
+              <p className={Style.priceText}>$23,000</p>
+
+              <div id={Style.Revenue_progressDiv}>
+                <div className={Style.Revenue_progressBar}></div>
+                <p id={Style.Revenue_percentText}>45%</p>
+              </div>
+              <p className={Style.Revenue_infoText}>70% more earning than last month, keep
+                watching to find out more</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div id={Style.DiceGame_lastline_graphDiv}>
+
+          <div id={Style.AreaChartDiv}>
+            <div id={Style.AreaChart_TextDiv}>
+              <p id={Style.AreaChart_weeklyText}>Weekly Revenue Report</p>
+              <p id={Style.AreaChart_dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
+            </div>
+            <ResponsiveContainer width="100%" height="70%">
+              <AreaChart
+                width={500}
+                height={300}
+                data={data}
+                margin={{
+                  top: 0,
+                  right: 0,
+                  left: -20,
+                  bottom: 0,
+                }}
+
+              >
+                {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                <XAxis dataKey="name" axisLine={false} tickLine={false} />
+                <YAxis axisLine={false} tickLine={false} tickFormatter={customTickFormatter} />
+                <Tooltip />
+                <Area type="normal" dataKey="uv" dot={true} stroke="#003E79" fill="#003e79cc" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+
+          <div id={Style.BarChart_TextWrapperDiv}>
+
+            <div id={Style.Chart_mainDiv}>
+              <div id={Style.PayoutsText}>Bet Placed</div>
+              <ResponsiveContainer
+                width="100%"
+                height="100%">
+                <BarChart
+                  width={300}
+                  height={100}
+                  data={data}
+                  margin={{
+                    top: 5,
+                    right: 30,
+                    left: -20,
+                    bottom: 10,
+                  }}
+                >
+
+                  <XAxis dataKey="name" fontSize={"0.8rem"} axisLine={false} tickLine={false}></XAxis>
+                  <YAxis fontSize={"0.7rem"} axisLine={false} tickLine={false}></YAxis>
+                  <Tooltip></Tooltip>
+                  <Bar dataKey="uv" stroke='none' stackId='a' fill='#0B9FE1'></Bar>
+                  <Bar dataKey="pv" stackId='a' fill='#003E79'></Bar>
+                </BarChart>
+              </ResponsiveContainer>
+
+            </div>
+
+
             <div id={Style.Dashboard_Card_wrapper}>
-
-              <div className={Style.Dashboard_CardDiv}>
-                <img src={rise} alt="" />
-                <div>
-                  <p className={Style.Card_figure}>200k</p>
-                  <p className={Style.Card_text}>Bet Placed</p>
-                </div>
-                <img src={arrow_side} alt="" />
-              </div>
-
-              <div className={Style.Dashboard_CardDiv}>
-                <img src={person} alt="" />
-                <div>
-                  <p className={Style.Card_figure}>2m</p>
-                  <p className={Style.Card_text}>All Users</p>
-                </div>
-                <img src={arrow_side} alt="" />
-              </div>
 
               <div className={Style.Dashboard_CardDiv}>
                 <img src={flag} alt="" />
@@ -165,96 +276,10 @@ const DiceGame = () => {
                 <img src={arrow_side} alt="" />
               </div>
             </div>
-
-            <div>
-              <img src={curve_line} alt="" />
-              <img src={curve_line} alt="" />
-            </div>
-          </div>
-
-          <div id={Style.DiceGame_lastline_graphDiv}>
-
-            <div id={Style.AreaChartDiv}>
-              <div id={Style.AreaChart_TextDiv}>
-                <p id={Style.AreaChart_weeklyText}>Weekly Revenue Report</p>
-                <p id={Style.AreaChart_dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
-              </div>
-              <ResponsiveContainer width="100%" height="70%">
-                <AreaChart
-                  width={500}
-                  height={300}
-                  data={data}
-                  margin={{
-                    top: 0,
-                    right: 0,
-                    left: -20,
-                    bottom: 0,
-                  }}
-
-                >
-                  {/* <CartesianGrid strokeDasharray="3 3" /> */}
-                  <XAxis dataKey="name" axisLine={false} tickLine={false} />
-                  <YAxis axisLine={false} tickLine={false} tickFormatter={customTickFormatter} />
-                  <Tooltip />
-                  <Area type="normal" dataKey="uv" dot={true} stroke="#003E79" fill="#003e79cc" />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-
-            <div id={Style.BarChart_TextWrapperDiv}>
-
-              <div id={Style.Chart_mainDiv}>
-                <div id={Style.PayoutsText}>Bet Placed</div>
-                <ResponsiveContainer
-                  width="100%"
-                  height="100%">
-                  <BarChart
-                    width={300}
-                    height={100}
-                    data={data}
-                    margin={{
-                      top: 5,
-                      right: 30,
-                      left: -20,
-                      bottom: 10,
-                    }}
-                  >
-
-                    <XAxis dataKey="name" fontSize={"0.8rem"} axisLine={false} tickLine={false}></XAxis>
-                    <YAxis fontSize={"0.7rem"} axisLine={false} tickLine={false}></YAxis>
-                    <Tooltip></Tooltip>
-                    <Bar dataKey="uv" stroke='none' stackId='a' fill='#0B9FE1'></Bar>
-                    <Bar dataKey="pv" stackId='a' fill='#003E79'></Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-
-              </div>
-
-
-              <div id={Style.Dashboard_Card_wrapper}>
-
-                <div className={Style.Dashboard_CardDiv}>
-                  <img src={flag} alt="" />
-                  <div>
-                    <p className={Style.Card_figure}>14</p>
-                    <p className={Style.Card_text}>Reg Countries</p>
-                  </div>
-                  <img src={arrow_side} alt="" />
-                </div>
-
-                <div className={Style.Dashboard_CardDiv}>
-                  <img src={rise} alt="" />
-                  <div>
-                    <p className={Style.Card_figure}>200k</p>
-                    <p className={Style.Card_text}>Bet Placed</p>
-                  </div>
-                  <img src={arrow_side} alt="" />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+      {/* </div> */}
 
     </div>
   )

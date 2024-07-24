@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const Total_Card = (props) => {
   const { image1, text, divText, price, to } = props
   return (
-    <div>
+    <div id={Style.Total_Card_mainDiv}>
       <div id={Style.Total_Card_Wrapper}>
         <div id={Style.Total_Card_firstLine_Div}>
           <div id={Style.Total_Card_firstLine_ImgDiv}>

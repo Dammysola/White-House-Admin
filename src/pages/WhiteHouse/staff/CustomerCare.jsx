@@ -41,7 +41,7 @@ const CustomerCare = () => {
                 headerText={"Welcome, Admin"}
                 headerInfo={"Here’s an overview of all Staff"} />
 
-            <div id={Style.CustomerCare_Div}>
+            <div id={Style.CustomerCare_wrapperDiv}>
                 <div>
                     <p id={Style.PlaceBet_summaryText}>Customer Care Summary</p>
                     <div id={Style.Total_Card_mapDiv}>

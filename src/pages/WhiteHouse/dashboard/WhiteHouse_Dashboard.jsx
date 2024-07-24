@@ -106,57 +106,59 @@ const WhiteHouse_Dashboard = () => {
                 headerText={"Welcome, Admin"}
                 headerInfo={"Here’s an overview of White House"} />
 
-            <div id={Style.Dashboard_CardGraph_Wrapper}>
-                <div id={Style.Dashboard_Card_wrapper}>
-                    <div className={Style.Dashboard_CardDiv}>
-                        <img src={rise} alt="" />
-                        <div>
-                            <p className={Style.Card_figure}>200k</p>
-                            <p className={Style.Card_text}>Bet Placed</p>
+            <div id={Style.Dashboard_WrapperDiv}>
+                <div id={Style.Dashboard_CardGraph_Wrapper}>
+                    <div id={Style.Dashboard_Card_wrapper}>
+                        <div className={Style.Dashboard_CardDiv}>
+                            <img src={rise} alt="" />
+                            <div>
+                                <p className={Style.Card_figure}>200k</p>
+                                <p className={Style.Card_text}>Bet Placed</p>
+                            </div>
+                            <img src={arrow_side} alt="" />
                         </div>
-                        <img src={arrow_side} alt="" />
-                    </div>
-                    <div className={Style.Dashboard_CardDiv}>
-                        <img src={person} alt="" />
-                        <div>
-                            <p className={Style.Card_figure}>2m</p>
-                            <p className={Style.Card_text}>All Users</p>
+                        <div className={Style.Dashboard_CardDiv}>
+                            <img src={person} alt="" />
+                            <div>
+                                <p className={Style.Card_figure}>2m</p>
+                                <p className={Style.Card_text}>All Users</p>
+                            </div>
+                            <img src={arrow_side} alt="" />
                         </div>
-                        <img src={arrow_side} alt="" />
-                    </div>
-                    <div className={Style.Dashboard_CardDiv}>
-                        <img src={flag} alt="" />
-                        <div>
-                            <p className={Style.Card_figure}>14</p>
-                            <p className={Style.Card_text}>Reg Countries</p>
+                        <div className={Style.Dashboard_CardDiv}>
+                            <img src={flag} alt="" />
+                            <div>
+                                <p className={Style.Card_figure}>14</p>
+                                <p className={Style.Card_text}>Reg Countries</p>
+                            </div>
+                            <img src={arrow_side} alt="" />
                         </div>
-                        <img src={arrow_side} alt="" />
-                    </div>
-                    <div className={Style.Dashboard_CardDiv}>
-                        <img src={rise} alt="" />
-                        <div>
-                            <p className={Style.Card_figure}>200k</p>
-                            <p className={Style.Card_text}>Bet Placed</p>
+                        <div className={Style.Dashboard_CardDiv}>
+                            <img src={rise} alt="" />
+                            <div>
+                                <p className={Style.Card_figure}>200k</p>
+                                <p className={Style.Card_text}>Bet Placed</p>
+                            </div>
+                            <img src={arrow_side} alt="" />
                         </div>
-                        <img src={arrow_side} alt="" />
                     </div>
-                </div>
-                {/* <img id={Style.img} src={line_graph} alt="" /> */}
-                <div id={Style.Dashboard_lineChart}>
-                    <p id={Style.Dashboard_RevenueText}>Revenue</p>
-                    <ResponsiveContainer width="100%" height="100%">
-                        <LineChart width={300} height={100} data={line_data} margin={{
-                            top: 5,
-                            right: 30,
-                            left: -30,
-                            bottom: 10,
-                        }} >
-                            <CartesianGrid strokeDasharray="3 4 " vertical={false}></CartesianGrid>
-                            <Line type="monotone" dot={false} dataKey="pv" stroke="#113353" backgr strokeWidth={4} />
-                            <XAxis dataKey="name" fontSize={"0.8rem"}></XAxis>
-                            <YAxis dataKey="pv" fontSize={"0.7rem"}></YAxis>
-                        </LineChart>
-                    </ResponsiveContainer>
+                    {/* <img id={Style.img} src={line_graph} alt="" /> */}
+                    <div id={Style.Dashboard_lineChart}>
+                        <p id={Style.Dashboard_RevenueText}>Revenue</p>
+                        <ResponsiveContainer width="100%" height="100%">
+                            <LineChart width={300} height={100} data={line_data} margin={{
+                                top: 5,
+                                right: 30,
+                                left: -30,
+                                bottom: 10,
+                            }} >
+                                <CartesianGrid strokeDasharray="3 4 " vertical={false}></CartesianGrid>
+                                <Line type="monotone" dot={false} dataKey="pv" stroke="#113353" backgr strokeWidth={4} />
+                                <XAxis dataKey="name" fontSize={"0.8rem"}></XAxis>
+                                <YAxis dataKey="pv" fontSize={"0.7rem"}></YAxis>
+                            </LineChart>
+                        </ResponsiveContainer>
+                    </div>
                 </div>
 
 
@@ -164,22 +166,22 @@ const WhiteHouse_Dashboard = () => {
                     <div id={Style.Dashboard_lineChart_Two}>
                         <p id={Style.Dashboard_RevenueText}>Revenue</p>
                         <ResponsiveContainer width="100%" height="100%">
-                        <BarChart width={150} height={40} data={line_data} margin={{
+                            <BarChart width={150} height={40} data={line_data} margin={{
                                 top: 5,
                                 right: 30,
                                 left: -20,
                                 bottom: 10,
                             }}>
-                                
-                               
-                                <XAxis dataKey="name"  
-                                axisLine={false} tickLine={false} fontSize={"0.8rem"}
+
+
+                                <XAxis dataKey="name"
+                                    axisLine={false} tickLine={false} fontSize={"0.8rem"}
                                 />
-                                <YAxis 
-                                axisLine={false} tickLine={false} fontSize={"0.7rem"}
+                                <YAxis
+                                    axisLine={false} tickLine={false} fontSize={"0.7rem"}
                                 />
-                                 {/* <Legend/> */}
-                                <Tooltip/>
+                                {/* <Legend/> */}
+                                <Tooltip />
                                 <Bar dataKey="pv" fill="#113353" />
                             </BarChart>
                         </ResponsiveContainer>
@@ -195,23 +197,23 @@ const WhiteHouse_Dashboard = () => {
                                 left: -20,
                                 bottom: 10,
                             }}>
-                                
-                               
-                                <XAxis dataKey="name"  
-                                axisLine={false} tickLine={false} fontSize={"0.8rem"}
+
+
+                                <XAxis dataKey="name"
+                                    axisLine={false} tickLine={false} fontSize={"0.8rem"}
                                 />
-                                <YAxis 
-                                axisLine={false} tickLine={false} fontSize={"0.7rem"}
+                                <YAxis
+                                    axisLine={false} tickLine={false} fontSize={"0.7rem"}
                                 />
-                                 {/* <Legend/> */}
-                                <Tooltip/>
+                                {/* <Legend/> */}
+                                <Tooltip />
                                 <Bar dataKey="uv" fill="#075070" />
-                                <Bar dataKey="amt" fill="#26EEC8"/>
+                                <Bar dataKey="amt" fill="#26EEC8" />
                             </BarChart>
                         </ResponsiveContainer>
 
                     </div>
-                    
+
                 </div>
 
 

@@ -4,10 +4,10 @@
     background-color: #F9F9F9;
 }
 #PlaceBet_wrapperDiv{
-    padding: 3rem 7.5rem;
+    padding: 4rem 8rem 5rem 7.5rem;
 }
-
 #Total_Card_mapDiv{
+    width: 100%;
     display: flex;
     column-gap: 2rem;
 }
@@ -17,23 +17,16 @@
     line-height: 38px;
 }
 #ChartDiv{
-    width: 79.68rem;
     display: flex;
-    justify-content: space-between;
+    column-gap: 2.3rem;
     margin-top: 48px;
 }
-#ChartDiv img{
-    margin-top: -13px;
-    width: 615px;
-    height: 350px;
-}
-
 
 #Chart_mainDiv {
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
-    width: 38.43rem;
+    width: 100%;
     height: 19.56rem;
     border-radius: 25px;
     padding: 1rem;
@@ -42,7 +35,6 @@
 
 #PayoutsText {
     display: flex;
-    /* margin: 0 30px; */
     margin-bottom: 1rem;
     box-sizing: border-box;
     align-items: center;
@@ -52,11 +44,8 @@
     color: #003E79;
     
 }
-
-
 #Dashboard_RevenueText {
     display: flex;
-    /* margin: 0  1rem; */
     box-sizing: border-box;
     align-items: center;
     height: 50px;
@@ -70,9 +59,8 @@
     flex-direction: column;
     background-color: #FFFFFF;
     border-radius: 25px;
-    border: 1px solid #F0F0F0;
     padding: 0 1rem;
     box-sizing: border-box;
-    width: 38.43rem;
+    width: 100%;
     height: 19.56rem;
 }

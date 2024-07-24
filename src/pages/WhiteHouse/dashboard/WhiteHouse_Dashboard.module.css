@@ -4,27 +4,28 @@
     width: 100%;
     
 }
+#Dashboard_WrapperDiv{
+    padding: 5rem 8rem 5rem 7.5rem;
+}
 #Dashboard_CardGraph_Wrapper{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    column-gap: 34px;
-    row-gap: 40px;
+    /* flex-wrap: wrap; */
+    column-gap: 2.5rem;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 120px;
-    margin-top: 80px; 
+    margin-bottom: 2.5rem;
 }
 
 #Dashboard_Card_wrapper{
-    width: 38.43rem;
-    height: 15.37rem;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 22px;
 }
 .Dashboard_CardDiv{
-    width: 18.62rem;
+    width: 49%;
     height: 111px;
     justify-content:space-around;
     align-items: center;
@@ -44,25 +45,23 @@
 #BarChart_Div{
     width: 100%;
     display: flex;
-    column-gap: 34px; 
+    /* justify-content: space-between; */
+    column-gap: 2.5rem;
     align-items: center;
-    padding-bottom: 2rem;
 }
 #Dashboard_lineChart{
  display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
     border-radius: 25px;
-    border: 1px solid #F0F0F0;
     padding: 0 1rem;
     box-sizing: border-box;
-    width: 38.43rem;
+    width: 100%;
     height: 15.5rem;
 }
 
 #Dashboard_RevenueText {
     display: flex;
-    /* margin: 0  1rem; */
     box-sizing: border-box;
     align-items: center;
     height: 50px;
@@ -76,10 +75,9 @@
     flex-direction: column;
     background-color: #FFFFFF;
     border-radius: 25px;
-    border: 1px solid #F0F0F0;
     padding: 0 1rem;
     box-sizing: border-box;
-    width: 38.43rem;
+    width: 100%;
     height: 19.56rem;
 }
 
@@ -87,17 +85,15 @@
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
-    width: 38.43rem;
+    width: 100%;
     height: 19.56rem;
     border-radius: 25px;
-    border: 1px solid #F0F0F0;
     padding: 1rem;
     box-sizing: border-box;
 }
 
 #PayoutsText {
     display: flex;
-    /* margin: 0 30px; */
     margin-bottom: 1rem;
     box-sizing: border-box;
     align-items: center;

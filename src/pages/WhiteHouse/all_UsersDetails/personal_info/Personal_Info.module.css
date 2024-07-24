@@ -4,7 +4,7 @@
     background-color: #F9F9F9;
 }
 #Personal_Info_wrapperDiv{
-    padding: 3.8rem 7.5rem;
+    padding: 3.8rem 8rem 3.8rem 7.5rem;
 }
 #Personal_Info_buttonDiv{
     width: 100%;
@@ -103,10 +103,12 @@ td {
 #Personal_Info_Card_wrapper{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    column-gap: 2rem;
+    /* justify-content: space-between; */
 }
 .Personal_Info_CardDiv{
-    width: 18.62rem;
+    /* width: 18.62rem; */
+    width: 100%;
     height: 111px;
     justify-content:space-around;
     align-items: center;
@@ -124,7 +126,7 @@ td {
     color: #717171;
 }
 #Personal_Info_Report_mainDiv{
-    width: 39rem;
+    width: 100%;
     height:22.56rem;
     border-radius: 1.25rem;
     background-color: #FFFFFF;
@@ -133,7 +135,6 @@ td {
     display: flex;
     flex-direction: column;
     row-gap: 0.9rem;
-    margin-top: 1rem;
 }
 #Personal_Info_ReportTextDiv{
     display: flex;
@@ -186,9 +187,8 @@ td {
 #Personal_Info_graphReport_Div{
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-    /* column-gap: 1.3rem; */
+    margin-top: 3rem;
+    column-gap: 2rem;
 }
 #graph{
     width: 39rem;
@@ -222,9 +222,8 @@ td {
     flex-direction: column;
     background-color: #FFFFFF;
     border-radius: 25px;
-    border: 1px solid #F0F0F0;
     padding: 0 1rem;
     box-sizing: border-box;
-    width: 39rem;
+    width: 100%;
     height: 22.56rem;
 }
