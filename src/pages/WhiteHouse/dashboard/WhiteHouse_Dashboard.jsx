@@ -10,6 +10,7 @@ import line_graph from '../../../assets/images/line_Graph.png'
 import Chart from '../../../components/chart/Chart'
 import NavBar from '../../../components/navBar/NavBar'
 import Header from '../../../components/header/Header'
+import Stats_Card from '../../../components/stats_card/Stats_Card'
 
 const WhiteHouse_Dashboard = () => {
     // const [data, setData] = useState()
@@ -99,6 +100,34 @@ const WhiteHouse_Dashboard = () => {
             amt: 2100,
         },
     ];
+    const stats_card1 = [
+        {
+            img: rise,
+            figure: "200k",
+            text: "Bet Placed",
+            to: "/placebet"
+
+        },
+        {
+            img: person,
+            figure: "2m",
+            text: "All Users",
+            to: "/placebet"
+        },
+        {
+            img: flag,
+            figure: "14",
+            text: "Reg Countries",
+            to: "/placebet"
+        },
+        {
+            img: rise,
+            figure: "200k",
+            text: "Bet Placed",
+            to: "/placebet"
+
+        },
+    ]
 
     return (
         <div id={Style.Dashboard_MainDiv}>
@@ -109,40 +138,20 @@ const WhiteHouse_Dashboard = () => {
             <div id={Style.Dashboard_WrapperDiv}>
                 <div id={Style.Dashboard_CardGraph_Wrapper}>
                     <div id={Style.Dashboard_Card_wrapper}>
-                        <div className={Style.Dashboard_CardDiv}>
-                            <img src={rise} alt="" />
-                            <div>
-                                <p className={Style.Card_figure}>200k</p>
-                                <p className={Style.Card_text}>Bet Placed</p>
-                            </div>
-                            <img src={arrow_side} alt="" />
-                        </div>
-                        <div className={Style.Dashboard_CardDiv}>
-                            <img src={person} alt="" />
-                            <div>
-                                <p className={Style.Card_figure}>2m</p>
-                                <p className={Style.Card_text}>All Users</p>
-                            </div>
-                            <img src={arrow_side} alt="" />
-                        </div>
-                        <div className={Style.Dashboard_CardDiv}>
-                            <img src={flag} alt="" />
-                            <div>
-                                <p className={Style.Card_figure}>14</p>
-                                <p className={Style.Card_text}>Reg Countries</p>
-                            </div>
-                            <img src={arrow_side} alt="" />
-                        </div>
-                        <div className={Style.Dashboard_CardDiv}>
-                            <img src={rise} alt="" />
-                            <div>
-                                <p className={Style.Card_figure}>200k</p>
-                                <p className={Style.Card_text}>Bet Placed</p>
-                            </div>
-                            <img src={arrow_side} alt="" />
-                        </div>
+                        
+                            {
+                                stats_card1.map((obj)=>{
+                                    return(
+                                        <Stats_Card
+                                        img ={obj.img}
+                                        figure = {obj.figure}
+                                        text = {obj.text} 
+                                        to = {obj.to}/>
+                                    )
+                                })
+                            }
+                    
                     </div>
-                    {/* <img id={Style.img} src={line_graph} alt="" /> */}
                     <div id={Style.Dashboard_lineChart}>
                         <p id={Style.Dashboard_RevenueText}>Revenue</p>
                         <ResponsiveContainer width="100%" height="100%">
@@ -180,14 +189,12 @@ const WhiteHouse_Dashboard = () => {
                                 <YAxis
                                     axisLine={false} tickLine={false} fontSize={"0.7rem"}
                                 />
-                                {/* <Legend/> */}
                                 <Tooltip />
                                 <Bar dataKey="pv" fill="#113353" />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
 
-                    {/* <Chart data={line_data}></Chart> */}
                     <div id={Style.Chart_mainDiv}>
                         <div id={Style.PayoutsText}>Bet Placed</div>
                         <ResponsiveContainer width="100%" height="100%">
@@ -205,7 +212,6 @@ const WhiteHouse_Dashboard = () => {
                                 <YAxis
                                     axisLine={false} tickLine={false} fontSize={"0.7rem"}
                                 />
-                                {/* <Legend/> */}
                                 <Tooltip />
                                 <Bar dataKey="uv" fill="#075070" />
                                 <Bar dataKey="amt" fill="#26EEC8" />

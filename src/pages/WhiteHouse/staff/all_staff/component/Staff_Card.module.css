@@ -32,7 +32,7 @@
     box-sizing: border-box;
 }
 .Staff_Card_careRep{
-    height: 0.5rem;
+    min-height: 0.5rem;
     color: #000000;
 }
 .Staff_Card_nameText{

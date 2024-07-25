@@ -30,49 +30,54 @@ import User_Friends from "./pages/WhiteHouse/all_UsersDetails/user_friends/User_
 import First_page from "./pages/WhiteHouse/first_page/First_page";
 import Chat_History from "./pages/WhiteHouse/chat_history/Chat_History";
 import Revenue from "./pages/WhiteHouse/revenue/Revenue";
+import Alphabet_mainLayout from "./mainLayout3/Alphabet_mainLayout";
+// import All_Accounts from "./pages/alphaBet/accounts/All_Accounts"
+import Dashboard from "./pages/alphaBet/dashboard/Dashboard"
+
+
 
 
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout/>,
+        element: <MainLayout />,
         children: [
             {
-                index:true,
-                element: <First_page/>
+                index: true,
+                element: <First_page />
             },
             {
                 // index:true,
                 path: "/newAccount",
-                element: <CreateNew_Account/>
+                element: <CreateNew_Account />
             },
             {
                 path: "/businessDetails",
-                element: <Business_Details/>
+                element: <Business_Details />
             },
             {
                 path: "/businessTransaction",
-                element: <Business_Transaction/>
+                element: <Business_Transaction />
             },
             {
                 path: "/directorDetails",
-                element: <Director_Details/>
+                element: <Director_Details />
             },
             {
                 path: "/success",
-                element: <Congratulation/>
+                element: <Congratulation />
             },
             {
                 path: "/signIn",
-                element: <SignIn/>
+                element: <SignIn />
             }
         ]
 
     },
     {
         path: "/",
-        element: <PopupContext><MainLayout_Two/></PopupContext> ,
+        element: <PopupContext><MainLayout_Two /></PopupContext>,
         children: [
             // {
             //     path: "/dashboard",
@@ -80,91 +85,101 @@ const router = createBrowserRouter([
             // },
             {
                 path: "/whiteHouseDashboard",
-                element: <WhiteHouse_Dashboard/>
+                element: <WhiteHouse_Dashboard />
             },
             {
                 path: "/dice",
-                element: <Dice/>
+                element: <Dice />
             },
             {
                 path: "/customerCare",
-                element: <CustomerCare/>
+                element: <CustomerCare />
             },
             {
                 path: "/allStaffs",
-                element: <All_Staff/>
+                element: <All_Staff />
             },
             {
                 path: "/transactions",
-                element:  <Transaction/>
+                element: <Transaction />
             },
             {
                 path: "/loggedsession",
-                element: <Logged_sessions/>
+                element: <Logged_sessions />
             },
             {
                 path: "/conversation",
-                element: <Conversation/>
+                element: <Conversation />
             },
             {
                 path: "/placebet",
-                element: <PlaceBet/>
+                element: <PlaceBet />
             },
             {
                 path: "/allusers",
-                element: <All_Users/>
+                element: <All_Users />
             },
             {
                 path: "/userDetails",
-                element: <Personal_Info/>
+                element: <Personal_Info />
             },
             {
                 path: "/userplacedbet",
-                element: <Users_placedbets/>
+                element: <Users_placedbets />
             },
             {
                 path: "/complainDetails",
-                element: <Complain_Details/>
+                element: <Complain_Details />
             },
             {
                 path: "/staffDetails",
-                element: <Staff_Details/>
+                element: <Staff_Details />
             },
             {
                 path: "/totalPlayers",
-                element: <Total_Players/>
+                element: <Total_Players />
             },
             {
                 path: "/totalBetPlaced",
-                element: <Total_BetPlaced/>
+                element: <Total_BetPlaced />
             },
             {
                 path: "/winners",
-                element: <Winner_loser/>
+                element: <Winner_loser />
             },
             {
                 path: "/countries",
-                element: <Countries/>
+                element: <Countries />
             },
             {
                 path: "/department",
-                element: <Department/>
+                element: <Department />
             },
             {
                 path: "/userFriends",
-                element: <User_Friends/>
+                element: <User_Friends />
             },
             {
                 path: "/chatHistory",
-                element: <Chat_History/>
+                element: <Chat_History />
             },
             {
                 path: "/revenue",
-                element: <Revenue/>
+                element: <Revenue />
             }
-            
+
         ]
 
+    },
+    {
+        path: "/",
+        element: <Alphabet_mainLayout />,
+        children: [
+            {
+                path: "/allAccounts",
+                element: <Dashboard/>
+            }
+        ]
     }
 ])
 export default router

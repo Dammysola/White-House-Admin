@@ -6,9 +6,9 @@ import Header from '../../../../components/header/Header'
 import person from '../../../../assets/images/Person1.png'
 import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
 import rise from '../../../../assets/svg/rise.svg'
-import arrow_side from '../../../../assets/svg/arrow_side.svg'
 import users from '../../../../assets/svg/users.svg'
 import '../staff_details/Staff_Details.css'
+import Stats_Card from '../../../../components/stats_card/Stats_Card';
 
 
 const Staff_Details = () => {
@@ -59,6 +59,22 @@ const Staff_Details = () => {
     ];
 
 
+    const stats_card_2 = [
+    {
+        img: rise,
+        figure: "200k",
+        text: "Bet Placed",
+        to: "/placebet"
+
+    },
+    {
+        img: users,
+        figure: "2m",
+        text: "All Users",
+        to: "/placebet"
+    },
+
+    ]
     const today = new Date();
     const getRange = (startDate, endDate) => {
         const date = new Date(startDate.getTime());
@@ -139,11 +155,11 @@ const Staff_Details = () => {
 
                 </div>
                 <div id={Style.Staff_Details_hoursDaily_logDiv}>
-                    <div>
+                    <div id={Style.Staff_Details_Chart_StatsDiv}>
                         <div id={Style.Staff_Details_BarChart}>
                             <div id={Style.Staff_Details_workingHours_TextDiv}>
-                            <p>Working Hours</p>
-                            <button>View Details</button>
+                                <p>Working Hours</p>
+                                <button>View Details</button>
                             </div>
 
                             <CalendarHeatmap
@@ -177,22 +193,17 @@ const Staff_Details = () => {
                         </div>
 
                         <div id={Style.Staff_Details_Card_wrapper}>
-                            <div className={Style.Staff_Details_CardDiv}>
-                                <img src={rise} alt="" />
-                                <div>
-                                    <p className={Style.Card_figure}>200k</p>
-                                    <p className={Style.Card_text}>All Staff</p>
-                                </div>
-                                <img src={arrow_side} alt="" />
-                            </div>
-                            <div className={Style.Staff_Details_CardDiv}>
-                                <img src={users} alt="" />
-                                <div>
-                                    <p className={Style.Card_figure}>14</p>
-                                    <p className={Style.Card_text}>Departments</p>
-                                </div>
-                                <img src={arrow_side} alt="" />
-                            </div>
+                        {
+                                stats_card_2.map((obj)=>{
+                                    return(
+                                        <Stats_Card
+                                        img ={obj.img}
+                                        figure = {obj.figure}
+                                        text = {obj.text} 
+                                        to = {obj.to}/>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
 
@@ -204,6 +215,12 @@ const Staff_Details = () => {
                         </div>
 
                         <table>
+                            {/* <tr>
+                                <th>ue8hyf</th>
+                                <th>wkfnuj</th>
+                                <th>omji</th>
+                                <th>omji</th>
+                            </tr> */}
 
                             <tr>
                                 <td>Days</td>

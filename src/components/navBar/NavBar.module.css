@@ -38,7 +38,7 @@
     cursor: pointer;
     color: #003E79;
 }
-#NavBar_ContactDiv div{
+#NavBar_ContactDiv NavBar_line{
     width: 2px;
     height: 40px;
     background-color: #D9D9D9;
@@ -55,19 +55,19 @@
     display: none;
 } */
 .Nav_styled_Link{
-    background-color: rgba(255, 255, 255, .2);
-    align-items: center;
+    /* background-color: rgba(255, 255, 255, .2); */
+    /* align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    color: #FFFFFF;
+    align-items: center; */
+    /* color: #FFFFFF;
     border: 1px solid #FFFFFF;
     font-size: 1rem;
     min-width: 6.56rem;
     padding: 1rem;
     box-sizing: border-box;
     height: 35px;
-    border-radius: 7px;
+    border-radius: 7px; */
 }
 
 #dropdown{
@@ -82,9 +82,10 @@
     position: absolute;
     margin-left: -50px;
     color: #353535;
-    /* background: url("../../assets/svg/Payment_background.svg") ; */
     background-color: #FFFFFF;
     border-radius: 1rem;
+}
+#Business_name_dropdown{
 
 }
 
@@ -95,21 +96,34 @@ ul{
     justify-content: center;
      list-style: none;
 }
-li{
+#dropdown li{
     display: flex;
-    /* column-gap: 0.5rem; */
+    column-gap: 0.5rem;
     justify-content: center;
     text-align: center;
     font-size: 1rem;
     color: #000000;
 }
-#radio_input{
-    /* background-color: #003E79; */
-    
-    /* color: #000000; */
+#NavBar_businessName{
+    width: 10rem;
+}
+#Business_name_dropdown{
+    display: none;
+}
+.NavBar_text:hover #Business_name_dropdown{
+    display: block;
+    height: 84px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: -2rem;
+    margin-left:1rem;
+    color: #FFFFFF;
+    border-radius: 1rem;
 }
 
-.radioInput{
+
+/* .radioInput{
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -117,7 +131,6 @@ li{
     border: 2px solid #ccc;
     border-radius: 5px;
     background-color: #003E79;
-    /* transition: background-color 0.3s, border-color 0.3s; */
 }
 
 
@@ -128,7 +141,6 @@ input[type="radio"] {
     margin: 0;
     font: inherit;
     cursor: pointer;
-    /* color: currentColor; */
     width: 1.15em;
     height: 1.15em;
     border: 0.1em solid currentColor;
@@ -136,7 +148,6 @@ input[type="radio"] {
   }
 
   input[type="radio"] {
-    /* ...existing styles */
     display: grid;
     place-content: center;
   }
@@ -153,4 +164,4 @@ input[type="radio"] {
   
   input[type="radio"]:checked::before {
     transform: scale(1);
-  }
+  } */

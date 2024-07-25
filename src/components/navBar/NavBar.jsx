@@ -18,9 +18,9 @@ const NavBar = () => {
   const [activeRadio, setActiveRadio] = useState(false)
 
 
-const radio =()=>{
-  setActiveRadio(true)
-}
+  const radio = () => {
+    setActiveRadio(true)
+  }
 
 
   const handleClick = (index) => {
@@ -122,10 +122,20 @@ const radio =()=>{
           </NavLink>
           <p>Mgt</p>
           <button>English <img src={arrowDown} alt="" /></button>
-          <div></div>
+          <div id={Style.NavBar_line}></div>
           <img src={mail} alt="" />
           <img src={user} alt="" />
-          <p>AlphaBet Limited <img src={arrowDown} alt="" /></p>
+          <NavLink to={''} className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
+            <div >
+              <p id={Style.NavBar_businessName}>WhiteHouse Limited <img src={arrowDown} alt="" /></p>
+              <div id={Style.Business_name_dropdown}>
+                <ul>
+                  {/* <NavLink><li>WhiteHouse LTD</li></NavLink> */}
+                  <NavLink to={'/allAccounts'}><li>AlphaBet Limited</li></NavLink>
+                </ul>
+              </div>
+            </div>
+          </NavLink>
         </div>
       </div>
 

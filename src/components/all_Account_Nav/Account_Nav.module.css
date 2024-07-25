@@ -47,7 +47,7 @@
     cursor: pointer;
     color: #003E79;
 }
-#NavBar_ContactDiv div{
+#NavBar_ContactDiv #NavBar_line{
     width: 2px;
     height: 40px;
     background-color: #D9D9D9;
@@ -63,6 +63,20 @@
     margin-left: -100px;
     color: #353535;
     background: url("../../assets/svg/Payment_background.svg") ;
+}
+#Business_name_dropdown{
+    display: none;
+}
+.NavBar_text:hover #Business_name_dropdown{
+    display: block;
+    height: 84px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: -2rem;
+    margin-left:-3rem;
+    color: #FFFFFF;
+    border-radius: 1rem;
 }
 /* .Nav_styled_Link hover #dropdown{
     display: block;

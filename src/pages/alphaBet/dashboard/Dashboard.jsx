@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Style from '../dashboard/Dashboard.module.css'
-import calendar from '../../assets/svg/Calendar.svg'
-import emoji from '../../assets/svg/Smiling_Face_with_Halo.svg'
-import Total_Card from '../../components/total_Card/Total_Card'
-import gamePad from '../../assets/svg/gamePad.svg'
-import arrow_down from '../../assets/svg/arrow_down.svg'
-import Chart from '../../components/chart/Chart'
+import calendar from '../../../assets/svg/Calendar.svg'
+import emoji from '../../../assets/svg/Smiling_Face_with_Halo.svg'
+import Total_Card from '../../../components/total_Card/Total_Card'
+import gamePad from '../../../assets/svg/gamePad.svg'
+import arrow_down from '../../../assets/svg/arrow_down.svg'
+import Chart from '../../../components/chart/Chart'
 
 
 

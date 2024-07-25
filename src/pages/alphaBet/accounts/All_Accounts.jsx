@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import Style from '../accounts/All_Accounts.module.css'
-import plus_blue from '../../assets/svg/Plus_blue.svg'
-import category_grid from '../../assets/svg/Category_Grid.svg'
-import document_img from '../../assets/svg/Document_img.svg'
-import All_AccountCard from '../../components/all_AccountCard/All_AccountCard'
-import No_Documents from '../../assets/svg/NoDocuments_img.svg'
-import Document_white from '../../assets/svg/Document_white.svg'
-import Category_grey from '../../assets/svg/Category_grey.svg'
-import { PopupContextHook } from '../../PopupContext '
+import plus_blue from '../../../assets/svg/Plus_blue.svg'
+import category_grid from '../../../assets/svg/Category_Grid.svg'
+import document_img from '../../../assets/svg/Document_img.svg'
+// import All_AccountCard from '../../../components/all_AccountCard/All_AccountCard'
+import No_Documents from '../../../assets/svg/NoDocuments_img.svg'
+import Document_white from '../../../assets/svg/Document_white.svg'
+import Category_grey from '../../../assets/svg/Category_grey.svg'
+import { PopupContextHook } from '../../../PopupContext '
 import Acc_Transaction from './account_Transaction/Acc_Transaction'
 
 
@@ -101,7 +101,7 @@ const All_Accounts = () => {
                                 {
                                     All_Account_Card.map((object) => {
                                         return (
-                                            <All_AccountCard
+                                            <All_Account_Card
                                                 accNumber={object.accNumber} />
                                         )
                                     })

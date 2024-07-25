@@ -14,46 +14,19 @@
     line-height: 38px;
 }
 
-#Total_Card_mapDiv {
+#DiceGame_Card_mapDiv {
     display: flex;
     column-gap: 2rem;
 }
 
-.Dashboard_CardDiv {
-    width: 49%;
-    height: 111px;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #FFFFFF;
-    border-radius: 20px;
-    display: flex;
-}
-
-#Dashboard_Card_wrapper {
-    /* min-width: 38.43rem; */
-    /*  height: 15.37rem; */
+#DiceGame_Card_wrapper {
+    width: 100%;
+    height: 15.37rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 22px;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
 }
-
-.Card_figure {
-    color: #000000;
-    font-size: 1.5rem;
-    height: 8px;
-}
-
-.Card_text {
-    font-size: 1.2rem;
-    color: #717171;
-}
-
-/* #DiceGame_graph{
-    width: 40rem;
-    height: 19rem;
-    margin-top: 6rem;
-} */
 .Revenue_earningDiv {
     width: 100%;
     height: 15.37rem;
@@ -64,11 +37,6 @@
     justify-content: center;
     padding: 1.5rem;
     box-sizing: border-box;
-}
-
-.Revenue_earningDiv img {
-    /* width: 3rem;
-    text-align: center; */
 }
 
 .Revenue_earningDiv #Revenue_percentText {
@@ -106,19 +74,14 @@
     flex-direction: column;
     align-items: center;
 }
-
-/* #Revenue_progressDiv img{
-    margin: -3rem;
-} */
 #SmileyImg_Div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: -1rem;
+    margin-left: -2rem;
+    box-sizing: border-box;
  }
 #Revenue_smileyImg{
     margin-top: -3rem;
     text-align: center;
-    /* box-sizing: border-box; */
 }
 .Revenue_progressBar {
     width: 10.62rem;
@@ -128,16 +91,16 @@
     border: 10px solid #ECEAF8;
     border-bottom: 0;
 }
-
 #Revenue_total_EarningDiv {
+    width: 100%;
     display: flex;
     column-gap: 1.5rem;
 }
 
 #DiceGame_cardGraph_wrapper {
+    width: 100%;
     display: flex;
     column-gap: 2rem;
-    /* justify-content: space-between; */
 }
 
 #DiceGame_cardGraph_wrapper img {
@@ -150,16 +113,13 @@
     display: flex;
     align-items: center;
     column-gap: 2.5rem;
-    /* justify-content: space-between; */
 
 }
-
 #BarChart_TextWrapperDiv {
     width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
-    /* margin-top: 8.5rem; */
 }
 
 #AreaChartDiv {
@@ -202,7 +162,6 @@
 
 #PayoutsText {
     display: flex;
-    /* margin: 0 30px; */
     margin-bottom: 1rem;
     box-sizing: border-box;
     align-items: center;
@@ -210,5 +169,8 @@
     border-bottom: 1.5px solid #E3E3E3;
     font-size: 1.125rem;
     color: #003E79;
-
+}
+#DiceGame_Card_wrapper_two{
+    display: flex;
+    column-gap: 2rem;
 }

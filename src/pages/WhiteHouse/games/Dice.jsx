@@ -10,6 +10,7 @@ import person from '../../../assets/svg/person.svg'
 import flag from '../../../assets/svg/flag.svg'
 import smiley from '../../../assets/svg/blue_smiley.svg'
 import arrow_down from '../../../assets/svg/arrow_down-dark.svg'
+import Stats_Card from '../../../components/stats_card/Stats_Card';
 
 
 
@@ -98,6 +99,51 @@ const DiceGame = () => {
       amt: 2100,
     },
   ]
+
+  const stats_card2 = [
+    {
+      img: rise,
+      figure: "200k",
+      text: "Bet Placed",
+      to: "/placebet"
+
+    },
+    {
+      img: person,
+      figure: "2m",
+      text: "All Users",
+      to: "/placebet"
+    },
+    {
+      img: flag,
+      figure: "14",
+      text: "Reg Countries",
+      to: "/placebet"
+    },
+    {
+      img: rise,
+      figure: "200k",
+      text: "Bet Placed",
+      to: "/placebet"
+
+    },
+  ]
+
+  const stats_card3 = [
+    {
+      img: rise,
+      figure: "200k",
+      text: "Bet Placed",
+      to: "/placebet"
+
+    },
+    {
+      img: person,
+      figure: "2m",
+      text: "All Users",
+      to: "/placebet"
+    }
+  ]
   return (
     <div id={Style.DiceGame_mainDiv}>
       {/* <div id={Style.PlaceBet_HeaderDiv}> */}
@@ -109,7 +155,7 @@ const DiceGame = () => {
 
       <div id={Style.DiceGame_wrapperDiv}>
         <p className={Style.PlaceBet_headerText}>Today's Summary</p>
-        <div id={Style.Total_Card_mapDiv}>
+        <div id={Style.DiceGame_Card_mapDiv}>
           {
             total_Card2.map((object) => {
               return (
@@ -125,45 +171,19 @@ const DiceGame = () => {
         </div>
         <p className={Style.PlaceBet_headerText}>Overview</p>
         <div id={Style.DiceGame_cardGraph_wrapper}>
-          <div id={Style.Dashboard_Card_wrapper}>
-
-            <div className={Style.Dashboard_CardDiv}>
-              <img src={rise} alt="" />
-              <div>
-                <p className={Style.Card_figure}>200k</p>
-                <p className={Style.Card_text}>Bet Placed</p>
-              </div>
-              <img src={arrow_side} alt="" />
-            </div>
-
-            <div className={Style.Dashboard_CardDiv}>
-              <img src={person} alt="" />
-              <div>
-                <p className={Style.Card_figure}>2m</p>
-                <p className={Style.Card_text}>All Users</p>
-              </div>
-              <img src={arrow_side} alt="" />
-            </div>
-
-            <div className={Style.Dashboard_CardDiv}>
-              <img src={flag} alt="" />
-              <div>
-                <p className={Style.Card_figure}>14</p>
-                <p className={Style.Card_text}>Reg Countries</p>
-              </div>
-              <img src={arrow_side} alt="" />
-            </div>
-
-            <div className={Style.Dashboard_CardDiv}>
-              <img src={rise} alt="" />
-              <div>
-                <p className={Style.Card_figure}>200k</p>
-                <p className={Style.Card_text}>Bet Placed</p>
-              </div>
-              <img src={arrow_side} alt="" />
-            </div>
+          <div id={Style.DiceGame_Card_wrapper}>
+            {
+              stats_card2.map((obj) => {
+                return (
+                  <Stats_Card
+                    img={obj.img}
+                    figure={obj.figure}
+                    text={obj.text}
+                    to={obj.to} />
+                )
+              })
+            }
           </div>
-
           <div id={Style.Revenue_total_EarningDiv}>
 
             <div className={Style.Revenue_earningDiv}>
@@ -256,25 +276,19 @@ const DiceGame = () => {
             </div>
 
 
-            <div id={Style.Dashboard_Card_wrapper}>
-
-              <div className={Style.Dashboard_CardDiv}>
-                <img src={flag} alt="" />
-                <div>
-                  <p className={Style.Card_figure}>14</p>
-                  <p className={Style.Card_text}>Reg Countries</p>
-                </div>
-                <img src={arrow_side} alt="" />
-              </div>
-
-              <div className={Style.Dashboard_CardDiv}>
-                <img src={rise} alt="" />
-                <div>
-                  <p className={Style.Card_figure}>200k</p>
-                  <p className={Style.Card_text}>Bet Placed</p>
-                </div>
-                <img src={arrow_side} alt="" />
-              </div>
+            <div id={Style.DiceGame_Card_wrapper_two}>
+            {
+              stats_card3.map((obj) => {
+                return (
+                  <Stats_Card
+                    img={obj.img}
+                    figure={obj.figure}
+                    text={obj.text}
+                    to={obj.to} />
+                )
+              })
+            }
+              
             </div>
           </div>
         </div>
