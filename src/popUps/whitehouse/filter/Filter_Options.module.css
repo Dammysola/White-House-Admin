@@ -1,0 +1,27 @@
+#Filter_options_mainDiv{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .3);
+
+}
+#Filter_options_wrapperDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* row-gap: 1.5rem; */
+    width: 12.12rem;
+    height: 6.25rem;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+}
+#Filter_options_wrapperDiv p{
+    display: flex;
+    column-gap: 0.3rem;
+    color: #000000;
+    font-size: 1rem;
+}
+
