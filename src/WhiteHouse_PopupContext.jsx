@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react"
 
 export const myContext = createContext()
 
@@ -14,6 +14,8 @@ const WhiteHouse_PopupContext = ({children}) => {
     const updateFilterPopup = (data)=>{
         setFilterPopup(data)
     }
+
+
   return (
     <myContext.Provider value={{
         filterPopup,

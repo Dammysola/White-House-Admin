@@ -33,6 +33,7 @@ import Revenue from "./pages/WhiteHouse/revenue/Revenue";
 import Alphabet_mainLayout from "./mainLayout3/Alphabet_mainLayout";
 // import All_Accounts from "./pages/alphaBet/accounts/All_Accounts"
 import Dashboard from "./pages/alphaBet/dashboard/Dashboard"
+import WhiteHouse_PopupContext from "./WhiteHouse_PopupContext";
 
 
 
@@ -77,7 +78,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/",
-        element: <PopupContext><MainLayout_Two/></PopupContext>,
+        element: <WhiteHouse_PopupContext><MainLayout_Two/></WhiteHouse_PopupContext>,
         children: [
             // {
             //     path: "/dashboard",

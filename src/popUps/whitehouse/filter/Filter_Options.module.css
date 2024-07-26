@@ -1,36 +1,53 @@
-#Filter_options_mainDiv{
+#Filter_options_mainDiv {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, .3);
+    flex-direction: column;
+    /* background-color: rgba(0, 0, 0, .3); */
     position: absolute;
+    margin-top: -34rem;
+    box-sizing: border-box;
     top: 0;
     bottom: 0;
-    z-index: 999;
+    /* z-index: 999; */
 
 }
-#Filter_options_wrapperDiv{
+
+#Filter_options_mainDiv button {
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    border: none;
+}
+
+#Filter_options_wrapperDiv {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     padding: 0.87rem;
     box-sizing: border-box;
     justify-content: center;
     row-gap: 1.5rem;
     width: 12.12rem;
+    margin-left: 6rem;
+    box-sizing: border-box;
     height: 6.25rem;
     background-color: #FFFFFF;
     border-radius: 1rem;
+    position: absolute;
+    /* overflow: hidden; */
+    /* margin-top: -2rem; */
 }
-#Filter_options_wrapperDiv div{
+
+#Filter_options_wrapperDiv div {
     display: flex;
     align-items: center;
     column-gap: 0.5rem;
     color: #000000;
     font-size: 1rem;
 }
+
 /* .Filter_optionsDiv{
     display: flex;
     align-items: center;
@@ -49,5 +66,4 @@
     height: 1.15em;
     border: 0.1em solid currentColor;
     border-radius: 50%;
-  }
-
+}

@@ -7,14 +7,14 @@ import Header from '../../../../components/header/Header'
 import search from '../../../../assets/svg/Search.svg'
 import App_Pagination from '../../../../components/app_Pagination/App_Pagination'
 import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
+// import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
 
 
 
 
 
 const Total_BetPlaced = () => {
-  const {setFilter} = PopupContextHook()
-
+  const {updateFilterPopup} = PopupContextHook()
   const showFilter =()=>{
     updateFilterPopup(true)
   }
@@ -175,7 +175,7 @@ const Total_BetPlaced = () => {
             </table>
           </div>
         </div>
-            <div>
+            <div id={Style.Total_BetPlaced_App_Pagination}>
               <App_Pagination/>
             </div>
       </div>

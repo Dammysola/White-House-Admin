@@ -98,3 +98,6 @@ td {
 #PlaceBet_tableDiv #lastline{
     border-bottom: none;
 }
+#Total_BetPlaced_App_Pagination{
+    /* height: 1rem; */
+}
