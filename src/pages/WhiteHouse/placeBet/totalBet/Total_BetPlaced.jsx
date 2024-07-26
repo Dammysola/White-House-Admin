@@ -6,12 +6,20 @@ import InputField from '../../../../components/input/InputField'
 import Header from '../../../../components/header/Header'
 import search from '../../../../assets/svg/Search.svg'
 import App_Pagination from '../../../../components/app_Pagination/App_Pagination'
+import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
 
 
 
 
 
 const Total_BetPlaced = () => {
+  const {setFilter} = PopupContextHook()
+
+  const showFilter =()=>{
+    updateFilterPopup(true)
+  }
+  
+  
   const [searchItem, setSearchItem] = useState({
     age: ""
   })
@@ -53,14 +61,15 @@ const Total_BetPlaced = () => {
                 onChange={searchDetails} 
                 />
 
-              {/* <input type="text" value={searchItem.age}
+
+                {/* <input type="text" value={searchItem.age}
                 onChange={searchDetails} name={"age"}
               /> */}
             </form>
           </div>
 
-          <img src={filter_img} alt="" />
-          <img src={download} alt="" />
+          <img onClick={showFilter} src={filter_img} alt="" />
+          <img  src={download} alt="" />
         </div>
 
         <div id={Style.TotalBet_wrapper}>

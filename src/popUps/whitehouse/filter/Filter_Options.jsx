@@ -6,8 +6,8 @@ const Filter_options = () => {
   return (
     <div id={Style.Filter_options_mainDiv}>
         <div id={Style.Filter_options_wrapperDiv}>
-            <p><input type="radio" name="" id="" /> By User ID</p>
-            <p><input type="radio" name="" id="" /> By Ticket ID</p>
+            <div><input type="radio" name="" id="" /> By Users ID</div>
+            <div><input type="radio" name="" id="" /> By Ticket ID</div>
         </div>
     </div>
   )

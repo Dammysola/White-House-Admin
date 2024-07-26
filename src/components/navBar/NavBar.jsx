@@ -15,6 +15,7 @@ const NavBar = () => {
   const [activeLink4, setActiveLink4] = useState(false)
   const [activeLink5, setActiveLink5] = useState(false)
   const [activeLink6, setActiveLink6] = useState(false)
+  const [activeLink7, setActiveLink7] = useState(false)
   const [activeRadio, setActiveRadio] = useState(false)
 
 
@@ -78,6 +79,7 @@ const NavBar = () => {
       setActiveLink4(false)
       setActiveLink5(false)
       setActiveLink6(true)
+      setActiveLink7(false)
     }
   };
 
@@ -107,17 +109,17 @@ const NavBar = () => {
             </div>
           </NavLink>
 
-          <NavLink to={'/allusers'} className={`${activeLink6 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(6)}>
+          <NavLink to={'/allusers'} className={`${activeLink4 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
             <p>Users</p>
           </NavLink>
 
-          <NavLink id='transactions' to={'/transactions'} className={`${activeLink4 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(4)}>
+          <NavLink id='transactions' to={'/transactions'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(5)}>
             <p>Transactions</p>
           </NavLink>
           <p>Reports</p>
         </div>
         <div id={Style.NavBar_ContactDiv}>
-          <NavLink to={'/customerCare'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(5)}>
+          <NavLink to={'/customerCare'} className={`${activeLink6 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(6)}>
             <p>Customer Care</p>
           </NavLink>
           <p>Mgt</p>
@@ -125,7 +127,7 @@ const NavBar = () => {
           <div id={Style.NavBar_line}></div>
           <img src={mail} alt="" />
           <img src={user} alt="" />
-          <NavLink to={''} className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
+          <NavLink to={''} className={`${activeLink7 ? Style.Nav_styled_Link : Style.NavBar_text}`}>
             <div >
               <p id={Style.NavBar_businessName}>WhiteHouse Limited <img src={arrowDown} alt="" /></p>
               <div id={Style.Business_name_dropdown}>

@@ -77,7 +77,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/",
-        element: <PopupContext><MainLayout_Two /></PopupContext>,
+        element: <PopupContext><MainLayout_Two/></PopupContext>,
         children: [
             // {
             //     path: "/dashboard",

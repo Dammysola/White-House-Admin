@@ -10,7 +10,7 @@
 }
 #NavBar_textDiv{
     display: flex;
-    column-gap: 32px;
+    column-gap: 2rem;
     align-items: center;
 }
 #NavBar_textDiv #game{
@@ -25,20 +25,20 @@
 }
 #NavBar_ContactDiv{
     display: flex;
-    column-gap: 15px;
+    column-gap: 0.62rem;
     align-items: center;
 }
 #NavBar_ContactDiv button{
-    margin-left: 25px;
+    margin-left: 1.56rem;
     width:  4.88rem;
-    height: 33px;
+    height: 2.0rem;
     background-color: #FFFFFF;
     border: none;
-    border-radius:7px;
+    border-radius:0.43rem;
     cursor: pointer;
     color: #003E79;
 }
-#NavBar_ContactDiv NavBar_line{
+#NavBar_ContactDiv #NavBar_line{
     width: 2px;
     height: 40px;
     background-color: #D9D9D9;
@@ -55,19 +55,19 @@
     display: none;
 } */
 .Nav_styled_Link{
-    /* background-color: rgba(255, 255, 255, .2); */
-    /* align-items: center;
+    background-color: rgba(255, 255, 255, .2); 
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center; */
-    /* color: #FFFFFF;
+    align-items: center;
+    color: #FFFFFF;
     border: 1px solid #FFFFFF;
     font-size: 1rem;
     min-width: 6.56rem;
     padding: 1rem;
     box-sizing: border-box;
     height: 35px;
-    border-radius: 7px; */
+    border-radius: 7px;
 }
 
 #dropdown{
@@ -98,7 +98,7 @@ ul{
 }
 #dropdown li{
     display: flex;
-    column-gap: 0.5rem;
+    /* column-gap: 0.5rem; */
     justify-content: center;
     text-align: center;
     font-size: 1rem;
@@ -122,8 +122,7 @@ ul{
     border-radius: 1rem;
 }
 
-
-/* .radioInput{
+.radioInput{
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -135,7 +134,7 @@ ul{
 
 
 
-input[type="radio"] {
+#dropdown input[type="radio"] {
     appearance: none;
     background-color: #fff;
     margin: 0;
@@ -147,12 +146,12 @@ input[type="radio"] {
     border-radius: 50%;
   }
 
-  input[type="radio"] {
+#dropdown input[type="radio"] {
     display: grid;
     place-content: center;
   }
   
-  input[type="radio"]::before {
+#dropdown input[type="radio"]::before {
     content: "";
     width: 0.65em;
     height: 0.65em;
@@ -164,4 +163,4 @@ input[type="radio"] {
   
   input[type="radio"]:checked::before {
     transform: scale(1);
-  } */
+  } 

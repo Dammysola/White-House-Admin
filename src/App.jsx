@@ -14,8 +14,7 @@ function App() {
   
   return (
     <> 
-      {/* <RouterProvider router={router}/> */}
-      <Filter_options/>
+      <RouterProvider router={router}/>
     </>
   )
 }
