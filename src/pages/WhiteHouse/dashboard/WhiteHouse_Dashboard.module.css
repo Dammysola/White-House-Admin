@@ -28,7 +28,6 @@
 #BarChart_Div{
     width: 100%;
     display: flex;
-    /* justify-content: space-between; */
     column-gap: 2.5rem;
     align-items: center;
 }

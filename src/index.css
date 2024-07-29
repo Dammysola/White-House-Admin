@@ -1,6 +1,3 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-} */
 body{
   margin: 0;
   padding: 0;
@@ -8,7 +5,6 @@ body{
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  /* background-color: #FAFAFA; */
 }
 a{
   text-decoration: none;

@@ -43,7 +43,7 @@
 #Filter_options_wrapperDiv div {
     display: flex;
     align-items: center;
-    column-gap: 0.5rem;
+    column-gap: 1rem;
     color: #000000;
     font-size: 1rem;
 }

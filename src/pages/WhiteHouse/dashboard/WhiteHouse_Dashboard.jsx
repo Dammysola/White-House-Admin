@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Style from '../dashboard/WhiteHouse_Dashboard.module.css'
-import { BarChart, LineChart, Line, YAxis, XAxis, Bar, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { BarChart, LineChart, Line, YAxis, XAxis, Bar, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from 'recharts'
 // import { } from 'recharts';
 import rise from '../../../assets/svg/rise.svg'
 import flag from '../../../assets/svg/flag.svg'
@@ -13,6 +13,10 @@ import Header from '../../../components/header/Header'
 import Stats_Card from '../../../components/stats_card/Stats_Card'
 
 const WhiteHouse_Dashboard = () => {
+
+    const customTickFormatter = (tick) => {
+        return `${tick}k`;
+      }
     // const [data, setData] = useState()
 
     // useEffect(() => {
@@ -112,13 +116,13 @@ const WhiteHouse_Dashboard = () => {
             img: person,
             figure: "2m",
             text: "All Users",
-            to: "/placebet"
+            to: "/allUsers"
         },
         {
             img: flag,
             figure: "14",
             text: "Reg Countries",
-            to: "/placebet"
+            to: "/countries"
         },
         {
             img: rise,
@@ -138,34 +142,41 @@ const WhiteHouse_Dashboard = () => {
             <div id={Style.Dashboard_WrapperDiv}>
                 <div id={Style.Dashboard_CardGraph_Wrapper}>
                     <div id={Style.Dashboard_Card_wrapper}>
-                        
-                            {
-                                stats_card1.map((obj)=>{
-                                    return(
-                                        <Stats_Card
-                                        img ={obj.img}
-                                        figure = {obj.figure}
-                                        text = {obj.text} 
-                                        to = {obj.to}/>
-                                    )
-                                })
-                            }
-                    
+
+                        {
+                            stats_card1.map((obj) => {
+                                return (
+                                    <Stats_Card
+                                        img={obj.img}
+                                        figure={obj.figure}
+                                        text={obj.text}
+                                        to={obj.to} />
+                                )
+                            })
+                        }
+
                     </div>
                     <div id={Style.Dashboard_lineChart}>
                         <p id={Style.Dashboard_RevenueText}>Revenue</p>
-                        <ResponsiveContainer width="100%" height="100%">
-                            <LineChart width={300} height={100} data={line_data} margin={{
-                                top: 5,
-                                right: 30,
-                                left: -30,
-                                bottom: 10,
-                            }} >
-                                <CartesianGrid strokeDasharray="3 4 " vertical={false}></CartesianGrid>
-                                <Line type="monotone" dot={false} dataKey="pv" stroke="#113353" backgr strokeWidth={4} />
-                                <XAxis dataKey="name" fontSize={"0.8rem"}></XAxis>
-                                <YAxis dataKey="pv" fontSize={"0.7rem"}></YAxis>
-                            </LineChart>
+                        <ResponsiveContainer width="100%" height="80%">
+                            <AreaChart
+                                width={500}
+                                height={300}
+                                data={line_data}
+                                margin={{
+                                    top: 0,
+                                    right: 0,
+                                    left: -10,
+                                    bottom: 0,
+                                }}
+
+                            >
+                                {/* <CartesianGrid strokeDasharray="3 3" /> */}
+                                <XAxis dataKey="name" axisLine={false} tickLine={false} />
+                                <YAxis axisLine={false} tickLine={false} tickFormatter={customTickFormatter} />
+                                <Tooltip />
+                                <Area type="normal" dataKey="pv" dot={true} stroke="#003E79" fill="#003e794d" />
+                            </AreaChart>
                         </ResponsiveContainer>
                     </div>
                 </div>

@@ -24,6 +24,7 @@
 }
 #input_FilterDiv img{
     height: 39px;
+    cursor: pointer;
 }
 #searchDiv{
     margin-top: -15px;
