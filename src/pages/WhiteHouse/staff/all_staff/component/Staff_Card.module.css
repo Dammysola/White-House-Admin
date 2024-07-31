@@ -25,7 +25,7 @@
 #Staff_Card_WrapperDiv button{
     width: 6.93rem;
     height: 1.87rem;
-    background-color: #075070;
+    background-color: #0E093C;
     font-size: 0.75rem;
     color: #FFFFFF;
     padding: 0.45rem;
@@ -36,7 +36,7 @@
     color: #000000;
 }
 .Staff_Card_nameText{
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     height: 0.5rem; 
 }
 .Staff_Card_online_signalDiv{

@@ -21,9 +21,10 @@
 #input_FilterDiv input{
     width: 18.87rem;
     height: 39px;
+    border-radius: 0.75rem;
 }
 #input_FilterDiv img{
-    height: 39px;
+    height: 2.5rem;
     cursor: pointer;
 }
 #searchDiv{

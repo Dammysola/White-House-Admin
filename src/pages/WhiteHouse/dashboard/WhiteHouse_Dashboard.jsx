@@ -11,12 +11,13 @@ import Chart from '../../../components/chart/Chart'
 import NavBar from '../../../components/navBar/NavBar'
 import Header from '../../../components/header/Header'
 import Stats_Card from '../../../components/stats_card/Stats_Card'
+import { Link } from 'react-router-dom'
 
 const WhiteHouse_Dashboard = () => {
 
     const customTickFormatter = (tick) => {
         return `${tick}k`;
-      }
+    }
     // const [data, setData] = useState()
 
     // useEffect(() => {
@@ -175,7 +176,7 @@ const WhiteHouse_Dashboard = () => {
                                 <XAxis dataKey="name" axisLine={false} tickLine={false} />
                                 <YAxis axisLine={false} tickLine={false} tickFormatter={customTickFormatter} />
                                 <Tooltip />
-                                <Area type="normal" dataKey="pv" dot={true} stroke="#003E79" fill="#003e794d" />
+                                <Area type="normal" dataKey="pv" dot={true} stroke="#332D5B" fill="#332d5b80" />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
@@ -184,10 +185,15 @@ const WhiteHouse_Dashboard = () => {
 
                 <div id={Style.BarChart_Div}>
                     <div id={Style.Dashboard_lineChart_Two}>
-                        <p id={Style.Dashboard_RevenueText}>Revenue</p>
+                        <div id={Style.Graph_headerDiv}>
+                            <p id={Style.Dashboard_RevenueText}>Revenue</p>
+                            <Link to={"/revenue"}>
+                                <p id={Style.Graph_BoxText}>See More</p>
+                            </Link>
+                        </div>
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart width={150} height={40} data={line_data} margin={{
-                                top: 5,
+                                top: 20,
                                 right: 30,
                                 left: -20,
                                 bottom: 10,
@@ -201,7 +207,7 @@ const WhiteHouse_Dashboard = () => {
                                     axisLine={false} tickLine={false} fontSize={"0.7rem"}
                                 />
                                 <Tooltip />
-                                <Bar dataKey="pv" fill="#113353" />
+                                <Bar dataKey="pv" fill="#332D5B" />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>
@@ -224,8 +230,8 @@ const WhiteHouse_Dashboard = () => {
                                     axisLine={false} tickLine={false} fontSize={"0.7rem"}
                                 />
                                 <Tooltip />
-                                <Bar dataKey="uv" fill="#075070" />
-                                <Bar dataKey="amt" fill="#26EEC8" />
+                                <Bar dataKey="uv" fill="#332D5B" />
+                                <Bar dataKey="amt" fill="#736EA0" />
                             </BarChart>
                         </ResponsiveContainer>
 

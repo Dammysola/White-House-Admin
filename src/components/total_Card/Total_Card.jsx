@@ -16,13 +16,11 @@ const Total_Card = (props) => {
           </div>
           <div id={Style.Total_Card_imgDiv}>
            <Link to={to}>
-           <div>
               {divText}
-            </div>
            </Link>
           </div>
         </div>
-        <div id={Style.Total_Card_line}></div>
+        {/* <div id={Style.Total_Card_line}></div> */}
         <p>
           {price}
         </p>

@@ -11,17 +11,17 @@ import Chart from '../../../components/chart/Chart'
 
 
 const dashboard = () => {
-    const [data, setData]= useState()
+    const [data, setData] = useState()
 
-    useEffect(()=>{
-        
-        const FetchData = async ()=>{
+    useEffect(() => {
+
+        const FetchData = async () => {
             const response = await fetch("https://api.coincap.io/v2/assets/?limit=10")
             const data = await response.json()
             console.log(data);
             setData(data.data)
         }
-        FetchData()   
+        FetchData()
     }, [])
 
     const total_Card1 = [
@@ -61,11 +61,11 @@ const dashboard = () => {
                 <div id={Style.Dashboard_welcomeText_Div}>
                     <div>
                         <div id={Style.Dashboard_welcomeText}>Welcome, Admin <img src={emoji} alt="" /></div>
-                    <p>Here’s a summary of your transactions </p>
-                    <div id={Style.Dashboard_gameText}>Games <img src={arrow_down} alt="" /></div>
+                        <p>Here’s a summary of your transactions </p>
+                        <div id={Style.Dashboard_gameText}>Games <img src={arrow_down} alt="" /></div>
                     </div>
                     <div>
-                    
+
                         <img src={gamePad} alt="" />
                     </div>
 
@@ -84,26 +84,28 @@ const dashboard = () => {
                     </div>
                 </div>
             </div>
-            
-            <div id={Style.Total_Card_mapDiv}>
-                {
-                    total_Card1.map((object)=>{
-                        return(
-                            <Total_Card
-                            image1 = {object.image1}
-                            image2 = {object.image2}
-                            text = {object.text}
-                            divText = {object.divText}
-                            price = {object.price}
-                            />
-                        )
-                    })
-                }
+
+            <div id={Style.Dashboard_second_WrapperDiv}>
+                <div id={Style.Total_Card_mapDiv}>
+                    {
+                        total_Card1.map((object) => {
+                            return (
+                                <Total_Card
+                                    image1={object.image1}
+                                    image2={object.image2}
+                                    text={object.text}
+                                    divText={object.divText}
+                                    price={object.price}
+                                />
+                            )
+                        })
+                    }
+                </div>
+                <div id={Style.BarChart_Div}>
+                    <Chart data={data}></Chart>
+                </div>
             </div>
-            <div id={Style.BarChart_Div}>
-                <Chart data= {data}></Chart>
-            </div>
-            
+
         </div>
     )
 }

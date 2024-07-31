@@ -5,14 +5,12 @@
     width: 38.43rem;
     height: 19.56rem;
     border-radius: 25px;
-    border: 1px solid #F0F0F0;
     padding: 1rem;
     box-sizing: border-box;
 }
 
 #PayoutsText {
     display: flex;
-    /* margin: 0 30px; */
     margin-bottom: 1rem;
     box-sizing: border-box;
     align-items: center;

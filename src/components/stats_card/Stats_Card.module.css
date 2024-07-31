@@ -12,11 +12,11 @@
     display: flex;
 }
 .Card_figure{
-    color: #000000;
+    color: #333333;
     font-size: 1.5rem;
     height: 8px;
 }
 .Card_text{
     font-size: 1.2rem;
-    color: #717171;
+    color: #939393;
 }

@@ -3,6 +3,10 @@ import Style from '../placeBet/PlaceBet.module.css'
 import Total_Card from '../../../components/total_Card/Total_Card'
 import { Bar, BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import Header from '../../../components/header/Header'
+import Activity from '../../../assets/svg/Activity.svg'
+import total_users from '../../../assets/svg/total_users.svg'
+import winner from '../../../assets/svg/winner.svg'
+import loosers from '../../../assets/svg/loosers.svg'
 
 
 
@@ -98,28 +102,28 @@ const PlaceBet = () => {
 
     const total_Card1 = [
         {
-            image1: './src/assets/svg/Activity.svg',
+            image1: Activity,
             text: 'Total Bet Placed',
             divText: 'View all',
             price: '$25,052,985',
             to: '/totalBetPlaced'
         },
         {
-            image1: './src/assets/svg/Activity.svg',
+            image1: total_users,
             text: 'Total Players',
             divText: 'View all',
-            price: '2m',
+            price: '2 million',
             to: "/totalPlayers"
         },
         {
-            image1: './src/assets/svg/Work.svg',
+            image1: winner,
             text: 'Winners',
             divText: 'View all',
             price: '345,000',
             to: '/winners'
         },
         {
-            image1: './src/assets/svg/Activity.svg',
+            image1: loosers,
             text: 'Loosers',
             divText: 'View all',
             price: '23,000',
@@ -175,24 +179,27 @@ const PlaceBet = () => {
                                     <XAxis dataKey="name" fontSize={"0.8rem"} tickLine={false} axisLine={false}></XAxis>
                                     <YAxis fontSize={"0.7rem"} tickLine={false} axisLine={false} ></YAxis>
                                     <Tooltip></Tooltip>
-                                    <Bar dataKey="uv" stroke='none' stackId='a' fill='#0B9FE1'></Bar>
-                                    <Bar dataKey="amt" stackId='a' fill='#003E79'></Bar>
+                                    <Bar dataKey="uv" stroke='none' stackId='a' fill='#0E093C'></Bar>
+                                    <Bar dataKey="amt" stackId='a' fill='#736EA0'></Bar>
                                 </BarChart>
                             </ResponsiveContainer>
 
                         </div>
-                        <div id={Style.Dashboard_lineChart_Two}>
-                            <p id={Style.Dashboard_RevenueText}>Revenue</p>
+                        <div id={Style.Placebet_lineChart_Two}>
+                            <div id={Style.Revenue_Div}>
+                                <p id={Style.Placebet_RevenueText}>Revenue</p>
+                                <p id={Style.PlaceBet_MoreText}>See More</p>
+                            </div>
                             <ResponsiveContainer width="100%" height="100%">
                                 <BarChart width={300} height={100} data={line_data} margin={{
-                                    top: 5,
+                                    top: 20,
                                     right: 30,
                                     left: -30,
                                     bottom: 10,
                                 }} >
                                     <XAxis dataKey="name" fontSize={"0.8rem"} tickLine={false} axisLine={false}></XAxis>
                                     <YAxis dataKey="pv" fontSize={"0.7rem"} tickLine={false} axisLine={false}></YAxis>
-                                    <Bar dataKey="pv" fill="#075070" />
+                                    <Bar dataKey="pv" fill="#0E093C" />
                                 </BarChart>
                             </ResponsiveContainer>
                         </div>

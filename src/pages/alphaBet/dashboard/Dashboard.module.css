@@ -1,5 +1,7 @@
 #Dashboard_mainDiv{
     min-height: 100vh;
+    width: 100%;
+    background-color: #F9F9F9;
 }
 #Dashboard_WrapperDiv{
     height: 300px;
@@ -71,9 +73,13 @@
     align-items: center;
     column-gap: 11px;
 }
+#Dashboard_second_WrapperDiv{
+    padding: 3rem 5rem;
+}
 #Total_Card_mapDiv{
     display: flex;
     justify-content: center;
     column-gap: 10px;
+    margin-bottom: 3rem;
 }
 

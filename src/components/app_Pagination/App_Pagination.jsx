@@ -1,23 +1,27 @@
-// import Pagination from '@mui/material'
-import { Pagination } from '@mui/material'
 import React from 'react'
 import '../app_Pagination/App_Pagination.css'
 
 
 
 
-const App_Pagination = () => {
+const App_Pagination = ({postsPerPage, totalPosts, paginate}) => {
 
-  // let pages = []
+  let pageNumbers = []
 
-  // for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-  //   pages.push(i)
-  // }
+  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    pageNumbers.push(i)
+  }
   return (
 
-    <div id="App_Pagination_mainDiv">
-      {/* <Pagination count= {10}></Pagination> */}
-      Pagination
+    <div id="Style2">
+      {/* <ul> */}
+        {pageNumbers.map(number =>(
+          <button key={number}>
+            <a onClick={()=>paginate(number)} href="!#">{number}</a>
+            
+          </button>
+        ))}
+      {/* </ul> */}
     </div>
   )
 }

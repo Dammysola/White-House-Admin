@@ -25,23 +25,19 @@ const Chart = ({ data, line_data}) => {
             <BarChart
               width={300}
               height={100}
-              data={line_data}
+              data={data}
               margin={{
                 top: 5,
                 right: 30,
-                left: -20,
-                bottom: 10,
+                left: -40,
+                bottom: 5,
               }}
             >
 
-              <CartesianGrid strokeDasharray="3 4 " vertical={false}></CartesianGrid>
               <XAxis dataKey="name" fontSize={"0.8rem"}></XAxis>
               <YAxis fontSize={"0.7rem"}  ></YAxis>
               <Tooltip></Tooltip>
-              {/* <Legend /> */}
-              <Bar dataKey="pv" stroke='none' stackId='a' fill='#0B9FE1'></Bar>
-              <Bar dataKey="amt" stackId='a' fill='#003E79'></Bar>
-              {/* verticalAlign='top' */}
+              <Bar dataKey="rank" stroke='none' stackId='a' fill='#003E79'></Bar>
             </BarChart>
           </ResponsiveContainer>
 

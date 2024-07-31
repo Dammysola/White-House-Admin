@@ -97,14 +97,14 @@ const NavBar = () => {
           </NavLink >
 
           <NavLink to={'/dice'} className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
-            <div>
+            {/* <div> */}
               <p id={Style.game}>Games <img src={arrowDown} alt="" /></p>
               <div id={Style.dropdown}>
                 <ul>
                   <NavLink to={'/dice'}><li><input type="radio" onClick={radio} className={`${activeRadio ? Style.radioInput : Style.radio_input}`} name="" value="" id={Style.radio_input} /> Dice</li></NavLink>
                   <NavLink><li><input type="radio" name="" id="" value="" />Lorem</li></NavLink>
                 </ul>
-              </div>
+              {/* </div> */}
 
             </div>
           </NavLink>
@@ -123,21 +123,23 @@ const NavBar = () => {
             <p>Customer Care</p>
           </NavLink>
           <p>Mgt</p>
-          <button>English <img src={arrowDown} alt="" /></button>
-          <div id={Style.NavBar_line}></div>
-          <img src={mail} alt="" />
-          <img src={user} alt="" />
-          <NavLink to={''} className={`${activeLink7 ? Style.Nav_styled_Link : Style.NavBar_text}`}>
-            <div >
-              <p id={Style.NavBar_businessName}>WhiteHouse Limited <img src={arrowDown} alt="" /></p>
-              <div id={Style.Business_name_dropdown}>
-                <ul>
-                  {/* <NavLink><li>WhiteHouse LTD</li></NavLink> */}
-                  <NavLink to={'/allAccounts'}><li>AlphaBet Limited</li></NavLink>
-                </ul>
+          <p>English <img src={arrowDown} alt="" /></p>
+          <div id={Style.NavBar_lastlineDiv}>
+            <div id={Style.NavBar_line}></div>
+            <img src={mail} alt="" />
+            <img src={user} alt="" />
+            <NavLink to={''} className={`${activeLink7 ? Style.Nav_styled_Link : Style.NavBar_text}`}>
+              <div >
+                <p id={Style.NavBar_businessName}>WhiteHouse Limited <img src={arrowDown} alt="" /></p>
+                <div id={Style.Business_name_dropdown}>
+                  <ul>
+                    {/* <NavLink><li>WhiteHouse LTD</li></NavLink> */}
+                    <NavLink to={'/allAccounts'}><li>AlphaBet Limited</li></NavLink>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </NavLink>
+            </NavLink>
+          </div>
         </div>
       </div>
 

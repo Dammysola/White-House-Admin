@@ -1,14 +1,11 @@
 #HeaderDiv{
-    /* width: 100%; */
     height: 8.12rem;
-    background: linear-gradient(120deg, #0B9FE1, #003E79);
+    background: #0E093C;
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
     justify-content: space-between;
     align-items: center;
     color: #FFFFFF;
-    padding: 0px 120px;
+    padding: 0px 7.5rem;
 }
 #HeaderDiv img{
     height: 10.56rem ;
@@ -21,6 +18,6 @@
 }
 #HeaderDiv p{
     font-size: 0.9rem;
-    color: #A1E2FF;
+    color: #FFFFFF;
     line-height: 8px;
 }

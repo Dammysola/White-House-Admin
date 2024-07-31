@@ -26,6 +26,8 @@
     flex-wrap: wrap;
     column-gap: 2rem;
     row-gap: 1.5rem;
+    /* background: linear-gradient(20deg, #736EA0 rgba(0, 0, 0, 0.3));
+    background: linear-gradient(120deg, #736EA0, #b3b1b1); */
 }
 .Revenue_earningDiv {
     width: 100%;
@@ -88,7 +90,7 @@
     height: 5.3rem;
     border-top-left-radius: 110px;
     border-top-right-radius: 110px;
-    border: 10px solid #ECEAF8;
+    border: 10px solid #F6F6F6;
     border-bottom: 0;
 }
 #Revenue_total_EarningDiv {

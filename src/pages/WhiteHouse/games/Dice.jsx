@@ -11,6 +11,10 @@ import flag from '../../../assets/svg/flag.svg'
 import smiley from '../../../assets/svg/blue_smiley.svg'
 import arrow_down from '../../../assets/svg/arrow_down-dark.svg'
 import Stats_Card from '../../../components/stats_card/Stats_Card';
+import winner from '../../../assets/svg/winner.svg'
+import loosers from '../../../assets/svg/loosers.svg'
+import Activity from '../../../assets/svg/Activity.svg'
+import three_users from '../../../assets/svg/three_users.svg'
 
 
 
@@ -23,25 +27,25 @@ const DiceGame = () => {
 
   const total_Card2 = [
     {
-      image1: './src/assets/svg/Activity.svg',
+      image1: Activity,
       text: 'Total Bet Placed',
       divText: 'View all',
       price: '$25,052,985'
     },
     {
-      image1: './src/assets/svg/Activity.svg',
+      image1: three_users,
       text: 'Total Players',
       divText: 'View all',
       price: '2m'
     },
     {
-      image1: './src/assets/svg/Work.svg',
+      image1: winner,
       text: 'Winners',
       divText: 'View all',
       price: '345,000'
     },
     {
-      image1: './src/assets/svg/Activity.svg',
+      image1: loosers,
       text: 'Loosers',
       divText: 'View all',
       price: '23,000'
@@ -146,8 +150,6 @@ const DiceGame = () => {
   ]
   return (
     <div id={Style.DiceGame_mainDiv}>
-      {/* <div id={Style.PlaceBet_HeaderDiv}> */}
-
       <Header
         headerText={"Dice"}
         headerInfo={"Here’s an information on Dice"}
@@ -237,11 +239,10 @@ const DiceGame = () => {
                 }}
 
               >
-                {/* <CartesianGrid strokeDasharray="3 3" /> */}
                 <XAxis dataKey="name" axisLine={false} tickLine={false} />
                 <YAxis axisLine={false} tickLine={false} tickFormatter={customTickFormatter} />
                 <Tooltip />
-                <Area type="normal" dataKey="uv" dot={true} stroke="#003E79" fill="#003e79cc" />
+                <Area type="normal" dataKey="uv" dot={true} stroke="#332D5B" fill="#332d5b80" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -268,8 +269,8 @@ const DiceGame = () => {
                   <XAxis dataKey="name" fontSize={"0.8rem"} axisLine={false} tickLine={false}></XAxis>
                   <YAxis fontSize={"0.7rem"} axisLine={false} tickLine={false}></YAxis>
                   <Tooltip></Tooltip>
-                  <Bar dataKey="uv" stroke='none' stackId='a' fill='#0B9FE1'></Bar>
-                  <Bar dataKey="pv" stackId='a' fill='#003E79'></Bar>
+                  <Bar dataKey="uv" stroke='none' stackId='a' fill='#332D5B'></Bar>
+                  <Bar dataKey="pv" stackId='a' fill='#736EA0'></Bar>
                 </BarChart>
               </ResponsiveContainer>
 
@@ -293,7 +294,6 @@ const DiceGame = () => {
           </div>
         </div>
       </div>
-      {/* </div> */}
 
     </div>
   )
