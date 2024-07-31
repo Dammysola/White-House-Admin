@@ -34,6 +34,8 @@ import Alphabet_mainLayout from "./mainLayout3/Alphabet_mainLayout";
 // import All_Accounts from "./pages/alphaBet/accounts/All_Accounts"
 import Dashboard from "./pages/alphaBet/dashboard/Dashboard"
 import WhiteHouse_PopupContext from "./WhiteHouse_PopupContext";
+import Reports from "./pages/WhiteHouse/reports/Reports";
+import Customer_Support from "./pages/WhiteHouse/staff/department/customer_Support/Customer_Support";
 
 
 
@@ -167,6 +169,14 @@ const router = createBrowserRouter([
             {
                 path: "/revenue",
                 element: <Revenue />
+            },
+            {
+                path: "/reports",
+                element: <Reports/>
+            },
+            {
+                path: "/customer_support",
+                element: <Customer_Support/>
             }
 
         ]

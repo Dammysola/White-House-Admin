@@ -16,6 +16,7 @@ const NavBar = () => {
   const [activeLink5, setActiveLink5] = useState(false)
   const [activeLink6, setActiveLink6] = useState(false)
   const [activeLink7, setActiveLink7] = useState(false)
+  const [activeLink8, setActiveLink8] = useState(false)
   const [activeRadio, setActiveRadio] = useState(false)
 
 
@@ -34,6 +35,7 @@ const NavBar = () => {
       setActiveLink4(false)
       setActiveLink5(false)
       setActiveLink6(false)
+      setActiveLink7(false)
 
     } else if (index == 2) {
 
@@ -43,6 +45,7 @@ const NavBar = () => {
       setActiveLink4(false)
       setActiveLink5(false)
       setActiveLink6(false)
+      setActiveLink7(false)
 
     } else if (index == 3) {
 
@@ -52,6 +55,8 @@ const NavBar = () => {
       setActiveLink4(false)
       setActiveLink5(false)
       setActiveLink6(false)
+      setActiveLink7(false)
+
     }
     else if (index == 4) {
 
@@ -61,6 +66,8 @@ const NavBar = () => {
       setActiveLink4(true)
       setActiveLink5(false)
       setActiveLink6(false)
+      setActiveLink7(false)
+
     }
     else if (index == 5) {
 
@@ -70,6 +77,8 @@ const NavBar = () => {
       setActiveLink4(false)
       setActiveLink5(true)
       setActiveLink6(false)
+      setActiveLink7(false)
+
     }
     else if (index == 6) {
 
@@ -80,6 +89,17 @@ const NavBar = () => {
       setActiveLink5(false)
       setActiveLink6(true)
       setActiveLink7(false)
+    }
+    else if (index == 7) {
+
+      setActiveLink1(false)
+      setActiveLink2(false)
+      setActiveLink3(false)
+      setActiveLink4(false)
+      setActiveLink5(false)
+      setActiveLink6(false)
+      setActiveLink7(true)
+      setActiveLink8(false)
     }
   };
 
@@ -98,12 +118,12 @@ const NavBar = () => {
 
           <NavLink to={'/dice'} className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
             {/* <div> */}
-              <p id={Style.game}>Games <img src={arrowDown} alt="" /></p>
-              <div id={Style.dropdown}>
-                <ul>
-                  <NavLink to={'/dice'}><li><input type="radio" onClick={radio} className={`${activeRadio ? Style.radioInput : Style.radio_input}`} name="" value="" id={Style.radio_input} /> Dice</li></NavLink>
-                  <NavLink><li><input type="radio" name="" id="" value="" />Lorem</li></NavLink>
-                </ul>
+            <p id={Style.game}>Games <img src={arrowDown} alt="" /></p>
+            <div id={Style.dropdown}>
+              <ul>
+                <NavLink to={'/dice'}><li><input type="radio" onClick={radio} className={`${activeRadio ? Style.radioInput : Style.radio_input}`} name="" value="" id={Style.radio_input} /> Dice</li></NavLink>
+                <NavLink><li><input type="radio" name="" id="" value="" />Lorem</li></NavLink>
+              </ul>
               {/* </div> */}
 
             </div>
@@ -116,7 +136,10 @@ const NavBar = () => {
           <NavLink id='transactions' to={'/transactions'} className={`${activeLink5 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(5)}>
             <p>Transactions</p>
           </NavLink>
+
+          <NavLink to={'/reports'} className={`${activeLink7 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(7)}>
           <p>Reports</p>
+          </NavLink>
         </div>
         <div id={Style.NavBar_ContactDiv}>
           <NavLink to={'/customerCare'} className={`${activeLink6 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(6)}>
@@ -128,17 +151,20 @@ const NavBar = () => {
             <div id={Style.NavBar_line}></div>
             <img src={mail} alt="" />
             <img src={user} alt="" />
-            <NavLink to={''} className={`${activeLink7 ? Style.Nav_styled_Link : Style.NavBar_text}`}>
-              <div >
-                <p id={Style.NavBar_businessName}>WhiteHouse Limited <img src={arrowDown} alt="" /></p>
-                <div id={Style.Business_name_dropdown}>
-                  <ul>
-                    {/* <NavLink><li>WhiteHouse LTD</li></NavLink> */}
-                    <NavLink to={'/allAccounts'}><li>AlphaBet Limited</li></NavLink>
-                  </ul>
-                </div>
-              </div>
-            </NavLink>
+
+            {/* <div> */}
+              <NavLink to={''} className={`${activeLink8 ? Style.Nav_styled_Link : Style.NavBar_text}`}>
+                {/* <div > */}
+                  <p id={Style.NavBar_businessName}>WhiteHouse Limited <img src={arrowDown} alt="" /></p>
+                  <div id={Style.Business_name_dropdown}>
+                    <ul>
+
+                      <NavLink to={'/allAccounts'}><li id={Style.Alphabet}>AlphaBet Limited</li></NavLink>
+                    </ul>
+                  </div>
+                {/* </div> */}
+              </NavLink>
+            {/* </div> */}
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@
 }
 #Total_Card_mapDiv {
     width: 100%;
-    justify-content: space-between;
+    column-gap: 2rem;
     display: flex;
     margin-bottom: 5.56rem;
 }
@@ -61,7 +61,8 @@
     height: 1.87rem;
     border: none;
     border-radius: 0.5rem;
-    background-color: #075070;
+    background-color: #0E093C;
     color: #FFFFFF;
     font-size: 0.8rem;
+    cursor: pointer;
 }

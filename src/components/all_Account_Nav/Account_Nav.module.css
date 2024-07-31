@@ -5,7 +5,7 @@
 #Nav_Bar_Wrapper{
     height: 5rem;
     padding: 0px 37px;
-    background:url('../../assets/svg/Bright_NavBackground.png') no-repeat;
+    background:url('../../assets/svg/blue_background.svg') no-repeat;
     background-size: cover;
     display: flex;
     justify-content: space-between;

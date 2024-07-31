@@ -96,6 +96,7 @@ const CustomerCare = () => {
                             <div id={Style.progressDiv}></div>
                         </div>
                     </div>
+                    
                     <div id={Style.CustomerCare_SatisfactionDiv}>
                         <div id={Style.CustomerCare_Satisfaction_GradeDiv}>
                             <p>Customer Care</p>

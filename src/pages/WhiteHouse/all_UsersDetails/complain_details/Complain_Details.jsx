@@ -4,7 +4,7 @@ import Header from '../../../../components/header/Header'
 import person from '../../../../assets/images/Person1.png'
 import Staff_Card from '../../staff/all_staff/component/Staff_Card'
 import Button from '../../../../components/button/Button'
-import smiley from '../../../../assets/svg/blue_smiley.svg'
+import smiley from '../../../../assets/svg/gray_smiley.svg'
 
 const Complain_Details = () => {
 

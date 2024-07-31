@@ -150,3 +150,8 @@ ul{
   input[type="radio"]:checked::before {
     transform: scale(1);
   } 
+
+
+#Alphabet{
+    color: #ccc;
+}

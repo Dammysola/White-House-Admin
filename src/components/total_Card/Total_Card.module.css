@@ -34,7 +34,9 @@
     align-items: center;
 }
 #Total_Card_imgDiv{
-    width: 3.88rem;
+    min-width: 3.88rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
     height: 2rem;
     border: 1px solid #0E093C;
     border-radius: 0.43rem;

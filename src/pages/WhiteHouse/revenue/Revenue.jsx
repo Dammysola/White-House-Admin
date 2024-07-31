@@ -3,7 +3,7 @@ import Style from '../revenue/Revenue.module.css'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import Header from '../../../components/header/Header'
 import Total_Card from '../../../components/total_Card/Total_Card'
-import smiley from '../../../assets/svg/blue_smiley.svg'
+import smiley from '../../../assets/svg/gray_smiley.svg'
 import line_Graph from '../../../assets/images/line_Graph.png'
 import arrow_down from '../../../assets/svg/arrow_down-dark.svg'
 

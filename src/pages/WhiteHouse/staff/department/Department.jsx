@@ -3,6 +3,7 @@ import Style from '../department/Department.module.css'
 import Header from '../../../../components/header/Header'
 import Total_Card from '../../../../components/total_Card/Total_Card'
 import workers from '../../../../assets/images/workers.png'
+import { Link } from 'react-router-dom'
 
 
 const Department = () => {
@@ -64,7 +65,9 @@ const Department = () => {
                             <p>Staff</p>
                             <p className={Style.Department_staffNumber}>40</p>
                         </div>
-                        <button>View Details</button>
+                        <Link to={"/customer_support"}>
+                            <button>View Details</button>
+                        </Link>
                     </div>
                     <div id={Style.Department_detailsDiv}>
                         <img src={workers} alt="" />
