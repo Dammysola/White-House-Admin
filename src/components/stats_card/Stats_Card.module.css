@@ -3,13 +3,20 @@
     flex: 1 1 300px;
 }
 .Stats_CardDiv{
-    /* width: 18.62rem; */
-    height: 6.93rem;
-    justify-content:space-around;
+      /* max-height: 8rem;
+  
+    min-height: 6.93rem; */
+    justify-content: space-between;
     align-items: center;
     background-color: #FFFFFF;
     border-radius: 20px;
     display: flex;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+}
+#Stats_Card_img_textDiv{
+    display: flex;
+   column-gap: 1.5rem; 
 }
 .Card_figure{
     color: #333333;

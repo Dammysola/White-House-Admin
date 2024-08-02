@@ -117,14 +117,13 @@ const NavBar = () => {
           </NavLink >
 
           <NavLink to={'/dice'} className={`${activeLink3 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(3)}>
-            {/* <div> */}
+           
             <p id={Style.game}>Games <img src={arrowDown} alt="" /></p>
             <div id={Style.dropdown}>
               <ul>
                 <NavLink to={'/dice'}><li><input type="radio" onClick={radio} className={`${activeRadio ? Style.radioInput : Style.radio_input}`} name="" value="" id={Style.radio_input} /> Dice</li></NavLink>
                 <NavLink><li><input type="radio" name="" id="" value="" />Lorem</li></NavLink>
-              </ul>
-              {/* </div> */}
+              </ul>      
 
             </div>
           </NavLink>

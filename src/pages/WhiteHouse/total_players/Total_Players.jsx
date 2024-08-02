@@ -59,7 +59,7 @@ const Total_Players = () => {
                             <td>
                                 <div id={Style.statusText}>Online</div>
                             </td>
-                            <td><button style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px", height: "1.37rem" }}>Suspend Action</button></td>
+                            <td><button style={{ backgroundColor: "#332D5B", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px", height: "1.37rem" }}>Suspend Action</button></td>
                         </tr>
 
                         <tr>
@@ -88,7 +88,7 @@ const Total_Players = () => {
                                     <div id={Style.statusText}>Online</div>
                                 </div>
                             </td>
-                            <td><button style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px", height: "1.37rem" }}>Suspend Action</button></td>
+                            <td><button style={{ backgroundColor: "#332D5B", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px", height: "1.37rem" }}>Suspend Action</button></td>
                         </tr>
 
                     </table>

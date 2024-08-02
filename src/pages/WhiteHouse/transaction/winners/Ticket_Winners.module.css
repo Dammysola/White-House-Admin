@@ -28,11 +28,12 @@
     color: #110000;
 }
  #headerTable{
-    background-color: #F1F1F1;
+    background-color: #E8E3F9;
     height: 44px;
     color: #000000;
     font-size: 0.9rem;
     font-weight: lighter;
+    border-bottom: none;
 }
 #Ticket_Winners_TableDiv th, td{
     padding: 0 2rem;

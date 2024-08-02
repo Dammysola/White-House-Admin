@@ -12,14 +12,16 @@ const Stats_Card = (props) => {
     return (
         <div id={Style.Stats_Card_mainDiv}>
             <div className={Style.Stats_CardDiv}>
-                <img src={img} alt="" />
-                <div>
-                    <p className={Style.Card_figure}>{figure}</p>
-                    <p className={Style.Card_text}>{text}</p>
+                <div id={Style.Stats_Card_img_textDiv}>
+                    <img src={img} alt="" />
+                    <div>
+                        <p className={Style.Card_figure}>{figure}</p>
+                        <p className={Style.Card_text}>{text}</p>
+                    </div>
                 </div>
 
                 <Link to={to}>
-                <img src={arrow_side} alt="" />
+                    <img src={arrow_side} alt="" />
                 </Link>
             </div>
         </div>

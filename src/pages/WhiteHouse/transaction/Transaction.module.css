@@ -34,7 +34,7 @@
 }
 .toggleDiv_buttonActive{
     min-width: 50px;
-    background-color: #003E79;
+    background-color: #332D5B;
     border: none;
     color: #FFFFFF;
     cursor: pointer;
@@ -81,7 +81,7 @@
     box-sizing: border-box;
 }
 #TransactionText span{
-    color: #0B9FE1;
+    color: #7429E8;
 }
 #Transaction_tableWrapperDiv table{
     box-sizing: border-box;
