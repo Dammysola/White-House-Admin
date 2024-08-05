@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from '../reports/Reports.module.css'
 import three_users from '../../../assets/svg/three_users.svg'
 import issues from '../../../assets/svg/Issues.svg'
@@ -11,6 +11,18 @@ import recording from '../../../assets/svg/recording.svg'
 import microphone from '../../../assets/svg/microphone.svg'
 
 const Reports = () => {
+
+    // let [toggleIndex, setToggleIndex] = useState(0);
+
+
+    // const [color, setColor] = useState('#FFFFFF'); // Initial color
+
+    // const handleCardClick = (index) => {
+
+    //     setColor( (prevColor) => (prevColor === '#FFFFFF' ? '#0E093C' : '#FFFFFF'));
+    // };
+
+
     const stats_card4 = [
         {
             image1: three_users,
@@ -64,17 +76,19 @@ const Reports = () => {
                 headerInfo={"Here’s an overview of White House"} />
 
             <div id={Style.Reports_WrapperDiv}>
-                <p className={Style.ReportsText}>Report Summary</p>
+                <p className={Style.ReportsText}>Queries Summary</p>
                 <div id={Style.Total_Stats_CardWrapper}>
                     <div id={Style.Reports_mapDiv}>
                         {
-                            stats_card4.map((obj) => {
+                            stats_card4.map((obj, index) => {
                                 return (
                                     <Total_Card
+                                        key={index}
                                         text={obj.text}
                                         image1={obj.image1}
                                         divText={obj.divText}
-                                        price={obj.price} />
+                                        price={obj.price}
+                                         />
                                 )
                             })
                         }
@@ -97,7 +111,7 @@ const Reports = () => {
                 </div>
 
 
-                <p className={Style.ReportsText}>All Reports</p>
+                <p className={Style.ReportsText}>All Queries</p>
                 <div id={Style.Reports_Table_WrapperDiv}>
                     <table>
                         <tr id={Style.headerTable}>
@@ -112,6 +126,8 @@ const Reports = () => {
                             <th>Action</th>
 
                         </tr>
+
+
                         <tr id={Style.Personal_Info_tr}>
                             <td>1</td>
                             <td>8/7/2024</td>
@@ -177,8 +193,8 @@ const Reports = () => {
                             <td className={Style.tableText}>Lorem ipsum dolo</td>
                             <td>
                                 <div className={Style.ReportDiv}>
-                                <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
-                                <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
+                                    <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                    <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
                                 </div>
                             </td>
                             <td>
@@ -186,6 +202,7 @@ const Reports = () => {
                             </td>
                             <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
                         </tr>
+
                     </table>
                 </div>
             </div>

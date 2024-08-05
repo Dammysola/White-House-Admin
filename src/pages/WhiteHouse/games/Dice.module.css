@@ -26,8 +26,6 @@
     flex-wrap: wrap;
     column-gap: 2rem;
     row-gap: 1.5rem;
-    background: linear-gradient(20deg, #736EA0 rgba(0, 0, 0, 0.3));
-    background: linear-gradient(120deg, #736EA0, #b3b1b1);
 }
 .Revenue_earningDiv {
     width: 100%;
@@ -105,7 +103,7 @@
     column-gap: 2rem;
 }
 
-#DiceGame_cardGraph_wrapper img {
+#Revenue_progressDiv img {
     margin-left: 2rem;
 }
 

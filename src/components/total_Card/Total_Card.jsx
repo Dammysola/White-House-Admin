@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 
-const Total_Card = (props) => {
+const Total_Card = ( props) => {
   const { image1, text, divText, price, to } = props
   return (
     <div id={Style.Total_Card_mainDiv}>
@@ -20,7 +20,6 @@ const Total_Card = (props) => {
            </Link>
           </div>
         </div>
-        {/* <div id={Style.Total_Card_line}></div> */}
         <p>
           {price}
         </p>

@@ -36,6 +36,7 @@ import Dashboard from "./pages/alphaBet/dashboard/Dashboard"
 import WhiteHouse_PopupContext from "./WhiteHouse_PopupContext";
 import Reports from "./pages/WhiteHouse/reports/Reports";
 import Customer_Support from "./pages/WhiteHouse/staff/department/customer_Support/Customer_Support";
+import Top_Agents from "./pages/WhiteHouse/staff/top_agents/Top_Agents";
 
 
 
@@ -177,6 +178,10 @@ const router = createBrowserRouter([
             {
                 path: "/customer_support",
                 element: <Customer_Support/>
+            },
+            {
+                path: "/topAgents",
+                element: <Top_Agents/>
             }
 
         ]
