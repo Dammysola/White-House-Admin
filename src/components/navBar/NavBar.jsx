@@ -36,7 +36,7 @@ const NavBar = () => {
       setActiveLink5(false)
       setActiveLink6(false)
       setActiveLink7(false)
-
+      
     } else if (index == 2) {
 
       setActiveLink1(false)
@@ -136,8 +136,8 @@ const NavBar = () => {
             <p>Transactions</p>
           </NavLink>
 
-          <NavLink to={'/reports'} className={`${activeLink7 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(7)}>
-          <p>Reports</p>
+          <NavLink to={'/queries'} className={`${activeLink7 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(7)}>
+          <p>Queries</p>
           </NavLink>
         </div>
         <div id={Style.NavBar_ContactDiv}>
@@ -151,9 +151,7 @@ const NavBar = () => {
             <img src={mail} alt="" />
             <img src={user} alt="" />
 
-            {/* <div> */}
               <NavLink to={''} className={`${activeLink8 ? Style.Nav_styled_Link : Style.NavBar_text}`}>
-                {/* <div > */}
                   <p id={Style.NavBar_businessName}>WhiteHouse Limited <img src={arrowDown} alt="" /></p>
                   <div id={Style.Business_name_dropdown}>
                     <ul>
@@ -161,9 +159,7 @@ const NavBar = () => {
                       <NavLink to={'/allAccounts'}><li id={Style.Alphabet}>AlphaBet Limited</li></NavLink>
                     </ul>
                   </div>
-                {/* </div> */}
               </NavLink>
-            {/* </div> */}
           </div>
         </div>
       </div>

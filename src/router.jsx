@@ -6,13 +6,13 @@ import Business_Transaction from "./pages/newAccount/businessDetails_EntryType/B
 import Director_Details from "./pages/newAccount/director_LoginDetails/Director_Details";
 import Congratulation from "./pages/newAccount/congratulation_message/Congratulation";
 import MainLayout_Two from "./mainLayout2/MainLayout_Two"
-import PopupContext from "./PopupContext ";
+// import PopupContext from "./PopupContext ";
 import SignIn from "./pages/signUp/SignIn"
 import Transaction from "./pages/WhiteHouse/transaction/Transaction";
 import PlaceBet from "./pages/WhiteHouse/placeBet/PlaceBet";
 import WhiteHouse_Dashboard from "./pages/WhiteHouse/dashboard/WhiteHouse_Dashboard";
 import Dice from "./pages/WhiteHouse/games/Dice"
-import CustomerCare from "./pages/WhiteHouse/staff/CustomerCare";
+// import CustomerCare from "./pages/WhiteHouse/staff/CustomerCare";
 import All_Staff from "./pages/WhiteHouse/staff/all_staff/All_Staff";
 import Logged_sessions from "./pages/WhiteHouse/logged_session/Logged_sessions";
 import Conversation from "./pages/WhiteHouse/conversation/Conversation";
@@ -34,7 +34,7 @@ import Alphabet_mainLayout from "./mainLayout3/Alphabet_mainLayout";
 // import All_Accounts from "./pages/alphaBet/accounts/All_Accounts"
 import Dashboard from "./pages/alphaBet/dashboard/Dashboard"
 import WhiteHouse_PopupContext from "./WhiteHouse_PopupContext";
-import Reports from "./pages/WhiteHouse/reports/Reports";
+import Queries from "./pages/WhiteHouse/queries/Queries";
 import Customer_Support from "./pages/WhiteHouse/staff/department/customer_Support/Customer_Support";
 import Top_Agents from "./pages/WhiteHouse/staff/top_agents/Top_Agents";
 
@@ -97,7 +97,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/customerCare",
-                element: <CustomerCare />
+                element: <Customer_Support/>
             },
             {
                 path: "/allStaffs",
@@ -172,8 +172,8 @@ const router = createBrowserRouter([
                 element: <Revenue />
             },
             {
-                path: "/reports",
-                element: <Reports/>
+                path: "/Queries",
+                element: <Queries/>
             },
             {
                 path: "/customer_support",

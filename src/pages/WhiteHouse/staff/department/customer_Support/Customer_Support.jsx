@@ -1,10 +1,8 @@
 import React from 'react'
 import Style from '../customer_Support/Customer_Support.module.css'
-import { BarChart, YAxis, XAxis, Bar, Tooltip, ResponsiveContainer} from 'recharts'
-
+import { BarChart, YAxis, XAxis, Bar, Tooltip, ResponsiveContainer } from 'recharts'
 import Header from '../../../../../components/header/Header'
 import Total_Card from '../../../../../components/total_Card/Total_Card'
-import Activity from '../../../../../assets/svg/Activity.svg'
 import online from '../../../../../assets/svg/online.svg'
 import offline from '../../../../../assets/svg/offline.svg'
 import three_users from '../../../../../assets/svg/three_users.svg'
@@ -16,6 +14,7 @@ import good from '../../../../../assets/svg/good.svg'
 import neutral from '../../../../../assets/svg/neutral.svg'
 import sad from '../../../../../assets/svg/sad.svg'
 import issues from '../../../../../assets/svg/Issues.svg'
+import { Link } from 'react-router-dom'
 
 
 
@@ -42,7 +41,7 @@ const Customer_Support = () => {
             image1: issues,
             price: "5k",
             text: "Queries",
-            to: "/placebet",
+            to: "/queries",
             divText: "View All"
         },
         {
@@ -64,42 +63,42 @@ const Customer_Support = () => {
     const data = [
         {
             time: "2am",
-            day:"Mon",
+            day: "Mon",
             Pv: "7"
         },
         {
             time: "4am",
-            day:"Tue",
+            day: "Tue",
             Pv: "12"
 
         },
         {
             time: "6am",
-            day:"Wed",
+            day: "Wed",
             Pv: "6"
 
         },
         {
             time: "10am",
-            day:"Thur",
+            day: "Thur",
             Pv: "10"
 
         },
         {
             time: "12pm",
-            day:"Fri",
+            day: "Fri",
             Pv: "12"
 
         },
         {
             time: "2pm",
-            day:"Sat",
+            day: "Sat",
             Pv: "2"
 
         },
         {
             time: "4pm",
-            day:"Sun",
+            day: "Sun",
             Pv: "9"
 
         }
@@ -121,12 +120,13 @@ const Customer_Support = () => {
                                     text={obj.text}
                                     image1={obj.image1}
                                     divText={obj.divText}
-                                    price={obj.price} />
+                                    price={obj.price}
+                                    to={obj.to} />
                             )
                         })
                     }
                 </div>
-                
+
                 <div id={Style.Customer_Support_rating_wrapperDiv}>
                     <div className={Style.Customer_Support_ratingDiv}>
                         <p className={Style.RatingText}>First Contact Resolution Rate</p>
@@ -182,64 +182,70 @@ const Customer_Support = () => {
 
                         <div id={Style.performance_headerDiv}>
                             <p>Top Performing Agents</p>
-                            <p id={Style.dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
+                            <div id={Style.date_viewDiv}>
+                                <p id={Style.dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
+                                <Link to={'/topAgents'}>
+                                    <button> View All</button>
+                                </Link>
+                            </div>
                         </div>
 
                         <table>
-                            {/* <tr>
-            <th>ue8hyf</th>
-            <th>wkfnuj</th>
-            <th>omji</th>
-            <th>omji</th>
-        </tr> */}
-
                             <tr>
                                 <td>Days</td>
                                 <td className={Style.performing_agentText}>Calls</td>
                                 <td className={Style.performing_agentText}>Mails</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td className={Style.performing_agentText}>Msg</td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>46</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td className={Style.performing_agentText}>5</td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>22</td>
                                 <td className={Style.performing_agentText}>13</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td className={Style.performing_agentText}>5</td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>45</td>
                                 <td className={Style.performing_agentText}>8</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td className={Style.performing_agentText}>5</td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>34</td>
                                 <td className={Style.performing_agentText}>77</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td className={Style.performing_agentText}>5</td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>89</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td className={Style.performing_agentText}>5</td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>33</td>
                                 <td className={Style.performing_agentText}>566</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td className={Style.performing_agentText}>5</td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>21</td>
                                 <td className={Style.performing_agentText}>44</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td className={Style.performing_agentText}>5</td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
                             </tr>
                         </table>
                     </div>
@@ -256,7 +262,7 @@ const Customer_Support = () => {
                                     <div id={Style.imgDiv}>
                                         <img src={amazing} alt="" />
                                         <p>Amazing</p></div>
-                                             <p>76.5%</p>
+                                    <p>76.5%</p>
                                 </div>
                                 <div id={Style.progressDiv}></div>
                             </div>
@@ -331,9 +337,9 @@ const Customer_Support = () => {
                         </div>
                     </div>
                     <div id={Style.Customer_Support_BarChartDiv}>
-                    
-                            <p id={Style.BarChart_headerText}>Peak Time</p>
-                        
+
+                        <p id={Style.BarChart_headerText}>Peak Time</p>
+
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart width={150} height={40} data={data} margin={{
                                 top: 20,

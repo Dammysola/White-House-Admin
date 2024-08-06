@@ -8,15 +8,15 @@ import { Link } from 'react-router-dom'
 
 
 const Stats_Card = (props) => {
-    const { img, figure, text, to } = props
+    const { img, figure, text, to, colourChange, onClick } = props
     return (
-        <div id={Style.Stats_Card_mainDiv}>
-            <div className={Style.Stats_CardDiv}>
+        <div id={Style.Stats_Card_mainDiv} onClick={onClick}>
+            <div className={Style.Stats_CardDiv} style={{ backgroundColor: colourChange ? "#0E093C" : "#FFFFFF" }}>
                 <div id={Style.Stats_Card_img_textDiv}>
                     <img src={img} alt="" />
                     <div>
-                        <p className={Style.Card_figure}>{figure}</p>
-                        <p className={Style.Card_text}>{text}</p>
+                        <p className={Style.Card_figure} style={{ color: colourChange ? "#FFFFFF" : "#333333" }}>{figure}</p>
+                        <p className={Style.Card_text} style={{ color: colourChange ? "#FFFFFF" : "#333333" }}>{text}</p>
                     </div>
                 </div>
 

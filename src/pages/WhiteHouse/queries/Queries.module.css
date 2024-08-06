@@ -7,6 +7,38 @@
 #Reports_WrapperDiv {
     padding: 5rem 8rem 5rem 7.5rem;
 }
+#Query_header_filterDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+#Input_filterDiv{
+    display: flex;
+    align-items: center;
+}
+#Input_filterDiv #searchDiv img{
+    position: absolute;
+    width: 0.93rem;
+    left: 1rem;
+    top: 1.7rem;
+    fill: #9e9ea7;
+}
+#searchDiv{
+    margin-top: -1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#searchDiv input{
+    width: 14.5rem;
+    border-radius: 12px;
+    padding-left:2rem ;
+    box-sizing: border-box;
+    height: 2.5rem;  
+}
 
 .ReportsText {
     font-size: 1.56rem;

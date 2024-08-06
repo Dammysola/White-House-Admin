@@ -55,7 +55,6 @@ const Top_Agents = () => {
                     </div>
 
                     <div className={Style.Revenue_earningDiv}>
-
                         <p className={Style.earningText}>Prompt Response</p>
                         <p className={Style.priceText}>70%</p>
 

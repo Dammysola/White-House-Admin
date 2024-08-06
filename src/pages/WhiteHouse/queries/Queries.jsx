@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Style from '../reports/Reports.module.css'
+import Style from './Queries.module.css'
 import three_users from '../../../assets/svg/three_users.svg'
 import issues from '../../../assets/svg/Issues.svg'
 import resolve from '../../../assets/svg/resolved.svg'
@@ -9,12 +9,25 @@ import rise from '../../../assets/svg/rise.svg'
 import Stats_Card from '../../../components/stats_card/Stats_Card'
 import recording from '../../../assets/svg/recording.svg'
 import microphone from '../../../assets/svg/microphone.svg'
+import search from '../../../assets/svg/Search.svg'
+import InputField from '../../../components/input/InputField'
+import filter_img from '../../../assets/svg/Complete_filter_img.svg'
+
+
 
 const Reports = () => {
 
-    // let [toggleIndex, setToggleIndex] = useState(0);
+    const [toggleIndex, setToggleIndex] = useState(100);
+    const [toggleStatsIndex, setToggleStatsIndex] = useState(100);
 
+const toggle = (index) => {
+        setToggleIndex(index);
+    }
 
+    const toggleStats = (index) => {
+        setToggleStatsIndex(index);
+    }
+    
     // const [color, setColor] = useState('#FFFFFF'); // Initial color
 
     // const handleCardClick = (index) => {
@@ -27,28 +40,28 @@ const Reports = () => {
         {
             image1: three_users,
             price: "200",
-            text: "User Report",
+            text: "In-app Message Queries",
             to: "/placebet",
             divText: "View Details"
         },
         {
             image1: issues,
             price: "200",
-            text: "Issue Report",
+            text: "Mail Queries",
             to: "/placebet",
             divText: "View All"
         },
         {
             image1: resolve,
             price: "180",
-            text: "Resolved Reports",
+            text: "In-app call Queries",
             to: "/placebet",
             divText: "View All"
         },
         {
             image1: resolve,
             price: "20",
-            text: "Pending Reports",
+            text: "Toll Calls Queries",
             to: "/placebet",
             divText: "View All"
         },
@@ -57,18 +70,22 @@ const Reports = () => {
     const stats_card3 = [
         {
             img: rise,
-            figure: "200k",
-            text: "Bet Placed",
-            to: "/placebet"
+            figure: "Pending Queries",
+            text: "20",
+            to: ""
 
         },
         {
             img: rise,
-            figure: "2m",
-            text: "All Users",
-            to: "/placebet"
+            figure: "Resolved Queries",
+            text: "180",
+            to: ""
         }
     ]
+
+    
+
+
     return (
         <div id={Style.Reports_mainDiv}>
             <Header
@@ -81,14 +98,18 @@ const Reports = () => {
                     <div id={Style.Reports_mapDiv}>
                         {
                             stats_card4.map((obj, index) => {
+                                let isBlack = index == toggleIndex ? true : false;
                                 return (
+
                                     <Total_Card
                                         key={index}
                                         text={obj.text}
                                         image1={obj.image1}
                                         divText={obj.divText}
                                         price={obj.price}
-                                         />
+                                        isBlack={isBlack}
+                                        onClick={() => toggle(index)}
+                                    />
                                 )
                             })
                         }
@@ -96,13 +117,16 @@ const Reports = () => {
 
                     <div id={Style.Query_Stats_MapCard}>
                         {
-                            stats_card3.map((obj) => {
+                            stats_card3.map((obj, index) => {
+                                let colourChange = index == toggleStatsIndex ? true : false
                                 return (
                                     <Stats_Card
                                         img={obj.img}
                                         figure={obj.figure}
                                         text={obj.text}
-                                        to={obj.to} />
+                                        to={obj.to}
+                                        colourChange ={colourChange}
+                                        onClick ={()=> toggleStats(index)} />
                                 )
                             })
                         }
@@ -111,7 +135,17 @@ const Reports = () => {
                 </div>
 
 
-                <p className={Style.ReportsText}>All Queries</p>
+                <div id={Style.Query_header_filterDiv}>
+                    <p className={Style.ReportsText}>All Queries</p>
+                    <div id={Style.Input_filterDiv}>
+                        <div id={Style.searchDiv}>
+                            <img src={search} alt="" />
+                            <InputField />
+                        </div>
+
+                        <img src={filter_img} alt="" />
+                    </div>
+                </div>
                 <div id={Style.Reports_Table_WrapperDiv}>
                     <table>
                         <tr id={Style.headerTable}>
@@ -131,8 +165,8 @@ const Reports = () => {
                         <tr id={Style.Personal_Info_tr}>
                             <td>1</td>
                             <td>8/7/2024</td>
-                            <td>Billing</td>
-                            <td className={Style.tableText}>In-app Message</td>
+                            <td className={Style.tableText}>In-app Message </td>
+                            <td className={Style.tableText}>Billing</td>
                             <td className={Style.tableText}>Lighty</td>
                             <td className={Style.tableText}>Lorem ipsum dolo</td>
                             <td>
@@ -150,7 +184,7 @@ const Reports = () => {
                             <td>2</td>
                             <td>8/7/2024</td>
                             <td className={Style.tableText}>Mail</td>
-                            <td className={Style.ReportDiv}>Account</td>
+                            <td className={Style.tableText}>Account</td>
                             <td className={Style.tableText}>Lighty</td>
                             <td className={Style.tableText}>Lorem ipsum dolo</td>
                             <td>
@@ -169,7 +203,7 @@ const Reports = () => {
                             <td>2</td>
                             <td>8/7/2024</td>
                             <td className={Style.tableText}>In-app Call</td>
-                            <td className={Style.ReportDiv}>Payment</td>
+                            <td className={Style.tableText}>Payment</td>
                             <td className={Style.tableText}>Lighty</td>
                             <td className={Style.tableText}>Lorem ipsum dolo</td>
                             <td>
@@ -188,7 +222,7 @@ const Reports = () => {
                             <td>2</td>
                             <td>8/7/2024</td>
                             <td className={Style.tableText}>Toll Call</td>
-                            <td className={Style.ReportDiv}>Payment</td>
+                            <td className={Style.tableText}>Payment</td>
                             <td className={Style.tableText}>Lighty</td>
                             <td className={Style.tableText}>Lorem ipsum dolo</td>
                             <td>

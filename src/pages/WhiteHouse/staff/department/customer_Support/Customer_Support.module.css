@@ -89,9 +89,23 @@
     box-sizing: border-box;
     color: #0E093C;
 }
+#performance_headerDiv button{
+    width: 5.12rem;
+    height: 1.68rem;
+    border-radius: 0.45rem;
+    background-color: #0E093C;
+    border: none;
+    color: #FFFFFF;
+    font-size: 0.69rem;
+}
 #performance_headerDiv #dateText{
     font-size: 0.95rem;
     color:#767676 ;
+}
+#date_viewDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
 }
 #Customer_Support_performanceDiv table{
     width: 100%;
@@ -100,6 +114,11 @@
     color: #767676;
     font-size: 1.2rem;
     height: 3rem;
+}
+#Customer_Support_performanceDiv
+td{
+    padding: 0 2.1rem;
+    box-sizing: border-box;
 }
 
 .performing_agentText{

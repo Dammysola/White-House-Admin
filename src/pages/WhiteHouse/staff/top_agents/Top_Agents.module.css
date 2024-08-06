@@ -12,7 +12,6 @@
     line-height: 3.5rem;
 }
 .Revenue_earningDiv{
-    /* width: 18.75rem; */
     width: 100%;
     height: 17.56rem;
     background-color: #FFFFFF;
@@ -49,7 +48,7 @@
 .Revenue_progressBar{
     width: 10.62rem;
     height: 1.5rem;
-    background-color: #003E79;
+    background-color: #0E093C;
     border-radius: 0.8rem;
 }
 .Revenue_infoText{
@@ -75,7 +74,6 @@
 #Top_Agents_TableWrapperDiv table{
     width: 100%;
     border-collapse: collapse;
-    /* border: none; */
 }
 
 #Top_Agents_TableWrapperDiv #headerTable {
@@ -83,7 +81,7 @@
     color: #000000;
     font-size: 1rem;
     font-weight: lighter;
-    border-bottom: 1px solid #C4C4C4;
+    /* border-bottom: 1px solid #C4C4C4; */
 }
 
 #Top_Agents_TableWrapperDiv tr {
