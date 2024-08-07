@@ -6,25 +6,11 @@
 #All_Staff_EntireCard_Wrapper{
     padding: 6.3rem 8rem 6.3rem 7.5rem;
 }
-#All_Staff_Card_wrapper{
-    width: 100%;
-    display: flex;
-    column-gap: 2rem;
-}
 #Staff_CardDiv{
     column-gap: 1.18rem;
     align-items: center;
     display: flex;
     margin-bottom: 2rem ;
-}
-.Card_figure{
-    color: #000000;
-    font-size: 1.5rem;
-    height: 8px;
-}
-.Card_text{
-    font-size: 1.2rem;
-    color: #717171;
 }
 #input_FilterDiv{
     width: 100%;
@@ -50,16 +36,16 @@
 #searchDiv img{
     position: absolute;
     top: 1rem;
-    width: 15px;
+    width: 0.93rem;
     left: 1rem;
     fill: #9e9ea7;   
 }
 #searchDiv input{
     width: 14.5rem;
-    border-radius: 12px;
-    padding-left:40px ;
+    border-radius: 0.75rem;
+    padding-left:2.5rem;
     box-sizing: border-box;
-    height: 39px;  
+    height: 2.43rem;  
 }
 
 .All_StaffText{
@@ -69,7 +55,6 @@
 }
 #All_Staff_Card{
     width: 100%;
-    /* width: 79.5rem; */
     display: flex;
     column-gap: 2rem;
     row-gap: 2rem;

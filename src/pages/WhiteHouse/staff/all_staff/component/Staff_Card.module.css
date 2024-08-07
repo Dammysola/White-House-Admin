@@ -4,8 +4,6 @@
 #Staff_Card_WrapperDiv{
     background-color: #FFFFFF;
     border-radius: 1rem;
-    /* min-width: 25.12rem; */
-    /* width: 100%; */
     padding: 2rem;
     box-sizing: border-box;
     height: 11.25rem;
@@ -15,7 +13,6 @@
     align-items: center;
     font-size: 1rem;
     color: #000000;
-
 }
 #Staff_Card_WrapperDiv img{
     width: 7.5rem;

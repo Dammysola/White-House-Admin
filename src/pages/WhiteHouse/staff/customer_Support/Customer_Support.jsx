@@ -1,19 +1,19 @@
 import React from 'react'
 import Style from '../customer_Support/Customer_Support.module.css'
 import { BarChart, YAxis, XAxis, Bar, Tooltip, ResponsiveContainer } from 'recharts'
-import Header from '../../../../../components/header/Header'
-import Total_Card from '../../../../../components/total_Card/Total_Card'
-import online from '../../../../../assets/svg/online.svg'
-import offline from '../../../../../assets/svg/offline.svg'
-import three_users from '../../../../../assets/svg/three_users.svg'
-import smiley from '../../../../../assets/svg/gray_smiley.svg'
-import call from '../../../../../assets/svg/call.svg'
-import arrow_down from '../../../../../assets/svg/arrow_down-dark.svg'
-import amazing from '../../../../../assets/svg/amazing.svg'
-import good from '../../../../../assets/svg/good.svg'
-import neutral from '../../../../../assets/svg/neutral.svg'
-import sad from '../../../../../assets/svg/sad.svg'
-import issues from '../../../../../assets/svg/Issues.svg'
+import Header from '../../../../components/header/Header'
+import Total_Card from '../../../../components/total_Card/Total_Card'
+import online from '../../../../assets/svg/online.svg'
+import offline from '../../../../assets/svg/offline.svg'
+import three_users from '../../../../assets/svg/three_users.svg'
+import smiley from '../../../../assets/svg/gray_smiley.svg'
+import call from '../../../../assets/svg/call.svg'
+import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
+import amazing from '../../../../assets/svg/amazing.svg'
+import good from '../../../../assets/svg/good.svg'
+import neutral from '../../../../assets/svg/neutral.svg'
+import sad from '../../../../assets/svg/sad.svg'
+import issues from '../../../../assets/svg/Issues.svg'
 import { Link } from 'react-router-dom'
 
 
@@ -30,13 +30,6 @@ const Customer_Support = () => {
             to: "/allStaffs",
             divText: "View Details"
         },
-        // {
-        //     image1: Activity,
-        //     price: "200",
-        //     text: "Total Ticket Received",
-        //     to: "/placebet",
-        //     divText: "View Details"
-        // },
         {
             image1: issues,
             price: "5k",
@@ -196,7 +189,6 @@ const Customer_Support = () => {
                                 <td className={Style.performing_agentText}>Calls</td>
                                 <td className={Style.performing_agentText}>Mails</td>
                                 <td className={Style.performing_agentText}>Msg</td>
-                                {/* <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td> */}
                             </tr>
                             <tr>
                                 <td>John Doe</td>
