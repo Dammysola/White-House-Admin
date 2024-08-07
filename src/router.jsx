@@ -37,6 +37,7 @@ import WhiteHouse_PopupContext from "./WhiteHouse_PopupContext";
 import Queries from "./pages/WhiteHouse/queries/Queries";
 import Customer_Support from "./pages/WhiteHouse/staff/department/customer_Support/Customer_Support";
 import Top_Agents from "./pages/WhiteHouse/staff/top_agents/Top_Agents";
+import Total_Top_Agents from "./pages/WhiteHouse/staff/top_agents/total_Top_Agents/Total_Top_Agents";
 
 
 
@@ -180,9 +181,14 @@ const router = createBrowserRouter([
                 element: <Customer_Support/>
             },
             {
-                path: "/topAgents",
+                path: "/topAgent",
                 element: <Top_Agents/>
+            },
+            {
+                path: "/TotalTopAgents",
+                element: <Total_Top_Agents/>
             }
+            
 
         ]
 

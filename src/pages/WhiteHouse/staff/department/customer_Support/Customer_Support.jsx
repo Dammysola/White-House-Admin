@@ -27,7 +27,7 @@ const Customer_Support = () => {
             image1: three_users,
             price: "400",
             text: "All Agents",
-            to: "/placebet",
+            to: "/allStaffs",
             divText: "View Details"
         },
         // {
@@ -184,7 +184,7 @@ const Customer_Support = () => {
                             <p>Top Performing Agents</p>
                             <div id={Style.date_viewDiv}>
                                 <p id={Style.dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
-                                <Link to={'/topAgents'}>
+                                <Link to={'/TotalTopAgents'}>
                                     <button> View All</button>
                                 </Link>
                             </div>
@@ -196,14 +196,14 @@ const Customer_Support = () => {
                                 <td className={Style.performing_agentText}>Calls</td>
                                 <td className={Style.performing_agentText}>Mails</td>
                                 <td className={Style.performing_agentText}>Msg</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                {/* <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td> */}
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>46</td>
                                 <td className={Style.performing_agentText}>5</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td><Link to={'/topAgent'}><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></Link></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>

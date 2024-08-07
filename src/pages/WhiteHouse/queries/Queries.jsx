@@ -20,14 +20,14 @@ const Reports = () => {
     const [toggleIndex, setToggleIndex] = useState(100);
     const [toggleStatsIndex, setToggleStatsIndex] = useState(100);
 
-const toggle = (index) => {
+    const toggle = (index) => {
         setToggleIndex(index);
     }
 
     const toggleStats = (index) => {
         setToggleStatsIndex(index);
     }
-    
+
     // const [color, setColor] = useState('#FFFFFF'); // Initial color
 
     // const handleCardClick = (index) => {
@@ -82,8 +82,11 @@ const toggle = (index) => {
             to: ""
         }
     ]
+    const frog = (index)=>{
+        let isBlack = index == toggleIndex ? true : false;
+    }
 
-    
+
 
 
     return (
@@ -125,8 +128,8 @@ const toggle = (index) => {
                                         figure={obj.figure}
                                         text={obj.text}
                                         to={obj.to}
-                                        colourChange ={colourChange}
-                                        onClick ={()=> toggleStats(index)} />
+                                        colourChange={colourChange}
+                                        onClick={() => toggleStats(index)} />
                                 )
                             })
                         }
@@ -162,80 +165,329 @@ const toggle = (index) => {
                         </tr>
 
 
-                        <tr id={Style.Personal_Info_tr}>
-                            <td>1</td>
-                            <td>8/7/2024</td>
-                            <td className={Style.tableText}>In-app Message </td>
-                            <td className={Style.tableText}>Billing</td>
-                            <td className={Style.tableText}>Lighty</td>
-                            <td className={Style.tableText}>Lorem ipsum dolo</td>
-                            <td>
-                                <div className={Style.ReportDiv}>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                </div>
-                            </td>
-                            <td>
+                        {
+                            toggleIndex == 100 ?
+
+                                <tbody>
+                                    <tr id={Style.Personal_Info_tr}>
+                                        <td>1</td>
+                                        <td>8/7/2024</td>
+                                        <td className={Style.tableText}>In-app Message </td>
+                                        <td className={Style.tableText}>Billing</td>
+                                        <td className={Style.tableText}>Lighty</td>
+                                        <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                        <td>
+                                            <div className={Style.ReportDiv}>
+                                                <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                                <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className={Style.statusText}>Pending</div>
+                                        </td>
+                                        <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                    </tr>
+                                    <tr id={Style.Personal_Info_tr}>
+                                        <td>2</td>
+                                        <td>8/7/2024</td>
+                                        <td className={Style.tableText}>Mail</td>
+                                        <td className={Style.tableText}>Account</td>
+                                        <td className={Style.tableText}>Lighty</td>
+                                        <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                        <td>
+                                            <div className={Style.ReportDiv}>
+                                                <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                                <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div id={Style.statusText2}>Resolved</div>
+                                        </td>
+                                        <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                    </tr>
+
+                                    <tr id={Style.Personal_Info_tr}>
+                                        <td>3</td>
+                                        <td>8/7/2024</td>
+                                        <td className={Style.tableText}>In-app Call</td>
+                                        <td className={Style.tableText}>Payment</td>
+                                        <td className={Style.tableText}>Lighty</td>
+                                        <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                        <td>
+                                            <div className={Style.ReportDiv}>
+                                                <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                                <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div id={Style.statusText2}>Resolved</div>
+                                        </td>
+                                        <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                    </tr>
+
+                                    <tr id={Style.Personal_Info_tr}>
+                                        <td>4</td>
+                                        <td>8/7/2024</td>
+                                        <td className={Style.tableText}>Toll Call</td>
+                                        <td className={Style.tableText}>Payment</td>
+                                        <td className={Style.tableText}>Lighty</td>
+                                        <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                        <td>
+                                            <div className={Style.ReportDiv}>
+                                                <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                                <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div id={Style.statusText2}>Resolved</div>
+                                        </td>
+                                        <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                    </tr>
+                                </tbody> : "what"
+                        }
+
+
+                        {toggleIndex === 0?
+                            <tbody>
+                                <tr id={Style.Personal_Info_tr}>
+                                    <td>1</td>
+                                    <td>8/7/2024</td>
+                                    <td className={Style.tableText}>In-app Message </td>
+                                    <td className={Style.tableText}>Billing</td>
+                                    <td className={Style.tableText}>Lighty</td>
+                                    <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                    <td>
+                                        <div className={Style.ReportDiv}>
+                                            <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div className={Style.statusText}>Pending</div>
+                                    </td>
+                                    <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                </tr>
+                                <tr id={Style.Personal_Info_tr}>
+                                    <td>2</td>
+                                    <td>8/7/2024</td>
+                                    <td className={Style.tableText}>Mail</td>
+                                    <td className={Style.tableText}>Account</td>
+                                    <td className={Style.tableText}>Lighty</td>
+                                    <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                    <td>
+                                        <div className={Style.ReportDiv}>
+                                            <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText2}>Resolved</div>
+                                    </td>
+                                    <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                </tr>
+
+                                <tr id={Style.Personal_Info_tr}>
+                                    <td>2</td>
+                                    <td>8/7/2024</td>
+                                    <td className={Style.tableText}>Mail</td>
+                                    <td className={Style.tableText}>Account</td>
+                                    <td className={Style.tableText}>Lighty</td>
+                                    <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                    <td>
+                                        <div className={Style.ReportDiv}>
+                                            <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText2}>Resolved</div>
+                                    </td>
+                                    <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                </tr>
+
+
+                                <tr id={Style.Personal_Info_tr}>
+                                    <td>2</td>
+                                    <td>8/7/2024</td>
+                                    <td className={Style.tableText}>Mail</td>
+                                    <td className={Style.tableText}>Account</td>
+                                    <td className={Style.tableText}>Lighty</td>
+                                    <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                    <td>
+                                        <div className={Style.ReportDiv}>
+                                            <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText2}>Resolved</div>
+                                    </td>
+                                    <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                </tr>
+
+                            </tbody> : "what"
+                        }
+
+                        {toggleIndex === 2?
+
+                            <tbody>
+                                <tr id={Style.Personal_Info_tr}>
+                                    <td>2</td>
+                                    <td>8/7/2024</td>
+                                    <td className={Style.tableText}>Toll Call</td>
+                                    <td className={Style.tableText}>Payment</td>
+                                    <td className={Style.tableText}>Lighty</td>
+                                    <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                    <td>
+                                        <div className={Style.ReportDiv}>
+                                            <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                            <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText2}>Resolved</div>
+                                    </td>
+                                    <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                </tr>
+
+                                <tr id={Style.Personal_Info_tr}>
+                                    <td>2</td>
+                                    <td>8/7/2024</td>
+                                    <td className={Style.tableText}>Toll Call</td>
+                                    <td className={Style.tableText}>Payment</td>
+                                    <td className={Style.tableText}>Lighty</td>
+                                    <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                    <td>
+                                        <div className={Style.ReportDiv}>
+                                            <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                            <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText2}>Resolved</div>
+                                    </td>
+                                    <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                </tr>
+
+                                <tr id={Style.Personal_Info_tr}>
+                                    <td>2</td>
+                                    <td>8/7/2024</td>
+                                    <td className={Style.tableText}>Toll Call</td>
+                                    <td className={Style.tableText}>Payment</td>
+                                    <td className={Style.tableText}>Lighty</td>
+                                    <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                    <td>
+                                        <div className={Style.ReportDiv}>
+                                            <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                            <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText2}>Resolved</div>
+                                    </td>
+                                    <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                </tr>
+
+                                <tr id={Style.Personal_Info_tr}>
+                                    <td>2</td>
+                                    <td>8/7/2024</td>
+                                    <td className={Style.tableText}>Toll Call</td>
+                                    <td className={Style.tableText}>Payment</td>
+                                    <td className={Style.tableText}>Lighty</td>
+                                    <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                    <td>
+                                        <div className={Style.ReportDiv}>
+                                            <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                            <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText2}>Resolved</div>
+                                    </td>
+                                    <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                </tr>
+                            </tbody> : "what"
+                        }
+
+                        {
+                            toggleStatsIndex === 0 && isBlack === false?
+                            <tbody>
+                            <tr id={Style.Personal_Info_tr}>
+                                <td>1</td>
+                                <td>8/7/2024</td>
+                                <td className={Style.tableText}>In-app Message </td>
+                                <td className={Style.tableText}>Billing</td>
+                                <td className={Style.tableText}>Lighty</td>
+                                <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                <td>
+                                    <div className={Style.ReportDiv}>
+                                        <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className={Style.statusText}>Pending</div>
+                                </td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                            </tr>
+                            <tr id={Style.Personal_Info_tr}>
+                                <td>2</td>
+                                <td>8/7/2024</td>
+                                <td className={Style.tableText}>Mail</td>
+                                <td className={Style.tableText}>Account</td>
+                                <td className={Style.tableText}>Lighty</td>
+                                <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                <td>
+                                    <div className={Style.ReportDiv}>
+                                        <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                    </div>
+                                </td>
+                                <td>
                                 <div className={Style.statusText}>Pending</div>
-                            </td>
-                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                        </tr>
-                        <tr id={Style.Personal_Info_tr}>
-                            <td>2</td>
-                            <td>8/7/2024</td>
-                            <td className={Style.tableText}>Mail</td>
-                            <td className={Style.tableText}>Account</td>
-                            <td className={Style.tableText}>Lighty</td>
-                            <td className={Style.tableText}>Lorem ipsum dolo</td>
-                            <td>
-                                <div className={Style.ReportDiv}>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id={Style.statusText2}>Resolved</div>
-                            </td>
-                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                        </tr>
+                                </td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                            </tr>
 
-                        <tr id={Style.Personal_Info_tr}>
-                            <td>2</td>
-                            <td>8/7/2024</td>
-                            <td className={Style.tableText}>In-app Call</td>
-                            <td className={Style.tableText}>Payment</td>
-                            <td className={Style.tableText}>Lighty</td>
-                            <td className={Style.tableText}>Lorem ipsum dolo</td>
-                            <td>
-                                <div className={Style.ReportDiv}>
-                                    <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
-                                    <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id={Style.statusText2}>Resolved</div>
-                            </td>
-                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                        </tr>
+                            <tr id={Style.Personal_Info_tr}>
+                                <td>3</td>
+                                <td>8/7/2024</td>
+                                <td className={Style.tableText}>In-app Call</td>
+                                <td className={Style.tableText}>Payment</td>
+                                <td className={Style.tableText}>Lighty</td>
+                                <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                <td>
+                                    <div className={Style.ReportDiv}>
+                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                        <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
+                                    </div>
+                                </td>
+                                <td>
+                                <div className={Style.statusText}>Pending</div>
+                                </td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                            </tr>
 
-                        <tr id={Style.Personal_Info_tr}>
-                            <td>2</td>
-                            <td>8/7/2024</td>
-                            <td className={Style.tableText}>Toll Call</td>
-                            <td className={Style.tableText}>Payment</td>
-                            <td className={Style.tableText}>Lighty</td>
-                            <td className={Style.tableText}>Lorem ipsum dolo</td>
-                            <td>
-                                <div className={Style.ReportDiv}>
-                                    <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
-                                    <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div id={Style.statusText2}>Resolved</div>
-                            </td>
-                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                        </tr>
+                            <tr id={Style.Personal_Info_tr}>
+                                <td>4</td>
+                                <td>8/7/2024</td>
+                                <td className={Style.tableText}>Toll Call</td>
+                                <td className={Style.tableText}>Payment</td>
+                                <td className={Style.tableText}>Lighty</td>
+                                <td className={Style.tableText}>Lorem ipsum dolo</td>
+                                <td>
+                                    <div className={Style.ReportDiv}>
+                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                        <p className={Style.Media_query}><img src={recording} alt="" />Play Recording</p>
+                                    </div>
+                                </td>
+                                <td>
+                                <div className={Style.statusText}>Pending</div>
+                                </td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                            </tr>
+                        </tbody> : ""
+                        }
 
                     </table>
                 </div>

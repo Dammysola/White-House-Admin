@@ -6,6 +6,11 @@
 #Transaction_wrapperDiv{
     padding: 6.8rem 8.5rem 6.8rem 7.5rem ;
 }
+#Transaction_mapDiv{
+    display: flex;
+    column-gap: 2rem;
+    margin-bottom: 3.3rem;
+}
 #Transaction_listCalendar_Div{
     display: flex;
     justify-content: space-between;
@@ -53,14 +58,17 @@
 #Transaction_tableWrapperDiv{
     width: 100%;
     height: 70vh;
+    position: relative;
     background-color: #FFFFFF;
     /* border: 1px solid #F0F0F0; */
     border-radius: 14px;
 }
 #input_FilterDiv{
     display: flex;
-    align-items: center;
+    align-items: end;
     column-gap: 6px;
+    justify-content: end;
+    margin-right: 1.6rem;
 }
 #input_FilterDiv p{
     font-size: 0.932rem;
@@ -147,5 +155,8 @@
 #searchDiv input{
     padding-left:40px ;
     height: 39px;
-    
+}
+#winners_background{
+    width: 100%;
+    margin-bottom: -4rem;
 }

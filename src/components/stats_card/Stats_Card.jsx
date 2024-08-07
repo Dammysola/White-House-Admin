@@ -11,7 +11,7 @@ const Stats_Card = (props) => {
     const { img, figure, text, to, colourChange, onClick } = props
     return (
         <div id={Style.Stats_Card_mainDiv} onClick={onClick}>
-            <div className={Style.Stats_CardDiv} style={{ backgroundColor: colourChange ? "#0E093C" : "#FFFFFF" }}>
+            <div className={Style.Stats_CardDiv} style={{ backgroundColor: colourChange ? "#0E093C" : "#FFFFFF", cursor: "pointer" }}>
                 <div id={Style.Stats_Card_img_textDiv}>
                     <img src={img} alt="" />
                     <div>

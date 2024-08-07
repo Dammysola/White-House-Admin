@@ -11,6 +11,15 @@
     font-size: 1.55rem;
     line-height: 3.5rem;
 }
+#Top_Agents_header_inputDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Top_Agents_header_inputDiv input{
+    width: 23.56rem;
+}
 .Revenue_earningDiv{
     width: 100%;
     height: 17.56rem;
@@ -103,4 +112,10 @@ td {
 
 #Top_Agents_TableWrapperDiv th {
     text-align: left;
+}
+
+td p{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
 }

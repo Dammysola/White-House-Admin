@@ -110,8 +110,8 @@ const Staff_Details = () => {
                 headerInfo={"Here’s an overview of all Staff"} />
 
             <div id={Style.Staff_Details_wrapperDiv}>
+                <p id={Style.Staff_headerText}>Staff Detail</p>
                 <div id={Style.Staff_Details_tableDiv}>
-
                     <table>
                         <tr id={Style.headerTable}>
                             <th>Photo</th>
