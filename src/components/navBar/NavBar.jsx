@@ -3,7 +3,7 @@ import Style from './NavBar.module.css'
 import arrowDown from '../../assets/svg/arrow_down.svg'
 import mail from '../../assets/svg/mail.svg'
 import user from '../../assets/svg/user.svg'
-import alphaBet_logo from '../../assets/svg/Alpha_bet_logo.svg'
+import alphaBet_logo from '../../assets/svg/Alpha_Bet_Black_Logo.svg'
 import { NavLink } from 'react-router-dom'
 
 
@@ -107,7 +107,9 @@ const NavBar = () => {
     <div>
       <div id={Style.Nav_Bar_Wrapper}>
         <div id={Style.NavBar_textDiv}>
+
           <img src={alphaBet_logo} alt="" />
+          
           <NavLink to={'/whiteHouseDashboard'} className={`${activeLink1 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(1)}>
             <p>Dashboard</p>
           </NavLink>

@@ -28,21 +28,21 @@
     margin-left: 1.3em;
     padding: 0.4em;
     visibility: visible;
-    color: #0095FF;
-    background-color: white;
+    color: #0E093C;
+    background-color: #F9F9F9;
 }
 
 .InputDiv .input {
     width: 100%;
     height: 51px;
-    border: 1px solid #0095FF;
+    border: 1px solid #0E093C;
     border-radius: 100px;
     padding: 11px 10px;
     box-sizing: border-box;
     font-size: 16px;
     font-size: 500;
     /* outline: none; */
-    background-color: #FFFFFF;
+    background-color: transparent;
     color: rgb(100, 100, 100);
 
      &:focus {

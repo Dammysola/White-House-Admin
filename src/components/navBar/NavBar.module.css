@@ -1,12 +1,10 @@
 #Nav_Bar_Wrapper{
     height: 5rem;
     padding: 0px 4rem 0 1.125rem;
-    background:url('../../assets//images//nav_background.png') no-repeat;
-    background-size: cover;
+    background-color: #FFFFFF;
     display: flex;
     column-gap: 12.5rem;
     align-items: center;
-    color: #FFFFFF;
 }
 #NavBar_textDiv{
     display: flex;
@@ -21,29 +19,31 @@
     margin-right: -3.5rem;
 }
 #NavBar_textDiv img{
-    margin-right: 2.8rem;
+    margin-right: 2.6rem;
+    box-sizing: border-box;
 }
 #NavBar_ContactDiv{
     display: flex;
-    column-gap: 2.8rem;
+    column-gap: 1.8rem;
     align-items: center;
+    color: #0E093C;
 }
 #NavBar_ContactDiv #NavBar_line{
     width: 2px;
     height: 40px;
-    background-color: #D9D9D9;
+    background-color: #0E093C;
 }
 .NavBar_text{
-    color: #FFFFFF;
+    color: #0E093C;
     font-size: 1rem;
 }
 .Nav_styled_Link{
-    background-color: #FFFFFF;
+    background-color: #0E093C;
     align-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #0E093C;
+    color: #FFFFFF;
     border: 1px solid #FFFFFF;
     font-size: 1rem;
     min-width: 6.56rem;

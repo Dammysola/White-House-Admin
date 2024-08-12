@@ -1,0 +1,12 @@
+#CustomerCare_Dashboard_mainDiv{
+    min-height: 100%;
+    background-color: #F9F9F9;
+
+}
+#CustomerCare_Dashboard_wrapperDiv{
+    padding: 3rem 7.5rem;
+}
+#Dashboard_CardDiv{
+    display: flex;
+    column-gap: 2rem;
+}
