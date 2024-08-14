@@ -1,9 +1,10 @@
 #Nav_Bar_Wrapper{
-    height: 5rem;
-    padding: 0px 4rem 0 1.125rem;
+    height: 5.5rem;
+    padding: 0px 7.5rem 0 1.125rem;
     background-color: #FFFFFF;
     display: flex;
-    column-gap: 12.5rem;
+    justify-content: space-between;
+    /* column-gap: 12.5rem; */
     align-items: center;
 }
 #NavBar_textDiv{
@@ -30,7 +31,7 @@
 }
 #NavBar_ContactDiv #NavBar_line{
     width: 2px;
-    height: 40px;
+    height: 2.5rem;
     background-color: #0E093C;
 }
 .NavBar_text{
@@ -46,10 +47,10 @@
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
     font-size: 1rem;
-    min-width: 6.56rem;
+    min-width: 5rem;
     padding: 1rem;
     box-sizing: border-box;
-    height: 35px;
+    height: 2.18rem;
     border-radius: 7px;
 }
 #NavBar_lastlineDiv{

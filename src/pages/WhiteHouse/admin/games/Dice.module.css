@@ -5,7 +5,7 @@
 }
 
 #DiceGame_wrapperDiv {
-    padding: 0 8rem 0 7.5rem;
+    padding: 2.5rem 8rem 10rem 7.5rem;
 }
 
 .PlaceBet_headerText {
@@ -173,4 +173,17 @@
 #DiceGame_Card_wrapper_two{
     display: flex;
     column-gap: 2rem;
+}
+#Sports_selectionDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7.56rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid #0E093C;
+    font-size: 1.25rem;
+    color: #0E093C;
+    column-gap: 0.6rem;
+
 }

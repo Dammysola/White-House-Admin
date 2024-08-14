@@ -39,6 +39,8 @@ import Top_Agents from "./pages/WhiteHouse/admin/staff/top_agents/Top_Agents";
 import Total_Top_Agents from "./pages/WhiteHouse/admin/staff/top_agents/total_Top_Agents/Total_Top_Agents";
 import AddNew_Agent from "./pages/WhiteHouse/admin/staff/addNew_Agent/AddNew_Agent";
 import CustomerCare_Dashboard from "./pages/WhiteHouse/customerCare/customerCare_Dashboard/CustomerCare_Dashboard";
+import CustomerCare_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/CustomerCare_Queries";
+import Sports from "./pages/WhiteHouse/admin/games/sports/Sports";
 
 
 
@@ -59,8 +61,8 @@ const router = createBrowserRouter([
                 element: <CustomerCare_Dashboard/>
             },
             {
-                path: "/businessDetails",
-                element: <Business_Details />
+                path: "/customerCare_queries",
+                element: <CustomerCare_Queries/>
             },
             {
                 path: "/businessTransaction",
@@ -93,6 +95,10 @@ const router = createBrowserRouter([
             {
                 path: "/dice",
                 element: <Dice />
+            },
+            {
+                path: "/sports",
+                element: <Sports/>
             },
             {
                 path: "/customerCare",

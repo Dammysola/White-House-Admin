@@ -8,7 +8,7 @@ const Total_Card = (props) => {
   const { image1, text, divText, price, to, isBlack, onClick } = props
   return (
     <div id={Style.Total_Card_mainDiv} onClick={onClick}>
-      <div id={Style.Total_Card_Wrapper} style={{ backgroundColor: isBlack ? "#0E093C" : "#FFFFFF", cursor: "pointer" }}>
+      <div id={Style.Total_Card_Wrapper} style={{ backgroundColor: isBlack ? "#0B438D" : "#FFFFFF", cursor: "pointer" }}>
         <div id={Style.Total_Card_firstLine_Div}>
           <div id={Style.Total_Card_firstLine_ImgDiv}>
             <img src={image1} alt="" />

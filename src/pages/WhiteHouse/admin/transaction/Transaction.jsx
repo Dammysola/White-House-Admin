@@ -137,7 +137,7 @@ const Transaction = () => {
 
 
 
-                    {toggleIndex == 0 ?
+                    {toggleIndex == 0 && cardToggleIndex ==0 ?
                         <table>
                             <tr id={Style.headerTable}>
                                 <th>S/N</th>
@@ -237,20 +237,159 @@ const Transaction = () => {
                                 </td>
                             </tr>
 
-                        </table> : ""}
+                        </table> 
+                        : ""}
 
                     <div>
-                        {toggleIndex == 2 ?
+                        {toggleIndex == 2 && cardToggleIndex == 0 ?
                             <Ticket_Losers /> : ""
                         }
 
                         {
-                            toggleIndex == 1 ?
+                            toggleIndex == 1 && cardToggleIndex == 0?
                                 <Ticket_Winners /> : ""
                         }
 
 
                     </div>
+
+                    {
+                        cardToggleIndex == 1 ? 
+
+                        <div>
+                        <table>
+                            <tr id={Style.headerTable}>
+                                <th>S/N</th>
+                                <th>User ID</th>
+                                <th>Ref Number</th>
+                                <th>Time</th>
+                                <th>Country</th>
+                                <th>Amount Paid</th>
+                                <th>Coin Received </th>
+                                <th>Payment Type</th>
+                                <th>Status</th>
+                            </tr>
+                            
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>UA 123476689</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>UA 123476689</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>UA 123476689</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>UA 123476689</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+                                </tbody>
+                        </table>
+                    </div>: ""
+                    }
                 </div>
 
 

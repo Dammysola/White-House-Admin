@@ -6,15 +6,15 @@ import chat from '../../../../../assets/svg/chat.svg'
 import clock from '../../../../../assets/svg/clock.svg'
 import users from '../../../../../assets/svg/users.svg'
 import rise from '../../../../../assets/svg/rise.svg'
-import arrow_side from '../../../../../assets/svg/arrow_side.svg'
-import line_graph from '../../../../../assets/images/line_Graph.png'
 import arrow_down from '../../../../../assets/svg/arrow_down-dark.svg'
 import Button from '../../../../../components/button/Button'
 import no_complaint from '../../../../../assets/svg/no_complaint.svg'
 import { Link } from 'react-router-dom'
-
-
-
+import Stats_Card from '../../../../../components/stats_card/Stats_Card'
+import search from '../../../../../assets/svg/Search.svg'
+import InputField from '../../../../../components/input/InputField'
+import download from '../../../../../assets/svg/download_img.svg'
+import coin from '../../../../../assets/svg/coin.svg'
 
 
 const Personal_Info = () => {
@@ -96,6 +96,36 @@ const Personal_Info = () => {
     ];
 
 
+    const users_stats_card = [
+        {
+            img: clock,
+            figure: "3k",
+            text: "Logged Sessions",
+            to: ""
+
+        },
+        {
+            img: users,
+            figure: "34",
+            text: "Friends",
+            to: "/userFriends"
+        },
+        {
+            img: chat,
+            figure: "14",
+            text: "Conversations",
+            to: ""
+        },
+        {
+            img: rise,
+            figure: "2k",
+            text: "Placed Bets",
+            to: "/userplacedbet"
+
+        },
+    ]
+
+
     return (
         <div id={Style.Personal_Info_mainDiv}>
             <Header
@@ -103,11 +133,25 @@ const Personal_Info = () => {
                 headerInfo={"Here’s an information on this User"} />
 
             <div id={Style.Personal_Info_wrapperDiv}>
-                <div id={Style.Personal_Info_buttonDiv}>
-                    <button>Freeze Account</button>
-                    <button>Suspend Account</button>
-                    <button>Fund Account</button>
+
+                <div id={Style.balance_buttonDiv}>
+                    <div id={Style.Coin_BalanceDiv}>
+                    <div id={Style.coinDiv}>
+                       <div><img src={coin} alt="" /></div> 
+                    </div>
+                    <div>
+                        <p>3K</p>
+                        <p>Coin Balance</p>
+                    </div>
+                    </div>
+
+                    <div id={Style.Personal_Info_buttonDiv}>
+                        <button>Freeze Account</button>
+                        <button>Suspend Account</button>
+                        <button>Fund Account</button>
+                    </div>
                 </div>
+
 
                 <div >
                     <p className={Style.Personal_Info_headerText}>Personal Information</p>
@@ -158,46 +202,18 @@ const Personal_Info = () => {
                 <p className={Style.Personal_Info_headerText}>Game Information</p>
                 <div id={Style.Personal_Info_Card_wrapper}>
 
-                    <div className={Style.Personal_Info_CardDiv}>
-                        <img src={clock} alt="" />
-                        <div>
-                            <p className={Style.Card_figure}>3k</p>
-                            <p className={Style.Card_text}>Logged Session</p>
-                        </div>
-                        <img src={arrow_side} alt="" />
-                    </div>
+                    {
+                        users_stats_card.map((obj) => {
 
-                    <div className={Style.Personal_Info_CardDiv}>
-                        <img src={users} alt="" />
-                        <div>
-                            <p className={Style.Card_figure}>34</p>
-                            <p className={Style.Card_text}>Friends</p>
-                        </div>
-                        <Link to={'/userFriends'}>
-                            <img src={arrow_side} alt="" />
-                        </Link>
-
-                    </div>
-
-                    <div className={Style.Personal_Info_CardDiv}>
-                        <img src={chat} alt="" />
-                        <div>
-                            <p className={Style.Card_figure}>1.5k</p>
-                            <p className={Style.Card_text}>Conversation</p>
-                        </div>
-                        <img src={arrow_side} alt="" />
-                    </div>
-
-                    <div className={Style.Personal_Info_CardDiv}>
-                        <img src={rise} alt="" />
-                        <div>
-                            <p className={Style.Card_figure}>2k</p>
-                            <p className={Style.Card_text}>Placed Bets</p>
-                        </div>
-                        <Link to={'/userplacedbet'}>
-                            <img src={arrow_side} alt="" />
-                        </Link>
-                    </div>
+                            return (
+                                <Stats_Card
+                                    figure={obj.figure}
+                                    img={obj.img}
+                                    text={obj.text}
+                                    to={obj.to} />
+                            )
+                        })
+                    }
                 </div>
 
                 <div id={Style.Personal_Info_graphReport_Div}>
@@ -206,22 +222,22 @@ const Personal_Info = () => {
                     <div id={Style.Dashboard_lineChart_Two}>
                         <p id={Style.Dashboard_RevenueText}>Revenue</p>
                         <ResponsiveContainer width="100%" height="70%">
-                        <BarChart width={150} height={40} data={line_data} margin={{
+                            <BarChart width={150} height={40} data={line_data} margin={{
                                 top: 5,
                                 right: 30,
                                 left: -20,
                                 bottom: 10,
                             }}>
-                                
-                               
-                                <XAxis dataKey="name"  
-                                axisLine={false} tickLine={false} fontSize={"0.8rem"}
+
+
+                                <XAxis dataKey="name"
+                                    axisLine={false} tickLine={false} fontSize={"0.8rem"}
                                 />
-                                <YAxis 
-                                axisLine={false} tickLine={false} fontSize={"0.7rem"}
+                                <YAxis
+                                    axisLine={false} tickLine={false} fontSize={"0.7rem"}
                                 />
-                                 {/* <Legend/> */}
-                                <Tooltip/>
+                                {/* <Legend/> */}
+                                <Tooltip />
                                 <Bar dataKey="pv" fill="#113353" />
                             </BarChart>
                         </ResponsiveContainer>
@@ -280,9 +296,344 @@ const Personal_Info = () => {
                         }
                     </div>
                 </div>
+
+                <div>
+
+                    <p className={Style.Personal_Info_headerText}>Coin Purchase History</p>
+
+                    <div className={Style.date_inputDiv}>
+                        <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
+                        <div className={Style.searchDiv}>
+                            <img src={search} alt="" />
+                            <InputField />
+                        </div>
+                        <img className={Style.download_img} src={download} alt="" />
+                    </div>
+                    <div id={Style.Personal_Info_tableDiv}>
+                        <table>
+                            <tr id={Style.headerTable}>
+                                <th>S/N</th>
+                                <th>Ref Number</th>
+                                <th>Time</th>
+                                <th>Country</th>
+                                <th>Amount Paid</th>
+                                <th>Coin Received</th>
+                                <th>Payment Type</th>
+                                <th>Status</th>
+                            </tr>
+
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p className={Style.Personal_Info_headerText}>Withdrawal History</p>
+
+                    <div className={Style.date_inputDiv}>
+                        <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
+                        <div className={Style.searchDiv}>
+                            <img src={search} alt="" />
+                            <InputField />
+                        </div>
+                        <img className={Style.download_img} src={download} alt="" />
+                    </div>
+
+                    <div id={Style.Personal_Info_tableDiv}>
+                        <table>
+                            <tr id={Style.headerTable}>
+                                <th>S/N</th>
+                                <th>Ref Number</th>
+                                <th>Time</th>
+                                <th>Country</th>
+                                <th>Coin Converted</th>
+                                <th>Amount Received</th>
+                                <th>Bank Details</th>
+                                <th>Status</th>
+                            </tr>
+
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p className={Style.Personal_Info_headerText}>Subscription History</p>
+
+                    <div className={Style.date_inputDiv}>
+                        <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
+                        <div className={Style.searchDiv}>
+                            <img src={search} alt="" />
+                            <InputField />
+                        </div>
+                        <img className={Style.download_img} src={download} alt="" />
+                    </div>
+
+                    <div id={Style.Personal_Info_tableDiv}>
+                        <table>
+                            <tr id={Style.headerTable}>
+                                <th>S/N</th>
+                                <th>Date</th>
+                                <th>Ref Number</th>
+                                <th>Subscription Type</th>
+                                <th>Amount Paid</th>
+                                <th>Bank Details</th>
+                                <th>Status</th>
+                            </tr>
+
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>UA 123476689</td>
+                                    <td>13:45</td>
+                                    <td>Nigeria</td>
+                                    <td>20000</td>
+                                    <td>500</td>
+                                    <td>
+                                        <div id={Style.BankDetails_Div}>
+                                            <div>
+                                                <p>Bank</p>
+                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                            </div>
+                                            <div>
+                                                <p>Account Number</p>
+                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                            </div><div>
+                                                <p>Account Name</p>
+                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id={Style.statusText}>Purchased</div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-
-
         </div>
     )
 }

@@ -124,7 +124,7 @@ const NavBar = () => {
             <div id={Style.dropdown}>
               <ul>
                 <NavLink to={'/dice'}><li><input type="radio" onClick={radio} className={`${activeRadio ? Style.radioInput : Style.radio_input}`} name="" value="" id={Style.radio_input} /> Dice</li></NavLink>
-                <NavLink><li><input type="radio" name="" id="" value="" />Lorem</li></NavLink>
+                <NavLink to={'/sports'}><li><input type="radio" name="" id="" value="" />Sports</li></NavLink>
               </ul>      
 
             </div>

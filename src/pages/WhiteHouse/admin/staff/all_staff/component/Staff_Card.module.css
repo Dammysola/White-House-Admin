@@ -47,3 +47,12 @@
     column-gap: 0.5rem;
     align-items: center;
 }
+#verified_img{
+    position: relative;
+}
+#imgDiv{
+    text-align: end;
+    /* padding-bottom: -3rem; */
+    /* margin: -3rem -1rem; */
+    box-sizing: border-box;
+}
