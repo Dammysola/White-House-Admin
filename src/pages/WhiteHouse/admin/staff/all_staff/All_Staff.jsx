@@ -80,7 +80,7 @@ const All_Staff = () => {
             img: users,
             figure: "New Agent",
             text: "Add A New Agent",
-            to: "/addNewAgent"
+            to: ""
         },
         {
             img: online,
@@ -137,7 +137,7 @@ const All_Staff = () => {
                                 </div>
 
                                 <img src={filter_img} alt="" />
-                            </div> 
+                            </div>
                         </div> : ""
                 }
 
@@ -157,7 +157,7 @@ const All_Staff = () => {
                                     )
                                 })
                             }
-                        </div> : toggleStatsIndex ? <AddNew_Agent /> : ""
+                        </div> : toggleStatsIndex == 1 ? <AddNew_Agent/> : ""
 
                 }
             </div>

@@ -101,7 +101,7 @@ const Personal_Info = () => {
             img: clock,
             figure: "3k",
             text: "Logged Sessions",
-            to: ""
+            to: "/loggedsession"
 
         },
         {

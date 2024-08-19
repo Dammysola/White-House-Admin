@@ -11,19 +11,21 @@ const Stats_Card = (props) => {
     const { img, figure, text, to, colourChange, onClick } = props
     return (
         <div id={Style.Stats_Card_mainDiv} onClick={onClick}>
-            <div className={Style.Stats_CardDiv} style={{ backgroundColor: colourChange ? "#0B438D" : "#FFFFFF", cursor: "pointer" }}>
-                <div id={Style.Stats_Card_img_textDiv}>
-                    <img src={img} alt="" />
-                    <div>
-                        <p className={Style.Card_figure} style={{ color: colourChange ? "#FFFFFF" : "#333333" }}>{figure}</p>
-                        <p className={Style.Card_text} style={{ color: colourChange ? "#FFFFFF" : "#333333" }}>{text}</p>
+            <Link to={to}>
+                <div className={Style.Stats_CardDiv} style={{ backgroundColor: colourChange ? "#0B438D" : "#FFFFFF", cursor: "pointer" }}>
+                    <div id={Style.Stats_Card_img_textDiv}>
+                        <img src={img} alt="" />
+                        <div>
+                            <p className={Style.Card_figure} style={{ color: colourChange ? "#FFFFFF" : "#333333" }}>{figure}</p>
+                            <p className={Style.Card_text} style={{ color: colourChange ? "#FFFFFF" : "#333333" }}>{text}</p>
+                        </div>
                     </div>
-                </div>
 
-                <Link to={to}>
+
                     <img src={arrow_side} alt="" />
-                </Link>
-            </div>
+                </div>
+            </Link>
+
         </div>
     )
 }

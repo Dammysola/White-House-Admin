@@ -41,14 +41,14 @@ const Customer_Support = () => {
             image1: online,
             price: "280",
             text: "Online",
-            to: "/placebet",
+            to: "",
             divText: "View All"
         },
         {
             image1: offline,
             price: "120",
             text: "Offline",
-            to: "/placebet",
+            to: "",
             divText: "View All"
         },
     ]

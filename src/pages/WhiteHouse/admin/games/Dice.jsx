@@ -277,18 +277,18 @@ const DiceGame = () => {
 
 
             <div id={Style.DiceGame_Card_wrapper_two}>
-            {
-              stats_card3.map((obj) => {
-                return (
-                  <Stats_Card
-                    img={obj.img}
-                    figure={obj.figure}
-                    text={obj.text}
-                    to={obj.to} />
-                )
-              })
-            }
-              
+              {
+                stats_card3.map((obj) => {
+                  return (
+                    <Stats_Card
+                      img={obj.img}
+                      figure={obj.figure}
+                      text={obj.text}
+                      to={obj.to} />
+                  )
+                })
+              }
+
             </div>
           </div>
         </div>

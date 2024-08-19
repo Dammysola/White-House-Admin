@@ -7,7 +7,7 @@
     padding: 2rem;
     box-sizing: border-box;
     height: 11.25rem;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     column-gap: 1.5rem;
     display: flex;
     align-items: center;

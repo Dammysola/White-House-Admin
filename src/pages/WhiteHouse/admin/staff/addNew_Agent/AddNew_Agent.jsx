@@ -1,7 +1,7 @@
 import React from 'react'
 import Input from '../../../../../components/SignUp_input/Input'
 import Style from '../addNew_Agent/AddNew_Agent.module.css'
-
+import Button from '../../../../../components/button/Button'
 
 
 const AddNew_Agent = () => {
@@ -40,7 +40,7 @@ const AddNew_Agent = () => {
 
                             <div id={Style.generatePassword}>Auto Generate Password</div>
                         </div>
-                        <div id={Style.AddNew_Agent_buttonDiv}><button>Save Details</button></div>
+                        <div id={Style.AddNew_Agent_buttonDiv}><Button text = {"Save Details"}/></div>
                     </div>
                 </form>
             </div>

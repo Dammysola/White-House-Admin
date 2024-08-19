@@ -4,7 +4,6 @@
     background-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
-    /* column-gap: 12.5rem; */
     align-items: center;
 }
 #NavBar_textDiv{
@@ -78,12 +77,10 @@ ul{
     flex-direction: column;
     row-gap: 0.6rem;
     justify-content: center;
-     list-style: none;
+    list-style: none;
 }
 #dropdown li{
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    text-align: left;
     font-size: 1rem;
     color: #000000;
 }

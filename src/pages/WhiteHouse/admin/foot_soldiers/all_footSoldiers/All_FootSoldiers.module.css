@@ -1,0 +1,59 @@
+#All_FootSoldiers_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#All_FootSoldiers_wrapperDiv{
+    padding: 5rem 7.5rem;
+}
+#All_FootSoldiers_headerText{
+    color: #1A1A1A;
+    font-size: 1.5rem;
+    height: 0;
+}
+#All_Users_toggle_dateDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#All_Users_input_FilterDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+
+}
+#All_Users_input_FilterDiv p{
+    font-size: 0.93rem;
+    color: #707070;
+    height: 0;
+}
+
+#All_Users_input_FilterDiv #searchDiv img{
+    position: absolute;
+    width: 15px;
+    padding-left: 0.7rem;
+    padding-top: 0.9rem;
+
+}
+#searchDiv{
+    display: flex;
+    align-items: center;
+}
+
+#searchDiv input{
+    position: relative;
+    width: 14.5rem;
+    border-radius: 0.75rem;
+    padding-left:2.5rem;
+    box-sizing: border-box;
+    height: 2.43rem;  
+}
+
+#All_Users_Card{
+    row-gap: 2rem;
+    margin-top: 1.56rem;
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}

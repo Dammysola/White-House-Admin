@@ -6,7 +6,12 @@ import flag from '../../../../assets/svg/flag.svg'
 import person from '../../../../assets/svg/person.svg'
 import Header from '../../../../components/header/Header'
 import Stats_Card from '../../../../components/stats_card/Stats_Card'
+import foot from '../../../../assets/svg/foot.svg'
 import { Link } from 'react-router-dom'
+
+
+
+
 
 const WhiteHouse_Dashboard = () => {
 
@@ -121,10 +126,10 @@ const WhiteHouse_Dashboard = () => {
             to: "/countries"
         },
         {
-            img: rise,
+            img: foot,
             figure: "200k",
-            text: "Bet Placed",
-            to: "/placebet"
+            text: "Foot Soldiers",
+            to: "/footSoldiers"
 
         },
     ]

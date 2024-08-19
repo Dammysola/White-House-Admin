@@ -5,7 +5,7 @@
 }
 
 #Personal_Info_wrapperDiv {
-    padding: 3.8rem 8rem 3.8rem 7.5rem;
+    padding: 3.8rem 7.5rem;
 }
 
 #Coin_BalanceDiv {
@@ -97,7 +97,7 @@
     height: 13.88rem;
     border-bottom: 1px solid #c5c4c4;
 }
-#Personal_Info_tableDiv tr:nth-child(3){
+#Personal_Info_tableDiv tr:last-child{
     border-bottom: none;
 }
 #Personal_Info_tableDiv #Personal_Info_tr {

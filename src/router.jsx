@@ -41,6 +41,12 @@ import AddNew_Agent from "./pages/WhiteHouse/admin/staff/addNew_Agent/AddNew_Age
 import CustomerCare_Dashboard from "./pages/WhiteHouse/customerCare/customerCare_Dashboard/CustomerCare_Dashboard";
 import CustomerCare_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/CustomerCare_Queries";
 import Sports from "./pages/WhiteHouse/admin/games/sports/Sports";
+import Foot_Soldiers from "./pages/WhiteHouse/admin/foot_soldiers/Foot_Soldiers";
+import All_FootSoldiers from "./pages/WhiteHouse/admin/foot_soldiers/all_footSoldiers/All_FootSoldiers";
+import Soldier_Transaction from "./pages/WhiteHouse/admin/foot_soldiers/footSoldier_transaction/Soldier_Transaction";
+import Pending_Request from "./pages/WhiteHouse/admin/foot_soldiers/pending_requests/Pending_Request";
+import Amount_Paid from "./pages/WhiteHouse/admin/foot_soldiers/amount_paid/Amount_Paid";
+import All_Transaction from "./pages/WhiteHouse/admin/foot_soldiers/all_transactions/All_Transaction";
 
 
 
@@ -195,7 +201,32 @@ const router = createBrowserRouter([
             {
                 path: "/addNewAgent",
                 element: <AddNew_Agent/>
+            },
+            {
+                path: "/footSoldiers",
+                element: <Foot_Soldiers/>
+            },
+            {
+                path: "/allFootSoldiers",
+                element: <All_FootSoldiers/>
+            },
+            {
+                path: "/soldiersTransaction",
+                element: <Soldier_Transaction/>
+            },
+            {
+                path: "/pendingRequests",
+                element: <Pending_Request/>
+            },
+            {
+                path: "/amountPaid",
+                element: <Amount_Paid/>
+            },
+            {
+                path: "/AllTransaction",
+                element: <All_Transaction/>
             }
+            
             
 
         ]

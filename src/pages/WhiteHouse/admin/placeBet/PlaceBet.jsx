@@ -127,7 +127,7 @@ const PlaceBet = () => {
             text: 'Loosers',
             divText: 'View all',
             price: '23,000',
-            to: "/staffDetails"
+            to: ""
         },
     ]
 

@@ -1,0 +1,65 @@
+#All_Transaction_mainDiv{
+    background-color: #F9F9F9;
+    min-height: 100vh;
+    width: 100%;
+}
+#All_Transaction_headerDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggleDiv_buttonActive{
+    min-width: 50px;
+    background-color: #0E093C;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    height: 2rem;
+    font-size: 0.9rem;
+}
+.All_Transaction_button{
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#Amount_Paid_input_FilterDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+
+}
+#Amount_Paid_input_FilterDiv p{
+    font-size: 0.93rem;
+    color: #707070;
+    height: 0;
+}
+#Amount_Paid_input_FilterDiv p img{
+    width: 1rem;
+}
+#Amount_Paid_input_FilterDiv #searchDiv img{
+    position: absolute;
+    width: 15px;
+    padding-left: 0.7rem;
+    padding-top: 0.9rem;
+
+}
+#searchDiv{
+    display: flex;
+    align-items: center;
+}
+#searchDiv input{
+    position: relative;
+    width: 14.5rem;
+    border-radius: 0.75rem;
+    padding-left:2.5rem;
+    box-sizing: border-box;
+    height: 2.43rem;  
+}
+#imgDiv img{
+    height: 2.3rem;
+    margin-right: 0.4rem;
+    margin-bottom: -1rem;
+}
