@@ -13,9 +13,11 @@
     align-items: center;
     margin-top: 2.5rem;
 }
+
 #Input_filterDiv{
     display: flex;
     align-items: center;
+    column-gap: 0.9rem;
 }
 #Input_filterDiv #searchDiv img{
     position: absolute;
@@ -93,7 +95,9 @@
     height: 15.5rem;
     border-bottom: 1px solid #C4C4C4;
 }
-
+#Reports_Table_WrapperDiv tr:last-child{
+    border-bottom: none;
+}
 #Reports_Table_WrapperDiv .tableText {
     color: #262626;
     font-weight: bold;

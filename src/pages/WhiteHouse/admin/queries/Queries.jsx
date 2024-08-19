@@ -82,9 +82,8 @@ const Reports = () => {
             to: ""
         }
     ]
-    const frog = (index)=>{
-        let isBlack = index == toggleIndex ? true : false;
-    }
+   
+    // let isBlack = index == toggleIndex ? true : false;
 
 
 
@@ -410,7 +409,7 @@ const Reports = () => {
                         }
 
                         {
-                            toggleStatsIndex === 0 && isBlack === false?
+                            toggleStatsIndex === 0 ?
                             <tbody>
                             <tr id={Style.Personal_Info_tr}>
                                 <td>1</td>
