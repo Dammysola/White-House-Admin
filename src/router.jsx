@@ -53,49 +53,45 @@ import All_Transaction from "./pages/WhiteHouse/admin/foot_soldiers/all_transact
 
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <MainLayout />,
-        children: [
-            // {
-            //     index: true,
-            //     element: <First_page/>
-            // },
-            {
-                index:true,
-                // path: "/newAccount",
-                element: <CustomerCare_Dashboard/>
-            },
-            {
-                path: "/customerCare_queries",
-                element: <CustomerCare_Queries/>
-            },
-            {
-                path: "/businessTransaction",
-                element: <Business_Transaction />
-            },
-            {
-                path: "/directorDetails",
-                element: <Director_Details />
-            },
-            {
-                path: "/success",
-                element: <Congratulation />
-            },
-            {
-                path: "/signIn",
-                element: <SignIn />
-            }
-        ]
+    // {
+    //     path: "/",
+    //     element: <MainLayout />,
+    //     children: [
+          
+    //         {
+    //             index:true,
+    //             element: <CustomerCare_Dashboard/>
+    //         },
+    //         {
+    //             path: "/customerCare_queries",
+    //             element: <CustomerCare_Queries/>
+    //         },
+    //         {
+    //             path: "/businessTransaction",
+    //             element: <Business_Transaction />
+    //         },
+    //         {
+    //             path: "/directorDetails",
+    //             element: <Director_Details />
+    //         },
+    //         {
+    //             path: "/success",
+    //             element: <Congratulation />
+    //         },
+    //         {
+    //             path: "/signIn",
+    //             element: <SignIn />
+    //         }
+    //     ]
 
-    },
+    // },
     {
         path: "/",
         element: <WhiteHouse_PopupContext><MainLayout_Two/></WhiteHouse_PopupContext>,
         children: [
            
             {
-                path: "/whiteHouseDashboard",
+                index: true,
                 element: <WhiteHouse_Dashboard />
             },
             {
