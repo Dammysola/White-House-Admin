@@ -17,14 +17,14 @@ const All_Transaction = () => {
         setToggleIndex(index)
     }
 
-    
+
     return (
         <div id={Style.All_Transaction_mainDiv} >
             <div id={Style.All_Transaction_headerDiv}>
                 <div>
                     <button onClick={() => toggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.All_Transaction_button}>All</button>
-                    <button>WHAgent</button>
-                    <button>Onboarding</button>
+                    <button onClick={() => toggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.All_Transaction_button}>WHAgent</button>
+                    <button onClick={() => toggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.All_Transaction_button}>Onboarding</button>
                 </div>
 
                 <div id={Style.Amount_Paid_input_FilterDiv}>
