@@ -108,7 +108,8 @@ const NavBar = () => {
       <div id={Style.Nav_Bar_Wrapper}>
         <div id={Style.NavBar_textDiv}>
 
-          <img src={alphaBet_logo} alt="" />
+          {/* <img src={alphaBet_logo} alt="" /> */}
+          <p id={Style.logo}>Logo</p>
           
           <NavLink to={true} className={`${activeLink1 ? Style.Nav_styled_Link : Style.NavBar_text}`} onClick={() => handleClick(1)}>
             <p>Dashboard</p>
