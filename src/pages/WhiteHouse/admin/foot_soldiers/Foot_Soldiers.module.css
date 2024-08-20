@@ -42,7 +42,7 @@
     border-bottom: none;
 }
 #onboarded_users_wrapperDiv th, td{
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 #onboarded_users_wrapperDiv th{
     text-align: left;
@@ -141,7 +141,6 @@
 }
 #SmileyImg_Div{
     margin-top: -1rem;
-    /* margin-left: -1rem; */
     box-sizing: border-box;
  }
 #Revenue_smileyImg{

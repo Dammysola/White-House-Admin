@@ -15,6 +15,7 @@ import neutral from '../../../../../assets/svg/neutral.svg'
 import sad from '../../../../../assets/svg/sad.svg'
 import issues from '../../../../../assets/svg/Issues.svg'
 import { Link } from 'react-router-dom'
+import Button from '../../../../../components/button/Button'
 
 
 
@@ -178,7 +179,7 @@ const Customer_Support = () => {
                             <div id={Style.date_viewDiv}>
                                 <p id={Style.dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
                                 <Link to={'/TotalTopAgents'}>
-                                    <button> View All</button>
+                                <Button text ={"View All"}/>
                                 </Link>
                             </div>
                         </div>
@@ -195,49 +196,49 @@ const Customer_Support = () => {
                                 <td className={Style.performing_agentText}>46</td>
                                 <td className={Style.performing_agentText}>5</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><Link to={'/topAgent'}><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></Link></td>
+                                <td><Link to={'/topAgent'}><Button text ={"View Details"}/></Link></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>22</td>
                                 <td className={Style.performing_agentText}>13</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td><Button text ={"View Details"}/></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>45</td>
                                 <td className={Style.performing_agentText}>8</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td><Button text ={"View Details"}/></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>34</td>
                                 <td className={Style.performing_agentText}>77</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td><Button text ={"View Details"}/></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>89</td>
                                 <td className={Style.performing_agentText}>5</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td><Button text ={"View Details"}/></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>33</td>
                                 <td className={Style.performing_agentText}>566</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td><Button text ={"View Details"}/></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>21</td>
                                 <td className={Style.performing_agentText}>44</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.69rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                <td><Button text ={"View Details"}/></td>
                             </tr>
                         </table>
                     </div>

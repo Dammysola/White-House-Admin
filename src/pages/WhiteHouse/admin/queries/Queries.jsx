@@ -138,7 +138,7 @@ const Reports = () => {
 
 
                 <div id={Style.Query_header_filterDiv}>
-                    <p className={Style.ReportsText}>All Queries</p>
+                    {toggleIndex== 100 ? <p className={Style.ReportsText}>All Queries</p>: toggleIndex == 0 ? <p className={Style.ReportsText}>In-app Message Queries</p>: toggleIndex == 2 ? <p className={Style.ReportsText}>In-app Call Queries</p>: toggleIndex == 1 ? <p className={Style.ReportsText}>Mail Queries</p>: toggleIndex == 3 ? <p className={Style.ReportsText}>In-app Message Queries</p>: toggleIndex == 2 ? <p className={Style.ReportsText}>In-app Call Queries</p>: toggleIndex == 1 ? <p className={Style.ReportsText}>Mail Queries</p>: ""}
                     <div id={Style.Input_filterDiv}>
                         <div id={Style.searchDiv}>
                             <img src={search} alt="" />

@@ -3,6 +3,9 @@
     min-height: 100vh;
     width: 100%;
 }
+#All_Transaction_WrapperDiv{
+    padding: 5rem 7.5rem;
+}
 #All_Transaction_headerDiv{
     display: flex;
     justify-content: space-between;
@@ -23,6 +26,8 @@
     font-size: 0.9rem;
     cursor: pointer;
     background-color: transparent;
+    color: #666666;
+    font-size: 0.9rem;
 }
 
 #Amount_Paid_input_FilterDiv{
@@ -61,4 +66,47 @@
     height: 2.3rem;
     margin-right: 0.4rem;
     margin-bottom: -1rem;
+}
+
+
+#All_Transaction_table_WrapperDiv{
+    width: 100%;
+    background-color: #FFFFFF;
+    margin-top: 0.9rem;
+    box-sizing: border-box;
+}
+#All_Transaction_table_WrapperDiv table{
+    border-collapse: collapse;
+    width: 100%;
+}
+#All_Transaction_table_WrapperDiv #headerTable{
+    color: #000000;
+    font-size: 1.1rem;
+    height: 5.1rem;
+}
+#All_Transaction_table_WrapperDiv th, td{
+    padding: 0 1rem;
+}
+#All_Transaction_table_WrapperDiv th{
+    text-align: left;
+}
+#All_Transaction_table_WrapperDiv tr{
+    height: 5rem;
+    color: #666666;
+    font-size: 0.93rem;
+}
+
+#All_Transaction_table_WrapperDiv tr:last-child{
+    border-bottom: none;
+}
+#status_td{
+    background-color: rgba(49, 195, 100, .2);
+    color: #31C364;
+    width: 5.1rem;
+    height: 1.6rem;
+    border-radius: 0.3rem;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
