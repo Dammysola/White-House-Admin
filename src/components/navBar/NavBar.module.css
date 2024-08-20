@@ -72,6 +72,20 @@
     background-color: #FFFFFF;
     border-radius: 1rem;
 }
+.Nav_styled_Link:hover #dropdown{
+    display: block;
+    width: 138px;
+    height: 84px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    /* margin-left: -50px; */
+    color: #353535;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    margin-top: 7.2rem;
+}
+
 ul{
     display: flex;
     flex-direction: column;

@@ -19,7 +19,7 @@ const NavBar = () => {
   const [activeLink8, setActiveLink8] = useState(false)
   const [activeRadio, setActiveRadio] = useState(false)
 
-
+  
   const radio = () => {
     setActiveRadio(true)
   }
@@ -123,8 +123,8 @@ const NavBar = () => {
             <p id={Style.game}>Games <img src={arrowDown} alt="" /></p>
             <div id={Style.dropdown}>
               <ul>
-                <NavLink to={'/dice'}><li><input type="radio" onClick={radio} className={`${activeRadio ? Style.radioInput : Style.radio_input}`} name="" value="" id={Style.radio_input} /> Dice</li></NavLink>
-                <NavLink to={'/sports'}><li><input type="radio" name="" id="" value="" />Sports</li></NavLink>
+                <NavLink to={'/dice'}><li><input type="radio" onClick={radio} className={`${activeRadio ? Style.radioInput : Style.radio_input}`} name="game" value="dice" id={Style.radio_input} /> Dice</li></NavLink>
+                <NavLink to={'/sports'}><li><input type="radio" name="game" id="" value="sport" />Sports</li></NavLink>
               </ul>      
 
             </div>

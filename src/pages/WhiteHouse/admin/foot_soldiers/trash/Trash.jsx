@@ -1,22 +1,18 @@
 import React from 'react'
 import Style from '../pending_requests/Pending_Request.module.css'
 import Header from '../../../../../components/header/Header'
-import gray_delete from '../../../../../assets/svg/gray_delete.svg'
 import red_delete from '../../../../../assets/svg/red_delete.svg'
-import { Link } from 'react-router-dom'
-
+import refresh from '../../../../../assets/svg/refresh.svg'
 const Pending_Request = () => {
     return (
         <div id={Style.Pending_Request_mainDiv}>
             <Header
-                headerText={"Pending Requests"}
-                headerInfo={"Here’s an information on all Pending Requests"} />
+                headerText={"Trash"}
+                headerInfo={"Here’s an information on all Trash"} />
 
             <div id={Style.Pending_Request_wrapperDiv}>
-                <div id={Style.Pending_Request_headerDiv}>
-                    <p id={Style.Pending_Request_HeaderText}>Pending Requests lists <span>(2000)</span></p>
-                    <Link to={"/trash"}><p id={Style.trashText}><img src={gray_delete} alt="" /> Trash</p></Link>
-                </div>
+                    <p id={Style.Pending_Request_HeaderText}>Trash Lists <span>(2000)</span></p>
+                
 
                 <div id={Style.Pending_Request_table_wrapperDiv}>
                     <table>
@@ -54,7 +50,7 @@ const Pending_Request = () => {
                                     </div>
                                 </td>
                                 <td>Ikeja</td>
-                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={red_delete} alt="" /></div></td>
+                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={refresh} alt="" /></div></td>
                             </tr>
 
                             <tr>
@@ -79,7 +75,7 @@ const Pending_Request = () => {
                                     </div>
                                 </td>
                                 <td>Ikeja</td>
-                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={red_delete} alt="" /></div></td>
+                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={refresh} alt="" /></div></td>
                             </tr>
 
                             <tr>
@@ -104,7 +100,7 @@ const Pending_Request = () => {
                                     </div>
                                 </td>
                                 <td>Ikeja</td>
-                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={red_delete} alt="" /></div></td>
+                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={refresh} alt="" /></div></td>
                             </tr>
                         </tbody>
 

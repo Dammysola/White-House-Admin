@@ -29,7 +29,8 @@ const DiceGame = () => {
       image1: Activity,
       text: 'Total Bet Placed',
       divText: 'View all',
-      price: '$25,052,985'
+      price: '$25,052,985',
+      to: "/diceBetPlaced"
     },
     {
       image1: three_users,
@@ -108,7 +109,7 @@ const DiceGame = () => {
       img: rise,
       figure: "200k",
       text: "Bet Placed",
-      to: "/placebet"
+      to: "/diceBetPlaced"
 
     },
     {
@@ -165,6 +166,7 @@ const DiceGame = () => {
                   text={object.text}
                   divText={object.divText}
                   price={object.price}
+                  to = {object.to}
                 />
               )
             })

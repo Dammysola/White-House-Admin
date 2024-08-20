@@ -174,7 +174,7 @@
     display: flex;
     column-gap: 2rem;
 }
-#Sports_selectionDiv{
+.Sports_selectionDiv{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,6 +184,12 @@
     border: 1px solid #0E093C;
     font-size: 1.25rem;
     color: #0E093C;
-    column-gap: 0.6rem;
-
+}
+#Sports_selection_wrapperDiv{
+    display: flex;
+    column-gap: 0.9rem;
+}
+#basket{
+    position: relative;
+    margin-top: 0.45rem; 
 }

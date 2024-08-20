@@ -26,7 +26,7 @@ const All_Transaction = () => {
                 headerInfo={"Here’s an information on all Foot Soliders transaction"} />
             <div id={Style.All_Transaction_WrapperDiv}>
                 <div id={Style.All_Transaction_headerDiv}>
-                    <div>
+                    <div id={Style.btnDiv}>
                         <button onClick={() => toggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.All_Transaction_button}>All</button>
                         <button onClick={() => toggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.All_Transaction_button}>WHAgent</button>
                         <button onClick={() => toggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.All_Transaction_button}>Onboarding</button>
@@ -62,6 +62,36 @@ const All_Transaction = () => {
                         <tbody>
                             <tr>
                                 <td>1</td>
+                                <td>UA 123476689</td>
+                                <td><div>
+                                    <p>24 Aug, 2024</p>
+                                    <p>13:53</p>
+                                    </div>
+                                </td>
+                                <td>WHAgent</td>
+                                <td>WHC 500</td>
+                                <td>John Doe</td>
+                                <td>WHAgent Account</td>
+                                <td><div id={Style.status_td}>Successful</div></td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>UA 123476689</td>
+                                <td><div>
+                                    <p>24 Aug, 2024</p>
+                                    <p>13:53</p>
+                                    </div>
+                                </td>
+                                <td>WHAgent</td>
+                                <td>WHC 500</td>
+                                <td>John Doe</td>
+                                <td>WHAgent Account</td>
+                                <td><div id={Style.status_td}>Successful</div></td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
                                 <td>UA 123476689</td>
                                 <td><div>
                                     <p>24 Aug, 2024</p>

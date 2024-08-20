@@ -47,8 +47,9 @@ import Soldier_Transaction from "./pages/WhiteHouse/admin/foot_soldiers/footSold
 import Pending_Request from "./pages/WhiteHouse/admin/foot_soldiers/pending_requests/Pending_Request";
 import Amount_Paid from "./pages/WhiteHouse/admin/foot_soldiers/amount_paid/Amount_Paid";
 import All_Transaction from "./pages/WhiteHouse/admin/foot_soldiers/all_transactions/All_Transaction";
-
-
+import Dice_BetPlaced from "./pages/WhiteHouse/admin/games/Dice_BetPlaced";
+import Users_From_Soldiers from "./pages/WhiteHouse/admin/foot_soldiers/users_from_soldiers/Users_From_Soldiers"
+import Trash from "./pages/WhiteHouse/admin/foot_soldiers/trash/Trash"
 
 
 
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
             {
                 path: "/sports",
                 element: <Sports/>
+            },
+            {
+                path: "/diceBetPlaced",
+                element: <Dice_BetPlaced/>
             },
             {
                 path: "/customerCare",
@@ -221,6 +226,14 @@ const router = createBrowserRouter([
             {
                 path: "/AllTransaction",
                 element: <All_Transaction/>
+            },
+            {
+                path: "/usersFromSoldiers",
+                element: <Users_From_Soldiers/>
+            },
+            {
+                path: "/trash",
+                element: <Trash/>
             }
             
             

@@ -39,8 +39,7 @@
     height: 4rem;
 }
 #Pending_Request_table_wrapperDiv tr {
-    height: 13.87rem;
-    text-align: left;
+    height: 13.87rem;font-size: 0.9rem;
 }
 
 #Pending_Request_table_wrapperDiv tr:last-child {
@@ -49,11 +48,10 @@
 
 #Pending_Request_table_wrapperDiv th,
 td {
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
-#Pending_Request_table_wrapperDiv td{
-    font-size: 0.9rem;
-
+#Pending_Request_table_wrapperDiv th{
+        text-align: left;
 }
 #Pending_Request_table_wrapperDiv #BankDetails_Div {
     display: flex;

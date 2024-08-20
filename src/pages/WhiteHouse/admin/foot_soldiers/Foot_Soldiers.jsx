@@ -29,7 +29,7 @@ const Foot_Soldiers = () => {
             text: "Users From Soldiers",
             divText: "View All",
             price: "20K",
-            to: ""
+            to: "/usersFromSoldiers"
         },
         {
             image1: amount,
