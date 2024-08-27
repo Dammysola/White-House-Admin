@@ -71,7 +71,7 @@ const Conversation = () => {
               </td>
               <td>50000</td>
               <td>
-                <Link to={'/loggedsession'}>
+                <Link to={"/chatHistory"}>
                  <button style={{ backgroundColor: "#075070", border: "none", width: "4.5rem", height: "1.37rem", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px" }}>View Chat</button>
                 </Link>
                </td>

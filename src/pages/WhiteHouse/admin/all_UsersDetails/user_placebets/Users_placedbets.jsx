@@ -5,15 +5,65 @@ import search from '../../../../../assets/svg/Search.svg'
 import InputField from '../../../../../components/input/InputField'
 import filter_img from '../../../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../../../assets/svg/download_img.svg'
+import Activity from '../../../../../assets/svg/Activity.svg'
+import Total_Card from '../../../../../components/total_Card/Total_Card'
 
 const Users_placedbets = () => {
+
+    const placedbet_total_Card = [
+        {
+          image1: Activity,
+          text: "Total Amount Staked",
+          divText: "",
+          price: "$25,000",
+          to: ""
+        },
+        {
+          image1: Activity,
+          text: "Total Amount Won",
+          divText: "",
+          price: "$15,052"
+        },
+        {
+          image1: Activity,
+          text: "Total Amount Loss",
+          divText: "",
+          price: "$5,000"
+        },
+        {
+          image1: Activity,
+          text: "Loosers",
+          divText: "View all",
+          price: "23,000"
+        },
+      ]
+    
+
     return (
         <div id={Style.Users_placedbets_mainDiv}>
             <Header
                 headerText={"Placed Bet"}
                 headerInfo={"Here’s an information on all bets placed by John Doe"} />
 
+
             <div id={Style.TotalBet_mainDiv}>
+
+            <div id={Style.Users_placedbets_mapDiv}>
+                {
+                    placedbet_total_Card.map((object) => {
+                        return (
+                          <Total_Card
+                            image1={object.image1}
+                            text={object.text}
+                            divText={object.divText}
+                            price={object.price}
+                            to = {object.to}
+                          />
+                        )
+                      })
+                }
+            </div>
+            
                 <div id={Style.input_FilterDiv}>
                     <p>3rd July, 2024</p>
                     <div id={Style.searchDiv}>

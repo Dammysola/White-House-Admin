@@ -52,7 +52,15 @@
     border-radius: 0.75rem;
 
 }
-
+#AddNew_Agent_wrapperDiv input{
+    /* color: #969696; */
+    border: 1.5px solid #939393;
+}
+#AddNew_Agent_wrapperDiv label{
+    background-color:#F9F9F9;
+    color: #0E093C;
+    font-weight: 500;
+}
 #AddNew_Agent_buttonDiv {
     display: flex;
     justify-content: center;

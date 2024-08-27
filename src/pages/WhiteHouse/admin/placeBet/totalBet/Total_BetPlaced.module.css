@@ -76,11 +76,12 @@
     width: 100%;
 } 
 #PlaceBet_tableDiv #headerTable{
-    background-color: hsl(0, 0%, 95%);
+    background-color: #E8E3F9;
     height: 2.75rem;
     color: #000000;
     font-size: 1.1rem;
     font-weight: lighter;
+    border-bottom: none;
 }
 #PlaceBet_tableDiv tr{
     color: #666666;
@@ -90,7 +91,7 @@
 } 
 #PlaceBet_tableDiv th,
 td {
-    padding: 0 1.87rem;
+    padding: 0 1rem;
     box-sizing: border-box;
 }
 

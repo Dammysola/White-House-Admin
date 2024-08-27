@@ -108,7 +108,7 @@
     margin-left: -7px
 }
 #Conversation_tableDiv th, td{
-    padding: 0 40px;
+    padding: 0 1rem;
     box-sizing: border-box;
 
 }

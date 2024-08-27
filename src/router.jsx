@@ -50,14 +50,16 @@ import All_Transaction from "./pages/WhiteHouse/admin/foot_soldiers/all_transact
 import Dice_BetPlaced from "./pages/WhiteHouse/admin/games/Dice_BetPlaced";
 import Users_From_Soldiers from "./pages/WhiteHouse/admin/foot_soldiers/users_from_soldiers/Users_From_Soldiers"
 import Trash from "./pages/WhiteHouse/admin/foot_soldiers/trash/Trash"
+import Game_History from "./pages/WhiteHouse/admin/games/game_history/Game_History";
+import CustomerCare_SignIn from "./pages/WhiteHouse/signIn/customerCare_signIn/CustomerCare_SignIn";
 
 
 
 const router = createBrowserRouter([
-    // {
-    //     path: "/",
-    //     element: <MainLayout />,
-    //     children: [
+    {
+        path: "/",
+        element: <MainLayout />,
+        children: [
           
     //         {
     //             index:true,
@@ -83,9 +85,14 @@ const router = createBrowserRouter([
     //             path: "/signIn",
     //             element: <SignIn />
     //         }
-    //     ]
 
-    // },
+    {
+                    path: "/signIn",
+                    element: <CustomerCare_SignIn/>
+                }
+        ]
+
+    },
     {
         path: "/",
         element: <WhiteHouse_PopupContext><MainLayout_Two/></WhiteHouse_PopupContext>,
@@ -108,6 +115,10 @@ const router = createBrowserRouter([
                 element: <Dice_BetPlaced/>
             },
             {
+                path: "/gameHistory",
+                element: <Game_History/>
+            },
+            {
                 path: "/customerCare",
                 element: <Customer_Support/>
             },
@@ -124,7 +135,7 @@ const router = createBrowserRouter([
                 element: <Logged_sessions />
             },
             {
-                path: "/conversation",
+                path: "/conversations",
                 element: <Conversation />
             },
             {

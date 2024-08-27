@@ -15,6 +15,7 @@ import search from '../../../../../assets/svg/Search.svg'
 import InputField from '../../../../../components/input/InputField'
 import download from '../../../../../assets/svg/download_img.svg'
 import coin from '../../../../../assets/svg/coin.svg'
+import game_pad from '../../../../../assets/svg/game_pad.svg'
 
 
 const Personal_Info = () => {
@@ -114,7 +115,7 @@ const Personal_Info = () => {
             img: chat,
             figure: "14",
             text: "Conversations",
-            to: ""
+            to: "/conversations"
         },
         {
             img: rise,
@@ -133,16 +134,33 @@ const Personal_Info = () => {
                 headerInfo={"Here’s an information on this User"} />
 
             <div id={Style.Personal_Info_wrapperDiv}>
+                <p id={Style.Onboarded_Text}>Onboarded By: <span>John Doe</span></p>
 
                 <div id={Style.balance_buttonDiv}>
-                    <div id={Style.Coin_BalanceDiv}>
-                    <div id={Style.coinDiv}>
-                       <div><img src={coin} alt="" /></div> 
-                    </div>
-                    <div>
-                        <p>3K</p>
-                        <p>Coin Balance</p>
-                    </div>
+
+                    <div id={Style.balance_game_HistoryDiv}>
+                        <div id={Style.Coin_BalanceDiv}>
+                            <div id={Style.coinDiv}>
+                                <img src={coin} alt="" />
+                            </div>
+                            <div>
+                                <p>3K</p>
+                                <p>Coin Balance</p>
+                            </div>
+                        </div>
+
+                        <Link to={"/gameHistory"}>
+                            <div id={Style.Game_historyDiv}>
+                                <div id={Style.padDiv}>
+                                    <img src={game_pad} alt="" />
+                                </div>
+                                <div>
+                                    <p>3K</p>
+                                    <p>Game History</p>
+                                </div>
+                            </div>
+                        </Link>
+
                     </div>
 
                     <div id={Style.Personal_Info_buttonDiv}>
@@ -166,7 +184,7 @@ const Personal_Info = () => {
                                 <th>Country</th>
                                 <th>Bank Detail</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                                <th>Subscription</th>
 
                             </tr>
                             <tr id={Style.Personal_Info_tr}>
@@ -193,7 +211,9 @@ const Personal_Info = () => {
                                 <td>
                                     <div id={Style.statusText}>Online</div>
                                 </td>
-                                <td><button style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px", height: "1.37rem" }}>Suspend Action</button></td>
+                                <td>
+                                    <div id={Style.Subscription}>Gold</div>
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -541,7 +561,7 @@ const Personal_Info = () => {
                                 <th>Ref Number</th>
                                 <th>Subscription Type</th>
                                 <th>Amount Paid</th>
-                                <th>Bank Details</th>
+                                <th>Payment Type</th>
                                 <th>Status</th>
                             </tr>
 
@@ -550,9 +570,8 @@ const Personal_Info = () => {
                                     <td>1</td>
                                     <td>UA 123476689</td>
                                     <td>13:45</td>
-                                    <td>Nigeria</td>
+                                    <td>Gold</td>
                                     <td>20000</td>
-                                    <td>500</td>
                                     <td>
                                         <div id={Style.BankDetails_Div}>
                                             <div>
@@ -578,9 +597,8 @@ const Personal_Info = () => {
                                     <td>2</td>
                                     <td>UA 123476689</td>
                                     <td>13:45</td>
-                                    <td>Nigeria</td>
+                                    <td>Black</td>
                                     <td>20000</td>
-                                    <td>500</td>
                                     <td>
                                         <div id={Style.BankDetails_Div}>
                                             <div>
@@ -606,9 +624,8 @@ const Personal_Info = () => {
                                     <td>3</td>
                                     <td>UA 123476689</td>
                                     <td>13:45</td>
-                                    <td>Nigeria</td>
+                                    <td>Blue</td>
                                     <td>20000</td>
-                                    <td>500</td>
                                     <td>
                                         <div id={Style.BankDetails_Div}>
                                             <div>

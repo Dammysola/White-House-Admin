@@ -19,56 +19,56 @@ const User_Friends = () => {
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Nigeria",
             status: "Online",
             to: "/userDetails"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Nigeria",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Nigeria",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Nigeria",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Nigeria",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Nigeria",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Nigeria",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Nigeria",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
-            position: "Customer care representative",
+            position: "Nigeria",
             status: "Online"
         }
     ]

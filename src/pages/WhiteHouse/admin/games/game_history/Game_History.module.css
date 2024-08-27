@@ -1,0 +1,58 @@
+#Game_History_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#Game_History_wrapperDiv{
+    padding: 0rem 7.5rem 5rem;
+}
+#Game_History_input_FilterDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+#Game_History_input_FilterDiv p{
+    font-size: 0.93rem;
+    color: #707070;
+    height: 0;
+}
+#Game_History_input_FilterDiv p img{
+    width: 1rem;
+}
+#Game_History_input_FilterDiv #searchDiv img{
+    position: absolute;
+    width: 15px;
+    padding-left: 0.7rem;
+    padding-top: 0.9rem;
+}
+#searchDiv{
+    display: flex;
+    align-items: center;
+}
+#searchDiv input{
+    position: relative;
+    width: 14.5rem;
+    border-radius: 0.75rem;
+    padding-left:2.5rem;
+    box-sizing: border-box;
+    height: 2.43rem;  
+}
+#imgDiv img{
+    height: 2.3rem;
+    margin-right: 0.4rem;
+    margin-bottom: -1rem;
+}
+#gamePad_inputFieldDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#gamePad{
+    margin: -3rem 0 0 -3.5rem;
+}
+#Game_History_mapDiv{
+    display: flex;
+    column-gap: 2.24rem;
+    row-gap: 2.5rem;
+    flex-wrap: wrap;
+}

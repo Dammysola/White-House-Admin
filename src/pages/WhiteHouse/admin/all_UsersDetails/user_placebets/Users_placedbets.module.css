@@ -5,7 +5,7 @@
 }
 
 #TotalBet_mainDiv {
-    padding: 8rem 0;
+    padding: 5.5rem 7.5rem;
 }
 
 #input_FilterDiv {
@@ -115,7 +115,7 @@
 
 #PlaceBet_tableDiv th,
 td {
-    padding: 0 30px;
+    padding: 0 1rem;
     box-sizing: border-box;
 }
 
@@ -125,4 +125,10 @@ td {
 
 #PlaceBet_tableDiv #lastline {
     border-bottom: none;
+}
+#Users_placedbets_mapDiv{
+    display: flex;
+    column-gap: 2rem;
+    margin-bottom: 4rem;
+    box-sizing: border-box;
 }

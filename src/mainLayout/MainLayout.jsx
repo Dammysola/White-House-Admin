@@ -15,7 +15,7 @@ const MainLayout = () => {
     
     <div id={Style.wrapper}>
       {/* {showNavbar && <Create_AccountNav />} */}
-      <CustomerCare_NavBar/>
+      {/* <CustomerCare_NavBar/> */}
 
       (<div><Outlet /></div >)
     </div>

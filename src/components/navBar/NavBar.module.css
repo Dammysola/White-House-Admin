@@ -71,6 +71,8 @@
     color: #353535;
     background-color: #FFFFFF;
     border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1rem 0 rgb(0, 0, 0, .2);
+
 }
 .Nav_styled_Link:hover #dropdown{
     display: block;
@@ -84,6 +86,7 @@
     background-color: #FFFFFF;
     border-radius: 1rem;
     margin-top: 7.2rem;
+    box-shadow: 0.5rem 0.5rem 1rem 0 rgb(0, 0, 0, .2);
 }
 
 ul{

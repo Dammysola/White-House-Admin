@@ -88,7 +88,7 @@ const Logged_sessions = () => {
 
                             </td>
                             <td>
-                                <div className={Style.WinnerText}>John Doe</div>
+                            <div className={Style.WinnerText}><img src={person} alt="" /> John Doe</div>
                             </td>
                             <td>50000</td>
                         </tr>
@@ -110,9 +110,11 @@ const Logged_sessions = () => {
 
                             </td>
                             <td>
-                                <div id={Style.action_field}>
+                            <div className={Style.WinnerText}><img src={person} alt="" /> John Doe</div>
+
+                                {/* <div id={Style.action_field}>
                                     <div className={Style.WinnerText}>John Doe</div>
-                                </div>
+                                </div> */}
                             </td>
                             <td>50000</td>
                         </tr>

@@ -22,11 +22,18 @@
     column-gap: 1.5rem;
 
 }
+#grid_text{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+   margin-bottom: -0rem;
+}
 #All_Users_input_FilterDiv p{
     font-size: 0.93rem;
     color: #707070;
     height: 0;
 }
+
 
 #All_Users_input_FilterDiv #searchDiv img{
     position: absolute;
@@ -42,7 +49,7 @@
 
 #searchDiv input{
     position: relative;
-    width: 14.5rem;
+    width: 7.6rem;
     border-radius: 0.75rem;
     padding-left:2.5rem;
     box-sizing: border-box;
@@ -56,4 +63,84 @@
     column-gap: 2rem;
     flex-wrap: wrap;
     word-wrap: break-word;
+}
+
+
+
+#All_FootSoldiers_table_WrapperDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+#Winner_loser_tableDiv {
+    width: 50rem;
+    height: 31.81rem;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+#Winner_loser_tableDiv table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#Winner_loser_tableDiv th,
+td {
+    padding: 0 1rem;
+    box-sizing: border-box;
+
+}
+
+#Winner_loser_tableDiv th {
+    text-align: left;
+}
+
+#Winner_loser_tableDiv button {
+    width: 5.3rem;
+    height: 22px;
+    background-color: #0E093C;
+    font-size: 0.7rem;
+    border-radius: 8px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#Winner_loser_tableDiv tr {
+    color: #666666;
+    height: 3.43rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #B1B1B1;
+}
+
+#Winner_loser_tableDiv #headerTable {
+    background-color: #E8E3F9;
+    height: 44px;
+    color: #000000;
+    font-size: 1.2rem;
+    border-bottom: none;
+}
+
+#Winner_loser_tableDiv .number {
+    font-weight: bold;
+    color: #000000;
+    font-size: 1rem;
+}
+
+#amount_TableText {
+    width: 150px;
+}
+
+#Winner_loser_tableDiv #lastline {
+    border-bottom: none;
+}
+
+.person_name_td{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+.person_name_td img{
+    width: 1.5rem;
+    height: 1.5rem;
 }

@@ -86,11 +86,12 @@
     width: 100%;
 } 
 #Winner_loser_tableDiv #headerTable{
-    background-color: #F1F1F1;
+    background-color: #E8E3F9;
     height: 44px;
     color: #000000;
     font-size: 1rem;
     font-weight: lighter;
+    border-bottom: none;
     /* text-align: left; */
 }
 
@@ -102,7 +103,7 @@
 } 
 #Winner_loser_tableDiv th,
 td {
-    padding: 0 30px;
+    padding: 0 1rem;
     box-sizing: border-box;
 }
 
