@@ -59,26 +59,26 @@ import Performance from "./pages/WhiteHouse/customerCare/performance/Performance
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <MainLayout />,
-        children: [
+        // path: "/",
+        // element: <MainLayout />,
+        // children: [
           
-            {
-                index:true,
-                element: <CustomerCare_Dashboard/>
-            },
-            {
-                path: "/customerCare_queries",
-                element: <CustomerCare_Queries/>
-            },
-            {
-                path: "/QueryReview",
-                element: <Query_Review/>
-            },
-            {
-                path: "/performance",
-                element: <Performance/>
-            },
+        //     {
+        //         index:true,
+        //         element: <CustomerCare_Dashboard/>
+        //     },
+        //     {
+        //         path: "/customerCare_queries",
+        //         element: <CustomerCare_Queries/>
+        //     },
+        //     {
+        //         path: "/QueryReview",
+        //         element: <Query_Review/>
+        //     },
+        //     {
+        //         path: "/performance",
+        //         element: <Performance/>
+        //     },
     //         {
     //             path: "/businessTransaction",
     //             element: <Business_Transaction />
@@ -96,11 +96,11 @@ const router = createBrowserRouter([
     //             element: <SignIn />
     //         }
 
-    {
-                    path: "/signIn",
-                    element: <CustomerCare_SignIn/>
-                }
-        ]
+    // {
+    //                 path: "/signIn",
+    //                 element: <CustomerCare_SignIn/>
+    //             }
+    //     ]
 
     },
     {
