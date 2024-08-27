@@ -1,22 +1,16 @@
-import React, { useState } from 'react'
-import Style from '../customerCare_Dashboard/CustomerCare_Dashboard.module.css'
+import React from 'react'
+import Style from '../performance/Performance.module.css'
 import Header from '../../../../components/header/Header'
 import Progress_Bar from '../../../../components/progress_bar/Progress_Bar'
-import InputField from '../../../../components/input/InputField'
-import search from '../../../../assets/svg/Search.svg'
-import avatar from '../../../../assets/images/avatar.png'
-import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
-import Button from '../../../../components/button/Button'
-import { Link } from 'react-router-dom'
+import arrow_down from '../../../../assets/svg/arrow_down.svg'
+import amazing from '../../../../assets/svg/amazing.svg'
+import good from '../../../../assets/svg/good.svg'
+import sad from '../../../../assets/svg/sad.svg'
+import neutral from '../../../../assets/svg/neutral.svg'
 
 
-const CustomerCare_Dashboard = () => {
 
-    let [toggleIndex, setToggleIndex] = useState(0);
-
-    const ticketToggle = (index) => {
-        setToggleIndex(index)
-    }
+const Performance = () => {
 
     const progressDiv = [
 
@@ -42,13 +36,14 @@ const CustomerCare_Dashboard = () => {
         }
     ]
     return (
-        <div id={Style.CustomerCare_Dashboard_mainDiv}>
+        <div id={Style.Performance_mainDiv}>
             <Header
-                headerText={"Welcome John"}
-                headerInfo={"Here’s an information on all Users"} />
+                headerText={"Performance"}
+                headerInfo={"Let's get rolling"} />
 
-            <div id={Style.CustomerCare_Dashboard_wrapperDiv}>
-                <div id={Style.Dashboard_CardDiv}>
+            <div id={Style.Performance_wrapperDiv}>
+                <p id={Style.review_historyText}>See Review History</p>
+                <div id={Style.Performance_CardDiv}>
                     {
                         progressDiv.map((obj) => {
                             return (
@@ -61,84 +56,7 @@ const CustomerCare_Dashboard = () => {
                     }
                 </div>
 
-                <div id={Style.Dashboard_Ticket_PerformanceDiv}>
-                    <div id={Style.Ticket_entireDiv}>
-                        <div id={Style.AssignedTicket_textDiv}>
-                            <p>Incoming Queries</p>
-                            <p>View All</p>
-                        </div>
-
-                        <div id={Style.Dashboard_TicketWrapperDiv}>
-                            <div id={Style.Ticket_HeaderDiv}>
-                                <div id={Style.ticketButtonDiv}>
-                                    <button onClick={() => ticketToggle(0)} className={toggleIndex == 0 ? Style.toggle_buttonActive : Style.ticketButton}>All</button>
-                                    {/* <button onClick={() => ticketToggle(1)} className={toggleIndex == 1 ? Style.toggle_buttonActive : Style.ticketButton}>Mail</button>
-                                    <button onClick={() => ticketToggle(2)} className={toggleIndex == 2 ? Style.toggle_buttonActive : Style.ticketButton}>In-app messages</button> */}
-                                </div>
-                                <div id={Style.searchDiv}>
-                                    <img src={search} alt="" />
-                                    <InputField
-                                        placeholder={"Search ticket no"} />
-                                </div>
-
-                            </div>
-
-                            <div id={Style.ticketTable_wrapperDiv}>
-                                <table>
-                                    <tr id={Style.headerTable}>
-                                        <th>User</th>
-                                        <th>Ticket No</th>
-                                        <th>Query Type</th>
-                                        <th>Action</th>
-                                    </tr>
-
-                                    <tbody>
-                                        <tr>
-                                            <td style={{ display: "flex", columnGap: "0.5rem", alignItems: "center" }}><img src={avatar} alt="" />
-                                                <div><p className={Style.Ticket_tableData}>John Doe</p>
-                                                    <p id={Style.disputeText}>User Dispute</p></div>
-                                            </td>
-                                            <td className={Style.Ticket_tableData}>GHNJ657RY</td>
-                                            <td className={Style.Ticket_tableData}>Mail</td>
-                                            <td><Button text ={"Review"}/></td>
-                                            {/* <td><div>
-                                                <p style={{ color: "#232323", fontSize: "1rem", fontWeight: "600" }}>28 Aug 2024</p>
-                                                <p>13:23</p></div></td> */}
-                                            
-                                        </tr>
-
-                                        <tr>
-                                            <td style={{ display: "flex", columnGap: "0.5rem", alignItems: "center" }}><img src={avatar} alt="" />
-                                                <div><p className={Style.Ticket_tableData}>John Doe</p>
-                                                    <p id={Style.disputeText}>User Dispute</p></div>
-                                            </td>
-                                            <td className={Style.Ticket_tableData}>GHNJ657RY</td>
-                                            <td className={Style.Ticket_tableData}>Message</td>
-                                            <td><Button text ={"Review"}/></td>
-                                            {/* <td><div>
-                                                <p style={{ color: "#232323", fontSize: "1rem", fontWeight: "500" }}>28 Aug, 2024</p>
-                                                <p>13:23</p></div></td> */}
-
-                                        </tr>
-
-                                        <tr>
-                                            <td style={{ display: "flex", columnGap: "0.5rem", alignItems: "center" }}><img src={avatar} alt="" />
-                                                <div><p className={Style.Ticket_tableData}>John Doe</p>
-                                                    <p id={Style.disputeText}>User Dispute</p></div>
-                                            </td>
-                                            <td className={Style.Ticket_tableData}>GHNJ657RY</td>
-                                            <td className={Style.Ticket_tableData}>In-App Calls</td>
-                                            <td><Button text ={"Accept"}/></td>
-                                            {/* <td><div>
-                                                <p style={{ color: "#232323", fontSize: "1rem", fontWeight: "500" }}>28 Aug, 2024</p>
-                                                <p>13:23</p></div></td> */}
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
+                <div id={Style.Performance_SatisfactionDiv}>
                     <div id={Style.performanceDiv}>
 
                         <div id={Style.Daily_Call_headerDiv}>
@@ -146,7 +64,7 @@ const CustomerCare_Dashboard = () => {
 
                             <div id={Style.dateDiv}>
                                 <p id={Style.dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
-                                <Link to={"/performance"}><button>See All</button></Link>
+                                <button>See All</button>
                             </div>
                         </div>
 
@@ -212,10 +130,65 @@ const CustomerCare_Dashboard = () => {
                             </table>
                         </div>
                     </div>
+
+
+                    {/* <div className={Style.Ticket_entireDiv}> */}
+
+                        <div id={Style.CustomerCare_Progress_Wrapper}>
+
+                            <div id={Style.CustomerCare_textDiv}>
+                                <p>Average Customer Satisfaction Score</p>
+                                <div id={Style.monthDiv}>Month <img src={arrow_down} alt="" /></div>
+                            </div>
+                            <div>
+                                <div className={Style.Staff_progress}>
+                                    <div id={Style.Staff_details}>
+                                        <div id={Style.imgDiv}>
+                                            <img src={amazing} alt="" />
+                                            <p>Amazing</p></div>
+                                        <p>76.5%</p>
+                                    </div>
+                                    <div id={Style.progressDiv}></div>
+                                </div>
+                                <div className={Style.Staff_progress}>
+                                    <div id={Style.Staff_details}>
+                                        <div id={Style.imgDiv}>
+                                            <img src={good} alt="" />
+                                            <p>Good</p></div>
+                                        <p>76.5%</p>
+                                    </div>
+                                    <div id={Style.progressDiv}></div>
+                                </div>
+                                <div className={Style.Staff_progress}>
+                                    <div id={Style.Staff_details}>
+                                        <div id={Style.imgDiv}>
+                                            <img src={neutral} alt="" />
+                                            <p>Neutral</p>
+                                        </div>
+                                        <p>76.5%</p>
+                                    </div>
+                                    <div id={Style.progressDiv}></div>
+                                </div>
+
+                                <div className={Style.Staff_progress}>
+                                    <div id={Style.Staff_details}>
+                                        <div id={Style.imgDiv}>
+                                            <img src={sad} alt="" />
+                                            <p>Bad</p>
+                                        </div>
+                                        <p>76.5%</p>
+                                    </div>
+                                    <div id={Style.progressDiv}></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    {/* </div> */}
                 </div>
             </div>
         </div>
     )
 }
 
-export default CustomerCare_Dashboard
+export default Performance

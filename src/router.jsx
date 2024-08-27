@@ -52,6 +52,8 @@ import Users_From_Soldiers from "./pages/WhiteHouse/admin/foot_soldiers/users_fr
 import Trash from "./pages/WhiteHouse/admin/foot_soldiers/trash/Trash"
 import Game_History from "./pages/WhiteHouse/admin/games/game_history/Game_History";
 import CustomerCare_SignIn from "./pages/WhiteHouse/signIn/customerCare_signIn/CustomerCare_SignIn";
+import Query_Review from "./pages/WhiteHouse/customerCare/customerCare_Queries/query_review/Query_Review";
+import Performance from "./pages/WhiteHouse/customerCare/performance/Performance";
 
 
 
@@ -61,14 +63,22 @@ const router = createBrowserRouter([
         element: <MainLayout />,
         children: [
           
-    //         {
-    //             index:true,
-    //             element: <CustomerCare_Dashboard/>
-    //         },
-    //         {
-    //             path: "/customerCare_queries",
-    //             element: <CustomerCare_Queries/>
-    //         },
+            {
+                index:true,
+                element: <CustomerCare_Dashboard/>
+            },
+            {
+                path: "/customerCare_queries",
+                element: <CustomerCare_Queries/>
+            },
+            {
+                path: "/QueryReview",
+                element: <Query_Review/>
+            },
+            {
+                path: "/performance",
+                element: <Performance/>
+            },
     //         {
     //             path: "/businessTransaction",
     //             element: <Business_Transaction />

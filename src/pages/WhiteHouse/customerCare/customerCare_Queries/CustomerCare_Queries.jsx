@@ -12,16 +12,31 @@ import amazing from '../../../../assets/svg/amazing.svg'
 import good from '../../../../assets/svg/good.svg'
 import sad from '../../../../assets/svg/sad.svg'
 import neutral from '../../../../assets/svg/neutral.svg'
+import microphone from '../../../../assets/svg/microphone.svg'
+import recording from '../../../../assets/svg/recording.svg'
+import capture from '../../../../assets/svg/capture.svg'
 import filter from '../../../../assets/svg/Complete_filter_img.svg'
+import Button from '../../../../components/button/Button'
+import { Link } from 'react-router-dom'
+import Query_Review from './query_review/Query_Review'
+
+
+
 
 const CustomerCare_Queries = () => {
 
 
     let [toggleIndex, setToggleIndex] = useState(100);
+    let [btnIndex, setBtnIndex] = useState(0);
 
     const ticketToggle = (index) => {
         setToggleIndex(index)
     }
+
+    const reviewButton = (index) => {
+        setBtnIndex(index)
+    }
+
 
     const stats_card7 = [
         {
@@ -53,6 +68,7 @@ const CustomerCare_Queries = () => {
             divText: "View All"
         },
     ]
+
 
 
     return (
@@ -126,9 +142,12 @@ const CustomerCare_Queries = () => {
                                                     </td>
                                                     <td className={Style.Ticket_tableData}>GHNJ657RY</td>
                                                     <td className={Style.Ticket_tableData}>Mail</td>
-                                                    <td><div>
-                                                        <p style={{ color: "#232323", fontSize: "1rem", fontWeight: "600" }}>28 Aug 2024</p>
-                                                        <p>13:23</p></div></td>
+                                                    <td>
+                                                        <div>
+                                                            <p style={{ color: "#232323", fontSize: "1rem", fontWeight: "600" }}>28 Aug 2024</p>
+                                                            <p>13:23</p>
+                                                        </div>
+                                                    </td>
                                                 </tr>
 
                                                 <tr>
@@ -234,8 +253,13 @@ const CustomerCare_Queries = () => {
                         </div> : ""
                 }
 
+
+
                 {
-                    toggleIndex == 0 ?
+
+                    // In-App Message Queries
+
+                    toggleIndex == 0 || toggleIndex == 1 ?
 
                         <div>
 
@@ -245,11 +269,12 @@ const CustomerCare_Queries = () => {
                                     <tr id={Style.headerTable}>
                                         <th>S/N</th>
                                         <th>Date</th>
-                                        <th>Ticket ID</th>
+                                        <th>TicketID</th>
                                         <th>Category</th>
                                         <th>Username</th>
                                         <th>QueryType</th>
                                         <th>Query</th>
+                                        <th>Attachments</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -269,9 +294,23 @@ const CustomerCare_Queries = () => {
                                                 </div>
                                             </td>
                                             <td>
+                                                <div className={Style.AttachmentDiv}>
+                                                    <div>
+                                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />Play Recording</p>
+                                                    </div>
+
+                                                    <div>
+                                                        <p className={Style.Media_query}><img src={capture} alt="" /> Photo</p>
+                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />View Photo</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
                                                 <div className={Style.statusText}>Pending</div>
                                             </td>
-                                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                            <td><
+                                                Link to={"/QueryReview"}><button style={{  backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></Link></td>
                                         </tr>
 
                                         <tr id={Style.Personal_Info_tr}>
@@ -285,6 +324,19 @@ const CustomerCare_Queries = () => {
                                                 <div className={Style.ReportDiv}>
                                                     <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
                                                     <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className={Style.AttachmentDiv}>
+                                                    <div>
+                                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />Play Recording</p>
+                                                    </div>
+
+                                                    <div>
+                                                        <p className={Style.Media_query}><img src={capture} alt="" /> Photo</p>
+                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />View Photo</p>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td>
@@ -307,6 +359,19 @@ const CustomerCare_Queries = () => {
                                                 </div>
                                             </td>
                                             <td>
+                                                <div className={Style.AttachmentDiv}>
+                                                    <div>
+                                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />Play Recording</p>
+                                                    </div>
+
+                                                    <div>
+                                                        <p className={Style.Media_query}><img src={capture} alt="" /> Photo</p>
+                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />View Photo</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
                                                 <div className={Style.statusText}>Pending</div>
                                             </td>
                                             <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
@@ -326,6 +391,19 @@ const CustomerCare_Queries = () => {
                                                 </div>
                                             </td>
                                             <td>
+                                                <div className={Style.AttachmentDiv}>
+                                                    <div>
+                                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
+                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />Play Recording</p>
+                                                    </div>
+
+                                                    <div>
+                                                        <p className={Style.Media_query}><img src={capture} alt="" /> Photo</p>
+                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />View Photo</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
                                                 <div className={Style.statusText}>Pending</div>
                                             </td>
                                             <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
@@ -334,9 +412,13 @@ const CustomerCare_Queries = () => {
                                     </tbody>
                                 </table>
                             </div>
-                        </div> : toggleIndex == 2 ?
+                        </div>
 
-                            <div id={Style.Queries_tableWrapperDiv} className={Style.tableWrapperDiv}>
+                        // In-App Call Queries
+
+                        : toggleIndex == 2 || toggleIndex == 3 ?
+
+                            <div id={Style.Dashboard_TicketWrapperDiv}>
                                 <table>
                                     <tr id={Style.headerTable}>
                                         <th>S/N</th>
@@ -358,7 +440,7 @@ const CustomerCare_Queries = () => {
                                             <td>
                                                 <div className={Style.statusText}>Waiting</div>
                                             </td>
-                                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Accept</button></td>
+                                            <td><Button text={"Accept"} /></td>
                                         </tr>
 
                                         <tr id={Style.Personal_Info_tr}>
@@ -370,7 +452,7 @@ const CustomerCare_Queries = () => {
                                             <td>
                                                 <div className={Style.statusText}>Waiting</div>
                                             </td>
-                                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Accept</button></td>
+                                            <td><Button text={"Accept"} /></td>
                                         </tr>
 
                                         <tr id={Style.Personal_Info_tr}>
@@ -382,7 +464,7 @@ const CustomerCare_Queries = () => {
                                             <td>
                                                 <div className={Style.statusText}>Waiting</div>
                                             </td>
-                                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Accept</button></td>
+                                            <td><Button text={"Accept"} /></td>
                                         </tr>
 
                                         <tr id={Style.Personal_Info_tr}>
@@ -394,7 +476,7 @@ const CustomerCare_Queries = () => {
                                             <td>
                                                 <div className={Style.statusText}>Waiting</div>
                                             </td>
-                                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Accept</button></td>
+                                            <td><Button text={"Accept"} /></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -402,7 +484,9 @@ const CustomerCare_Queries = () => {
                 }
 
 
-
+                {
+                    // btnIndex == 0 ? <Query_Review/>: ""
+                }
             </div>
         </div>
     )

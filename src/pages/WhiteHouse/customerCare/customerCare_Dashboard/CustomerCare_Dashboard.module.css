@@ -63,6 +63,7 @@
     height: 2.5rem;
     border-radius: 0.75rem;
     padding-left: 2.5rem;
+    background-color: #F9F9F9;
 }
 
 
@@ -83,14 +84,16 @@
 }
 
 #ticketTable_wrapperDiv table {
+    border-collapse: collapse;
     width: 100%;
 }
 
 #ticketTable_wrapperDiv #headerTable {
     height: 3rem;
     color: #000000;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: lighter;
+    border-bottom: none;
 }
 
 #ticketTable_wrapperDiv td img {
@@ -98,10 +101,22 @@
     height: 2.5rem;
     border-radius: 100%;
 }
+#ticketTable_wrapperDiv td button{
+    width: 5.1rem;
+    height: 1.37rem;
+    border-radius: 0.5rem;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+}
 
 #ticketTable_wrapperDiv tr {
     height: 5.5rem;
-    border-bottom: 1px solid #c5c4c4;
+    border-bottom: 0.px solid #c5c4c4;
+}
+
+#ticketTable_wrapperDiv tr:last-child{
+    border-bottom: none;
 }
 #ticketTable_wrapperDiv th, td{
     padding: 0 1rem;
@@ -148,6 +163,7 @@
     border: none;
     background-color: #0E093C;
     border-radius: 0.43rem;
+    cursor: pointer;
     color: #FFFFFF;
 }
 #Staff_details_Daily_CallDiv table{

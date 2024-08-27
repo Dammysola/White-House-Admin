@@ -1,17 +1,20 @@
-#Queries_mainDiv{
+#Queries_mainDiv {
     width: 100%;
     min-height: 100vh;
     background-color: #F9F9F9;
 }
-#Queries_wrapperDiv{
+
+#Queries_wrapperDiv {
     padding: 3rem 7.5rem 20rem;
 }
-#Queries_headerText{
+
+#Queries_headerText {
     color: #232323;
     font-size: 1.3rem;
     font-weight: 500;
 }
-#Queries_mapDiv{
+
+#Queries_mapDiv {
     display: flex;
     column-gap: 1.25rem;
 }
@@ -35,7 +38,6 @@
     color: #616FEC;
     background-color: transparent;
     font-size: 1.12rem;
-
     border: none;
     border-bottom: 1px solid #616FEC;
 
@@ -61,11 +63,17 @@
     align-items: center;
     position: relative;
 }
+
 #searchDiv input {
     width: 11.3rem;
     height: 2.5rem;
     border-radius: 0.75rem;
     padding-left: 2.5rem;
+    background-color: #F9F9F9;
+}
+
+#searchDiv input::placeholder {
+    font-size: 0.75rem;
 }
 
 #Ticket_HeaderDiv {
@@ -77,43 +85,62 @@
 
 #Dashboard_TicketWrapperDiv {
     width: 100%;
-    height: 25.12rem;
+    min-height: 25.12rem;
     background-color: #FFFFFF;
     padding: 1rem 1.5rem;
     box-sizing: border-box;
     border-radius: 1rem;
 }
 
-#ticketTable_wrapperDiv table {
+#Dashboard_TicketWrapperDiv table {
     width: 100%;
+    border-collapse: collapse;
 }
 
-#ticketTable_wrapperDiv #headerTable {
+#Dashboard_TicketWrapperDiv #headerTable {
     height: 3rem;
     color: #000000;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: lighter;
 }
 
-#ticketTable_wrapperDiv td img {
+#Dashboard_TicketWrapperDiv td img {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 100%;
 }
 
-#ticketTable_wrapperDiv tr {
+#Dashboard_TicketWrapperDiv tr {
     height: 5.5rem;
     border-bottom: 1px solid #c5c4c4;
 }
-#ticketTable_wrapperDiv th, td{
+
+#Dashboard_TicketWrapperDiv tr:last-child {
+    border-bottom: none;
+}
+
+#Dashboard_TicketWrapperDiv th,
+td {
     padding: 0 1rem;
 }
-#ticketTable_wrapperDiv th{
+
+#Dashboard_TicketWrapperDiv th {
     text-align: left;
 }
 
+#Dashboard_TicketWrapperDiv .Ticket_tableData {
+    color: #464646;
+    font-size: 0.9rem;
+}
 
-#CustomerCare_Progress_Wrapper{
+#disputeText {
+    font-family: serif;
+    color: #0E093C;
+    font-size: 0.9rem;
+}
+
+
+#CustomerCare_Progress_Wrapper {
     background-color: #FFFFFF;
     width: 100%;
     height: 25.12rem;
@@ -125,14 +152,16 @@
     flex-direction: column;
     row-gap: 2rem;
 }
-#CustomerCare_textDiv{
+
+#CustomerCare_textDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1rem;
     color: #000000;
 }
-#monthDiv{
+
+#monthDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,47 +169,55 @@
     color: #000000;
     column-gap: 0.8rem;
 }
-.Staff_progress{
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
- }
- #Staff_details{
-     display: flex;
-     justify-content: space-between;
- }
- #Staff_details p{
-     color: #000000;
- }
-#imgDiv{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     column-gap: 0.9rem;
-     font-size: 1rem;
-     color: #000000;
+
+.Staff_progress {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-#imgDiv p{
-     width: 6rem;
- }
- .Staff_progress #progressDiv{
-     height: 0.62rem;
-     width: 100%;
-     background-color: #075070;
-     border-radius: 0.62rem;
-     margin-bottom: 2rem;
- }
- #Query_satisfaction_wrapperDiv{
+
+#Staff_details {
+    display: flex;
+    justify-content: space-between;
+}
+
+#Staff_details p {
+    color: #000000;
+}
+
+#imgDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.9rem;
+    font-size: 1rem;
+    color: #000000;
+}
+
+#imgDiv p {
+    width: 6rem;
+}
+
+.Staff_progress #progressDiv {
+    height: 0.62rem;
+    width: 100%;
+    background-color: #075070;
+    border-radius: 0.62rem;
+    margin-bottom: 2rem;
+}
+
+#Query_satisfaction_wrapperDiv {
     /* width: 100%; */
     display: flex;
     column-gap: 3rem;
     margin-top: 2.5rem;
- }
- .Ticket_entireDiv{
+}
+
+.Ticket_entireDiv {
     width: 100%;
 }
 
-#Query_incomingTextDiv{
+#Query_incomingTextDiv {
     display: flex;
     justify-content: space-between;
     color: #1A1A1A;
@@ -188,20 +225,24 @@
     margin-top: 8rem;
     box-sizing: border-box;
 }
-#search_filterDiv{
+
+#search_filterDiv {
     display: flex;
     column-gap: 1.87rem;
     align-items: center;
 }
-#search_filterDiv input{
+
+#search_filterDiv input {
     width: 23.56rem;
 }
-#Queries_tableWrapperDiv{
+
+#Queries_tableWrapperDiv {
     width: 100%;
     background-color: #FFFFFF;
     border-radius: 16px;
     box-sizing: border-box;
 }
+
 #Queries_tableWrapperDiv #headerTable {
     height: 4.5rem;
     color: #000000;
@@ -209,33 +250,39 @@
     font-weight: lighter;
     border-bottom: 1px solid #C4C4C4;
 }
- #Queries_tableWrapperDiv table {
+
+#Queries_tableWrapperDiv table {
     width: 100%;
     border-collapse: collapse;
 }
-#Queries_tableWrapperDiv .tableText {
+
+.tableText {
     color: #262626;
     font-weight: bold;
+    font-size: 0.9rem;
 }
 
 #Queries_tableWrapperDiv tr {
     color: #666666;
     font-size: 0.95rem;
-    height: 11rem;
+    height: 15.5rem;
     border-bottom: 1px solid #C4C4C4;
 }
 
+#Queries_tableWrapperDiv tr:last-child {
+    border-bottom: none;
+}
 
 #Queries_tableWrapperDiv th,
 td {
-    padding: 0 1.5rem;
+    padding: 0 1.8rem;
     box-sizing: border-box;
 
 }
 
 #Queries_tableWrapperDiv th {
     text-align: left;
-} 
+}
 
 .statusText {
     background-color: rgba(252, 158, 47, 0.2);
@@ -249,8 +296,9 @@ td {
     border-radius: 0.25rem;
     height: 1.62rem;
 }
-#statusText2{
-    background-color:rgba(49, 195, 100, .2);
+
+#statusText2 {
+    background-color: rgba(49, 195, 100, .2);
     border: none;
     color: #31C364;
     display: flex;
@@ -262,9 +310,63 @@ td {
     height: 1.62rem;
 }
 
-.tableWrapperDiv tr{
+.tableWrapperDiv tr {
     color: #666666;
     font-size: 0.95rem;
     height: 7.6rem;
     border-bottom: 1px solid #C4C4C4;
 }
+
+.ReportDiv p {
+    width: 70%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.Media_query {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    color: #262626;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 1rem;
+}
+
+.AttachmentDiv img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.Media_query_two {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    color: #262626;
+    font-size: 0.9rem;
+    margin-bottom: 2.7rem;
+    font-weight: 500;
+}
+#Dashboard_TicketWrapperDiv td button{
+    color: #FFFFFF;
+    width: 5.1rem;
+    height: 1.37rem;
+    font-size: 0.7rem;
+    padding: 0.5rem;
+}
+
+
+/* 
+backgroundColor: "#0E093C",
+border: "none",
+color: "#FFFFFF",
+fontSize: "0.7rem",
+width: "5.18rem",
+borderRadius: "8px",
+height: "1.37rem"
+}
+}
+
+>Accept */
