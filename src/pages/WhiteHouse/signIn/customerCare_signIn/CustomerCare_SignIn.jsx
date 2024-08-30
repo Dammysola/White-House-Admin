@@ -9,6 +9,7 @@ import pie_BG from '../../../../assets/svg/pie_BG.svg'
 import game_BG from '../../../../assets/svg/game_BG.svg'
 import lady_BG from '../../../../assets/svg/lady_BG.svg'
 import WH_logo from '../../../../assets/images/WH_logo.png'
+import { Link } from 'react-router-dom'
 
 
 const CustomerCare_SignIn = () => {
@@ -57,7 +58,7 @@ const CustomerCare_SignIn = () => {
 
           </div>
 
-          <div id={Style.btnDiv}><Button text={"Sign In"} /></div>
+         <Link to={"/whiteHouseDashboard"}> <div id={Style.btnDiv}><Button text={"Sign In"} /></div></Link>
 
         </form>
       </div>

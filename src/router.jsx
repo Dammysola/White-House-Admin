@@ -61,30 +61,32 @@ import Performance_Details from "./pages/WhiteHouse/customerCare/performance/per
 
 const router = createBrowserRouter([
     {
-        // path: "/",
-        // element: <MainLayout />,
-        // children: [
+        path: "/",
+        element: <MainLayout />,
+        children: [
 
-        //     {
-        //         index: true,
-        //         element: <CustomerCare_Dashboard />
-        //     },
-        //     {
-        //         path: "/customerCare_queries",
-        //         element: <CustomerCare_Queries />
-        //     },
-        //     {
-        //         path: "/QueryReview",
-        //         element: <Query_Review />
-        //     },
-        //     {
-        //         path: "/performance",
-        //         element: <Performance />
-        //     },
-        //     {
-        //         path: "/performanceDetails",
-        //         element: <Performance_Details />
-        //     },
+            // {
+            //     index: true,
+            //     element: <CustomerCare_Dashboard />
+            // },
+            // {
+            //     path: "/customerCare_queries",
+            //     element: <CustomerCare_Queries />
+            // },
+            // {
+            //     path: "/QueryReview",
+            //     element: <Query_Review />
+            // },
+            // {
+            //     path: "/performance",
+            //     element: <Performance />
+            // },
+            // {
+            //     path: "/performanceDetails",
+            //     element: <Performance_Details />
+            // },
+
+            
             //         {
             //             path: "/businessTransaction",
             //             element: <Business_Transaction />
@@ -106,7 +108,7 @@ const router = createBrowserRouter([
             //     path: "/signIn",
             //     element: <CustomerCare_SignIn />
             // }
-        // ]
+        ]
 
     },
     {
@@ -115,8 +117,8 @@ const router = createBrowserRouter([
         children: [
 
             {
-                index: true,
-                // path: "/whiteHouseDashboard",
+                // index: true,
+                path: "/whiteHouseDashboard",
                 element: <WhiteHouse_Dashboard />
             },
             {

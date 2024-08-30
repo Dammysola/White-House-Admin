@@ -15,8 +15,8 @@ const MainLayout = () => {
   return (
     
     <div id={Style.wrapper}>
-      {/* {showNavbar && <CustomerCare_SignIn/>} */}
-      <CustomerCare_NavBar/>
+      {showNavbar && <CustomerCare_SignIn/>}
+      {/* <CustomerCare_NavBar/> */}
 
       <div><Outlet /></div >
     </div>
