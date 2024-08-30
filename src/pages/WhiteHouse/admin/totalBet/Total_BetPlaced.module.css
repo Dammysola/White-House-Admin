@@ -96,11 +96,16 @@
 }
 
 
-
+#winners_background{
+    /* position: absolute; */
+    margin-bottom: -4rem;
+    width: 100%;
+}
 #Total_BetPlaced_TableWrapperDiv table{
     box-sizing: border-box;
     border-collapse: collapse;
     width: 100%;
+    position: relative;
 } 
 /* #transaction_header_inputfield_Div{
     display: flex;
@@ -115,6 +120,7 @@
     background-color: #F1F1F1;
     height: 2.68rem;
     border-bottom: none;
+    
 }
 #players_imgDiv img{
     width: 1.12rem;
@@ -142,7 +148,7 @@
     align-items: center;
 }
 #Total_BetPlaced_TableWrapperDiv th, td{
-    padding: 0 1.1rem;
+    padding: 0 2rem;
     color: #666666;
 }
 #Total_BetPlaced_TableWrapperDiv th{
