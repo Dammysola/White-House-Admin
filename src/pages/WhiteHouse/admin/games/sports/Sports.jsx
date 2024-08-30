@@ -1,7 +1,6 @@
 import React from 'react'
 import Style from '../Dice.module.css'
 import { AreaChart, Area, XAxis, YAxis, Bar, BarChart, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
-import dice from '../../../../../assets/svg/Dice.svg'
 import Header from '../../../../../components/header/Header'
 import Total_Card from '../../../../../components/total_Card/Total_Card'
 import rise from '../../../../../assets/svg/rise.svg'
@@ -105,48 +104,34 @@ const Sports = () => {
 
   const stats_card2 = [
     {
-      img: rise,
-      figure: "200k",
-      text: "Bet Placed",
-      to: "/placebet"
-
-    },
-    {
       img: person,
       figure: "2m",
       text: "All Users",
-      to: "/placebet"
+      to: "/allUsers"
     },
     {
       img: flag,
       figure: "14",
       text: "Reg Countries",
-      to: "/placebet"
-    },
-    {
-      img: rise,
-      figure: "200k",
-      text: "Bet Placed",
-      to: "/placebet"
-
+      to: "/"
     },
   ]
 
-  const stats_card3 = [
-    {
-      img: rise,
-      figure: "200k",
-      text: "Bet Placed",
-      to: "/placebet"
+  // const stats_card3 = [
+  //   {
+  //     img: rise,
+  //     figure: "200k",
+  //     text: "Bet Placed",
+  //     to: "/placebet"
 
-    },
-    {
-      img: person,
-      figure: "2m",
-      text: "All Users",
-      to: "/placebet"
-    }
-  ]
+  //   },
+  //   {
+  //     img: person,
+  //     figure: "2m",
+  //     text: "All Users",
+  //     to: "/placebet"
+  //   }
+  // ]
   return (
     <div id={Style.DiceGame_mainDiv}>
       <Header
@@ -277,22 +262,6 @@ const Sports = () => {
                   <Bar dataKey="pv" stackId='a' fill='#736EA0'></Bar>
                 </BarChart>
               </ResponsiveContainer>
-
-            </div>
-
-
-            <div id={Style.DiceGame_Card_wrapper_two}>
-              {
-                stats_card3.map((obj) => {
-                  return (
-                    <Stats_Card
-                      img={obj.img}
-                      figure={obj.figure}
-                      text={obj.text}
-                      to={obj.to} />
-                  )
-                })
-              }
 
             </div>
           </div>

@@ -76,6 +76,7 @@
     font-size: 0.93rem;
     color: #707070;
     height: 0;
+    /* display: flex; */
 }
 #Amount_Paid_input_FilterDiv p img{
     width: 1rem;
@@ -89,6 +90,7 @@
 #searchDiv{
     display: flex;
     align-items: center;
+    margin-top: -1rem;
 }
 #searchDiv input{
     position: relative;
@@ -101,7 +103,7 @@
 #imgDiv img{
     height: 2.3rem;
     margin-right: 0.4rem;
-    margin-bottom: -1rem;
+    /* margin-bottom: -1rem; */
 }
 #Dice_BetPlaced_tableWrapperDiv table{
     width: 100%;

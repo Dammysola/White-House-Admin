@@ -112,7 +112,7 @@ const All_Users = () => {
                         <button onClick={() => transactionToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Unsubscribed</button>
                         <button onClick={() => transactionToggle(3)} className={toggleIndex == 3 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Not-Subscribed</button>
                     </div>
-                    <div id={Style.All_Users_input_FilterDiv}>
+                    <div id={Style.input_FilterDiv}>
 
                         <p>3rd July, 2024 <img src={arrow_down} alt="" /></p>
                         <div id={Style.searchDiv}>
@@ -122,7 +122,7 @@ const All_Users = () => {
                         </div>
 
                         <div id={Style.InputField_images}>
-                            {/* <img src={filter_img} alt="" /> */}
+                            <img src={filter_img} alt="" />
                             <img id={Style.download_img} src={download} alt="" />
                         </div>
 

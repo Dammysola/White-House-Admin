@@ -36,17 +36,19 @@
     border-bottom: none;
 }
 #Ticket_Winners_TableDiv th, td{
-    padding: 0 2rem;
+    padding: 0 1rem;
     color: #666666;
 
 }
 #Ticket_Winners_TableDiv th{
     text-align: left;
 }
- tr{
+#Ticket_Winners_TableDiv tr{
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
 }
-#line{
+#Transaction_tableWrapperDiv tr:last-child{
     border-bottom: none;
 }
+
+

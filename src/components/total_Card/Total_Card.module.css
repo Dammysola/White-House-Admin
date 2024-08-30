@@ -51,8 +51,9 @@
     margin: 0px 0.3rem;
     background-color: #F0F0F0;
 } */
-#Total_Card_Wrapper p{
-
+#priceText{
+    display: flex;
+    column-gap: 0.55rem;
     font-size: 1.87rem;
     color: #0E093C;
     line-height: 1rem;
@@ -62,3 +63,30 @@
     color: #777777;
     font-size: 0.9rem;
 }
+#priceText span{
+    color: #939393;
+    font-size: 0.9rem;
+}
+#Total_Card_Wrapper p img{
+    /* width: 1.62rem; */
+    height: 1.62rem;
+    border-radius: 100%;
+}
+#Total_Card_info_Div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#contact_detailsDiv{
+    display: flex;
+    column-gap: 0.5rem;
+    padding: 0 1rem;
+}
+#contact_detailsDiv p{
+    display: flex;
+    column-gap: 0.25rem;
+    align-items: center;
+    color: #0E093C;
+    font-size: 0.9rem;
+}
+

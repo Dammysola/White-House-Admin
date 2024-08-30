@@ -20,6 +20,7 @@ import three_users from '../../../../assets/svg/three_users.svg'
 
 const DiceGame = () => {
 
+
   const customTickFormatter = (tick) => {
     return `${tick}k`;
   }
@@ -30,7 +31,7 @@ const DiceGame = () => {
       text: 'Total Bet Placed',
       divText: 'View all',
       price: '$25,052,985',
-      to: "/diceBetPlaced"
+      to: "/totalBetPlaced"
     },
     {
       image1: three_users,
@@ -105,32 +106,32 @@ const DiceGame = () => {
   ]
 
   const stats_card2 = [
-    {
-      img: rise,
-      figure: "200k",
-      text: "Bet Placed",
-      to: "/diceBetPlaced"
+    // {
+    //   img: rise,
+    //   figure: "200k",
+    //   text: "Bet Placed",
+    //   to: "/diceBetPlaced"
 
-    },
+    // },
     {
       img: person,
       figure: "2m",
       text: "All Users",
-      to: "/placebet"
+      to: "/allUsers"
     },
     {
       img: flag,
       figure: "14",
       text: "Reg Countries",
-      to: "/placebet"
+      to: "/"
     },
-    {
-      img: rise,
-      figure: "200k",
-      text: "Bet Placed",
-      to: "/placebet"
+    // {
+    //   img: rise,
+    //   figure: "200k",
+    //   text: "Bet Placed",
+    //   to: "/placebet"
 
-    },
+    // },
   ]
 
   const stats_card3 = [
@@ -278,7 +279,7 @@ const DiceGame = () => {
             </div>
 
 
-            <div id={Style.DiceGame_Card_wrapper_two}>
+            {/* <div id={Style.DiceGame_Card_wrapper_two}>
               {
                 stats_card3.map((obj) => {
                   return (
@@ -291,7 +292,7 @@ const DiceGame = () => {
                 })
               }
 
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

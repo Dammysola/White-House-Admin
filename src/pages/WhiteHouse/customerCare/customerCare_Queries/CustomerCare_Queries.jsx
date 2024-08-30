@@ -42,7 +42,7 @@ const CustomerCare_Queries = () => {
         {
             image1: users,
             price: "23,000",
-            text: "In-App Message Queries",
+            text: "App Message Queries",
             to: "/placebet",
             divText: "View All"
         },
@@ -275,7 +275,6 @@ const CustomerCare_Queries = () => {
                                         <th>QueryType</th>
                                         <th>Query</th>
                                         <th>Attachments</th>
-                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
 
@@ -305,9 +304,6 @@ const CustomerCare_Queries = () => {
                                                         <p className={Style.Media_query_two}><img src={recording} alt="" />View Photo</p>
                                                     </div>
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <div className={Style.statusText}>Pending</div>
                                             </td>
                                             <td><
                                                 Link to={"/QueryReview"}><button style={{  backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></Link></td>
@@ -339,9 +335,7 @@ const CustomerCare_Queries = () => {
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <div className={Style.statusText}>Pending</div>
-                                            </td>
+                                        
                                             <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
                                         </tr>
 
@@ -371,9 +365,7 @@ const CustomerCare_Queries = () => {
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <div className={Style.statusText}>Pending</div>
-                                            </td>
+                                           
                                             <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
                                         </tr>
 
@@ -403,9 +395,7 @@ const CustomerCare_Queries = () => {
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <div className={Style.statusText}>Pending</div>
-                                            </td>
+                                           
                                             <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
                                         </tr>
 

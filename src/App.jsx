@@ -3,6 +3,7 @@ import { RouterProvider } from 'react-router-dom'
 import CustomerCare_SignIn from './pages/WhiteHouse/signIn/customerCare_signIn/CustomerCare_SignIn'
 import CustomerCare_NavBar from './components/customerCare_Navbar/CustomerCare_NavBar'
 import History_component from './pages/WhiteHouse/admin/games/game_history/component/History_component'
+import Total_Card from './components/total_Card/Total_Card'
 
 
 
@@ -12,7 +13,7 @@ function App() {
   return (
     <> 
       <RouterProvider router={router}/>
-      {/* <CustomerCare_SignIn/> */}
+    {/* <Total_Card/> */}
     </>
   )
 }

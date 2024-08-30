@@ -7,12 +7,15 @@ import revenue_BG from '../../../../assets/svg/revenue_BG.svg'
 import chart_BG from '../../../../assets/svg/chart_BG.svg'
 import pie_BG from '../../../../assets/svg/pie_BG.svg'
 import game_BG from '../../../../assets/svg/game_BG.svg'
+import lady_BG from '../../../../assets/svg/lady_BG.svg'
+import WH_logo from '../../../../assets/images/WH_logo.png'
 
 
 const CustomerCare_SignIn = () => {
   return (
     <div id={Style.SignIn_mainDiv}>
       <div id={Style.scattered_imagesDiv}>
+        <img id={Style.gamePad} src={game_BG} alt="" />
         <img src={revenue_BG} alt="" />
 
         <div id={Style.pie_Chart_textDiv}>
@@ -23,12 +26,12 @@ const CustomerCare_SignIn = () => {
           </div>
         </div>
         <img src={chart_BG} alt="" />
-        <img id={Style.gamePad} src={game_BG} alt="" />
+        <img id={Style.gamePad} src={lady_BG} alt="" />
       </div>
 
       <div id={Style.admin_signIn_wrapperDiv}>
         <div id={Style.SignIn_headerDiv}>
-          <p id={Style.Logo}>Logo</p>
+          <img src={WH_logo} alt="" />
 
           <p id={Style.signIn_Text}>Sign In into your Account</p>
           <p id={Style.login_detailsText}>Sign in by filling your administrator login details below</p>
@@ -38,7 +41,7 @@ const CustomerCare_SignIn = () => {
           <div id={Style.inputDiv}>
             <Input
               placeholder={"account@email.com"}
-              label={"Director Email/Username"} />
+              label={"Email"} />
 
             <Input
               placeholder={"Password"}

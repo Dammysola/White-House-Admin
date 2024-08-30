@@ -22,6 +22,7 @@
     border: none;
     color: #666666;
     font-size: 0.9rem;
+    cursor: pointer;
 }
 .toggleDiv_buttonActive{
     min-width: 50px;
@@ -38,43 +39,54 @@
     justify-content: space-between;
     align-items: center;
 }
-#All_Users_input_FilterDiv{
+#input_FilterDiv {
     display: flex;
     align-items: center;
-    column-gap: 1.5rem;
-
+    column-gap: 1rem;
+    margin-bottom: 1rem;
 }
-#All_Users_input_FilterDiv p{
-    font-size: 0.93rem;
+
+#input_FilterDiv p {
+    display: flex;
+    column-gap: 8px;
+    font-size: 0.932rem;
     color: #707070;
-    height: 0;
 }
-#All_Users_input_FilterDiv p img{
-    width: 1rem;
-}
-#All_Users_input_FilterDiv #searchDiv img{
-    position: absolute;
-    width: 15px;
-    padding-left: 0.7rem;
-    padding-top: 0.9rem;
 
+
+
+#input_FilterDiv input {
+    width: 18.87rem;
+    height: 39px;
 }
-#searchDiv{
+
+#InputField_images img {
+    height: 39px;
+    margin-right: 12px;
+}
+
+#searchDiv {
+    margin-top: -0.95rem;
     display: flex;
+    justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-#searchDiv input{
-    position: relative;
-    width: 14.5rem;
-    border-radius: 0.75rem;
-    padding-left:2.5rem;
-    box-sizing: border-box;
-    height: 2.43rem;  
+#searchDiv img {
+    position: absolute;
+    top: 1.75rem;
+    width: 15px;
+    left: 1rem;
+    fill: #9e9ea7;
 }
-#download_img{
-    height: 2.3rem;
-    margin-bottom: -1rem;
+
+#searchDiv input {
+    width: 14.5rem;
+    border-radius: 12px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    height: 39px;
 }
 /* #InputField_images{
     display: flex;

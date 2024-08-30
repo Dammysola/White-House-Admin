@@ -50,7 +50,7 @@ const Pending_Request = () => {
                                     </div>
                                 </td>
                                 <td>Ikeja</td>
-                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={refresh} alt="" /></div></td>
+                                <td><div className={Style.ActionDiv}><button className={Style.trash_Action_button}>Restore</button> <img src={refresh} alt="" /></div></td>
                             </tr>
 
                             <tr>
@@ -75,7 +75,7 @@ const Pending_Request = () => {
                                     </div>
                                 </td>
                                 <td>Ikeja</td>
-                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={refresh} alt="" /></div></td>
+                                <td><div className={Style.ActionDiv}><button className={Style.trash_Action_button}>Restore</button> <img src={refresh} alt="" /></div></td>
                             </tr>
 
                             <tr>
@@ -100,7 +100,7 @@ const Pending_Request = () => {
                                     </div>
                                 </td>
                                 <td>Ikeja</td>
-                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={refresh} alt="" /></div></td>
+                                <td><div className={Style.ActionDiv}><button className={Style.trash_Action_button}>Restore</button> <img src={refresh} alt="" /></div></td>
                             </tr>
                         </tbody>
 

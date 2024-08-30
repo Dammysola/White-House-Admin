@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Style from './Transaction.module.css'
 import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../../assets/svg/download_img.svg'
@@ -13,11 +13,20 @@ import total_users from '../../../../assets/svg/total_users.svg'
 import winner from '../../../../assets/svg/winner.svg'
 import Total_Card from '../../../../components/total_Card/Total_Card'
 import winners_background from '../../../../assets/svg/winners_background.svg'
+import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
+import search from '../../../../assets/svg/Search.svg'
+import green_eyes from '../../../../assets/svg/green_eyes.svg'
+import warning from '../../../../assets/svg/yellow_warning.svg'
+import delete_list from '../../../../assets/svg/product_delete.svg'
+import person from '../../../../assets/images/person_img.png'
+
+
 
 
 const Transaction = () => {
     let [toggleIndex, setToggleIndex] = useState(0);
     let [cardToggleIndex, setCardToggleIndex] = useState(0);
+    let [dev, setDev] = useState([]);
 
     const transactionToggle = (index) => {
 
@@ -32,19 +41,21 @@ const Transaction = () => {
     }
 
 
+
+
     const stats_card6 = [
         {
             image1: betCoin,
             price: "23,000",
             text: "Bet transactions",
-            to: "/placebet",
+            to: "",
             divText: "View All"
         },
         {
             image1: total_users,
             price: "20K",
             text: "Coin Purchase",
-            to: "/placebet",
+            to: "",
             divText: "View All"
         },
         {
@@ -57,11 +68,216 @@ const Transaction = () => {
         {
             image1: betCoin,
             price: "23,000",
-            text: "Lorem Iposum",
-            to: "/",
+            text: "Unsettled Bets",
+            to: "",
             divText: "View All"
         },
     ]
+
+
+    const arr = [
+        {
+            SN: "1",
+            userID: "5466FH",
+            BetID: "6458575RFG",
+            game: "DiceRoom344",
+            amount: "1000",
+            players: person,
+            status: "Won",
+            win: "5000",
+            action: {
+                eye: green_eyes,
+                warning: warning,
+                delete: delete_list
+            }
+
+        },
+        {
+            SN: "2",
+            userID: "5466FH",
+            BetID: "6458575RFG",
+            game: "DiceRoom344",
+            amount: "1000",
+            players: person,
+            status: "Lost",
+            win: "5000",
+            action: {
+                eye: green_eyes,
+                warning: warning,
+                delete: delete_list
+            }
+
+        },
+        {
+            SN: "2",
+            userID: "5466FH",
+            BetID: "6458575RFG",
+            game: "DiceRoom344",
+            amount: "1000",
+            players: person,
+            status: "Lost",
+            win: "5000",
+            action: {
+                eye: green_eyes,
+                warning: warning,
+                delete: delete_list
+            }
+
+        },
+        {
+            SN: "2",
+            userID: "5466FH",
+            BetID: "6458575RFG",
+            game: "DiceRoom344",
+            amount: "1000",
+            players: person,
+            status: "Lost",
+            win: "5000",
+            action: {
+                eye: green_eyes,
+                warning: warning,
+                delete: delete_list
+            }
+
+        },
+        {
+            SN: "3",
+            userID: "5466FH",
+            BetID: "6458575RFG",
+            game: "DiceRoom344",
+            amount: "1000",
+            players: person,
+            status: "Won",
+            win: "5000",
+            action: {
+                eye: green_eyes,
+                warning: warning,
+                delete: delete_list
+            }
+
+        },
+        {
+            SN: "4",
+            userID: "5466FH",
+            BetID: "6458575RFG",
+            game: "DiceRoom344",
+            amount: "1000",
+            players: person,
+            status: "Lost",
+            win: "5000",
+            action: {
+                eye: green_eyes,
+                warning: warning,
+                delete: delete_list
+            }
+
+        },
+        {
+            SN: "3",
+            userID: "5466FH",
+            BetID: "6458575RFG",
+            game: "DiceRoom344",
+            amount: "1000",
+            players: person,
+            status: "Won",
+            win: "5000",
+            action: {
+                eye: green_eyes,
+                warning: warning,
+                delete: delete_list
+            }
+        },
+
+        {
+            SN: "3",
+            userID: "5466FH",
+            BetID: "6458575RFG",
+            game: "DiceRoom344",
+            amount: "1000",
+            players: person,
+            status: "Won",
+            win: "5000",
+            action: {
+                eye: green_eyes,
+                warning: warning,
+                delete: delete_list
+            }
+        }
+    ]
+
+    useEffect(() => {
+        let d = arr.filter((a) => a.status === "Won")
+        console.log(d);
+
+        setDev(d)
+    }, [])
+
+
+    const coin_arr = [
+
+        {
+            userID: "UA 123476689",
+            RefNo: "UA 123476689",
+            time: "13:45",
+            country: "Nigeria",
+            amount: "20000",
+            coinRd: "500",
+            payType: {
+                bank: "Access Bank",
+                accNo: "0123456789",
+                accName: "John Doe"
+            },
+            status: "Successful"
+
+        },
+        {
+            userID: "UA 123476689",
+            RefNo: "UA 123476689",
+            time: "13:45",
+            country: "Nigeria",
+            amount: "20000",
+            coinRd: "500",
+            payType: {
+                bank: "Access Bank",
+                accNo: "0123456789",
+                accName: "John Doe"
+            },
+            status: "Pending"
+
+        },
+        {
+            userID: "UA 123476689",
+            RefNo: "UA 123476689",
+            time: "13:45",
+            country: "Nigeria",
+            amount: "20000",
+            coinRd: "500",
+            payType: {
+                bank: "Access Bank",
+                accNo: "0123456789",
+                accName: "John Doe"
+            },
+            status: "Successful"
+
+        },
+        {
+            userID: "UA 123476689",
+            RefNo: "UA 123476689",
+            time: "13:45",
+            country: "Nigeria",
+            amount: "20000",
+            coinRd: "500",
+            payType: {
+                bank: "Access Bank",
+                accNo: "0123456789",
+                accName: "John Doe"
+            },
+            status: "Failed"
+
+        },
+
+    ]
+
 
 
     return (
@@ -93,303 +309,343 @@ const Transaction = () => {
                     {
                         toggleIndex == 1 && cardToggleIndex == 0 ?
                             <img id={Style.winners_background} src={winners_background} alt="" />
-                        : " "
+                            : " "
                     }
                 </div>
-                <div id={Style.Transaction_tableWrapperDiv}>
-                    <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>
+                {
+                    cardToggleIndex !== 0 ?
 
-                    {
-                        cardToggleIndex === 0 ?
-                            <div id={Style.Transaction_listCalendar_Div}>
+                        <div id={Style.transaction_header_inputfield_Div}>
+                            <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>
 
-                                <div id={Style.Transaction_listDiv}>
-                                    <button onClick={() => transactionToggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>All</button>
-                                    <button onClick={() => transactionToggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>Winning transaction</button>
-                                    <button onClick={() => transactionToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>Losing transaction</button>
+                            <div id={Style.Amount_Paid_input_FilterDiv}>
+                                <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
 
+                                <div id={Style.searchDiv}>
+                                    <img src={search} alt="" />
+                                    <InputField />
                                 </div>
-                                <div id={Style.input_FilterDiv}>
-                                    <p>3rd July, 2024</p>
-                                    <div id={Style.searchDiv}>
-                                        <img src={Search} alt="" />
-                                        <InputField
-                                            placeholder={"Search tickets"} />
-                                    </div>
-
+                                <div id={Style.imgDiv}>
                                     <img src={filter_img} alt="" />
                                     <img src={download} alt="" />
                                 </div>
-                            </div> :
-
-                            <div id={Style.input_FilterDiv}>
-                                <p>3rd July, 2024</p>
-                                <div id={Style.searchDiv}>
-                                    <img src={Search} alt="" />
-                                    <InputField
-                                        placeholder={"Search tickets"} />
-                                </div>
-
-                                <img src={filter_img} alt="" />
-                                <img src={download} alt="" />
                             </div>
+                        </div> : ""
+                }
+                <div id={Style.Transaction_tableWrapperDiv}>
+                    {
+                        cardToggleIndex == 0 ?
+
+                            <>
+                                <div id={Style.BetText}>Bet Lists <span>(1,355)</span></div>
+
+                                <div id={Style.Transaction_listCalendar_Div}>
+
+                                    <div id={Style.Transaction_listDiv}>
+
+                                        <button onClick={() => transactionToggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>All</button>
+                                        <button onClick={() => transactionToggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>Winning Bets</button>
+                                        <button onClick={() => transactionToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>Losing Bets</button>
+
+                                    </div>
+
+                                    <div id={Style.Amount_Paid_input_FilterDiv}>
+                                        <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
+
+                                        <div id={Style.searchDiv}>
+                                            <img src={search} alt="" />
+                                            <InputField />
+                                        </div>
+                                        <div id={Style.imgDiv}>
+                                            <img src={filter_img} alt="" />
+                                            <img src={download} alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </> : ""
                     }
 
 
-
-                    {toggleIndex == 0 && cardToggleIndex ==0 ?
+                    {cardToggleIndex == 0 ?
                         <table>
                             <tr id={Style.headerTable}>
                                 <th>S/N</th>
                                 <th>User ID</th>
-                                <th>Ticket ID</th>
+                                <th>Bet ID</th>
+                                <th>Game</th>
                                 <th>Amount Staked</th>
+                                <th>Players</th>
+                                <th>Status</th>
                                 <th>Amount Won</th>
-                                <th>Booking Code</th>
-                                <th>Country </th>
-                                <th>Status <img src={status_img} alt="" /></th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>SA 123476689</td>
-                                <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td>₦10,000.00</td>
-                                <td>ID12535408</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.statusText}>Won</div>
-                                </td>
+                                <th>Action</th>
                             </tr>
 
-                            <tr>
-                                <td>2</td>
-                                <td>SA 123476689</td>
-                                <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td>₦10,000.00</td>
-                                <td>ID12535408</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.action_field}>
-                                        <div id={Style.statusText_lost}>lost</div>
-                                    </div>
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td>3</td>
-                                <td>SA 123476689</td>
-                                <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td>₦10,000.00</td>
-                                <td>ID12535408</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.action_field}>
-                                        <div id={Style.statusText}>Won</div>
-                                    </div>
-                                </td>
-                            </tr>
+                            {
+                                toggleIndex == 0 ?
 
-                            <tr>
-                                <td>4</td>
-                                <td>SA 123476689</td>
-                                <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td>₦10,000.00</td>
-                                <td>ID12535408</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.action_field}>
-                                        <div id={Style.statusText_lost}>lost</div>
-                                    </div>
-                                </td>
-                            </tr>
+                                    <tbody>
+                                        {
+                                            arr.map((user, index) => {
+                                                let lost = user.status == "Lost" ? true : false
+                                                return (
+                                                    <tr >
+                                                        <td>{index + 1}</td>
+                                                        <td>{user.userID}</td>
+                                                        <td>{user.BetID}</td>
+                                                        <td>{user.game}</td>
+                                                        <td>{user.amount}</td>
+                                                        <td>
+                                                            <div id={Style.players_imgDiv}>
+                                                                <img src={user.players} alt="" />
+                                                                <img src={user.players} alt="" />
+                                                                <img src={user.players} alt="" />
+                                                                <img src={user.players} alt="" />
+                                                            </div>
+                                                        </td>
+                                                        <td><div id={Style.statusText_td} style={{ backgroundColor: lost ? "#11000033" : "#31c36433", color: lost ? "#110000" : "#31C364" }}>{user.status}</div></td>
+                                                        <td>{user.win}</td>
+                                                        <td>
+                                                            <div id={Style.action_field}>
+                                                                <img src={user.action.eye} alt="" />
+                                                                <img src={user.action.warning} alt="" />
+                                                                <img src={user.action.delete} alt="" />
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
 
-                            <tr>
-                                <td>5</td>
-                                <td>SA 123476689</td>
-                                <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td>₦10,000.00</td>
-                                <td>ID12535408</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.action_field}>
-                                        <div id={Style.statusText}>Won</div>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </tbody> :
+                                    toggleIndex == 1 && cardToggleIndex == 0 ?
 
-                            <tr id={Style.line}>
-                                <td>6</td>
-                                <td>SA 123476689</td>
-                                <td>8012345678</td>
-                                <td>₦100.00</td>
-                                <td>₦10,000.00</td>
-                                <td>ID12535408</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.action_field}>
-                                        <div id={Style.statusText}>Jackpot</div>
-                                    </div>
-                                </td>
-                            </tr>
 
-                        </table> 
+
+                                        //winner Bet
+
+                                        <tbody>
+                                            {
+                                                dev.map((user, index) => {
+                                                    // let lost = user.status == "Lost" ? true : false
+                                                    return (
+                                                        <tr>
+                                                            <td>{index + 1}</td>
+                                                            <td>{user.userID}</td>
+                                                            <td>{user.BetID}</td>
+                                                            <td>{user.game}</td>
+                                                            <td>{user.amount}</td>
+                                                            <td>
+                                                                <div id={Style.players_imgDiv}>
+                                                                    <img src={user.players} alt="" />
+                                                                    <img src={user.players} alt="" />
+                                                                    <img src={user.players} alt="" />
+                                                                    <img src={user.players} alt="" />
+                                                                </div>
+                                                            </td>
+                                                            <td><div id={Style.statusText_td}>{user.status}</div></td>
+                                                            <td>{user.win}</td>
+                                                            <td>
+                                                                <div id={Style.action_field}>
+                                                                    <img src={user.action.eye} alt="" />
+                                                                    <img src={user.action.warning} alt="" />
+                                                                    <img src={user.action.delete} alt="" />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
+
+                                        </tbody> :
+
+                                        toggleIndex == 2 ?
+                                            //Dice_Bet_Placed Lost screen
+
+                                            <tbody>
+                                                {
+                                                    arr.filter((p) => p.status === "Lost").map((user, index) => {
+                                                        let lost = user.status == "Lost" ? true : false
+                                                        return (
+                                                            <tr >
+                                                                <td>{index + 1}</td>
+                                                                <td>{user.userID}</td>
+                                                                <td>{user.BetID}</td>
+                                                                <td>{user.game}</td>
+                                                                <td>{user.amount}</td>
+                                                                <td>
+                                                                    <div id={Style.players_imgDiv}>
+                                                                        <img src={user.players} alt="" />
+                                                                        <img src={user.players} alt="" />
+                                                                        <img src={user.players} alt="" />
+                                                                        <img src={user.players} alt="" />
+                                                                    </div>
+                                                                </td>
+                                                                <td><div id={Style.statusText_td} style={{ backgroundColor: lost ? "#11000033" : "#31c36433", color: lost ? "#110000" : "#31C364" }}>{user.status}</div></td>
+                                                                <td>{user.win}</td>
+                                                                <td>
+                                                                    <div id={Style.action_field}>
+                                                                        <img src={user.action.eye} alt="" />
+                                                                        <img src={user.action.warning} alt="" />
+                                                                        <img src={user.action.delete} alt="" />
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        )
+                                                    })
+                                                }
+                                            </tbody> : ""
+
+                            }
+
+                        </table>
                         : ""}
 
-                    <div>
-                        {toggleIndex == 2 && cardToggleIndex == 0 ?
-                            <Ticket_Losers /> : ""
-                        }
+                    {
+                        cardToggleIndex == 1 ?
 
-                        {
-                            toggleIndex == 1 && cardToggleIndex == 0?
-                                <Ticket_Winners /> : ""
-                        }
+                            <div id={Style.Card_table_wrapperDiv}>
+                                <table>
+                                    <tr id={Style.headerTable_tr}>
+                                        <th>S/N</th>
+                                        <th>User ID</th>
+                                        <th>Ref Number</th>
+                                        <th>Time</th>
+                                        <th>Country</th>
+                                        <th>Amount Paid</th>
+                                        <th>Coin Received </th>
+                                        <th>Payment Type</th>
+                                        <th>Status</th>
+                                    </tr>
 
+                                    <tbody>
 
-                    </div>
+                                        {
+                                            coin_arr.map((user, index) => {
+                                                let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
+                                                let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
+
+                                                // let lost = user.status == "Lost" ? true : false
+                                                return (
+                                                    <tr>
+                                                        <td>{index + 1}</td>
+                                                        <td>{user.userID}</td>
+                                                        <td>{user.RefNo}</td>
+                                                        <td>{user.time}</td>
+                                                        <td>{user.country}</td>
+                                                        <td>{user.amount}</td>
+                                                        <td>{user.coinRd}</td>
+                                                        <td>
+                                                            <div id={Style.BankDetails_Div}>
+                                                                <div>
+                                                                    <p>Bank</p>
+                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
+                                                                </div>
+                                                                <div>
+                                                                    <p>Account Number</p>
+                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
+                                                                </div><div>
+                                                                    <p>Account Name</p>
+                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                        </td>
+
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div> : ""
+                    }
+
 
                     {
-                        cardToggleIndex == 1 ? 
+                        cardToggleIndex == 2 ?
 
-                        <div>
-                        <table>
-                            <tr id={Style.headerTable}>
-                                <th>S/N</th>
-                                <th>User ID</th>
-                                <th>Ref Number</th>
-                                <th>Time</th>
-                                <th>Country</th>
-                                <th>Amount Paid</th>
-                                <th>Coin Received </th>
-                                <th>Payment Type</th>
-                                <th>Status</th>
-                            </tr>
-                            
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>UA 123476689</td>
-                                    <td>UA 123476689</td>
-                                    <td>13:45</td>
-                                    <td>Nigeria</td>
-                                    <td>20000</td>
-                                    <td>500</td>
-                                    <td>
-                                        <div id={Style.BankDetails_Div}>
-                                            <div>
-                                                <p>Bank</p>
-                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                            </div>
-                                            <div>
-                                                <p>Account Number</p>
-                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                            </div><div>
-                                                <p>Account Name</p>
-                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div id={Style.statusText}>Purchased</div>
-                                    </td>
+                            <div id={Style.Card_table_wrapperDiv}>
+                                <table>
+                                    <tr id={Style.headerTable_tr}>
+                                        <th>S/N</th>
+                                        <th>User ID</th>
+                                        <th>Ref Number</th>
+                                        <th>Time</th>
+                                        <th>Country</th>
+                                        <th>Amount Converted</th>
+                                        <th>Coin Purchased </th>
+                                        <th>Payment Type</th>
+                                        <th>Status</th>
+                                    </tr>
 
-                                </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>UA 123476689</td>
+                                            <td>UA 123476689</td>
+                                            <td>13:45</td>
+                                            <td>Nigeria</td>
+                                            <td>20000</td>
+                                            <td>500</td>
+                                            <td>
+                                                <div id={Style.BankDetails_Div}>
+                                                    <div>
+                                                        <p>Bank</p>
+                                                        <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                                    </div>
+                                                    <div>
+                                                        <p>Account Number</p>
+                                                        <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                                    </div><div>
+                                                        <p>Account Name</p>
+                                                        <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div id={Style.statusText}>Purchased</div>
+                                            </td>
 
-                                <tr>
-                                    <td>2</td>
-                                    <td>UA 123476689</td>
-                                    <td>UA 123476689</td>
-                                    <td>13:45</td>
-                                    <td>Nigeria</td>
-                                    <td>20000</td>
-                                    <td>500</td>
-                                    <td>
-                                        <div id={Style.BankDetails_Div}>
-                                            <div>
-                                                <p>Bank</p>
-                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                            </div>
-                                            <div>
-                                                <p>Account Number</p>
-                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                            </div><div>
-                                                <p>Account Name</p>
-                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div id={Style.statusText}>Purchased</div>
-                                    </td>
+                                        </tr>
 
-                                </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>UA 123476689</td>
+                                            <td>UA 123476689</td>
+                                            <td>13:45</td>
+                                            <td>Nigeria</td>
+                                            <td>20000</td>
+                                            <td>500</td>
+                                            <td>
+                                                <div id={Style.BankDetails_Div}>
+                                                    <div>
+                                                        <p>Bank</p>
+                                                        <p className={Style.BankDetails_BoldText}>Access Bank</p>
+                                                    </div>
+                                                    <div>
+                                                        <p>Account Number</p>
+                                                        <p className={Style.BankDetails_BoldText}>0123456789</p>
+                                                    </div><div>
+                                                        <p>Account Name</p>
+                                                        <p className={Style.BankDetails_BoldText}>John Doe</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div id={Style.statusText}>Purchased</div>
+                                            </td>
 
-                                <tr>
-                                    <td>3</td>
-                                    <td>UA 123476689</td>
-                                    <td>UA 123476689</td>
-                                    <td>13:45</td>
-                                    <td>Nigeria</td>
-                                    <td>20000</td>
-                                    <td>500</td>
-                                    <td>
-                                        <div id={Style.BankDetails_Div}>
-                                            <div>
-                                                <p>Bank</p>
-                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                            </div>
-                                            <div>
-                                                <p>Account Number</p>
-                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                            </div><div>
-                                                <p>Account Name</p>
-                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div id={Style.statusText}>Purchased</div>
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>4</td>
-                                    <td>UA 123476689</td>
-                                    <td>UA 123476689</td>
-                                    <td>13:45</td>
-                                    <td>Nigeria</td>
-                                    <td>20000</td>
-                                    <td>500</td>
-                                    <td>
-                                        <div id={Style.BankDetails_Div}>
-                                            <div>
-                                                <p>Bank</p>
-                                                <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                            </div>
-                                            <div>
-                                                <p>Account Number</p>
-                                                <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                            </div><div>
-                                                <p>Account Name</p>
-                                                <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div id={Style.statusText}>Purchased</div>
-                                    </td>
-
-                                </tr>
-                                </tbody>
-                        </table>
-                    </div>: ""
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            : ""
                     }
+
                 </div>
 
 

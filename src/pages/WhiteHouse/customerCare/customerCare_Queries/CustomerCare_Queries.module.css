@@ -275,7 +275,7 @@ td {
 
 #Queries_tableWrapperDiv th,
 td {
-    padding: 0 1.8rem;
+    padding: 0 1rem;
     box-sizing: border-box;
 
 }
@@ -318,12 +318,14 @@ td {
 }
 
 .ReportDiv p {
-    width: 70%;
+    width: 10rem;
+    /* line-break: strict; */
     display: -webkit-box;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical; 
     -webkit-line-clamp: 3;
     overflow: hidden;
 }
+
 
 .Media_query {
     display: flex;

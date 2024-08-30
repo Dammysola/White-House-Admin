@@ -7,6 +7,7 @@ import amazing from '../../../../assets/svg/amazing.svg'
 import good from '../../../../assets/svg/good.svg'
 import sad from '../../../../assets/svg/sad.svg'
 import neutral from '../../../../assets/svg/neutral.svg'
+import { Link } from 'react-router-dom'
 
 
 
@@ -83,7 +84,7 @@ const Performance = () => {
                                     <td className={Style.Daily_CallText}>46</td>
                                     <td className={Style.Daily_CallText}>5</td>
                                     <td className={Style.Daily_CallText}>5</td>
-                                    <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                    <td> <Link to={"/performanceDetails"}><button style={{ backgroundColor: "transparent", cursor: "pointer", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></Link></td>
                                 </tr>
                                 <tr>
                                     <td>Tuesday</td>
@@ -97,7 +98,7 @@ const Performance = () => {
                                     <td className={Style.Daily_CallText}>45</td>
                                     <td className={Style.Daily_CallText}>8</td>
                                     <td className={Style.Daily_CallText}>8</td>
-                                    <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                    <td> <Link to={"/performanceDetails"}><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></Link></td>
                                 </tr>
                                 <tr>
                                     <td>Thursday</td>

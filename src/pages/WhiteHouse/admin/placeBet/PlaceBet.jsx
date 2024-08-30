@@ -103,30 +103,30 @@ const PlaceBet = () => {
     const total_Card1 = [
         {
             image1: Activity,
-            text: 'Total Bet Placed',
-            divText: 'View all',
-            price: '$25,052,985',
-            to: '/totalBetPlaced'
+            text: "Total Bet Placed",
+            divText: "View all",
+            price: "$25,052,985",
+            to: "/totalBetPlaced"
         },
         {
             image1: total_users,
-            text: 'Total Players',
-            divText: 'View all',
-            price: '2 million',
-            to: "/totalPlayers"
+            text: "Total Online Players",
+            divText: "View all",
+            price: "2 million",
+            to: "/totalOnlinePlayers"
         },
         {
             image1: winner,
-            text: 'Winners',
-            divText: 'View all',
-            price: '345,000',
-            to: '/winners'
+            text:"Winners",
+            divText: "View all",
+            price: "345,000",
+            to: "/winners"
         },
         {
             image1: loosers,
-            text: 'Loosers',
-            divText: 'View all',
-            price: '23,000',
+            text: "Loosers",
+            divText: "View all",
+            price: "23,000",
             to: ""
         },
     ]

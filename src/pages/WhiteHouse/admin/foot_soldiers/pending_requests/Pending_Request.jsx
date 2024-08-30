@@ -25,8 +25,7 @@ const Pending_Request = () => {
                             <th>Full Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Country</th>
-                            <th>Bank Details</th>
+                            <th>Nationality</th>
                             <th>Region of Operation</th>
                             <th>Action</th>
                         </tr>
@@ -37,22 +36,7 @@ const Pending_Request = () => {
                                 <td>John Doe</td>
                                 <td>johndoe@gmail.com</td>
                                 <td>+2344816273888</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.BankDetails_Div}>
-                                        <div>
-                                            <p>Bank</p>
-                                            <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                        </div>
-                                        <div>
-                                            <p>Account Number</p>
-                                            <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                        </div><div>
-                                            <p>Account Name</p>
-                                            <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                        </div>
-                                    </div>
-                                </td>
+                                <td>Nigerian</td>
                                 <td>Ikeja</td>
                                 <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={red_delete} alt="" /></div></td>
                             </tr>
@@ -62,22 +46,7 @@ const Pending_Request = () => {
                                 <td>John Doe</td>
                                 <td>johndoe@gmail.com</td>
                                 <td>+2344816273888</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.BankDetails_Div}>
-                                        <div>
-                                            <p>Bank</p>
-                                            <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                        </div>
-                                        <div>
-                                            <p>Account Number</p>
-                                            <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                        </div><div>
-                                            <p>Account Name</p>
-                                            <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                        </div>
-                                    </div>
-                                </td>
+                                <td>Nigerian</td>
                                 <td>Ikeja</td>
                                 <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={red_delete} alt="" /></div></td>
                             </tr>
@@ -87,22 +56,7 @@ const Pending_Request = () => {
                                 <td>John Doe</td>
                                 <td>johndoe@gmail.com</td>
                                 <td>+2344816273888</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.BankDetails_Div}>
-                                        <div>
-                                            <p>Bank</p>
-                                            <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                        </div>
-                                        <div>
-                                            <p>Account Number</p>
-                                            <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                        </div><div>
-                                            <p>Account Name</p>
-                                            <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                        </div>
-                                    </div>
-                                </td>
+                                <td>Nigerian</td>
                                 <td>Ikeja</td>
                                 <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={red_delete} alt="" /></div></td>
                             </tr>

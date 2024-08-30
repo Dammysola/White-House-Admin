@@ -90,14 +90,17 @@
     color: #000000;
     font-size: 1rem;
     font-weight: lighter;
-    /* border-bottom: 1px solid #C4C4C4; */
+    border-bottom: 1px solid #C4C4C4;
 }
 
 #Top_Agents_TableWrapperDiv tr {
     color: #666666;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     height: 15.5rem;
     border-bottom: 1px solid #C4C4C4;
+}
+#Top_Agents_TableWrapperDiv tr:last-child{
+    border-bottom: none;
 }
 #Top_Agents_TableWrapperDiv .tableData{
     color: #262626;
@@ -105,7 +108,7 @@
 }
 #Top_Agents_TableWrapperDiv th,
 td {
-    padding: 0 2rem;
+    padding: 0 0.55rem;
     box-sizing: border-box;
 
 }

@@ -22,7 +22,7 @@ import Users_placedbets from "./pages/WhiteHouse/admin/all_UsersDetails/user_pla
 import Complain_Details from "./pages/WhiteHouse/admin/all_UsersDetails/complain_details/Complain_Details";
 import Staff_Details from "./pages/WhiteHouse/admin/staff/staff_details/Staff_Details";
 import Total_Players from "./pages/WhiteHouse/admin/total_players/Total_Players";
-import Total_BetPlaced from "./pages/WhiteHouse/admin/placeBet/totalBet/Total_BetPlaced"
+import Total_BetPlaced from "./pages/WhiteHouse/admin/totalBet/Total_BetPlaced"
 import Winner_loser from "./pages/WhiteHouse/admin/placeBet/winner/Winner_loser"
 import Countries from "./pages/WhiteHouse/admin/placeBet/countries/Countries"
 import Department from "./pages/WhiteHouse/admin/staff/department/Department";
@@ -54,6 +54,8 @@ import Game_History from "./pages/WhiteHouse/admin/games/game_history/Game_Histo
 import CustomerCare_SignIn from "./pages/WhiteHouse/signIn/customerCare_signIn/CustomerCare_SignIn";
 import Query_Review from "./pages/WhiteHouse/customerCare/customerCare_Queries/query_review/Query_Review";
 import Performance from "./pages/WhiteHouse/customerCare/performance/Performance";
+import Online_Players from "./pages/WhiteHouse/admin/placeBet/totalOnline_players/Online_Players";
+import Performance_Details from "./pages/WhiteHouse/customerCare/performance/performance_details/Performance_Details";
 
 
 
@@ -62,54 +64,59 @@ const router = createBrowserRouter([
         // path: "/",
         // element: <MainLayout />,
         // children: [
-          
+
         //     {
-        //         index:true,
-        //         element: <CustomerCare_Dashboard/>
+        //         index: true,
+        //         element: <CustomerCare_Dashboard />
         //     },
         //     {
         //         path: "/customerCare_queries",
-        //         element: <CustomerCare_Queries/>
+        //         element: <CustomerCare_Queries />
         //     },
         //     {
         //         path: "/QueryReview",
-        //         element: <Query_Review/>
+        //         element: <Query_Review />
         //     },
         //     {
         //         path: "/performance",
-        //         element: <Performance/>
+        //         element: <Performance />
         //     },
-    //         {
-    //             path: "/businessTransaction",
-    //             element: <Business_Transaction />
-    //         },
-    //         {
-    //             path: "/directorDetails",
-    //             element: <Director_Details />
-    //         },
-    //         {
-    //             path: "/success",
-    //             element: <Congratulation />
-    //         },
-    //         {
-    //             path: "/signIn",
-    //             element: <SignIn />
-    //         }
+        //     {
+        //         path: "/performanceDetails",
+        //         element: <Performance_Details />
+        //     },
+            //         {
+            //             path: "/businessTransaction",
+            //             element: <Business_Transaction />
+            //         },
+            //         {
+            //             path: "/directorDetails",
+            //             element: <Director_Details />
+            //         },
+            //         {
+            //             path: "/success",
+            //             element: <Congratulation />
+            //         },
+            //         {
+            //             path: "/signIn",
+            //             element: <SignIn />
+            //         }
 
-    // {
-    //                 path: "/signIn",
-    //                 element: <CustomerCare_SignIn/>
-    //             }
-    //     ]
+            // {
+            //     path: "/signIn",
+            //     element: <CustomerCare_SignIn />
+            // }
+        // ]
 
     },
     {
         path: "/",
-        element: <WhiteHouse_PopupContext><MainLayout_Two/></WhiteHouse_PopupContext>,
+        element: <WhiteHouse_PopupContext><MainLayout_Two /></WhiteHouse_PopupContext>,
         children: [
-           
+
             {
                 index: true,
+                // path: "/whiteHouseDashboard",
                 element: <WhiteHouse_Dashboard />
             },
             {
@@ -118,19 +125,19 @@ const router = createBrowserRouter([
             },
             {
                 path: "/sports",
-                element: <Sports/>
+                element: <Sports />
             },
             {
                 path: "/diceBetPlaced",
-                element: <Dice_BetPlaced/>
+                element: <Dice_BetPlaced />
             },
             {
                 path: "/gameHistory",
-                element: <Game_History/>
+                element: <Game_History />
             },
             {
                 path: "/customerCare",
-                element: <Customer_Support/>
+                element: <Customer_Support />
             },
             {
                 path: "/allStaffs",
@@ -181,6 +188,10 @@ const router = createBrowserRouter([
                 element: <Total_BetPlaced />
             },
             {
+                path: "/totalOnlinePlayers",
+                element: <Online_Players />
+            },
+            {
                 path: "/winners",
                 element: <Winner_loser />
             },
@@ -206,58 +217,58 @@ const router = createBrowserRouter([
             },
             {
                 path: "/Queries",
-                element: <Queries/>
+                element: <Queries />
             },
             {
                 path: "/customer_support",
-                element: <Customer_Support/>
+                element: <Customer_Support />
             },
             {
                 path: "/topAgent",
-                element: <Top_Agents/>
+                element: <Top_Agents />
             },
             {
                 path: "/TotalTopAgents",
-                element: <Total_Top_Agents/>
+                element: <Total_Top_Agents />
             },
             {
                 path: "/addNewAgent",
-                element: <AddNew_Agent/>
+                element: <AddNew_Agent />
             },
             {
                 path: "/footSoldiers",
-                element: <Foot_Soldiers/>
+                element: <Foot_Soldiers />
             },
             {
                 path: "/allFootSoldiers",
-                element: <All_FootSoldiers/>
+                element: <All_FootSoldiers />
             },
             {
                 path: "/soldiersTransaction",
-                element: <Soldier_Transaction/>
+                element: <Soldier_Transaction />
             },
             {
                 path: "/pendingRequests",
-                element: <Pending_Request/>
+                element: <Pending_Request />
             },
             {
                 path: "/amountPaid",
-                element: <Amount_Paid/>
+                element: <Amount_Paid />
             },
             {
                 path: "/AllTransaction",
-                element: <All_Transaction/>
+                element: <All_Transaction />
             },
             {
                 path: "/usersFromSoldiers",
-                element: <Users_From_Soldiers/>
+                element: <Users_From_Soldiers />
             },
             {
                 path: "/trash",
-                element: <Trash/>
+                element: <Trash />
             }
-            
-            
+
+
 
         ]
 
@@ -268,7 +279,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/allAccounts",
-                element: <Dashboard/>
+                element: <Dashboard />
             }
         ]
     }

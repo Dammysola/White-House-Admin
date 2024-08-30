@@ -42,7 +42,7 @@ const Reports = () => {
             price: "200",
             text: "In-app Message Queries",
             to: "/placebet",
-            divText: "View Details"
+            divText: "View All"
         },
         {
             image1: issues,
@@ -120,7 +120,7 @@ const Reports = () => {
                     <div id={Style.Query_Stats_MapCard}>
                         {
                             stats_card3.map((obj, index) => {
-                                let colourChange = index == toggleStatsIndex ? true : false
+                                let colourChange = index + 4 == toggleIndex ? true : false
                                 return (
                                     <Stats_Card
                                         img={obj.img}
@@ -128,7 +128,7 @@ const Reports = () => {
                                         text={obj.text}
                                         to={obj.to}
                                         colourChange={colourChange}
-                                        onClick={() => toggleStats(index)} />
+                                        onClick={() => toggle(index + 4)} />
                                 )
                             })
                         }
@@ -246,7 +246,7 @@ const Reports = () => {
                         }
 
 
-                        {toggleIndex === 0?
+                        {toggleIndex === 0 || toggleIndex === 1?
                             <tbody>
                                 <tr id={Style.Personal_Info_tr}>
                                     <td>1</td>
@@ -327,7 +327,7 @@ const Reports = () => {
                             </tbody> : "what"
                         }
 
-                        {toggleIndex === 2?
+                        {toggleIndex === 2 || toggleIndex === 3?
 
                             <tbody>
                                 <tr id={Style.Personal_Info_tr}>
@@ -409,7 +409,7 @@ const Reports = () => {
                         }
 
                         {
-                            toggleStatsIndex === 0 ?
+                            toggleIndex === 4 ?
                             <tbody>
                             <tr id={Style.Personal_Info_tr}>
                                 <td>1</td>

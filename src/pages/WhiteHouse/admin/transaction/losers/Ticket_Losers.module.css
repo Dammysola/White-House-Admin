@@ -36,8 +36,8 @@
     font-weight: lighter;
     border-bottom: none;
 }
-/* th, td{
-    padding: 0 40px;
+th, td{
+    padding: 0 1rem;
     color: #666666;
 
 }
@@ -48,9 +48,10 @@ tr{
     height: 58px;
     border-bottom: 1px solid #E3E3E3;
 }
-#line{
+#Transaction_tableWrapperDiv tr:last-child{
     border-bottom: none;
-} */
+}
+
 #action_field{
     display: flex;
     column-gap: 4px;

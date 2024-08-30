@@ -24,7 +24,11 @@ const CustomerCare_NavBar = () => {
                 </div>
             </div>
             <div id={Style.Navbar_lastLineDiv}>
-                <p>Performance</p>
+
+                <NavLink to={"/performance"}>
+                    <p>Performance</p>
+                </NavLink>
+
                 <p>Mgt</p>
                 <p>English</p>
                 <div id={Style.line}></div>
@@ -35,7 +39,7 @@ const CustomerCare_NavBar = () => {
                 <p>WhiteHouse Ltd</p>
 
             </div>
-            
+
         </div>
     )
 }

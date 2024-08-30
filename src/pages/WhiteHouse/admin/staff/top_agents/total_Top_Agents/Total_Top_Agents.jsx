@@ -6,6 +6,47 @@ import Style from '../Top_Agents.module.css'
 
 
 const Total_Top_Agents = () => {
+
+
+
+    const arr = [
+        {
+            SN: "1",
+            name: "John Doe",
+            call: "200",
+            message: "490",
+            mail: "5660",
+            tollcall: "480",
+            action: "Review"
+        },
+        {
+            SN: "2",
+            name: "John Doe",
+            call: "200",
+            message: "490",
+            mail: "5660",
+            tollcall: "480",
+            action: "Review"
+        },
+        {
+            SN: "3",
+            name: "John Doe",
+            call: "200",
+            message: "490",
+            mail: "5660",
+            tollcall: "480",
+            action: "Review"
+        },
+        {
+            SN: "4",
+            name: "John Doe",
+            call: "200",
+            message: "490",
+            mail: "5660",
+            tollcall: "480",
+            action: "Review"
+        }
+    ]
     return (
         <div id={Style.Top_Agents_mainDiv}>
             <Header
@@ -31,45 +72,21 @@ const Total_Top_Agents = () => {
                         </tr>
 
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><p><img src={person_img} alt="" /> John Doe</p></td>
-                                <td className={Style.tableData}>200</td>
-                                <td className={Style.tableData}>400</td>
-                                <td className={Style.tableData}>345</td>
-                                <td className={Style.tableData}>200</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                            {
+                                arr.map((user)=>{
+                                    return <tr>
+                                <td>{user.SN}</td>
+                                <td><p><img src={person_img} alt="" />{user.name}</p></td>
+                                <td className={Style.tableData}>{user.call}</td>
+                                <td className={Style.tableData}>{user.message}</td>
+                                <td className={Style.tableData}>{user.mail}</td>
+                                <td className={Style.tableData}>{user.tollcall}</td>
+                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>{user.action}</button></td>
                             </tr>
-
-                            <tr>
-                                <td>2</td>
-                                <td><p><img src={person_img} alt="" /> John Doe</p></td>
-                                <td className={Style.tableData}>200</td>
-                                <td className={Style.tableData}>400</td>
-                                <td className={Style.tableData}>345</td>
-                                <td className={Style.tableData}>200</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td><p><img src={person_img} alt="" /> John Doe</p></td>
-                                <td className={Style.tableData}>200</td>
-                                <td className={Style.tableData}>400</td>
-                                <td className={Style.tableData}>345</td>
-                                <td className={Style.tableData}>200</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                            </tr>
-
-                            <tr>
-                                <td>4</td>
-                                <td><p><img src={person_img} alt="" /> John Doe</p></td>
-                                <td className={Style.tableData}>200</td>
-                                <td className={Style.tableData}>400</td>
-                                <td className={Style.tableData}>345</td>
-                                <td className={Style.tableData}>200</td>
-                                <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                            </tr>
+     
+                                    
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>

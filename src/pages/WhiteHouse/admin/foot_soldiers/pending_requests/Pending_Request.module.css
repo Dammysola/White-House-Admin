@@ -48,19 +48,10 @@
 
 #Pending_Request_table_wrapperDiv th,
 td {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
 }
 #Pending_Request_table_wrapperDiv th{
         text-align: left;
-}
-#Pending_Request_table_wrapperDiv #BankDetails_Div {
-    display: flex;
-    flex-direction: column;
-}
-
-#Pending_Request_table_wrapperDiv .BankDetails_BoldText {
-    font-weight: bold;
-    line-height: 0;
 }
 .Action_button{
     background-color: #0B438D;
@@ -75,4 +66,13 @@ td {
     display: flex;
     align-items: center;
     column-gap: 0.6rem;
+}
+.trash_Action_button{
+    background-color: green;
+    border: none;
+    width: 5.3rem;
+    height:1.37rem ;
+    border-radius: 0.5rem;
+    color: #FFFFFF;
+    font-size: 0.75rem;
 }

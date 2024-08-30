@@ -8,12 +8,15 @@ import offline from '../../../../../assets/svg/offline.svg'
 import three_users from '../../../../../assets/svg/three_users.svg'
 import smiley from '../../../../../assets/svg/gray_smiley.svg'
 import call from '../../../../../assets/svg/call.svg'
-import arrow_down from '../../../../../assets/svg/arrow_down-dark.svg'
+import arrow_down from '../../../../../assets/svg/arrow_down.svg'
 import amazing from '../../../../../assets/svg/amazing.svg'
 import good from '../../../../../assets/svg/good.svg'
 import neutral from '../../../../../assets/svg/neutral.svg'
 import sad from '../../../../../assets/svg/sad.svg'
 import issues from '../../../../../assets/svg/Issues.svg'
+import chat from '../../../../../assets/svg/chat.svg'
+import mail from '../../../../../assets/svg/mail.svg'
+// import call from '../../../../../assets/svg/call.svg'
 import { Link } from 'react-router-dom'
 import Button from '../../../../../components/button/Button'
 
@@ -33,10 +36,18 @@ const Customer_Support = () => {
         },
         {
             image1: issues,
+            all: "All",
             price: "5k",
             text: "Queries",
+            price2: "2k",
+            price3: "2k",
+            price4: "1k",
+            image2: call,
+            image3: mail,
+            image4: chat,
             to: "/queries",
             divText: "View All"
+
         },
         {
             image1: online,
@@ -115,7 +126,14 @@ const Customer_Support = () => {
                                     image1={obj.image1}
                                     divText={obj.divText}
                                     price={obj.price}
-                                    to={obj.to} />
+                                    to={obj.to}
+                                    price2 ={obj.price2}
+                                    price3 = {obj.price3}
+                                    price4 = {obj.price4}
+                                    image2 = {obj.image2}
+                                    image3 = {obj.image3}
+                                    image4 = {obj.image4}
+                                    all = {obj.all} />
                             )
                         })
                     }
