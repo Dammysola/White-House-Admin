@@ -8,10 +8,17 @@ import good from '../../../../assets/svg/good.svg'
 import sad from '../../../../assets/svg/sad.svg'
 import neutral from '../../../../assets/svg/neutral.svg'
 import { Link } from 'react-router-dom'
+import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
 
 
 
 const Performance = () => {
+
+    const {updateFilterPopup} = PopupContextHook()
+
+    const trey = ()=>{
+        updateFilterPopup()
+    }
 
     const progressDiv = [
 
