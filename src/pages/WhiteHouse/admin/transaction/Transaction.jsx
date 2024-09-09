@@ -19,6 +19,8 @@ import green_eyes from '../../../../assets/svg/green_eyes.svg'
 import warning from '../../../../assets/svg/yellow_warning.svg'
 import delete_list from '../../../../assets/svg/product_delete.svg'
 import person from '../../../../assets/images/person_img.png'
+import Total_BetPlaced from '../totalBet/Total_BetPlaced'
+import { useParams } from 'react-router-dom'
 
 
 
@@ -26,7 +28,10 @@ import person from '../../../../assets/images/person_img.png'
 const Transaction = () => {
     let [toggleIndex, setToggleIndex] = useState(0);
     let [cardToggleIndex, setCardToggleIndex] = useState(0);
+    // let [filterData, setFilterData] = useState(arr);
     let [dev, setDev] = useState([]);
+
+
 
     const transactionToggle = (index) => {
 
@@ -56,7 +61,7 @@ const Transaction = () => {
             price: "20K",
             text: "Coin Purchase",
             to: "",
-            divText: "View All"
+            divText: "View All",
         },
         {
             image1: winner,
@@ -160,7 +165,7 @@ const Transaction = () => {
             SN: "4",
             userID: "5466FH",
             BetID: "6458575RFG",
-            game: "DiceRoom344",
+            game: "tr",
             amount: "1000",
             players: person,
             status: "Lost",
@@ -205,6 +210,22 @@ const Transaction = () => {
         }
     ]
 
+    let [filterData, setFilterData] = useState(arr);
+
+
+    const onChange = (e) =>{
+        if( e.target.value === ""){
+            
+            setFilterData(arr)
+            return;
+        }
+
+        // const data = arr.filter((d)=> d.toLowerCase().
+        // indexOf( e.target.value.toLowerCase()) !== -1);
+
+        // setFilterData(data)
+    }
+
     useEffect(() => {
         let d = arr.filter((a) => a.status === "Won")
         console.log(d);
@@ -212,6 +233,7 @@ const Transaction = () => {
         setDev(d)
     }, [])
 
+    
 
     const coin_arr = [
 
@@ -314,6 +336,7 @@ const Transaction = () => {
                 </div>
                 {
                     cardToggleIndex !== 0 ?
+                    
 
                         <div id={Style.transaction_header_inputfield_Div}>
                             <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>
@@ -323,7 +346,7 @@ const Transaction = () => {
 
                                 <div id={Style.searchDiv}>
                                     <img src={search} alt="" />
-                                    <InputField />
+                                    <InputField type ={"text"} OnChange = {onChange}/>
                                 </div>
                                 <div id={Style.imgDiv}>
                                     <img src={filter_img} alt="" />
@@ -384,6 +407,7 @@ const Transaction = () => {
                             {
                                 toggleIndex == 0 ?
 
+                                
                                     <tbody>
                                         {
                                             arr.map((user, index) => {
@@ -466,6 +490,7 @@ const Transaction = () => {
                                                 {
                                                     arr.filter((p) => p.status === "Lost").map((user, index) => {
                                                         let lost = user.status == "Lost" ? true : false
+
                                                         return (
                                                             <tr >
                                                                 <td>{index + 1}</td>
@@ -494,7 +519,8 @@ const Transaction = () => {
                                                         )
                                                     })
                                                 }
-                                            </tbody> : ""
+                                            </tbody> 
+                                    : ""
 
                             }
 
@@ -566,7 +592,7 @@ const Transaction = () => {
 
 
                     {
-                        cardToggleIndex == 2 ?
+                        cardToggleIndex == 2 || cardToggleIndex == 3 ?
 
                             <div id={Style.Card_table_wrapperDiv}>
                                 <table>
@@ -576,70 +602,98 @@ const Transaction = () => {
                                         <th>Ref Number</th>
                                         <th>Time</th>
                                         <th>Country</th>
-                                        <th>Amount Converted</th>
-                                        <th>Coin Purchased </th>
+                                        <th>Coin Converted</th>
+                                        <th>Amount Withdrawn </th>
                                         <th>Payment Type</th>
                                         <th>Status</th>
                                     </tr>
 
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UA 123476689</td>
-                                            <td>UA 123476689</td>
-                                            <td>13:45</td>
-                                            <td>Nigeria</td>
-                                            <td>20000</td>
-                                            <td>500</td>
-                                            <td>
-                                                <div id={Style.BankDetails_Div}>
-                                                    <div>
-                                                        <p>Bank</p>
-                                                        <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                                    </div>
-                                                    <div>
-                                                        <p>Account Number</p>
-                                                        <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                                    </div><div>
-                                                        <p>Account Name</p>
-                                                        <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div id={Style.statusText}>Purchased</div>
-                                            </td>
 
-                                        </tr>
 
-                                        <tr>
-                                            <td>2</td>
-                                            <td>UA 123476689</td>
-                                            <td>UA 123476689</td>
-                                            <td>13:45</td>
-                                            <td>Nigeria</td>
-                                            <td>20000</td>
-                                            <td>500</td>
-                                            <td>
-                                                <div id={Style.BankDetails_Div}>
-                                                    <div>
-                                                        <p>Bank</p>
-                                                        <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                                    </div>
-                                                    <div>
-                                                        <p>Account Number</p>
-                                                        <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                                    </div><div>
-                                                        <p>Account Name</p>
-                                                        <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div id={Style.statusText}>Purchased</div>
-                                            </td>
+                                        {         //Withdrawal
+                                            cardToggleIndex == 2 ?
 
-                                        </tr>
+
+                                                coin_arr.map((user, index) => {
+                                                    let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
+                                                    let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
+
+                                                    // let lost = user.status == "Lost" ? true : false
+                                                    return (
+                                                        <tr>
+                                                            <td>{index + 1}</td>
+                                                            <td>{user.userID}</td>
+                                                            <td>{user.RefNo}</td>
+                                                            <td>{user.time}</td>
+                                                            <td>{user.country}</td>
+                                                            <td>{user.amount}</td>
+                                                            <td>{user.coinRd}</td>
+                                                            <td>
+                                                                <div id={Style.BankDetails_Div}>
+                                                                    <div>
+                                                                        <p>Bank</p>
+                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p>Account Number</p>
+                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
+                                                                    </div><div>
+                                                                        <p>Account Name</p>
+                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                            </td>
+
+                                                        </tr>
+                                                    )
+                                                })
+                                                : ""
+                                        }
+                                        {         //Withdrawal
+                                            cardToggleIndex == 3 ?
+
+
+                                                coin_arr.filter((p)=> p.status === "Pending").map((user, index) => {
+                                                    let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
+                                                    let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
+
+                                                    // let lost = user.status == "Lost" ? true : false
+                                                    return (
+                                                        <tr>
+                                                            <td>{index + 1}</td>
+                                                            <td>{user.userID}</td>
+                                                            <td>{user.RefNo}</td>
+                                                            <td>{user.time}</td>
+                                                            <td>{user.country}</td>
+                                                            <td>{user.amount}</td>
+                                                            <td>{user.coinRd}</td>
+                                                            <td>
+                                                                <div id={Style.BankDetails_Div}>
+                                                                    <div>
+                                                                        <p>Bank</p>
+                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p>Account Number</p>
+                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
+                                                                    </div><div>
+                                                                        <p>Account Name</p>
+                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                            </td>
+
+                                                        </tr>
+                                                    )
+                                                }) : ""
+                                        }
                                     </tbody>
                                 </table>
                             </div>

@@ -51,42 +51,49 @@ import Dice_BetPlaced from "./pages/WhiteHouse/admin/games/Dice_BetPlaced";
 import Users_From_Soldiers from "./pages/WhiteHouse/admin/foot_soldiers/users_from_soldiers/Users_From_Soldiers"
 import Trash from "./pages/WhiteHouse/admin/foot_soldiers/trash/Trash"
 import Game_History from "./pages/WhiteHouse/admin/games/game_history/Game_History";
-import CustomerCare_SignIn from "./pages/WhiteHouse/signIn/customerCare_signIn/CustomerCare_SignIn";
+// import CustomerCare_SignIn from "./pages/WhiteHouse/CustomerCare/signIn/customerCare_signIn/CustomerCare_SignIn";
 import Query_Review from "./pages/WhiteHouse/customerCare/customerCare_Queries/query_review/Query_Review";
 import Performance from "./pages/WhiteHouse/customerCare/performance/Performance";
 import Online_Players from "./pages/WhiteHouse/admin/placeBet/totalOnline_players/Online_Players";
 import Performance_Details from "./pages/WhiteHouse/customerCare/performance/performance_details/Performance_Details";
+import CC_All_Users from "./pages/WhiteHouse/customerCare/customerCare_all_Users/CC_All_Users";
+import CustomerCare_SignIn from "./pages/WhiteHouse/customerCare/signIn/customerCare_signIn/CustomerCare_SignIn";
+import Admin_SignIn from "./pages/WhiteHouse/admin/signIn/admin_signIn/Admin_SignIn";
+import Onboarded_users from "./pages/WhiteHouse/admin/foot_soldiers/recent_onboarded_users/Onboarded_users";
+import Incoming_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/incoming_queries/Incoming_Queries";
 
 
 
 const router = createBrowserRouter([
+
+    
     {
         path: "/",
-        element: <MainLayout />,
+        element: <WhiteHouse_PopupContext><MainLayout /></WhiteHouse_PopupContext> ,
         children: [
 
-            // {
-            //     index: true,
-            //     element: <CustomerCare_Dashboard />
-            // },
-            // {
-            //     path: "/customerCare_queries",
-            //     element: <CustomerCare_Queries />
-            // },
-            // {
-            //     path: "/QueryReview",
-            //     element: <Query_Review />
-            // },
-            // {
-            //     path: "/performance",
-            //     element: <Performance />
-            // },
-            // {
-            //     path: "/performanceDetails",
-            //     element: <Performance_Details />
-            // },
+            {
+                index: true,
+                element: <CustomerCare_Dashboard />
+            },
+            {
+                path: "/customerCare_queries",
+                element: <CustomerCare_Queries />
+            },
+            {
+                path: "/QueryReview",
+                element: <Query_Review />
+            },
+            {
+                path: "/performance",
+                element: <Performance />
+            },
+            {
+                path: "/performanceDetails",
+                element: <Performance_Details />
+            },
 
-            
+
             //         {
             //             path: "/businessTransaction",
             //             element: <Business_Transaction />
@@ -104,10 +111,18 @@ const router = createBrowserRouter([
             //             element: <SignIn />
             //         }
 
-            // {
-            //     path: "/signIn",
-            //     element: <CustomerCare_SignIn />
-            // }
+            {
+                path: "/signIn",
+                element: <CustomerCare_SignIn/>
+            },
+            {
+                path: "/incomingQueries",
+                element: <Incoming_Queries/>
+            },
+            {
+                path: "/allUsers_cc",
+                element: <CC_All_Users/>
+            }
         ]
 
     },
@@ -115,6 +130,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <WhiteHouse_PopupContext><MainLayout_Two /></WhiteHouse_PopupContext>,
         children: [
+
+            {
+                path: "/admin_signIn",
+                element: <Admin_SignIn/>
+            },
 
             {
                 // index: true,
@@ -186,7 +206,7 @@ const router = createBrowserRouter([
                 element: <Total_Players />
             },
             {
-                path: "/totalBetPlaced",
+                path: "/totalBetPlaced/:indexParams",
                 element: <Total_BetPlaced />
             },
             {
@@ -258,7 +278,11 @@ const router = createBrowserRouter([
                 element: <Amount_Paid />
             },
             {
-                path: "/AllTransaction",
+                path: "/recentOnboarderUsers",
+                element: <Onboarded_users/>
+            },
+            {
+                path: "/AllTransaction/:indexParams",
                 element: <All_Transaction />
             },
             {

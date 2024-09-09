@@ -17,7 +17,7 @@ const Performance = () => {
     const {updateFilterPopup} = PopupContextHook()
 
     const trey = ()=>{
-        updateFilterPopup()
+        updateFilterPopup(true)
     }
 
     const progressDiv = [
@@ -91,7 +91,11 @@ const Performance = () => {
                                     <td className={Style.Daily_CallText}>46</td>
                                     <td className={Style.Daily_CallText}>5</td>
                                     <td className={Style.Daily_CallText}>5</td>
-                                    <td> <Link to={"/performanceDetails"}><button style={{ backgroundColor: "transparent", cursor: "pointer", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></Link></td>
+                                    <td> 
+                                        {/* <Link> */}
+                                    <button onClick={trey} style={{ backgroundColor: "transparent", cursor: "pointer", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button>
+                                    {/* </Link> */}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Tuesday</td>

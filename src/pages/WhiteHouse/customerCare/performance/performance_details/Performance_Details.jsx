@@ -5,9 +5,13 @@ import person from '../../../../../assets/images/person_img.png'
 import microphone from '../../../../../assets/svg/microphone.svg'
 import recording from '../../../../../assets/svg/recording.svg'
 import Button from '../../../../../components/button/Button'
+import { PopupContextHook } from '../../../../../WhiteHouse_PopupContext'
 
 
 const Performance_Details = () => {
+
+    const {updateFilterPopup} = PopupContextHook()
+
 
     const arr = [
 
@@ -69,7 +73,7 @@ const Performance_Details = () => {
     ]
     return (
         <div id={Style.Performance_Details_mainDiv}>
-            <div id={Style.transparentDiv}></div>
+            <div id={Style.transparentDiv} onClick={()=>updateFilterPopup(false)}></div>
             <div id={Style.Performance_Details_wrapperDiv}>
 
                 <p id={Style.Performance_Details_headerText}>Mon 26th October, 2024</p>

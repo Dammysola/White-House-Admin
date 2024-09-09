@@ -1,5 +1,6 @@
 #History_component_mainDiv{
-    flex: 1;
+    /* flex: 1;
+    max-width: 500px; */
 }
 #History_component_wrapperDiv{
     display: flex;

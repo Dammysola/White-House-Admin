@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from '../customerCare_Navbar/CustomerCare_NavBar.module.css'
 import mail from '../../assets/svg/staff_mail.svg'
 import person from '../../assets/svg/staff_person.svg'
@@ -6,6 +6,14 @@ import { NavLink } from 'react-router-dom'
 
 
 const CustomerCare_NavBar = () => {
+
+    const [activeNav, setActiveNav] = useState('');
+
+    const handleNavClick = (navItem) => {
+      setActiveNav(navItem);
+    };
+
+
     return (
         <div id={Style.CustomerCare_NavBar_mainDiv}>
 
@@ -15,17 +23,22 @@ const CustomerCare_NavBar = () => {
 
                 <div id={Style.Navbar_textsDiv}>
                     <p>Dashboard</p>
-                    <NavLink to={"/customerCare_queries"}>
+                    <NavLink to={"/customerCare_queries"} className={`${Style.NavBar_text} ${activeNav === 'query' ? Style.Nav_styled_Link : ''}`} onClick={() => handleNavClick('query')}>
                         <p>Query Management</p>
                     </NavLink>
-                    <p>Users</p>
+                    
+
+                    <NavLink to={"/allUsers_cc"} className={`${Style.NavBar_text} ${activeNav === 'users' ? Style.Nav_styled_Link : ''}`} onClick={() => handleNavClick('users')}>
+                     <p>Users</p>   
+                    </NavLink>
+                    
                     <p>Tickets</p>
                     <p>Transactions</p>
                 </div>
             </div>
             <div id={Style.Navbar_lastLineDiv}>
 
-                <NavLink to={"/performance"}>
+                <NavLink to={"/performance"} className={`${Style.NavBar_text} ${activeNav === 'performance' ? Style.Nav_styled_Link : ''}`} onClick={() => handleNavClick('performance')}>
                     <p>Performance</p>
                 </NavLink>
 

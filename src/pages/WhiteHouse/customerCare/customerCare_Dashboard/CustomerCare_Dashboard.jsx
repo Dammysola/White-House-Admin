@@ -41,11 +41,49 @@ const CustomerCare_Dashboard = () => {
             infoText: "70% more earning than last month, keep watching to find out more"
         }
     ]
+
+
+    const arr = [
+
+        {
+            users: {
+                img: avatar,
+                name: "John Doe",
+                issue: "User Dispute"
+            },
+            ticketNo: "GHNJ657RY",
+            queryType: "Mail",
+            action: "Review"
+        },
+        {
+            users: {
+                img: avatar,
+                name: "John Doe",
+                issue: "User Dispute"
+            },
+            ticketNo: "GHNJ657RY",
+            queryType: "Mail",
+            action: "Review"
+        },
+        {
+            users: {
+                img: avatar,
+                name: "John Doe",
+                issue: "User Dispute"
+            },
+            ticketNo: "GHNJ657RY",
+            queryType: "Mail",
+            action: "Review"
+        },
+
+    ]
+
     return (
         <div id={Style.CustomerCare_Dashboard_mainDiv}>
             <Header
                 headerText={"Welcome John"}
-                headerInfo={"Here’s an information on all Users"} />
+                headerInfo={"Here’s an information on all Users"}
+                back1={false} />
 
             <div id={Style.CustomerCare_Dashboard_wrapperDiv}>
                 <div id={Style.Dashboard_CardDiv}>
@@ -65,7 +103,7 @@ const CustomerCare_Dashboard = () => {
                     <div id={Style.Ticket_entireDiv}>
                         <div id={Style.AssignedTicket_textDiv}>
                             <p>Incoming Queries</p>
-                            <p>View All</p>
+                            <Link to={"/incomingQueries"}><p>View All</p></Link>
                         </div>
 
                         <div id={Style.Dashboard_TicketWrapperDiv}>
@@ -88,51 +126,38 @@ const CustomerCare_Dashboard = () => {
                                     <tr id={Style.headerTable}>
                                         <th>User</th>
                                         <th>Ticket No</th>
-                                        <th>Query Type</th>
+                                        <th>QueryType</th>
                                         <th>Action</th>
                                     </tr>
 
                                     <tbody>
-                                        <tr>
-                                            <td style={{ display: "flex", columnGap: "0.5rem", alignItems: "center" }}><img src={avatar} alt="" />
-                                                <div><p className={Style.Ticket_tableData}>John Doe</p>
-                                                    <p id={Style.disputeText}>User Dispute</p></div>
-                                            </td>
-                                            <td className={Style.Ticket_tableData}>GHNJ657RY</td>
-                                            <td className={Style.Ticket_tableData}>Mail</td>
-                                            <td><Button text ={"Review"}/></td>
-                                            {/* <td><div>
+
+                                        {
+                                            arr.map((obj) => {
+                                                return (
+                                                    <tr>
+                                                        <td>
+                                                            <div style={{ display: "flex", columnGap: "0.5rem", alignItems: "center" }}>
+                                                                <img style={{ width: "2rem", height: "2rem" }} src={obj.users.img} alt="" />
+                                                                <div>
+                                                                    <p className={Style.Ticket_tableData}>{obj.users.name} </p>
+                                                                    <p id={Style.disputeText}>{obj.users.issue}</p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td className={Style.Ticket_tableData}>{obj.ticketNo}</td>
+                                                        <td className={Style.Ticket_tableData}>{obj.queryType}</td>
+                                                        <td><Button text={obj.action} /></td>
+                                                        {/* <td><div>
                                                 <p style={{ color: "#232323", fontSize: "1rem", fontWeight: "600" }}>28 Aug 2024</p>
                                                 <p>13:23</p></div></td> */}
-                                            
-                                        </tr>
 
-                                        <tr>
-                                            <td style={{ display: "flex", columnGap: "0.5rem", alignItems: "center" }}><img src={avatar} alt="" />
-                                                <div><p className={Style.Ticket_tableData}>John Doe</p>
-                                                    <p id={Style.disputeText}>User Dispute</p></div>
-                                            </td>
-                                            <td className={Style.Ticket_tableData}>GHNJ657RY</td>
-                                            <td className={Style.Ticket_tableData}>Message</td>
-                                            <td><Button text ={"Review"}/></td>
-                                            {/* <td><div>
-                                                <p style={{ color: "#232323", fontSize: "1rem", fontWeight: "500" }}>28 Aug, 2024</p>
-                                                <p>13:23</p></div></td> */}
+                                                    </tr>
+                                                )
+                                            })
+                                        }
 
-                                        </tr>
 
-                                        <tr>
-                                            <td style={{ display: "flex", columnGap: "0.5rem", alignItems: "center" }}><img src={avatar} alt="" />
-                                                <div><p className={Style.Ticket_tableData}>John Doe</p>
-                                                    <p id={Style.disputeText}>User Dispute</p></div>
-                                            </td>
-                                            <td className={Style.Ticket_tableData}>GHNJ657RY</td>
-                                            <td className={Style.Ticket_tableData}>In-App Calls</td>
-                                            <td><Button text ={"Accept"}/></td>
-                                            {/* <td><div>
-                                                <p style={{ color: "#232323", fontSize: "1rem", fontWeight: "500" }}>28 Aug, 2024</p>
-                                                <p>13:23</p></div></td> */}
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

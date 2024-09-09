@@ -74,7 +74,7 @@ const CustomerCare_Queries = () => {
     return (
         <div id={Style.Queries_mainDiv}>
             <Header
-                headerText={"Query Management"}
+                headerText={"Incoming Queries"}
                 headerInfo={"let's get rolling"} />
 
             <div id={Style.Queries_wrapperDiv}>
@@ -130,7 +130,7 @@ const CustomerCare_Queries = () => {
                                             <tr id={Style.headerTable}>
                                                 <th>User</th>
                                                 <th>Ticket No</th>
-                                                <th>Query Type</th>
+                                                <th>QueryType</th>
                                                 <th>Date/Time</th>
                                             </tr>
 

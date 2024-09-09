@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from '../mainLayout2/MainLayout_Two.module.css'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 // import { PopupContextHook } from '../PopupContext '
 import NavBar from '../components/navBar/NavBar'
 import Filter_Options from '../popUps/whitehouse/filter/Filter_Options'
@@ -10,13 +10,14 @@ import Performance_Details from '../pages/WhiteHouse/customerCare/performance/pe
 
 const MainLayout_Two = () => {
 
-  const {filterPopup} = PopupContextHook()
-
+ const location = useLocation();
+  const showNavbar = location.pathname !== '/admin_signIn';
   return (
     <div id={Style.wrapper}>
-      {filterPopup && <Performance_Details/>}
-      <NavBar/>
-      <div><Outlet /></div>
+      {/* {filterPopup && <Performance_Details/>} */}
+      {showNavbar && <NavBar/>}
+      
+      <div><Outlet/></div>
     </div>
   )
 }

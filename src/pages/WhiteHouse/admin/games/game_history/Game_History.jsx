@@ -144,10 +144,11 @@ const Game_History = () => {
             <Header
                 headerText={"Game History"}
                 headerInfo={"Here’s all information on John Doe"}
+                image3 ={game_pad}
             />
             <div id={Style.Game_History_wrapperDiv}>
-                <div id={Style.gamePad_inputFieldDiv}>
-                    <img id={Style.gamePad} src={game_pad} alt="" />
+                {/* <div id={Style.gamePad_inputFieldDiv}> */}
+                    {/* <img id={Style.gamePad} src={game_pad} alt="" /> */}
 
                     <div id={Style.Game_History_input_FilterDiv}>
                         <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
@@ -160,7 +161,7 @@ const Game_History = () => {
                             <img src={filter} alt="" />
                             <img src={download} alt="" />
                         </div>
-                    </div>
+                    {/* </div> */}
                 </div>
 
                 <div id={Style.Game_History_mapDiv}>

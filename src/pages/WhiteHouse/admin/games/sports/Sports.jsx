@@ -28,7 +28,9 @@ const Sports = () => {
       image1: Activity,
       text: 'Total Bet Placed',
       divText: 'View all',
-      price: '$25,052,985'
+      price: '$25,052,985',
+      to: `/totalBetPlaced/${0}`
+
     },
     {
       image1: three_users,
@@ -40,13 +42,15 @@ const Sports = () => {
       image1: winner,
       text: 'Winners',
       divText: 'View all',
-      price: '345,000'
+      price: '345,000',
+      to: `/totalBetPlaced/${1}`
     },
     {
       image1: loosers,
       text: 'Loosers',
       divText: 'View all',
-      price: '23,000'
+      price: '23,000',
+      to: `/totalBetPlaced/${2}`
     },
   ]
 
@@ -117,21 +121,9 @@ const Sports = () => {
     },
   ]
 
-  // const stats_card3 = [
-  //   {
-  //     img: rise,
-  //     figure: "200k",
-  //     text: "Bet Placed",
-  //     to: "/placebet"
 
-  //   },
-  //   {
-  //     img: person,
-  //     figure: "2m",
-  //     text: "All Users",
-  //     to: "/placebet"
-  //   }
-  // ]
+
+
   return (
     <div id={Style.DiceGame_mainDiv}>
       <Header
@@ -142,8 +134,12 @@ const Sports = () => {
       <div id={Style.DiceGame_wrapperDiv}>
 
         <div id={Style.Sports_selection_wrapperDiv}>
-          <div className={Style.Sports_selectionDiv}>Football</div>
-          <div className={Style.Sports_selectionDiv} id={Style.basket}>Basketball</div>
+          <button className={Style.Sports_selectionDiv}>Football</button>
+          <div className={Style.Sports_selectionDiv}>Basketball</div>
+          <div className={Style.Sports_selectionDiv}>Tennis</div>
+          <div className={Style.Sports_selectionDiv}>8 balls</div>
+          <div className={Style.Sports_selectionDiv}> 9 balls</div>
+          {/* <div className={Style.Sports_selectionDiv} id={Style.basket}>Basketball</div> */}
         </div>
         <p className={Style.PlaceBet_headerText}>Today's Summary</p>
         <div id={Style.DiceGame_Card_mapDiv}>
@@ -155,6 +151,7 @@ const Sports = () => {
                   text={object.text}
                   divText={object.divText}
                   price={object.price}
+                  to ={object.to}
                 />
               )
             })

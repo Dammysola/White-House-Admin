@@ -149,18 +149,30 @@ const Personal_Info = () => {
                             </div>
                         </div>
 
-                        <Link to={"/gameHistory"}>
-                            <div id={Style.Game_historyDiv}>
-                                <div id={Style.padDiv}>
-                                    <img src={game_pad} alt="" />
-                                </div>
-                                <div>
-                                    <p>3K</p>
-                                    <p>Game History</p>
-                                </div>
-                            </div>
-                        </Link>
+                        <div>
 
+
+                            <Link to={"/gameHistory"}>
+                            
+                                <div id={Style.dropdown}>
+                                    Click to See game history
+                                    {/* <ul>
+                                <li>Click to See game history</li>
+                            </ul> */}
+
+                                </div>
+                                <div id={Style.Game_historyDiv}>
+                                    <div id={Style.padDiv}>
+                                        <img src={game_pad} alt="" />
+                                    </div>
+                                    <div>
+                                        <p>3K</p>
+                                        <p>Game History</p>
+                                    </div>
+                                </div>
+                            </Link>
+
+                        </div>
                     </div>
 
                     <div id={Style.Personal_Info_buttonDiv}>

@@ -1,19 +1,17 @@
 import { RouterProvider } from 'react-router-dom'
- import router from './router'
-import CustomerCare_SignIn from './pages/WhiteHouse/signIn/customerCare_signIn/CustomerCare_SignIn'
-import CustomerCare_NavBar from './components/customerCare_Navbar/CustomerCare_NavBar'
-import History_component from './pages/WhiteHouse/admin/games/game_history/component/History_component'
-import Total_Card from './components/total_Card/Total_Card'
-
+import router from './router'
+import NewAgent_Success from './popUps/whitehouse/newAgent_Success/NewAgent_Success'
 
 
 
 function App() {
-  
+
+
   return (
-    <> 
-      <RouterProvider router={router}/>
-    {/* <Total_Card/> */}
+    <>
+      {/* <RouterProvider router={router} /> */}
+      <NewAgent_Success/>
+
     </>
   )
 }

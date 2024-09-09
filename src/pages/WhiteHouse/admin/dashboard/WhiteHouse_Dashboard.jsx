@@ -109,8 +109,8 @@ const WhiteHouse_Dashboard = () => {
         {
             img: rise,
             figure: "200k",
-            text: "Bet Placed",
-            to: "/placebet"
+            text: "Total Bets Placed",
+            to: `/totalBetPlaced/${0}`
 
         },
         {
@@ -138,7 +138,8 @@ const WhiteHouse_Dashboard = () => {
         <div id={Style.Dashboard_MainDiv}>
             <Header
                 headerText={"Welcome, Admin"}
-                headerInfo={"Here’s an overview of White House"} />
+                headerInfo={"Here’s an overview of White House"}
+                back1 ={false} />
 
             <div id={Style.Dashboard_WrapperDiv}>
                 <div id={Style.Dashboard_CardGraph_Wrapper}>

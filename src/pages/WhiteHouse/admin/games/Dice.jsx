@@ -31,7 +31,7 @@ const DiceGame = () => {
       text: 'Total Bet Placed',
       divText: 'View all',
       price: '$25,052,985',
-      to: "/totalBetPlaced"
+      to: `/totalBetPlaced/${0}`
     },
     {
       image1: three_users,
@@ -43,13 +43,15 @@ const DiceGame = () => {
       image1: winner,
       text: 'Winners',
       divText: 'View all',
-      price: '345,000'
+      price: '345,000',
+      to: `/totalBetPlaced/${1}`
     },
     {
       image1: loosers,
       text: 'Loosers',
       divText: 'View all',
-      price: '23,000'
+      price: '23,000',
+      to: `/totalBetPlaced/${2}`
     },
   ]
 
@@ -134,21 +136,7 @@ const DiceGame = () => {
     // },
   ]
 
-  const stats_card3 = [
-    {
-      img: rise,
-      figure: "200k",
-      text: "Bet Placed",
-      to: "/placebet"
 
-    },
-    {
-      img: person,
-      figure: "2m",
-      text: "All Users",
-      to: "/placebet"
-    }
-  ]
   return (
     <div id={Style.DiceGame_mainDiv}>
       <Header

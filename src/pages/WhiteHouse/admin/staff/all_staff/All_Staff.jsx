@@ -78,8 +78,8 @@ const All_Staff = () => {
         },
         {
             img: users,
-            figure: "New Agent",
-            text: "Add A New Agent",
+            figure: "New Staff",
+            text: "Add A New Staff",
             to: ""
         },
         {

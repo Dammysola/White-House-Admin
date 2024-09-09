@@ -95,8 +95,12 @@
 #All_Users_Card{
     row-gap: 2rem;
     margin-top: 4rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    gap: 2rem;
+    /* display: flex;
     column-gap: 2rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     word-wrap: break-word;
 }

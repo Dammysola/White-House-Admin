@@ -188,6 +188,7 @@
     border: 1px solid #0E093C;
     font-size: 1.25rem;
     color: #0E093C;
+    background-color: transparent;
 }
 #Sports_selection_wrapperDiv{
     display: flex;

@@ -1,0 +1,42 @@
+#NewAgent_Success_mainDiv {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, .2);
+    /* display: flex;  */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+#NewAgent_Success_wrapperDiv {
+    background: url("../../../assets/svg/popup_BG.svg")no-repeat;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#NewAgent_Success_headerText {
+    color: #1A1A1A;
+    font-size: 1.2rem;
+
+
+}
+
+#NewAgent_Success_tablewrapperDiv tr {
+    height: 3rem;
+}
+
+.detailsText {
+    color: #939393;
+    font-size: 1rem;
+}
+
+.detailsBold {
+    color: #1A1A1A;
+    font-weight: 700;
+}
+#copyText{
+    text-align: center;
+}

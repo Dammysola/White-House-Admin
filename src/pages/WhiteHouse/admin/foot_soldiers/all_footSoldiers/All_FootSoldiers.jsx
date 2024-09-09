@@ -12,14 +12,16 @@ import person_img from '../../../../../assets/images/person_img.png'
 import country_flag from '../../../../../assets/svg/country_flag.svg'
 import country_flag2 from '../../../../../assets/svg/country_flag2.svg'
 import Category_Grid from '../../../../../assets/svg/Category_Grid.svg'
+import list_view from '../../../../../assets/svg/list_view.svg'
 import Button from '../../../../../components/button/Button'
 
 
 
-const All_FootSoldiers = () => {
-    const [viewChange, setViewChange] = useState(0)
 
-    const view = ()=>{
+const All_FootSoldiers = () => {
+    const [isGridView, setIsGridView] = useState(true);
+
+    const view = () => {
         setViewChange(!viewChange)
     }
 
@@ -99,6 +101,83 @@ const All_FootSoldiers = () => {
         },
 
     ]
+
+    const listView_arr = [
+
+        {
+            name: {
+                img: person_img,
+                name: "John Doe"
+            },
+            countries: "Nigeria",
+            flag: nig_flag,
+            action: "View Users"
+        },
+
+        {
+            name: {
+                img: person_img,
+                name: "John Doe"
+            },
+            countries: "Nigeria",
+            flag: country_flag,
+            action: "View Users"
+        },
+        {
+            name: {
+                img: person_img,
+                name: "John Doe"
+            },
+            countries: "Nigeria",
+            flag: nig_flag,
+            action: "View Users"
+        },
+        {
+            name: {
+                img: person_img,
+                name: "John Doe"
+            },
+            countries: "Nigeria",
+            flag: country_flag2,
+            action: "View Users"
+        },
+        {
+            name: {
+                img: person_img,
+                name: "John Doe"
+            },
+            countries: "Nigeria",
+            flag: nig_flag,
+            action: "View Users"
+        },
+        {
+            name: {
+                img: person_img,
+                name: "John Doe"
+            },
+            countries: "Nigeria",
+            flag: country_flag,
+            action: "View Users"
+        },
+        {
+            name: {
+                img: person_img,
+                name: "John Doe"
+            },
+            countries: "Nigeria",
+            flag: country_flag2,
+            action: "View Users"
+        },
+        {
+            name: {
+                img: person_img,
+                name: "John Doe"
+            },
+            countries: "Nigeria",
+            flag: country_flag2,
+            action: "View Users"
+        }
+    ]
     return (
         <div id={Style.All_FootSoldiers_mainDiv}>
             <Header
@@ -110,7 +189,10 @@ const All_FootSoldiers = () => {
                 <div id={Style.All_Users_toggle_dateDiv}>
                     <p id={Style.All_FootSoldiers_headerText}>All Foot Soldiers</p>
                     <div id={Style.All_Users_input_FilterDiv}>
-                        <p id={Style.grid_text}><img src={Category_Grid} alt="" /> Grid View</p>
+
+                        <button id={Style.viewchange_button} onClick={() => setIsGridView(!isGridView)}>
+                            {isGridView ? <div className={Style.footsoldier_listGrid_view}><img src={list_view} alt="" /> List View</div> : <div className={Style.footsoldier_listGrid_view}><img src={Category_Grid} alt="" /> Grid View</div>}
+                        </button>
                         <p>3rd July, 2024 <img src={arrow_down} alt="" /></p>
                         <div id={Style.searchDiv}>
                             <img src={search} alt="" />
@@ -121,124 +203,67 @@ const All_FootSoldiers = () => {
                     </div>
                 </div>
 
-{
-    view == !viewChange ? 
 
-    <div id={Style.All_Users_Card}>
-    {
-        all_soldiers_arr.map((object) => {
-            return (
-                <Staff_Card
-                    img={object.img}
-                    status={object.status}
-                    name={object.name}
-                    position={object.position}
-                    to={object.to}
-                />
-            )
-        })
-    }
+                {
+                    isGridView ?
 
-</div>: ""
-}
+                        <div id={Style.All_Users_Card}>
+                            {
+                                all_soldiers_arr.map((object) => {
+                                    return (
+                                        <Staff_Card
+                                            img={object.img}
+                                            status={object.status}
+                                            name={object.name}
+                                            position={object.position}
+                                            to={object.to}
+                                        />
+                                    )
+                                })
+                            }
+
+                        </div> : ""
+                }
 
 
-                <div id={Style.All_FootSoldiers_table_WrapperDiv}>
-                    <div id={Style.Winner_loser_tableDiv}>
-                        <table>
-                            <tr id={Style.headerTable}>
-                                <th>S/N</th>
-                                <th>Name</th>
-                                <th>Countries</th>
-                                <th id={Style.amount_TableText}>Flag</th>
-                                <th>Action</th>
-                            </tr>
-                            <tr id={Style}>
-                                <td className={Style.number}>1</td>
-                                <td > <div className={Style.person_name_td}><img src={person_img} alt="" /> John Doe</div></td>
-                                <td>Nigeria</td>
-                                <td><img src={nig_flag} alt="" /></td>
-                                <td>
-                                    <Button
-                                        text={"View Users"} />
-                                </td>
-                            </tr>
+                {
+                    !isGridView ?
+                        <div id={Style.All_FootSoldiers_tableDiv}>
+                            <table>
+                                <thead>
+                                    <tr id={Style.headerTable}>
+                                        <th>S/N</th>
+                                        <th>Name</th>
+                                        <th>Countries</th>
+                                        <th>Flag</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
 
-                            <tr>
-                                <td className={Style.number}>2</td>
-                                <td > <div className={Style.person_name_td}><img src={person_img} alt="" /> John Doe</div></td>
-                                <td>Nigeria</td>
-                                <td><img src={country_flag2} alt="" /></td>
-                                <td>
-                                    <Button
-                                        text={"View Users"} />
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td className={Style.number}>3</td>
-                                <td > <div className={Style.person_name_td}><img src={person_img} alt="" /> John Doe</div></td>
-                                <td>Nigeria</td>
-                                <td><img src={country_flag2} alt="" /></td>
-                                <td>
-                                    <Button
-                                        text={"View Users"} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={Style.number}>4</td>
-                                <td> <div className={Style.person_name_td}><img src={person_img} alt="" /> John Doe</div></td>
-                                <td>Nigeria</td>
-                                <td><img src={nig_flag} alt="" /></td>
-                                <td>
-                                    <Button
-                                        text={"View Users"} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={Style.number}>5</td>
-                                <td> <div className={Style.person_name_td}><img src={person_img} alt="" /> John Doe</div></td>
-                                <td>Nigeria</td>
-                                <td><img src={country_flag} alt="" /></td>
-                                <td>
-                                    <Button
-                                        text={"View Users"} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={Style.number}>6</td>
-                                <td> <div className={Style.person_name_td}><img src={person_img} alt="" /> John Doe</div></td>
-                                <td>Nigeria</td>
-                                <td><img src={country_flag2} alt="" /></td>
-                                <td>
-                                    <Button
-                                        text={"View Users"} />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className={Style.number}>7</td>
-                                <td> <div className={Style.person_name_td}><img src={person_img} alt="" /> John Doe</div></td>
-                                <td>Nigeria</td>
-                                <td><img src={nig_flag} alt="" /></td>
-                                <td>
-                                    <Button
-                                        text={"View Users"} />
-                                </td>
-                            </tr>
-                            <tr id={Style.lastline}>
-                                <td className={Style.number}>8</td>
-                                <td>SA 123476689</td>
-                                <td>20,000</td>
-                                <td><img src={country_flag} alt="" /></td>
-                                <td>
-                                    <Button
-                                        text={"View Users"} />
-                                </td>
-                            </tr>
+                                <tbody>
+                                    {
+                                        listView_arr.map((obj, index) => {
+                                            return (
 
-                        </table>
-                    </div>
-                </div>
+                                                <tr>
+                                                    <td className={Style.number}>{index + 1}</td>
+                                                    <td > <div className={Style.person_name_td}><img src={obj.name.img} alt="" /> {obj.name.name}</div></td>
+                                                    <td>{obj.countries}</td>
+                                                    <td><img src={obj.flag} alt="" /></td>
+                                                    <td>
+                                                        <Button
+                                                            text={obj.action} />
+                                                    </td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div> : ""
+                }
             </div>
         </div>
     )

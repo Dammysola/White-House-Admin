@@ -119,7 +119,7 @@
     border-bottom: none;
 }
 #ticketTable_wrapperDiv th, td{
-    padding: 0 1rem;
+    /* padding: 0 rem; */
 }
 #ticketTable_wrapperDiv th{
     text-align: left;

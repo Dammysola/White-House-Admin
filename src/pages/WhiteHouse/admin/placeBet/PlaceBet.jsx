@@ -7,6 +7,7 @@ import Activity from '../../../../assets/svg/Activity.svg'
 import total_users from '../../../../assets/svg/total_users.svg'
 import winner from '../../../../assets/svg/winner.svg'
 import loosers from '../../../../assets/svg/loosers.svg'
+import { Link } from 'react-router-dom';
 
 
 
@@ -25,6 +26,7 @@ const PlaceBet = () => {
         FetchData()
     }, [])
 
+    
     const line_data = [
         {
             name: 'jan',
@@ -106,7 +108,7 @@ const PlaceBet = () => {
             text: "Total Bet Placed",
             divText: "View all",
             price: "$25,052,985",
-            to: "/totalBetPlaced"
+            to: `/totalBetPlaced/${0}`
         },
         {
             image1: total_users,
@@ -120,14 +122,15 @@ const PlaceBet = () => {
             text:"Winners",
             divText: "View all",
             price: "345,000",
-            to: "/winners"
+            to: `/totalBetPlaced/${1}`
+            // to: "/winners"
         },
         {
             image1: loosers,
             text: "Loosers",
             divText: "View all",
             price: "23,000",
-            to: ""
+            to: `/totalBetPlaced/${2}`
         },
     ]
 
@@ -188,7 +191,7 @@ const PlaceBet = () => {
                         <div id={Style.Placebet_lineChart_Two}>
                             <div id={Style.Revenue_Div}>
                                 <p id={Style.Placebet_RevenueText}>Revenue</p>
-                                <p id={Style.PlaceBet_MoreText}>See More</p>
+                              <Link to={"/revenue"}><p id={Style.PlaceBet_MoreText}>See More</p></Link>  
                             </div>
                             <ResponsiveContainer width="100%" height="100%">
                                 <BarChart width={300} height={100} data={line_data} margin={{

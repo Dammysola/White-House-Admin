@@ -4,10 +4,11 @@
     background-color: #F9F9F9;
 }
 #TotalBet_wrapperDiv{
-    padding: 5rem 7.5rem;
+    padding: 1.75rem 7.5rem 5rem;
 }
 
-#Transaction_listCalendar_Div{
+
+/* #Transaction_listCalendar_Div{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,59 +98,26 @@
 
 
 #winners_background{
-    /* position: absolute; */
     margin-bottom: -4rem;
     width: 100%;
 }
-#Total_BetPlaced_TableWrapperDiv table{
-    box-sizing: border-box;
-    border-collapse: collapse;
-    width: 100%;
-    position: relative;
-} 
-/* #transaction_header_inputfield_Div{
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-    margin: 7rem 0 1rem;
-} */
 
+
+#Total_BetPlaced_TableWrapperDiv table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2.43rem;
+    box-sizing: border-box;
+}
 #Total_BetPlaced_TableWrapperDiv #headerTable{
     color: #000000;
     font-size: 1rem;
     background-color: #F1F1F1;
     height: 2.68rem;
     border-bottom: none;
-    
 }
-#players_imgDiv img{
-    width: 1.12rem;
-    height: 1.12rem;
-    border-radius: 100%;
-}
-#players_imgDiv{
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-}
-#statusText{
-    width: 3.2rem;
-    height: 26px;
-    background-color: rgba(49, 195, 100, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.25rem;
-    color: #31c464;
-}
-#action_field{
-    display: flex;
-    column-gap: 0.25rem;
-    align-items: center;
-}
-#Total_BetPlaced_TableWrapperDiv th, td{
+#Total_BetPlaced_TableWrapperDiv td,th{
     padding: 0 2rem;
-    color: #666666;
 }
 #Total_BetPlaced_TableWrapperDiv th{
     text-align: left;
@@ -157,8 +125,30 @@
 #Total_BetPlaced_TableWrapperDiv tr{
     height: 4.3rem;
     color: #666666;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 #Total_BetPlaced_TableWrapperDiv tr:last-child{
     border-bottom: none;
 }
+#Total_BetPlaced_TableWrapperDiv #players_imgDiv{
+    display: flex;
+    column-gap: 0.5rem;
+}
+#Total_BetPlaced_TableWrapperDiv #players_imgDiv img{
+    width: 1.12rem;
+}
+#Total_BetPlaced_TableWrapperDiv #action_field{
+    display: flex;
+    column-gap: 0.25rem;
+}
+#Total_BetPlaced_TableWrapperDiv #statusText{
+    width: 3rem;
+    height: 1.62rem;
+    background-color: rgba(49, 195, 100, .2);
+    color: #31C364;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ */

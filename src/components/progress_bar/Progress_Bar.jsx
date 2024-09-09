@@ -5,7 +5,7 @@ import smiley from '../../assets/svg/gray_smiley.svg'
 const Progress_Bar = (props) => {
     const {text, percent, infoText} = props
     return (
-        <div>
+        <div id={Style.Progress_Bar_mainDiv}>
             <div className={Style.Revenue_earningDiv}>
 
                 <p id={Style.averageCall_Text}>{text}</p>

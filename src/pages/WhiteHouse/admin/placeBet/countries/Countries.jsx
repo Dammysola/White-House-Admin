@@ -9,10 +9,14 @@ import Button from '../../../../../components/button/Button'
 import country_flag2 from '../../../../../assets/svg/country_flag2.svg'
 import country_flag from '../../../../../assets/svg/country_flag.svg'
 import nig_flag from '../../../../../assets/svg/nig_flag.svg'
+import back from '../../../../../assets/svg/back.svg'
 import Header from '../../../../../components/header/Header'
+import { useNavigate } from 'react-router-dom'
 
 
 const Countries = () => {
+
+    
     return (
         <div id={Style.Winner_loser_mainDiv}>
             <Header
@@ -20,6 +24,7 @@ const Countries = () => {
                 headerInfo={"Here’s an information on all Countries"}/>
                 
             <div id={Style.Winner_loser_wrapperDiv}>
+
                 <div id={Style.input_FilterDiv}>
                     <p>3rd July, 2024 <img src={arrow_down} alt="" /></p>
                     <div id={Style.searchDiv}>

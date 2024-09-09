@@ -1,5 +1,6 @@
 #Staff_Card_mainDiv{
-    flex: 1;
+    /* flex: 1 300px;
+    max-width: 500px; */
 }
 #Staff_Card_WrapperDiv{
     background-color: #FFFFFF;

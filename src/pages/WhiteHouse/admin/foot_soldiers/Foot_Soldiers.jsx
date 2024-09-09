@@ -10,6 +10,7 @@ import flag from '../../../../assets/svg/flag.svg'
 import Stats_Card from '../../../../components/stats_card/Stats_Card'
 import amount from '../../../../assets/svg/stats_capture.svg'
 import clock from '../../../../assets/svg/stats_clock.svg'
+import { Link } from 'react-router-dom'
 
 
 
@@ -50,19 +51,55 @@ const Foot_Soldiers = () => {
 
     const foot_soldiers_stats_card = [
         {
-          img: rise,
-          figure: "2k",
-          text: "Transactions",
-          to: "/AllTransaction"
-    
+            img: rise,
+            figure: "2k",
+            text: "Transactions",
+            to: "/AllTransaction"
+
         },
         {
-          img: flag,
-          figure: "14",
-          text: "Reg Countries",
-          to: "/placebet"
+            img: flag,
+            figure: "14",
+            text: "Reg Countries",
+            to: "/placebet"
         }
     ]
+
+    const arr = [
+
+        {
+            date: "23 Aug,2024",
+            userID: "UA 123476689",
+            footsoldiers: "John Doe",
+            status: "Onboarded"
+        },
+        {
+            date: "23 Aug,2024",
+            userID: "UA 123476689",
+            footsoldiers: "John Doe",
+            status: "Onboarded"
+        },
+        {
+            date: "23 Aug,2024",
+            userID: "UA 123476689",
+            footsoldiers: "John Doe",
+            status: "Onboarded"
+        },
+        {
+            date: "23 Aug,2024",
+            userID: "UA 123476689",
+            footsoldiers: "John Doe",
+            status: "Onboarded"
+        },
+        {
+            date: "23 Aug,2024",
+            userID: "UA 123476689",
+            footsoldiers: "John Doe",
+            status: "Onboarded"
+        },
+    ]
+
+
     return (
         <div id={Style.Foot_Soldiers_mainDiv}>
             <Header
@@ -93,58 +130,37 @@ const Foot_Soldiers = () => {
                     <div id={Style.onboarded_users_wrapperDiv}>
                         <div id={Style.onboarded_users_headerDiv}>
                             <p>Recently Onboarded Users</p>
-                            <p>See All</p>
+                            <Link to={"/recentOnboarderUsers"}> <p>See All</p></Link>
                         </div>
 
                         <table>
-                            <tr id={Style.headerTable}>
-                                <th>S/N</th>
-                                <th>Date</th>
-                                <th>User ID</th>
-                                <th>FootSoldiers</th>
-                                <th>Status</th>
-                            </tr>
+                            <thead>
+                                <tr id={Style.headerTable}>
+                                    <th>S/N</th>
+                                    <th>Date</th>
+                                    <th>User ID</th>
+                                    <th>FootSoldiers</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
 
                             <tbody>
-                                <tr>
-                                    <td style={{ color: "#000000" }}>1</td>
-                                    <td>23 Aug,2024</td>
-                                    <td>UA 123476689</td>
-                                    <td>John Doe</td>
-                                    <td><button style={{ Width: "5.5rem", height: "1.62rem", backgroundColor: "#31c36433", color: "#31C364", display: "flex", alignItems: "center", justifyContent: "center", border: "none", fontSize: "0.8rem", borderRadius: "0.3rem" }}>Onboarding</button></td>
-                                </tr>
+                                {
+                                    arr.map((obj, index) => {
+                                        return (
 
-                                <tr>
-                                    <td style={{ color: "#000000" }}>2</td>
-                                    <td>23 Aug 2024</td>
-                                    <td>UA 123476689</td>
-                                    <td>John Doe</td>
-                                    <td><button style={{ Width: "5.5rem", height: "1.62rem", backgroundColor: "#31c36433", color: "#31C364", display: "flex", alignItems: "center", justifyContent: "center", border: "none", fontSize: "0.8rem", borderRadius: "0.3rem" }}>Onboarding</button></td>
-                                </tr>
+                                            <tr>
+                                                <td style={{ color: "#000000" }}>{index + 1}</td>
+                                                <td>{obj.date}</td>
+                                                <td>{obj.userID}</td>
+                                                <td>{obj.footsoldiers}</td>
+                                                <td><button style={{ Width: "5.5rem", height: "1.62rem", backgroundColor: "#31c36433", color: "#31C364", display: "flex", alignItems: "center", justifyContent: "center", border: "none", fontSize: "0.8rem", borderRadius: "0.3rem" }}>{obj.status}</button></td>
+                                            </tr>
 
-                                <tr>
-                                    <td style={{ color: "#000000" }}>3</td>
-                                    <td>23 Aug 2024</td>
-                                    <td>UA 123476689</td>
-                                    <td>John Doe</td>
-                                    <td><button style={{ Width: "5.5rem", height: "1.62rem", backgroundColor: "#31c36433", color: "#31C364", display: "flex", alignItems: "center", justifyContent: "center", border: "none", fontSize: "0.8rem", borderRadius: "0.3rem" }}>Onboarding</button></td>
-                                </tr>
-
-                                <tr>
-                                    <td style={{ color: "#000000" }}>4</td>
-                                    <td>23 Aug 2024</td>
-                                    <td>UA 123476689</td>
-                                    <td>John Doe</td>
-                                    <td><button style={{ Width: "5.5rem", height: "1.62rem", backgroundColor: "#31c36433", color: "#31C364", display: "flex", alignItems: "center", justifyContent: "center", border: "none", fontSize: "0.8rem", borderRadius: "0.3rem" }}>Onboarding</button></td>
-                                </tr>
-
-                                <tr>
-                                    <td style={{ color: "#000000" }}>5</td>
-                                    <td>23 Aug 2024</td>
-                                    <td>UA 123476689</td>
-                                    <td>John Doe</td>
-                                    <td><button style={{ Width: "5.5rem", height: "1.62rem", backgroundColor: "#31c36433", color: "#31C364", display: "flex", alignItems: "center", justifyContent: "center", border: "none", fontSize: "0.8rem", borderRadius: "0.3rem" }}>Onboarding</button></td>
-                                </tr>
+                                        )
+                                    })
+                                }
+                    
                             </tbody>
                         </table>
                     </div>
@@ -172,7 +188,7 @@ const Foot_Soldiers = () => {
 
                             <div className={Style.Revenue_earningDiv}>
 
-                            <div id={Style.Revenue_headerDiv}>
+                                <div id={Style.Revenue_headerDiv}>
                                     <div>
                                         <p className={Style.earningText}>Daily Revenue</p>
                                         <p className={Style.priceText}>$3,000</p>
@@ -190,14 +206,14 @@ const Foot_Soldiers = () => {
                         </div>
                         <div id={Style.foot_soldiers_stats_cardDiv}>
                             {
-                                foot_soldiers_stats_card.map ((obj)=>{
+                                foot_soldiers_stats_card.map((obj) => {
 
-                                    return(
+                                    return (
                                         <Stats_Card
-                                        figure ={obj.figure}
-                                        img = {obj.img}
-                                        to = {obj.to}
-                                        text ={obj.text}/>
+                                            figure={obj.figure}
+                                            img={obj.img}
+                                            to={obj.to}
+                                            text={obj.text} />
                                     )
                                 })
                             }
