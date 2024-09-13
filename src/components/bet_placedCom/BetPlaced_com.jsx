@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Style from '../bet_placedCom/BetPlaced_com.module.css'
-import person from '../../assets/images/person_img.png'
-import green_eyes from '../../assets/svg/green_eyes.svg'
-import warning from '../../assets/svg/yellow_warning.svg'
-import delete_list from '../../assets/svg/product_delete.svg'
 import winners_background from '../../assets/svg/winners_background.svg'
 import arrow_down from '../../assets/svg/arrow_down-dark.svg'
 import search from '../../assets/svg/Search.svg'
@@ -30,8 +26,9 @@ const BetPlaced_com = (props) => {
 
     
   useEffect(() => {
+    
     setToggleIndex(initialIndex)
-  })
+  }, [])
 
 
     return (

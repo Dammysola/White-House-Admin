@@ -4,18 +4,27 @@ import Total_Card from '../../../../components/total_Card/Total_Card'
 import Activity from '../../../../assets/svg/Activity.svg'
 import total_users from '../../../../assets/svg/total_users.svg'
 import Header from '../../../../components/header/Header'
-import smiley from '../../../../assets/svg/gray_smiley.svg'
+import arrow_down from '../../../../assets/svg/arrow_down.svg'
 import rise from '../../../../assets/svg/rise.svg'
 import flag from '../../../../assets/svg/flag.svg'
 import Stats_Card from '../../../../components/stats_card/Stats_Card'
 import amount from '../../../../assets/svg/stats_capture.svg'
 import clock from '../../../../assets/svg/stats_clock.svg'
 import { Link } from 'react-router-dom'
+import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
 
 
 
 
 const Foot_Soldiers = () => {
+
+  const {updateRevenuePopup} = PopupContextHook()
+
+  const showRevenue = ()=>{
+
+    updateRevenuePopup(true)
+  }
+
 
     const soldiers_card = [
         {
@@ -61,7 +70,7 @@ const Foot_Soldiers = () => {
             img: flag,
             figure: "14",
             text: "Reg Countries",
-            to: "/placebet"
+            to: "/footSoldiersCountries"
         }
     ]
 
@@ -160,7 +169,7 @@ const Foot_Soldiers = () => {
                                         )
                                     })
                                 }
-                    
+
                             </tbody>
                         </table>
                     </div>
@@ -169,39 +178,29 @@ const Foot_Soldiers = () => {
                             <div className={Style.Revenue_earningDiv}>
 
                                 <div id={Style.Revenue_headerDiv}>
-                                    <div>
-                                        <p className={Style.earningText}>Daily Revenue</p>
-                                        <p className={Style.priceText}>$3,000</p>
-                                    </div>
-                                    <div id={Style.View_AllDiv}>View All</div>
-                                </div>
 
-                                <div id={Style.Revenue_progressDiv}>
-                                    <div className={Style.Revenue_progressBar}></div>
-                                    <div id={Style.SmileyImg_Div}>
-                                        <img id={Style.Revenue_smileyImg} src={smiley} alt="" />
-                                    </div>
+                                    <p className={Style.earningText}>Daily Payments</p>
+
+                                    <p id={Style.dateText}>Today <img src={arrow_down} alt="" /></p>
                                 </div>
-                                <p className={Style.Revenue_infoText}>70% more earning than last month, keep
-                                    watching to find out more</p>
+                                <p id={Style.priceText}>3,000 WHC</p>
+
+                                <div className={Style.btnDiv}><button onClick={showRevenue}>Details</button></div>
+
                             </div>
 
                             <div className={Style.Revenue_earningDiv}>
 
                                 <div id={Style.Revenue_headerDiv}>
-                                    <div>
-                                        <p className={Style.earningText}>Daily Revenue</p>
-                                        <p className={Style.priceText}>$3,000</p>
-                                    </div>
-                                    <div id={Style.View_AllDiv}>View All</div>
-                                </div>
 
-                                <div id={Style.Revenue_progressDiv}>
-                                    <div className={Style.Revenue_progressBar}></div>
-                                    <p id={Style.Revenue_percentText}>45%</p>
+                                    <p className={Style.earningText}>Monthly Payments</p>
+
+                                    <p id={Style.dateText}>Today <img src={arrow_down} alt="" /></p>
                                 </div>
-                                <p className={Style.Revenue_infoText}>70% more earning than last month, keep
-                                    watching to find out more</p>
+                                <p id={Style.priceText}>60,000 WHC</p>
+
+                                <div className={Style.btnDiv}><button>Details</button></div>
+
                             </div>
                         </div>
                         <div id={Style.foot_soldiers_stats_cardDiv}>

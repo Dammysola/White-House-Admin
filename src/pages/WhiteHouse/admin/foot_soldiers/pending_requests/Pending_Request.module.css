@@ -39,7 +39,9 @@
     height: 4rem;
 }
 #Pending_Request_table_wrapperDiv tr {
-    height: 13.87rem;font-size: 0.9rem;
+    height: 13.87rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #C4C4C4;
 }
 
 #Pending_Request_table_wrapperDiv tr:last-child {

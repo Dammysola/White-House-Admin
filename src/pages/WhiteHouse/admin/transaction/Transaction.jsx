@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Style from './Transaction.module.css'
 import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../../assets/svg/download_img.svg'
-import status_img from '../../../../assets/svg/status_img.svg'
 import InputField from '../../../../components/input/InputField'
-import Ticket_Losers from './losers/Ticket_Losers'
-import Ticket_Winners from './winners/Ticket_Winners'
-import Search from '../../../../assets/svg/Search.svg'
 import Header from '../../../../components/header/Header'
 import betCoin from '../../../../assets/svg/betCoin.svg'
 import total_users from '../../../../assets/svg/total_users.svg'
@@ -19,8 +15,9 @@ import green_eyes from '../../../../assets/svg/green_eyes.svg'
 import warning from '../../../../assets/svg/yellow_warning.svg'
 import delete_list from '../../../../assets/svg/product_delete.svg'
 import person from '../../../../assets/images/person_img.png'
-import Total_BetPlaced from '../totalBet/Total_BetPlaced'
-import { useParams } from 'react-router-dom'
+import avatar from '../../../../assets/images/avatar.png'
+import Button from '../../../../components/button/Button'
+import { Link } from 'react-router-dom'
 
 
 
@@ -29,6 +26,7 @@ const Transaction = () => {
     let [toggleIndex, setToggleIndex] = useState(0);
     let [cardToggleIndex, setCardToggleIndex] = useState(0);
     // let [filterData, setFilterData] = useState(arr);
+    const [searchTerm, setSearchTerm] = useState('');
     let [dev, setDev] = useState([]);
 
 
@@ -42,8 +40,10 @@ const Transaction = () => {
     const toggle = (index) => {
 
         setCardToggleIndex(index)
-
     }
+
+    
+
 
 
 
@@ -131,9 +131,9 @@ const Transaction = () => {
         },
         {
             SN: "2",
-            userID: "5466FH",
+            userID: "35574TD",
             BetID: "6458575RFG",
-            game: "DiceRoom344",
+            game: "FootballRoom 454",
             amount: "1000",
             players: person,
             status: "Lost",
@@ -210,21 +210,6 @@ const Transaction = () => {
         }
     ]
 
-    let [filterData, setFilterData] = useState(arr);
-
-
-    const onChange = (e) =>{
-        if( e.target.value === ""){
-            
-            setFilterData(arr)
-            return;
-        }
-
-        // const data = arr.filter((d)=> d.toLowerCase().
-        // indexOf( e.target.value.toLowerCase()) !== -1);
-
-        // setFilterData(data)
-    }
 
     useEffect(() => {
         let d = arr.filter((a) => a.status === "Won")
@@ -233,13 +218,20 @@ const Transaction = () => {
         setDev(d)
     }, [])
 
-    
+
+
+
+
 
     const coin_arr = [
 
         {
-            userID: "UA 123476689",
-            RefNo: "UA 123476689",
+            user: {
+                id: "UA 123476689",
+                img: person,
+                name: "Lighty"
+            },
+            RefNo: "AU 123476689",
             time: "13:45",
             country: "Nigeria",
             amount: "20000",
@@ -253,10 +245,14 @@ const Transaction = () => {
 
         },
         {
-            userID: "UA 123476689",
+            user: {
+                id: "UA 123476689",
+                img: avatar,
+                name: "Lighty"
+            },
             RefNo: "UA 123476689",
             time: "13:45",
-            country: "Nigeria",
+            country: "USA",
             amount: "20000",
             coinRd: "500",
             payType: {
@@ -268,7 +264,11 @@ const Transaction = () => {
 
         },
         {
-            userID: "UA 123476689",
+            user: {
+                id: "UA 123476689",
+                img: person,
+                name: "Lighty"
+            },
             RefNo: "UA 123476689",
             time: "13:45",
             country: "Nigeria",
@@ -283,9 +283,15 @@ const Transaction = () => {
 
         },
         {
-            userID: "UA 123476689",
+            user: {
+                id: "UA 123476689",
+                img: avatar,
+                name: "Lighty"
+            },
             RefNo: "UA 123476689",
             time: "13:45",
+            date: "Oct 4",
+            game: "DiceRoom13",
             country: "Nigeria",
             amount: "20000",
             coinRd: "500",
@@ -299,6 +305,48 @@ const Transaction = () => {
         },
 
     ]
+
+    const unsettled = [
+        {
+            user: {
+                id: "UA 123476689",
+                img: avatar,
+                name: "Lighty"
+            },
+            RefNo: "UA 123476689",
+            time: "13:45",
+            date: "Oct 4",
+            game: "DiceRoom13",
+            country: "Nigeria",
+            amount: "20000",
+            balance: "200",
+            status: "Used",
+            action: "View Details"
+        },
+        {
+            user: {
+                id: "UA 123476689",
+                img: avatar,
+                name: "Lighty"
+            },
+            RefNo: "UA 123476689",
+            time: "13:45",
+            date: "Oct 4",
+            game: "DiceRoom13",
+            country: "Nigeria",
+            amount: "20000",
+            balance: "200",
+            status: "Pending",
+            action: "View Details"
+        },
+    ]
+
+    const filteredData_two = coin_arr.filter(item =>
+        item.RefNo.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.amount.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.coinRd.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.status.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
 
 
@@ -327,6 +375,7 @@ const Transaction = () => {
                         })
                     }
                 </div>
+
                 <div>
                     {
                         toggleIndex == 1 && cardToggleIndex == 0 ?
@@ -336,7 +385,7 @@ const Transaction = () => {
                 </div>
                 {
                     cardToggleIndex !== 0 ?
-                    
+
 
                         <div id={Style.transaction_header_inputfield_Div}>
                             <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>
@@ -346,7 +395,10 @@ const Transaction = () => {
 
                                 <div id={Style.searchDiv}>
                                     <img src={search} alt="" />
-                                    <InputField type ={"text"} OnChange = {onChange}/>
+                                    <InputField type={"text"}
+                                        value={searchTerm}
+                                        OnChange={(e) => setSearchTerm(e.target.value)}
+                                    />
                                 </div>
                                 <div id={Style.imgDiv}>
                                     <img src={filter_img} alt="" />
@@ -407,7 +459,7 @@ const Transaction = () => {
                             {
                                 toggleIndex == 0 ?
 
-                                
+
                                     <tbody>
                                         {
                                             arr.map((user, index) => {
@@ -519,8 +571,8 @@ const Transaction = () => {
                                                         )
                                                     })
                                                 }
-                                            </tbody> 
-                                    : ""
+                                            </tbody>
+                                            : ""
 
                             }
 
@@ -534,7 +586,7 @@ const Transaction = () => {
                                 <table>
                                     <tr id={Style.headerTable_tr}>
                                         <th>S/N</th>
-                                        <th>User ID</th>
+                                        <th>User</th>
                                         <th>Ref Number</th>
                                         <th>Time</th>
                                         <th>Country</th>
@@ -546,8 +598,10 @@ const Transaction = () => {
 
                                     <tbody>
 
-                                        {
-                                            coin_arr.map((user, index) => {
+                                        {filteredData_two.length > 0 ? (
+
+
+                                            filteredData_two.map((user, index) => {
                                                 let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
                                                 let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
 
@@ -555,7 +609,12 @@ const Transaction = () => {
                                                 return (
                                                     <tr>
                                                         <td>{index + 1}</td>
-                                                        <td>{user.userID}</td>
+                                                        <td>
+                                                            <div>
+                                                                <p>{user.user.id}</p>
+                                                                <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                            </div>
+                                                        </td>
                                                         <td>{user.RefNo}</td>
                                                         <td>{user.time}</td>
                                                         <td>{user.country}</td>
@@ -583,22 +642,23 @@ const Transaction = () => {
                                                     </tr>
                                                 )
                                             })
-                                        }
+                                        ) : ""}
 
                                     </tbody>
                                 </table>
+                                {filteredData_two.length === 0 && <p>No matching records found</p>}
                             </div> : ""
                     }
 
 
                     {
-                        cardToggleIndex == 2 || cardToggleIndex == 3 ?
+                        cardToggleIndex == 2 ?
 
                             <div id={Style.Card_table_wrapperDiv}>
                                 <table>
                                     <tr id={Style.headerTable_tr}>
                                         <th>S/N</th>
-                                        <th>User ID</th>
+                                        <th>User</th>
                                         <th>Ref Number</th>
                                         <th>Time</th>
                                         <th>Country</th>
@@ -611,93 +671,115 @@ const Transaction = () => {
                                     <tbody>
 
 
-                                        {         //Withdrawal
-                                            cardToggleIndex == 2 ?
+                                           //Withdrawal
 
 
-                                                coin_arr.map((user, index) => {
-                                                    let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
-                                                    let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
+                                        {
+                                            coin_arr.map((user, index) => {
+                                                let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
+                                                let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
 
-                                                    // let lost = user.status == "Lost" ? true : false
-                                                    return (
-                                                        <tr>
-                                                            <td>{index + 1}</td>
-                                                            <td>{user.userID}</td>
-                                                            <td>{user.RefNo}</td>
-                                                            <td>{user.time}</td>
-                                                            <td>{user.country}</td>
-                                                            <td>{user.amount}</td>
-                                                            <td>{user.coinRd}</td>
-                                                            <td>
-                                                                <div id={Style.BankDetails_Div}>
-                                                                    <div>
-                                                                        <p>Bank</p>
-                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
-                                                                    </div>
-                                                                    <div>
-                                                                        <p>Account Number</p>
-                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
-                                                                    </div><div>
-                                                                        <p>Account Name</p>
-                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
-                                                                    </div>
+                                                // let lost = user.status == "Lost" ? true : false
+                                                return (
+                                                    <tr>
+                                                        <td>{index + 1}</td>
+                                                        <td>
+                                                            <div>
+                                                                <p>{user.user.id}</p>
+                                                                <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                            </div>
+                                                        </td>
+                                                        <td>{user.RefNo}</td>
+                                                        <td>{user.time}</td>
+                                                        <td>{user.country}</td>
+                                                        <td>{user.amount}</td>
+                                                        <td>{user.coinRd}</td>
+                                                        <td>
+                                                            <div id={Style.BankDetails_Div}>
+                                                                <div>
+                                                                    <p>Bank</p>
+                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
                                                                 </div>
-                                                            </td>
-                                                            <td>
-                                                                <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
-                                                            </td>
+                                                                <div>
+                                                                    <p>Account Number</p>
+                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
+                                                                </div><div>
+                                                                    <p>Account Name</p>
+                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                        </td>
 
-                                                        </tr>
-                                                    )
-                                                })
-                                                : ""
+                                                    </tr>
+                                                )
+                                            })
+
                                         }
-                                        {         //Withdrawal
-                                            cardToggleIndex == 3 ?
+
+                                    </tbody>
+                                </table>
+                            </div> : ""
+                    }
 
 
-                                                coin_arr.filter((p)=> p.status === "Pending").map((user, index) => {
-                                                    let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
-                                                    let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
+                    {
+                        cardToggleIndex == 3 ?
 
-                                                    // let lost = user.status == "Lost" ? true : false
-                                                    return (
-                                                        <tr>
-                                                            <td>{index + 1}</td>
-                                                            <td>{user.userID}</td>
-                                                            <td>{user.RefNo}</td>
-                                                            <td>{user.time}</td>
-                                                            <td>{user.country}</td>
-                                                            <td>{user.amount}</td>
-                                                            <td>{user.coinRd}</td>
-                                                            <td>
-                                                                <div id={Style.BankDetails_Div}>
-                                                                    <div>
-                                                                        <p>Bank</p>
-                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
-                                                                    </div>
-                                                                    <div>
-                                                                        <p>Account Number</p>
-                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
-                                                                    </div><div>
-                                                                        <p>Account Name</p>
-                                                                        <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
-                                                            </td>
+                            <div id={Style.Card_table_wrapperDiv}>
 
-                                                        </tr>
-                                                    )
-                                                }) : ""
+                                <table>
+                                    <tr id={Style.headerTable_tr}>
+                                        <th>S/N</th>
+                                        <th>User</th>
+                                        <th>Ref Number</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Game</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Balance</th>
+                                        <th>Action</th>
+                                    </tr>
+
+                                    <tbody>
+                                        {         //Unsettled
+
+
+
+                                            unsettled.map((user, index) => {
+                                                let bGcolor = user.status == "Used" ? "#00800033" : user.status == "Pending" ? "#eb575733" : ""
+                                                let color = user.status == "Used" ? "green" : user.status == "Pending" ? "#EB5757" : ""
+
+                                                // let lost = user.status == "Lost" ? true : false
+                                                return (
+                                                    <tr>
+                                                        <td>{index + 1}</td>
+                                                        <td>
+                                                            <div>
+                                                                <p>{user.user.id}</p>
+                                                                <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                            </div>
+                                                        </td>
+                                                        <td>{user.RefNo}</td>
+                                                        <td>{user.date}</td>
+                                                        <td>{user.time}</td>
+                                                        <td>{user.game}</td>
+                                                        <td>{user.amount}</td>
+                                                        <td>
+                                                            <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                        </td>
+                                                        <td>{user.balance}</td>
+                                                        <td id={Style.btn}> <Link to={"/unsettledBet"}><Button text={user.action}/></Link></td>
+                                                    </tr>
+                                                )
+                                            })
                                         }
                                     </tbody>
                                 </table>
-                            </div>
-                            : ""
+                            </div> : ""
                     }
 
                 </div>

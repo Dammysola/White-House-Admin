@@ -10,17 +10,16 @@
     color: #1A1A1A;
     font-size: 1.5rem;
     height: 0;
+    line-height: 0;
 }
 #All_Users_toggle_dateDiv{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
 }
 #All_Users_input_FilterDiv{
     display: flex;
-    align-items: center;
     column-gap: 1.5rem;
-
 }
 .footsoldier_listGrid_view{
     display: flex;
@@ -37,12 +36,11 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    height: 0;
 }
-#All_Users_input_FilterDiv p{
+#All_Users_input_FilterDiv #dateText{
     font-size: 0.93rem;
     color: #707070;
-    height: 0;
+    line-height: 1.4rem;
 }
 
 
@@ -50,100 +48,31 @@
     position: absolute;
     width: 15px;
     padding-left: 0.7rem;
-    padding-top: 0.9rem;
+    padding-top: 1rem;
 
 }
 #searchDiv{
     display: flex;
     align-items: center;
+    height: 0;
 }
 
 #searchDiv input{
+    /* position: absolute; */
     position: relative;
     width: 7.6rem;
     border-radius: 0.75rem;
-    padding-left:2.5rem;
+    padding-left:2rem;
     box-sizing: border-box;
     height: 2.43rem;  
 }
 
 #All_Users_Card{
-    /* row-gap: 2rem; */
     margin-top: 1.56rem;
-    /* display: flex;
-    column-gap: 2rem;
-    flex-wrap: wrap;
-    word-wrap: break-word; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     justify-content: center;
-    gap: 2.3rem;
+    gap: 2.2rem;
 }
 
-#All_FootSoldiers_tableDiv {
-    width: 100%;
-    height: 31.81rem;
-    background-color: #FFFFFF;
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    margin-top: 1.56rem;
-}
-#All_FootSoldiers_tableDiv table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#All_FootSoldiers_tableDiv th,
-td {
-    padding: 0 2rem;
-    box-sizing: border-box;
-
-}
-
-#All_FootSoldiers_tableDiv th {
-    text-align: left;
-}
-
-#All_FootSoldiers_tableDiv button {
-    width: 5.3rem;
-    height: 1.37rem;
-    font-size: 0.7rem;
-    border-radius: 8px;
-    padding: 0.3rem;
-    box-sizing: border-box;
-}
-
-#All_FootSoldiers_tableDiv tr {
-    color: #666666;
-    height: 3.43rem;
-    font-size: 0.95rem;
-    border-bottom: 1px solid #B1B1B1;
-}
-#All_FootSoldiers_tableDiv tr:last-child{
-    border-bottom: none;
-}
-#All_FootSoldiers_tableDiv #headerTable {
-    background-color: #E8E3F9;
-    height: 44px;
-    color: #000000;
-    font-size: 1.2rem;
-    border-bottom: none;
-}
-
-#All_FootSoldiers_tableDiv .number {
-    font-weight: bold;
-    color: #000000;
-    font-size: 1rem;
-}
-
-.person_name_td{
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-}
-.person_name_td img{
-    width: 1.5rem;
-    height: 1.5rem;
-}
 

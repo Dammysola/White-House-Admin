@@ -149,18 +149,12 @@ const Personal_Info = () => {
                             </div>
                         </div>
 
-                        <div>
+                        <div id={Style.dropDiv}>
 
-
+                            <div id={Style.dropdown} >Click to See game history</div>
                             <Link to={"/gameHistory"}>
-                            
-                                <div id={Style.dropdown}>
-                                    Click to See game history
-                                    {/* <ul>
-                                <li>Click to See game history</li>
-                            </ul> */}
 
-                                </div>
+
                                 <div id={Style.Game_historyDiv}>
                                     <div id={Style.padDiv}>
                                         <img src={game_pad} alt="" />

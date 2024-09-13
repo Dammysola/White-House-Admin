@@ -12,13 +12,8 @@ import amazing from '../../../../assets/svg/amazing.svg'
 import good from '../../../../assets/svg/good.svg'
 import sad from '../../../../assets/svg/sad.svg'
 import neutral from '../../../../assets/svg/neutral.svg'
-import microphone from '../../../../assets/svg/microphone.svg'
-import recording from '../../../../assets/svg/recording.svg'
-import capture from '../../../../assets/svg/capture.svg'
-import filter from '../../../../assets/svg/Complete_filter_img.svg'
 import Button from '../../../../components/button/Button'
-import { Link } from 'react-router-dom'
-import Query_Review from './query_review/Query_Review'
+import Progress_Bar from '../../../../components/progress_bar/Progress_Bar'
 
 
 
@@ -27,15 +22,7 @@ const CustomerCare_Queries = () => {
 
 
     let [toggleIndex, setToggleIndex] = useState(100);
-    let [btnIndex, setBtnIndex] = useState(0);
 
-    const ticketToggle = (index) => {
-        setToggleIndex(index)
-    }
-
-    const reviewButton = (index) => {
-        setBtnIndex(index)
-    }
 
 
     const stats_card7 = [
@@ -43,32 +30,80 @@ const CustomerCare_Queries = () => {
             image1: users,
             price: "23,000",
             text: "App Message Queries",
-            to: "/placebet",
+            to: "/message_queries",
             divText: "View All"
         },
         {
             image1: issues,
             price: "20K",
             text: "Mail Queries",
-            to: "/placebet",
+            to: "/mailQueries",
             divText: "View All"
         },
         {
             image1: users,
             price: "345,000",
             text: "In- App Call Queries",
-            to: "",
+            to: "/callQueries",
             divText: "View All"
         },
         {
             image1: issues,
             price: "23,000",
             text: "Toll Calls Queries",
-            to: "/",
+            to: "",
             divText: "View All"
         },
     ]
 
+    const ticket_arr = [
+        {
+            image1: users,
+            price: "23,000",
+            text: "Resolved Queries",
+            to: "/resolvedQueries",
+            divText: "View All"
+        },
+        {
+            image1: issues,
+            price: "20K",
+            text: "Closed Queries",
+            to: "/closedQueries",
+            divText: "View All"
+        },
+        {
+            image1: issues,
+            price: "345,000",
+            text: "Escalated Queries",
+            to: "/escalatedQueries",
+            divText: "View All"
+        },
+    ]
+
+
+    const progressDiv = [
+
+        {
+            text: "Average First Contact Resolution Rate",
+            percent: "70%",
+            infoText: "70% more earning than last month, keep watching to find out more"
+        },
+        {
+            text: "Average Customer Satisfaction Rate",
+            percent: "70%",
+            infoText: "70% more earning than last month, keep watching to find out more"
+        },
+        {
+            text: "Average Resolution Time",
+            percent: "70%",
+            infoText: "70% more earning than last month, keep watching to find out more"
+        },
+        {
+            text: "Average Response Time",
+            percent: "70%",
+            infoText: "70% more earning than last month, keep watching to find out more"
+        }
+    ]
 
 
     return (
@@ -83,7 +118,6 @@ const CustomerCare_Queries = () => {
                 <div id={Style.Queries_mapDiv}>
                     {
                         stats_card7.map((obj, index) => {
-                            let isBlack = index == toggleIndex ? true : false;
 
                             return (
                                 <Total_Card
@@ -93,8 +127,6 @@ const CustomerCare_Queries = () => {
                                     text={obj.text}
                                     to={obj.to}
                                     divText={obj.divText}
-                                    isBlack={isBlack}
-                                    onClick={() => ticketToggle(index)}
                                 />
 
                             )
@@ -102,8 +134,43 @@ const CustomerCare_Queries = () => {
                     }
                 </div>
 
-                {
-                    toggleIndex == 100 ?
+                <div id={Style.ticket_mapDiv}>
+                    {
+                        ticket_arr.map((obj, index) => {
+
+                            return (
+                                <Total_Card
+                                    Key={index}
+                                    image1={obj.image1}
+                                    price={obj.price}
+                                    text={obj.text}
+                                    to={obj.to}
+                                    divText={obj.divText}
+                                />
+
+                            )
+                        })
+                    }
+                </div>
+
+                
+                    <div id={Style.Performance_CardDiv}>
+
+                        {
+                            progressDiv.map((obj) => {
+                                return (
+                                    <Progress_Bar
+                                        text={obj.text}
+                                        infoText={obj.infoText}
+                                        percent={obj.percent} />
+                                )
+                            })
+                        }
+
+                    </div>
+                
+
+                
                         <div id={Style.Query_satisfaction_wrapperDiv}>
                             <div className={Style.Ticket_entireDiv}>
                                 <div id={Style.AssignedTicket_textDiv}>
@@ -114,9 +181,7 @@ const CustomerCare_Queries = () => {
                                 <div id={Style.Dashboard_TicketWrapperDiv}>
                                     <div id={Style.Ticket_HeaderDiv}>
                                         <div id={Style.ticketButtonDiv}>
-                                            <button onClick={() => ticketToggle(0)} className={toggleIndex == 0 ? Style.toggle_buttonActive : Style.ticketButton}>All</button>
-                                            {/* <button onClick={() => ticketToggle(1)} className={toggleIndex == 1 ? Style.toggle_buttonActive : Style.ticketButton}>Mail</button> */}
-                                            {/* <button onClick={() => ticketToggle(2)} className={toggleIndex == 2 ? Style.toggle_buttonActive : Style.ticketButton}>In-app messages</button> */}
+                                            <button className={Style.ticketButton}>All</button>
                                         </div>
                                         <div id={Style.searchDiv}>
                                             <img src={search} alt="" />
@@ -233,180 +298,14 @@ const CustomerCare_Queries = () => {
 
                             </div>
 
-                        </div> : ""}
-
-
-                {
-                    toggleIndex !== 100 ?
-
-                        <div id={Style.Query_incomingTextDiv}>
-                            <p>Incoming</p>
-
-                            <div id={Style.search_filterDiv}>
-                                <div id={Style.searchDiv}>
-                                    <img src={search} alt="" />
-                                    <InputField
-                                        placeholder={"Search ticket no"} />
-                                </div>
-                                <img src={filter} alt="" />
-                            </div>
-                        </div> : ""
-                }
+                        </div> 
 
 
 
-                {
-
-                    // In-App Message Queries
-
-                    toggleIndex == 0 || toggleIndex == 1 ?
-
-                        <div>
-
-
-                            <div id={Style.Queries_tableWrapperDiv}>
-                                <table>
-                                    <tr id={Style.headerTable}>
-                                        <th>S/N</th>
-                                        <th>Date</th>
-                                        <th>TicketID</th>
-                                        <th>Category</th>
-                                        <th>Username</th>
-                                        <th>QueryType</th>
-                                        <th>Query</th>
-                                        <th>Attachments</th>
-                                        <th>Action</th>
-                                    </tr>
-
-                                    <tbody>
-                                        <tr id={Style.Personal_Info_tr}>
-                                            <td>1</td>
-                                            <td>8/7/2024</td>
-                                            <td className={Style.tableText}>WH457IP</td>
-                                            <td className={Style.tableText}>User Dispute</td>
-                                            <td className={Style.tableText}>Lighty</td>
-                                            <td className={Style.tableText}>In-app Message</td>
-                                            <td>
-                                                <div className={Style.ReportDiv}>
-                                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div className={Style.AttachmentDiv}>
-                                                    <div>
-                                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
-                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />Play Recording</p>
-                                                    </div>
-
-                                                    <div>
-                                                        <p className={Style.Media_query}><img src={capture} alt="" /> Photo</p>
-                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />View Photo</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><
-                                                Link to={"/QueryReview"}><button style={{  backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></Link></td>
-                                        </tr>
-
-                                        <tr id={Style.Personal_Info_tr}>
-                                            <td>2</td>
-                                            <td>8/7/2024</td>
-                                            <td className={Style.tableText}>WH457IP</td>
-                                            <td className={Style.tableText}>User Dispute</td>
-                                            <td className={Style.tableText}>Lighty</td>
-                                            <td className={Style.tableText}>In-app Message</td>
-                                            <td>
-                                                <div className={Style.ReportDiv}>
-                                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div className={Style.AttachmentDiv}>
-                                                    <div>
-                                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
-                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />Play Recording</p>
-                                                    </div>
-
-                                                    <div>
-                                                        <p className={Style.Media_query}><img src={capture} alt="" /> Photo</p>
-                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />View Photo</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        
-                                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                                        </tr>
-
-                                        <tr id={Style.Personal_Info_tr}>
-                                            <td>3</td>
-                                            <td>8/7/2024</td>
-                                            <td className={Style.tableText}>WH457IP</td>
-                                            <td className={Style.tableText}>User Dispute</td>
-                                            <td className={Style.tableText}>Lighty</td>
-                                            <td className={Style.tableText}>In-app Message</td>
-                                            <td>
-                                                <div className={Style.ReportDiv}>
-                                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div className={Style.AttachmentDiv}>
-                                                    <div>
-                                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
-                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />Play Recording</p>
-                                                    </div>
-
-                                                    <div>
-                                                        <p className={Style.Media_query}><img src={capture} alt="" /> Photo</p>
-                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />View Photo</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                           
-                                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                                        </tr>
-
-                                        <tr id={Style.Personal_Info_tr}>
-                                            <td>4</td>
-                                            <td>8/7/2024</td>
-                                            <td className={Style.tableText}>WH457IP</td>
-                                            <td className={Style.tableText}>User Dispute</td>
-                                            <td className={Style.tableText}>Lighty</td>
-                                            <td className={Style.tableText}>In-app Message</td>
-                                            <td>
-                                                <div className={Style.ReportDiv}>
-                                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                                    <p>Lorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputateLorem ipsum dolor sit amet consectetur. Odio ornare id enim vulputate</p>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div className={Style.AttachmentDiv}>
-                                                    <div>
-                                                        <p className={Style.Media_query}><img src={microphone} alt="" /> 4:23</p>
-                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />Play Recording</p>
-                                                    </div>
-
-                                                    <div>
-                                                        <p className={Style.Media_query}><img src={capture} alt="" /> Photo</p>
-                                                        <p className={Style.Media_query_two}><img src={recording} alt="" />View Photo</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                           
-                                            <td><button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
+{
                         // In-App Call Queries
 
-                        : toggleIndex == 2 || toggleIndex == 3 ?
+                         toggleIndex == 2 || toggleIndex == 3 ?
 
                             <div id={Style.Dashboard_TicketWrapperDiv}>
                                 <table>
@@ -474,9 +373,7 @@ const CustomerCare_Queries = () => {
                 }
 
 
-                {
-                    // btnIndex == 0 ? <Query_Review/>: ""
-                }
+                
             </div>
         </div>
     )

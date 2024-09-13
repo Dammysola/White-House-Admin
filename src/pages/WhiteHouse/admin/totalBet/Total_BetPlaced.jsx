@@ -21,11 +21,6 @@ const Total_BetPlaced = () => {
   let paramIndex = JSON.parse(indexParams)
 
 
-  useEffect(() => {
-    setToggleIndex(paramIndex)
-  }, [])
-
-
 
   const arr = [
     {
@@ -167,7 +162,7 @@ const Total_BetPlaced = () => {
       <div id={Style.TotalBet_wrapperDiv}>
       
 
-        <BetPlaced_com arr={arr} initialIndex = {toggleIndex} />
+        <BetPlaced_com arr={arr} initialIndex = {paramIndex} />
 
       </div>
 

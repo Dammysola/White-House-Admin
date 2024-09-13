@@ -1,7 +1,6 @@
 import React from 'react'
 import Style from '../component/Staff_Card.module.css'
 import Button from '../../../../../../components/button/Button'
-import verified from '../../../../../../assets/images/subscribed.png'
 import { Link } from 'react-router-dom'
 
 
@@ -10,9 +9,6 @@ const Staff_Card = (props) => {
     return (
         <div id={Style.Staff_Card_mainDiv}>
 
-            <div id={Style.imgDiv}>                            
-                {/* <img id={Style.verified_img} src={verified} alt="" /> */}
-            </div>
             <div id={Style.Staff_Card_WrapperDiv}>
                 <img src={img} alt="" />
                 <div id={Style.Staff_Card_textDiv}>

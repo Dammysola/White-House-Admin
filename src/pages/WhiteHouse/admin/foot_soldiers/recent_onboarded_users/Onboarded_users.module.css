@@ -80,6 +80,7 @@
 #Onboarded_users_tableWrapperDiv tr{
     height: 4.7rem;
     color: #666666;
+    border-bottom: 1px solid #C4C4C4;
 }
 #Onboarded_users_tableWrapperDiv tr:last-child{
     border-bottom: none;

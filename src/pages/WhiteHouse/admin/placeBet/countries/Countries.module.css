@@ -22,19 +22,6 @@
     font-size: 0.932rem;
     color: #707070;
 }
-
-
-
-#input_FilterDiv input {
-    width: 18.87rem;
-    height: 39px;
-}
-
-#InputField_images img {
-    height: 39px;
-    margin-right: 12px;
-}
-
 #searchDiv {
     margin-top: -0.95rem;
     display: flex;
@@ -58,6 +45,7 @@
     box-sizing: border-box;
     height: 39px;
 }
+
 #Winner_loser_tableDiv {
     /* width: 50rem; */
     width: 100%;

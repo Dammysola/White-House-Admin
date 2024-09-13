@@ -31,9 +31,7 @@ const CustomerCare_NavBar = () => {
                     <NavLink to={"/allUsers_cc"} className={`${Style.NavBar_text} ${activeNav === 'users' ? Style.Nav_styled_Link : ''}`} onClick={() => handleNavClick('users')}>
                      <p>Users</p>   
                     </NavLink>
-                    
-                    <p>Tickets</p>
-                    <p>Transactions</p>
+
                 </div>
             </div>
             <div id={Style.Navbar_lastLineDiv}>

@@ -57,10 +57,19 @@ import Performance from "./pages/WhiteHouse/customerCare/performance/Performance
 import Online_Players from "./pages/WhiteHouse/admin/placeBet/totalOnline_players/Online_Players";
 import Performance_Details from "./pages/WhiteHouse/customerCare/performance/performance_details/Performance_Details";
 import CC_All_Users from "./pages/WhiteHouse/customerCare/customerCare_all_Users/CC_All_Users";
-import CustomerCare_SignIn from "./pages/WhiteHouse/customerCare/signIn/customerCare_signIn/CustomerCare_SignIn";
+import CustomerCare_SignIn from "./pages/WhiteHouse/customerCare/signIn/customerCare_Admin_signIn/CustomerCare_AdminSignIn";
 import Admin_SignIn from "./pages/WhiteHouse/admin/signIn/admin_signIn/Admin_SignIn";
 import Onboarded_users from "./pages/WhiteHouse/admin/foot_soldiers/recent_onboarded_users/Onboarded_users";
 import Incoming_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/incoming_queries/Incoming_Queries";
+import CC_SignIn from "./pages/WhiteHouse/customerCare/cc_signIn/CC_SignIn";
+import Unsettled_Details from "./pages/WhiteHouse/admin/transaction/unsettled_details/Unsettled_Details";
+import FootSoldiers_countries from "./pages/WhiteHouse/admin/foot_soldiers/countries/FootSoldiers_countries";
+import Message_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/queries_categories/Message_Queries";
+import InProgress_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/general_Queries/InProgress_Queries";
+import Mail_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/queries_categories/Mail_Queries";
+import Escalated_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/general_Queries/Escalated_Queries";
+import Closed_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/general_Queries/Closed_Queries";
+import InApp_Calls from "./pages/WhiteHouse/customerCare/customerCare_Queries/queries_categories/calls_queries/InApp_Calls";
 
 
 
@@ -111,9 +120,11 @@ const router = createBrowserRouter([
             //             element: <SignIn />
             //         }
 
+
+
             {
                 path: "/signIn",
-                element: <CustomerCare_SignIn/>
+                element: <CC_SignIn/>
             },
             {
                 path: "/incomingQueries",
@@ -122,6 +133,30 @@ const router = createBrowserRouter([
             {
                 path: "/allUsers_cc",
                 element: <CC_All_Users/>
+            },
+             {
+                path: "/message_queries",
+                element: <Message_Queries/>
+            },
+            {
+                path: "/mailQueries",
+                element: <Mail_Queries/>
+            },
+            {
+                path: "/callQueries",
+                element: <InApp_Calls/>
+            },
+             {
+                path: "/resolvedQueries",
+                element: <InProgress_Queries/>
+            },
+            {
+                path: "/escalatedQueries",
+                element: <Escalated_Queries/>
+            },
+            {
+                path: "/closedQueries",
+                element: <Closed_Queries/>
             }
         ]
 
@@ -192,6 +227,10 @@ const router = createBrowserRouter([
             {
                 path: "/userplacedbet",
                 element: <Users_placedbets />
+            },
+             {
+                path: "/unsettledBet",
+                element: <Unsettled_Details/>
             },
             {
                 path: "/complainDetails",
@@ -282,8 +321,12 @@ const router = createBrowserRouter([
                 element: <Onboarded_users/>
             },
             {
-                path: "/AllTransaction/:indexParams",
+                path: "/AllTransaction",
                 element: <All_Transaction />
+            },
+             {
+                path: "/footSoldiersCountries",
+                element: <FootSoldiers_countries />
             },
             {
                 path: "/usersFromSoldiers",

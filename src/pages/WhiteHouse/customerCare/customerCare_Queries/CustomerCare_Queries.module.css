@@ -18,6 +18,16 @@
     display: flex;
     column-gap: 1.25rem;
 }
+#ticket_mapDiv{
+    display: flex;
+    column-gap: 1.25rem;
+    margin-top: 4.5rem;
+}
+#Performance_CardDiv{
+    display: flex;
+    column-gap: 2rem;
+    margin-top: 3.3rem;
+}
 
 #AssignedTicket_textDiv {
     display: flex;
@@ -28,20 +38,18 @@
 }
 
 .ticketButton {
-    color: #232323;
-    border: none;
-    font-size: 1.12rem;
-    background-color: transparent;
-}
-
-.toggle_buttonActive {
     color: #616FEC;
     background-color: transparent;
     font-size: 1.12rem;
     border: none;
     border-bottom: 1px solid #616FEC;
-
+    
 }
+
+/* .toggle_buttonActive {
+    
+
+} */
 
 #ticketButtonDiv {
     display: flex;
@@ -125,6 +133,7 @@ td {
 }
 
 #Dashboard_TicketWrapperDiv th {
+    padding: 1rem;
     text-align: left;
 }
 
@@ -235,81 +244,6 @@ td {
 #search_filterDiv input {
     width: 23.56rem;
 }
-
-#Queries_tableWrapperDiv {
-    width: 100%;
-    background-color: #FFFFFF;
-    border-radius: 16px;
-    box-sizing: border-box;
-}
-
-#Queries_tableWrapperDiv #headerTable {
-    height: 4.5rem;
-    color: #000000;
-    font-size: 1rem;
-    font-weight: lighter;
-    border-bottom: 1px solid #C4C4C4;
-}
-
-#Queries_tableWrapperDiv table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.tableText {
-    color: #262626;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-#Queries_tableWrapperDiv tr {
-    color: #666666;
-    font-size: 0.95rem;
-    height: 15.5rem;
-    border-bottom: 1px solid #C4C4C4;
-}
-
-#Queries_tableWrapperDiv tr:last-child {
-    border-bottom: none;
-}
-
-#Queries_tableWrapperDiv th,
-td {
-    padding: 0 1rem;
-    box-sizing: border-box;
-
-}
-
-#Queries_tableWrapperDiv th {
-    text-align: left;
-}
-
-.statusText {
-    background-color: rgba(252, 158, 47, 0.2);
-    border: none;
-    color: #FC9E2F;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.81rem;
-    width: 4.25rem;
-    border-radius: 0.25rem;
-    height: 1.62rem;
-}
-
-#statusText2 {
-    background-color: rgba(49, 195, 100, .2);
-    border: none;
-    color: #31C364;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.81rem;
-    width: 4.25rem;
-    border-radius: 0.25rem;
-    height: 1.62rem;
-}
-
 .tableWrapperDiv tr {
     color: #666666;
     font-size: 0.95rem;
@@ -317,14 +251,13 @@ td {
     border-bottom: 1px solid #C4C4C4;
 }
 
-.ReportDiv p {
+/* .ReportDiv p {
     width: 10rem;
-    /* line-break: strict; */
     display: -webkit-box;
     -webkit-box-orient: vertical; 
     -webkit-line-clamp: 3;
     overflow: hidden;
-}
+} */
 
 
 .Media_query {
@@ -358,17 +291,3 @@ td {
     font-size: 0.7rem;
     padding: 0.5rem;
 }
-
-
-/* 
-backgroundColor: "#0E093C",
-border: "none",
-color: "#FFFFFF",
-fontSize: "0.7rem",
-width: "5.18rem",
-borderRadius: "8px",
-height: "1.37rem"
-}
-}
-
->Accept */

@@ -120,6 +120,7 @@
     height: 4.3rem;
     color: #666666;
     font-size: 0.9rem;
+    border-bottom: 1px solid #C4C4C4;
 }
 #Total_BetPlaced_TableWrapperDiv tr:last-child{
     border-bottom: none;

@@ -7,21 +7,25 @@
 #Personal_Info_wrapperDiv {
     padding: 3.8rem 7.5rem;
 }
-#Onboarded_Text{
+
+#Onboarded_Text {
     color: #000000;
     font-size: 1.25rem;
     text-align: end;
     margin-bottom: 1.5rem;
 }
-#Onboarded_Text span{
+
+#Onboarded_Text span {
     font-weight: 600;
     font-size: 1.5rem;
 }
-#balance_game_HistoryDiv{
+
+#balance_game_HistoryDiv {
     display: flex;
     align-items: center;
     column-gap: 3rem;
 }
+
 #Coin_BalanceDiv {
     width: 18.87rem;
     height: 6.93rem;
@@ -36,7 +40,8 @@
     font-size: 1.25rem;
     color: #0E093C;
 }
-#Game_historyDiv{
+
+#Game_historyDiv {
     width: 18.87rem;
     height: 6.93rem;
     border-radius: 1.25rem;
@@ -64,7 +69,8 @@
     border-radius: 0.5rem;
     background-color: #FFFFFF;
 }
-#padDiv{
+
+#padDiv {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,44 +79,40 @@
     border-radius: 0.5rem;
     background-color: #FFFFFF;
 }
-#Game_historyDiv #padDiv img{
+
+#Game_historyDiv #padDiv img {
     width: 4.7rem;
 }
-#balance_buttonDiv{
+
+#balance_buttonDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3.4rem;
 }
-#dropdown{
+
+#dropdown {
     display: none;
 }
-#Game_historyDiv:hover #dropdown{
+
+#dropDiv:hover #dropdown {
     display: block;
-   font-size: 0.75rem;
-   color: #666666;
-   font-weight: bold;
-   background-color: #141313;
-   width: 9.62rem;
-   height: 2.37rem;
-   display: flex;
-   justify-content: center; 
-   align-items: center;
-   border-radius: 0.5rem;
-   margin: 0;
-   /* margin: 10rem; */
-}
-#dropdown li{
-    text-align: left;
-    font-size: 1rem;
-    color: #000000;
-}
-ul{
+    font-size: 0.75rem;
+    color: #666666;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    width: 9.62rem;
+    height: 2.37rem;
     display: flex;
-    flex-direction: column;
-    row-gap: 0.6rem;
     justify-content: center;
-    list-style: none;
+    align-items: center;
+    border-radius: 0.5rem;
+    /* margin: 0 0 9rem 2rem; */
+    margin: -3rem 0 0 7rem;
+    box-sizing: border-box;
+    box-shadow: 0.5rem 0.5rem 1rem 0 rgb(0, 0, 0, .1);
+    position: absolute;
+
 }
 
 #Personal_Info_buttonDiv {
@@ -170,9 +172,11 @@ ul{
     height: 13.88rem;
     border-bottom: 1px solid #c5c4c4;
 }
-#Personal_Info_tableDiv tr:last-child{
+
+#Personal_Info_tableDiv tr:last-child {
     border-bottom: none;
 }
+
 #Personal_Info_tableDiv #Personal_Info_tr {
     border-bottom: none;
 }
@@ -211,10 +215,8 @@ td {
     box-sizing: border-box;
     color: #31C364;
 }
-#statusText_online{
 
-}
-#Subscription{
+#Subscription {
     width: 2.8rem;
     height: 1.3rem;
     background-color: #D6AB1B;

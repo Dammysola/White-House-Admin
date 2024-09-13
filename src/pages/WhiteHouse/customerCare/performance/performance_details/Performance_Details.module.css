@@ -35,6 +35,7 @@
     width: 15.27rem;
     min-height: 100%;
     background-color: rgba(0, 0, 0, .3);
+    cursor: pointer;
 }
 #second_headerText{
     color: #0E093C;
