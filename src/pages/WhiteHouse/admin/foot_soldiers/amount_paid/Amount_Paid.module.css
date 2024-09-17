@@ -151,6 +151,7 @@
     height: 5rem;
     color: #666666;
     font-size: 0.93rem;
+    border-bottom: 1px solid #C4C4C4;
 }
 
 #Amount_Paid_table_WrapperDiv tr:last-child{

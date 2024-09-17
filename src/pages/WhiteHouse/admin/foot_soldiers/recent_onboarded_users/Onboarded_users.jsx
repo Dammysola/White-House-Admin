@@ -61,7 +61,7 @@ const Onboarded_users = () => {
             userID: "UA 123476689",
             footSoldier: "John Doe",
             status: "Onboarded"
-        },
+        }
 
     ]
 

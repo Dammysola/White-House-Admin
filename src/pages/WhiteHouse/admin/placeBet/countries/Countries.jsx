@@ -39,7 +39,7 @@ const Countries = () => {
                                 <th>S/N</th>
                                 <th>Countries</th>
                                 <th>Users</th>
-                                <th id={Style.amount_TableText}>Flag</th>
+                                <th>Flag</th>
                                 <th>Action</th>
                             </tr>
                             <tr id={Style}>

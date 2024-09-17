@@ -72,10 +72,12 @@
     border-bottom: none;
 }
 #Onboarded_users_tableWrapperDiv th, td{
-    padding: 0 2rem;
+    padding: 0 1.5rem;
+    /* text-align: left; */
 }
 #Onboarded_users_tableWrapperDiv th{
     text-align: left;
+
 }
 #Onboarded_users_tableWrapperDiv tr{
     height: 4.7rem;
