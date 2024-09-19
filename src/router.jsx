@@ -70,7 +70,9 @@ import Mail_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/q
 import Escalated_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/general_Queries/Escalated_Queries";
 import Closed_Queries from "./pages/WhiteHouse/customerCare/customerCare_Queries/general_Queries/Closed_Queries";
 import InApp_Calls from "./pages/WhiteHouse/customerCare/customerCare_Queries/queries_categories/calls_queries/InApp_Calls";
-
+import Soldiers_details from  "./pages/WhiteHouse/admin/foot_soldiers/soldiers_personalDetail/Soldiers_details"
+import Solider_OnboardedUsers from "./pages/WhiteHouse/admin/foot_soldiers/soldier_onboardedUsers/Solider_OnboardedUsers";
+import Profile from "./pages/WhiteHouse/admin/profile/Profile";
 
 
 const router = createBrowserRouter([
@@ -329,13 +331,26 @@ const router = createBrowserRouter([
                 element: <FootSoldiers_countries />
             },
             {
+                path: "/soldiersDetails",
+                element: <Soldiers_details/>
+            },
+            {
                 path: "/usersFromSoldiers",
                 element: <Users_From_Soldiers />
             },
             {
+                path: "/soldierOnboardedUsers",
+                element: <Solider_OnboardedUsers />
+            },
+            {
                 path: "/trash",
                 element: <Trash />
+            },
+            {
+                path: "/profile",
+                element: <Profile/>
             }
+
 
 
 

@@ -133,8 +133,15 @@ ul{
     color: #0E093C;
 }
 
-
-
+#profile_img{
+    display: flex; 
+    align-items: center; 
+    column-gap: 0.5rem;
+    margin-top: 1rem;
+}
+#profile_img img{
+    width: 1.1rem;
+}
 
 
 

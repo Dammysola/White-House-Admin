@@ -4,6 +4,7 @@ import Header from '../../../../../components/header/Header'
 import arrow_down from '../../../../../assets/svg/arrow_down-dark.svg'
 import InputField from '../../../../../components/input/InputField'
 import search from '../../../../../assets/svg/Search.svg'
+import { useParams } from 'react-router-dom'
 
 const Soldier_Transaction = () => {
 
@@ -13,6 +14,162 @@ const Soldier_Transaction = () => {
         setToggleIndex(index)
     }
 
+
+    // let [toggleIndex, setToggleIndex] = useState(0);
+
+    // let { indexParamsTwo } = useParams()
+  
+    // let paramIndex = JSON.parse(indexParamsTwo)
+
+    // useEffect(() => {
+    
+    //     setToggleIndex(indexParamsTwo)
+    //   })
+
+
+
+    const arr = [
+
+        {
+            refNumber: "UA 123476689",
+            date: "24 Aug, 2024",
+            time: "13:24",
+            amountPaid: "20000",
+            paymentType: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            userOnboarded: "John Doe",
+            status: "Successful"
+        },
+        {
+
+            refNumber: "UA 123476689",
+            date: "24 Aug, 2024",
+            time: "13:24",
+            amountPaid: "20000",
+            paymentType: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            userOnboarded: "John Doe",
+            status: "Successful"
+        },
+        {
+
+            refNumber: "UA 123476689",
+            date: "24 Aug, 2024",
+            time: "13:24",
+            amountPaid: "20000",
+            paymentType: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            userOnboarded: "John Doe",
+            status: "Successful"
+        },
+        {
+
+            refNumber: "UA 123476689",
+            date: "24 Aug, 2024",
+            time: "13:24",
+            amountPaid: "20000",
+            paymentType: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            userOnboarded: "John Doe",
+            status: "Successful"
+        },
+        {
+
+            refNumber: "UA 123476689",
+            date: "24 Aug, 2024",
+            time: "13:24",
+            amountPaid: "20000",
+            paymentType: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            userOnboarded: "John Doe",
+            status: "Successful"
+        },
+    ]
+
+    const withdrawalArr = [
+
+        {
+            refNumber: "UA 123476689",
+            time: "13:24",
+            country: "Nigeria",
+            coinCoverted: "430",
+            amountReceived: "300",
+            bankDetails: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            status: "Purchased"
+        },
+        {
+            refNumber: "UA 123476689",
+            time: "13:24",
+            country: "Nigeria",
+            coinCoverted: "430",
+            amountReceived: "300",
+            bankDetails: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            status: "Purchased"
+        },
+        {
+            refNumber: "UA 123476689",
+            time: "13:24",
+            country: "Nigeria",
+            coinCoverted: "430",
+            amountReceived: "300",
+            bankDetails: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            status: "Purchased"
+        },
+        {
+            refNumber: "UA 123476689",
+            time: "13:24",
+            country: "Nigeria",
+            coinCoverted: "430",
+            amountReceived: "300",
+            bankDetails: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            status: "Purchased"
+        },
+        {
+            refNumber: "UA 123476689",
+            time: "13:24",
+            country: "Nigeria",
+            coinCoverted: "430",
+            amountReceived: "300",
+            bankDetails: {
+                bank: "Fidelity Bank",
+                name: "John Doe",
+                accNo: "0123456789"
+            },
+            status: "Purchased"
+        }
+
+    ]
     return (
         <div id={Style.Soldier_Transaction_mainDiv}>
             <Header
@@ -36,54 +193,59 @@ const Soldier_Transaction = () => {
                 </div>
 
                 <div id={Style.Soldier_Transaction_Table_WrapperDiv}>
+
                     <table>
                         {
                             toggleIndex == 0 ?
                                 <>
-                                    <tr id={Style.headerTable}>
-                                        <th>S/N</th>
-                                        <th>Ref Number</th>
-                                        <th>Date</th>
-                                        <th>Time</th>
-                                        <th>Amount Paid</th>
-                                        <th>Payment Type</th>
-                                        <th>User Onboarded</th>
-                                        <th>Status</th>
-                                    </tr>
+                                    <thead>
+                                        <tr id={Style.headerTable}>
+                                            <th>S/N</th>
+                                            <th>Ref Number</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Amount Paid</th>
+                                            <th>Payment Type</th>
+                                            <th>User Onboarded</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UA 123476689</td>
-                                            <td>24 Aug, 2024</td>
-                                            <td>13:24</td>
-                                            <td>20000</td>
-                                            <td>WH Agent Account</td>
-                                            <td>John Doe</td>
-                                            <td><div className={Style.Status_data}>Successful </div></td>
-                                        </tr>
+                                        {
+                                            arr.map((obj, index) => {
 
-                                        <tr>
-                                            <td>2</td>
-                                            <td>UA 123476689</td>
-                                            <td>24 Aug, 2024</td>
-                                            <td>13:24</td>
-                                            <td>20000</td>
-                                            <td>WH Agent Account</td>
-                                            <td>John Doe</td>
-                                            <td><div className={Style.Status_data}>Successful </div></td>
-                                        </tr>
+                                                return (
 
-                                        <tr>
-                                            <td>3</td>
-                                            <td>UA 123476689</td>
-                                            <td>24 Aug, 2024</td>
-                                            <td>13:24</td>
-                                            <td>20000</td>
-                                            <td>WH Agent Account</td>
-                                            <td>John Doe</td>
-                                            <td><div className={Style.Status_data}>Successful </div></td>
-                                        </tr>
+                                                    <tr>
+                                                        <td>{index + 1}</td>
+                                                        <td>{obj.refNumber}</td>
+                                                        <td>{obj.date}</td>
+                                                        <td>{obj.time}</td>
+                                                        <td>{obj.amountPaid}</td>
+                                                        <td>
+                                                            <div id={Style.BankDetails_Div}>
+                                                                <div>
+                                                                    <p>Bank</p>
+                                                                    <p className={Style.BankDetails_BoldText}>{obj.paymentType.bank} </p>
+                                                                </div>
+                                                                <div>
+                                                                    <p>Account Number</p>
+                                                                    <p className={Style.BankDetails_BoldText}>{obj.paymentType.accNo}</p>
+                                                                </div><div>
+                                                                    <p>Account Name</p>
+                                                                    <p className={Style.BankDetails_BoldText}>{obj.paymentType.name}</p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>{obj.userOnboarded}</td>
+                                                        <td><div className={Style.Status_data}>{obj.status} </div></td>
+                                                    </tr>
+                                                )
+                                            })
+                                        }
+
+
                                     </tbody>
                                 </> : toggleIndex == 1 ?
 
@@ -100,80 +262,39 @@ const Soldier_Transaction = () => {
                                         </tr>
 
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>SA 123476689</td>
-                                                <td>13:55</td>
-                                                <td>Nigeria</td>
-                                                <td>430</td>
-                                                <td>200</td>
-                                                <td>
-                                                    <div id={Style.BankDetails_Div}>
-                                                        <div>
-                                                            <p>Bank</p>
-                                                            <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                                        </div>
-                                                        <div>
-                                                            <p>Account Number</p>
-                                                            <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                                        </div><div>
-                                                            <p>Account Name</p>
-                                                            <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td><div className={Style.Status_data}>Purchased</div></td>
-                                            </tr>
+                                            {
+                                                withdrawalArr.map((obj, index) => {
 
-                                            <tr>
-                                                <td>2</td>
-                                                <td>SA 123476689</td>
-                                                <td>13:55</td>
-                                                <td>Nigeria</td>
-                                                <td>430</td>
-                                                <td>200</td>
-                                                <td>
-                                                    <div id={Style.BankDetails_Div}>
-                                                        <div>
-                                                            <p>Bank</p>
-                                                            <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                                        </div>
-                                                        <div>
-                                                            <p>Account Number</p>
-                                                            <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                                        </div><div>
-                                                            <p>Account Name</p>
-                                                            <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td><div className={Style.Status_data}>Purchased</div></td>
-                                            </tr>
+                                                    return (
 
-                                            <tr>
-                                                <td>3</td>
-                                                <td>SA 123476689</td>
-                                                <td>13:55</td>
-                                                <td>Nigeria</td>
-                                                <td>430</td>
-                                                <td>200</td>
-                                                <td>
-                                                    <div id={Style.BankDetails_Div}>
-                                                        <div>
-                                                            <p>Bank</p>
-                                                            <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                                        </div>
-                                                        <div>
-                                                            <p>Account Number</p>
-                                                            <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                                        </div><div>
-                                                            <p>Account Name</p>
-                                                            <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td><div className={Style.Status_data}>Purchased</div></td>
-                                            </tr>
+                                                        <tr>
+                                                            <td>{index + 1}</td>
+                                                            <td>{obj.refNumber}</td>
+                                                            <td>{obj.time}</td>
+                                                            <td>{obj.country}</td>
+                                                            <td>{obj.coinCoverted}</td>
+                                                            <td>{obj.amountReceived}</td>
+                                                            <td>
+                                                                <div id={Style.BankDetails_Div}>
+                                                                    <div>
+                                                                        <p>Bank</p>
+                                                                        <p className={Style.BankDetails_BoldText}>{obj.bankDetails.bank} </p>
+                                                                    </div>
+                                                                    <div>
+                                                                        <p>Account Number</p>
+                                                                        <p className={Style.BankDetails_BoldText}>{obj.bankDetails.accNo}</p>
+                                                                    </div><div>
+                                                                        <p>Account Name</p>
+                                                                        <p className={Style.BankDetails_BoldText}>{obj.bankDetails.name}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td><div className={Style.Status_data}>{obj.status}</div></td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
+
                                         </tbody>
                                     </> : ""
                         }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Style from '../all_footSoldiers/All_FootSoldiers.module.css'
-import Header from '../../../../../components/header/Header'
+import Style from './Solider_OnboardedUsers.module.css'
+import Header from '../../../../../components/header/Header';
 import Staff_Card from '../../staff/all_staff/component/Staff_Card'
 import person from '../../../../../assets/images/Person1.png'
 import arrow_down from '../../../../../assets/svg/arrow_down-dark.svg'
@@ -17,9 +17,8 @@ import Button from '../../../../../components/button/Button'
 import List_viewTable from '../../../../../components/listView/List_viewTable'
 
 
+const Solider_OnboardedUsers = () => {
 
-
-const All_FootSoldiers = () => {
     const [isGridView, setIsGridView] = useState(true);
 
 
@@ -183,16 +182,18 @@ const All_FootSoldiers = () => {
             action: "View Users"
         }
     ]
-    return (
-        <div id={Style.All_FootSoldiers_mainDiv}>
-            <Header
-                headerText={"All Foot Soldiers"}
+
+
+  return (
+    <div id={Style.onboardedUsers}>
+        <Header
+                headerText={"Foot Soldier"}
                 headerInfo={"Here’s an information of all Foot Soldiers"} />
 
 
             <div id={Style.All_FootSoldiers_wrapperDiv}>
                 <div id={Style.All_Users_toggle_dateDiv}>
-                    <p id={Style.All_FootSoldiers_headerText}>All Foot Soldiers</p>
+                    <p id={Style.All_FootSoldiers_headerText}>John Doe’s Onboarded Users</p>
 
                     <div id={Style.All_Users_input_FilterDiv}>
 
@@ -239,8 +240,8 @@ const All_FootSoldiers = () => {
                         <List_viewTable listView_arr={listView_arr}/> : ""
                 }
             </div>
-        </div>
-    )
+    </div>
+  )
 }
 
-export default All_FootSoldiers
+export default Solider_OnboardedUsers

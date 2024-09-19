@@ -29,6 +29,7 @@
     border: none;
     background-color: transparent;
     color: #666666;
+    cursor: pointer;
     font-size: 0.9rem;
 }
 
@@ -40,6 +41,7 @@
     background-color: #0E093C;
     color: #FFFFFF;
     font-size: 0.9rem;
+    cursor: pointer;
 }
 
 #InputField_Div {
@@ -78,6 +80,7 @@
 }
 
 #Soldier_Transaction_Table_WrapperDiv #headerTable {
+    border-bottom: 1px solid #C4C4C4;
     color: #000000;
     font-size: 1.1rem;
     height: 4rem;
@@ -85,7 +88,10 @@
 
 #Soldier_Transaction_Table_WrapperDiv tr {
     height: 13.87rem;
-    text-align: left;
+    border-bottom: 1px solid #C4C4C4;
+    color: #666666;
+    font-size: 0.9rem;
+    /* text-align: left; */
 }
 
 #Soldier_Transaction_Table_WrapperDiv tr:last-child {
@@ -94,7 +100,11 @@
 
 #Soldier_Transaction_Table_WrapperDiv th,
 td {
-    padding: 0 2rem;
+    padding: 0 1rem;
+}
+
+#Soldier_Transaction_Table_WrapperDiv th{
+    text-align: left;
 }
 
 #Soldier_Transaction_Table_WrapperDiv .Status_data {

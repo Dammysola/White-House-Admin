@@ -61,8 +61,12 @@
 
 #Countries_tableDiv th,
 td {
-    padding: 0 2rem;
+    padding: 0 1rem;
     box-sizing: border-box;
+
+}
+
+#Countries_tableDiv th{
     text-align: left ;
 
 }

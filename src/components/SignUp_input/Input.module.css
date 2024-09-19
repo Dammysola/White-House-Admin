@@ -1,4 +1,5 @@
 .InputDiv {
+    width: 100%;
     display: flex;
     /* width: fit-content; */
     position: relative;
@@ -31,6 +32,7 @@
     visibility: visible;
     color: #0095FF;
     background-color: #FFFFFF;
+    font-size: 1rem;
 }
 
 .InputDiv .input {

@@ -4,6 +4,8 @@ import arrowDown from '../../assets/svg/arrow_down.svg'
 import mail from '../../assets/svg/transparent_mail.svg'
 import user from '../../assets/svg/transparent_contact.svg'
 import alphaBet_logo from '../../assets/svg/Alpha_Bet_Black_Logo.svg'
+import mail_two from '../../assets/svg/staff_mail.svg'
+import person from '../../assets/svg/staff_person.svg'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 
@@ -40,8 +42,8 @@ const NavBar = () => {
             <p>Bet Placed</p>
           </NavLink >
 
-            <div className={`${Style.NavBar_text} ${activeNav === 'game' ? Style.Nav_styled_Link : ''}`}>
-              <p className={Style.game}>Games <img src={arrowDown} alt="" /></p>
+          <div className={`${Style.NavBar_text} ${activeNav === 'game' ? Style.Nav_styled_Link : ''}`}>
+            <p className={Style.game}>Games <img src={arrowDown} alt="" /></p>
             <div id={Style.dropdown}>
               <ul>
                 <NavLink to={'/dice'} onClick={() => handleNavClick('game')}><li><input type="radio" name="game" value="dice" id={Style.radio_input} /> Dice</li></NavLink>
@@ -49,8 +51,8 @@ const NavBar = () => {
               </ul>
 
             </div>
-            </div>
-            
+          </div>
+
 
           <NavLink to={'/allusers'} className={`${Style.NavBar_text} ${activeNav === 'users' ? Style.Nav_styled_Link : ''}`} onClick={() => handleNavClick('users')}>
             <p>Users</p>
@@ -65,30 +67,37 @@ const NavBar = () => {
           </NavLink>
         </div>
         <div id={Style.NavBar_ContactDiv}>
-            <p onClick={toggleDropdown} className={`${Style.NavBar_text} ${activeNav === 'customerCare' ? Style.Nav_styled_Link : ''}`} > Customer Care
+          <p onClick={toggleDropdown} className={`${Style.NavBar_text} ${activeNav === 'customerCare' ? Style.Nav_styled_Link : ''}`} > Customer Care
 
 
-              {
-                dropdownOpen && (
-                  <div id={Style.CustomerCare_details_mainDiv}>
+            {
+              dropdownOpen && (
+                <div id={Style.CustomerCare_details_mainDiv}>
                   <div id={Style.CustomerCare_details_wrapperDiv}>
-                      <p>See details from the customer care unit</p>
-                      <div id={Style.btnDiv}>
-                          <NavLink to={"/customerCare"} onClick={() => handleNavClick('customerCare')}><button>Yes</button></NavLink>
-                          <button onClick={()=>toggleDropdown(false)}> Cancel</button>
-                      </div>
+                    <p>See details from the customer care unit</p>
+                    <div id={Style.btnDiv}>
+                      <NavLink to={"/customerCare"} onClick={() => handleNavClick('customerCare')}><button>Yes</button></NavLink>
+                      <button onClick={() => toggleDropdown(false)}> Cancel</button>
+                    </div>
                   </div>
-              </div>
-                )
-              }
-            </p>
-              
+                </div>
+              )
+            }
+          </p>
+
           <p>Mgt</p>
           <p>English <img src={arrowDown} alt="" /></p>
+
           <div id={Style.NavBar_lastlineDiv}>
             <div id={Style.NavBar_line}></div>
             <img src={mail} alt="" />
-            <img src={user} alt="" />
+
+            <NavLink to={'/profile'} onClick={() => handleNavClick('profile')}>
+             <div id={Style.profile_img}>
+             {activeNav === 'profile' ? <img src={person} alt="" /> : <img src={user} alt="" />}
+             profile
+             </div>
+            </NavLink>
 
             <NavLink to={''} className={`${activeLink8 ? Style.Nav_styled_Link : Style.NavBar_text}`}>
               <p id={Style.NavBar_businessName}>WhiteHouse Limited <img src={arrowDown} alt="" /></p>
