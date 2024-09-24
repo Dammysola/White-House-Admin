@@ -73,7 +73,7 @@ import InApp_Calls from "./pages/WhiteHouse/customerCare/customerCare_Queries/qu
 import Soldiers_details from  "./pages/WhiteHouse/admin/foot_soldiers/soldiers_personalDetail/Soldiers_details"
 import Solider_OnboardedUsers from "./pages/WhiteHouse/admin/foot_soldiers/soldier_onboardedUsers/Solider_OnboardedUsers";
 import Profile from "./pages/WhiteHouse/admin/profile/Profile";
-
+import CC_Profile from "./pages/WhiteHouse/customerCare/profile/CC_Profile"
 
 const router = createBrowserRouter([
 
@@ -159,7 +159,11 @@ const router = createBrowserRouter([
             {
                 path: "/closedQueries",
                 element: <Closed_Queries/>
-            }
+            },
+            {
+                path: "/cc_profile",
+                element: <CC_Profile/>
+            },
         ]
 
     },

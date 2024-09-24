@@ -59,42 +59,42 @@
     background-color: #FFFFFF;
     width: 29.5rem;
     height: 24.4rem;
-    display: flex;
-    flex-direction: column;
     border-radius: 1rem;
     position: absolute;
-    align-items: center;
-
-
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+#imgDiv{
+    text-align: center;
 }
 #success_img {
     position: relative;
-    margin-top: -2.5rem;
+    margin-top: -2rem;
 }
 
 #Successful_headerText {
     color: #1A1A1A;
     font-size: 1.2rem;
+    text-align: center;
     font-weight: 500;
-    margin-top: -0.2rem;
-}
-#Successful_tablewrapperDiv table {
-    width: 100%;
-    margin-top: -3rem;
+    height: 1rem;
+    line-height: 0;
 }
 
-#Successful_tablewrapperDiv tr {
-    height: 2.7rem;
+.detailsDiv{
+    display: flex;
+    column-gap: 8rem;
+    height: 2.9rem;
 }
-
 .detailsText {
     color: #939393;
     font-size: 1rem;
+    width: 8rem;
 }
 
 .detailsBold {
     color: #1A1A1A;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 #copyText {
@@ -110,11 +110,10 @@
 #buttonDiv{
     display: flex;
     justify-content: center;
+    margin-top: 2rem;  
 }
 #buttonDiv button{
     width: 7.8rem;
     height: 1.87rem;
-    font-size: 0.75rem;
-    /* padding: 0.5rem; */
-    margin-top: 2rem;
+    font-size: 0.75rem;   
 }

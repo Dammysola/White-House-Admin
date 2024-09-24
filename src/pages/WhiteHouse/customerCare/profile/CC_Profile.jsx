@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Style from './CC_Profile.module.css'
-import profile_img from '../../../../assets/images/profile_img.png'
+import profile_img from '../../../../assets/images/ccImg.png'
 import edit from '../../../../assets/svg/edit.svg'
 import white_edit from '../../../../assets/svg/white_edit.svg'
 import capture_two from '../../../../assets/svg/capture_two.svg'
