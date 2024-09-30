@@ -49,13 +49,12 @@
 
 #customerCare{
     display: flex;
-    /* flex-direction: column; */
 }
-.Personal_Info_tableDiv .BankDetails_BoldText {
+/* .Personal_Info_tableDiv .BankDetails_BoldText {
     font-weight: bold;
     margin-top: -10px;
     line-height: 0.9rem;
-}
+} */
 
 .Personal_Info_tableDiv th,
 td {
@@ -88,7 +87,6 @@ td {
     height: 33.3rem;
     background-color: #FFFFFF;
     border-radius: 16px;
-    /* margin-top: 16px; */
     box-sizing: border-box;
 }
 #Complain_Details_tableDiv_two #Personal_Info_tr {
@@ -97,17 +95,7 @@ td {
     font-size: 0.9rem;
     height: 24.5rem;
 }
-.Personal_Info_tableDiv tr
 
-
-/* #Staff_Card_WrapperDiv{
-    height: 6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-
-} */
  #headlineText{
     color: #262626;
     font-weight: bold;
@@ -155,8 +143,6 @@ td {
     column-gap: 8px;
     align-items: center;
 }
-
-
 .Revenue_earningDiv{
     width: 18.75rem;
     height: 17.56rem;
@@ -219,8 +205,6 @@ td {
 }
 .line{
     width: 100%;
-    /* background-color: #666666;
-    height: 1px; */
     border: 1px dashed #666666;
     margin-bottom: 2.5rem;
 }

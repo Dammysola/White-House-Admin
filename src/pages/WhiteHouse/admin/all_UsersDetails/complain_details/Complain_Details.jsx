@@ -4,8 +4,21 @@ import Header from '../../../../../components/header/Header'
 import person from '../../../../../assets/images/Person1.png'
 import Button from '../../../../../components/button/Button'
 import smiley from '../../../../../assets/svg/gray_smiley.svg'
+import { PopupContextHook } from '../../../../../WhiteHouse_PopupContext'
+
+
+
+
+
 
 const Complain_Details = () => {
+
+    const { updateReAccessPopup } = PopupContextHook()
+
+    const reAccess = () => {
+        updateReAccessPopup(true)
+    }
+
 
     return (
         <div id={Style.Complain_Details_mainDiv}>
@@ -18,6 +31,7 @@ const Complain_Details = () => {
 
                 <div >
                     <p className={Style.Personal_Info_headerText}>Complain Details</p>
+
                     <div className={Style.Personal_Info_tableDiv}>
 
                         <table>
@@ -41,14 +55,22 @@ const Complain_Details = () => {
                                 <td>
                                     <div id={Style.statusText}>Reviewed</div>
                                 </td>
-                                <td><button style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.1rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                <td>
+                                    <button onClick={reAccess} style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.1rem", borderRadius: "8px", height: "1.37rem" }}>
+                                        Reaccess
+                                    </button>
+                                </td>
                             </tr>
                         </table>
                     </div>
                 </div>
+
                 <div className={Style.line}></div>
-                <div >
+
+                <div>
+
                     <p className={Style.Personal_Info_headerText}>Review Details</p>
+
                     <div id={Style.Complain_Details_tableDiv_two} className={Style.Personal_Info_tableDiv}>
 
                         <table>
@@ -86,41 +108,25 @@ const Complain_Details = () => {
                                 <td>
                                     <div id={Style.statusText}>Reviewed</div>
                                 </td>
-                                <td><button style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px", height: "1.37rem" }}>Review</button></td>
+                                <td>
+                                    <button onClick={reAccess} style={{ backgroundColor: "#075070", border: "none", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px", height: "1.37rem" }}>
+                                        Reaccess
+                                    </button>
+                                </td>
                             </tr>
+                        
                         </table>
                     </div>
+
                 </div>
 
                 <div className={Style.line}></div>
+
                 <div>
+
                     <p className={Style.Personal_Info_headerText}>User Satisfaction</p>
+
                     <div id={Style.Revenue_total_EarningDiv}>
-                        <div className={Style.Revenue_earningDiv}>
-
-                            <p className={Style.earningText}>Prompt Response</p>
-                            <p className={Style.priceText}>70%</p>
-
-                            <div id={Style.Revenue_progressDiv}>
-                                <div id={Style.Revenue_progressBar}></div>
-                                <img src={smiley} alt="" />
-                            </div>
-                            <p className={Style.Revenue_infoText}>70% more earning than last month, keep
-                                watching t find out more</p>
-                        </div>
-
-                        <div className={Style.Revenue_earningDiv}>
-
-                            <p className={Style.earningText}>Customer Care Relation</p>
-                            <p className={Style.priceText}>45%</p>
-
-                            <div id={Style.Revenue_progressDiv}>
-                                <div id={Style.Revenue_progressBar_two}></div>
-                                <p id={Style.Revenue_percentText}>45%</p>
-                            </div>
-                            <p className={Style.Revenue_infoText}>70% more earning than last month, keep
-                                watching t find out more</p>
-                        </div>
 
                         <div className={Style.Revenue_earningDiv}>
 
@@ -146,6 +152,34 @@ const Complain_Details = () => {
                             </div>
                             <p className={Style.Revenue_infoText}>70% more earning than last month, keep
                                 watching t find out more</p>
+
+                        </div>
+
+                        <div className={Style.Revenue_earningDiv}>
+
+                            <p className={Style.earningText}>Prompt Response</p>
+                            <p className={Style.priceText}>70%</p>
+
+                            <div id={Style.Revenue_progressDiv}>
+                                <div id={Style.Revenue_progressBar}></div>
+                                <img src={smiley} alt="" />
+                            </div>
+                            <p className={Style.Revenue_infoText}>70% more earning than last month, keep
+                                watching t find out more</p>
+                        </div>
+
+                        <div className={Style.Revenue_earningDiv}>
+
+                            <p className={Style.earningText}>Customer Care Relation</p>
+                            <p className={Style.priceText}>45%</p>
+
+                            <div id={Style.Revenue_progressDiv}>
+                                <div id={Style.Revenue_progressBar_two}></div>
+                                <p id={Style.Revenue_percentText}>45%</p>
+                            </div>
+                            <p className={Style.Revenue_infoText}>70% more earning than last month, keep
+                                watching t find out more</p>
+
                         </div>
 
                     </div>

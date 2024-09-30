@@ -11,8 +11,8 @@ import country_flag from '../../../../../assets/svg/country_flag.svg'
 import country_flag2 from '../../../../../assets/svg/country_flag2.svg'
 import nig_flag from '../../../../../assets/svg/nig_flag.svg'
 import Category_Grid from '../../../../../assets/svg/Category_Grid.svg'
-import Button from '../../../../../components/button/Button'
 import List_viewTable from '../../../../../components/listView/List_viewTable'
+import { PopupContextHook } from '../../../../../WhiteHouse_PopupContext'
 
 
 
@@ -20,6 +20,12 @@ import List_viewTable from '../../../../../components/listView/List_viewTable'
 const Online_Players = () => {
 
     const [isGridView, setIsGridView] = useState(true);
+    const {updateOnlineCountPopup}= PopupContextHook()
+
+
+    const onlineCount = ()=>{
+        updateOnlineCountPopup(true)
+    }
 
 
     const Online_Players_arr = [
@@ -165,25 +171,31 @@ const Online_Players = () => {
                 headerInfo={"Here’s an information on all Online Players"} />
 
             <div id={Style.Online_Players_wrapperDiv}>
-                {/* <div id={Style.All_Users_toggle_dateDiv}> */}
-                {/* <p id={Style.All_FootSoldiers_headerText}>All Foot Soldiers</p> */}
 
-                <div id={Style.input_FilterDiv}>
+                <div id={Style.header_dateDiv}>
 
-                    <p id={Style.viewchange_button} onClick={() => setIsGridView(!isGridView)}>
-                        {isGridView ? <div className={Style.footsoldier_listGrid_view}><img src={list_view} alt="" /> List View</div> : <div className={Style.footsoldier_listGrid_view}><img src={Category_Grid} alt="" /> Grid View</div>}
-                    </p>
+                    <div id={Style.headerDiv}>
+                        <p id={Style.headerText}>Total Online Players </p>
+                        <p id={Style.numberText}>2000</p>
+                        <p id={Style.seeMore_Text} onClick={onlineCount}>See More</p>
+                    </div>
 
-                    <p id={Style.dateText}>3rd July, 2024 <img src={arrow_down} alt="" /></p>
+                    <div id={Style.input_FilterDiv}>
 
-                    <p id={Style.searchDiv}>
-                        <img src={search} alt="" />
-                        <InputField
-                            placeholder={"A-Z"} />
-                    </p>
+                        <p id={Style.viewchange_button} onClick={() => setIsGridView(!isGridView)}>
+                            {isGridView ? <div className={Style.footsoldier_listGrid_view}><img src={list_view} alt="" /> List View</div> : <div className={Style.footsoldier_listGrid_view}><img src={Category_Grid} alt="" /> Grid View</div>}
+                        </p>
 
+                        <p id={Style.dateText}>3rd July, 2024 <img src={arrow_down} alt="" /></p>
+
+                        <p id={Style.searchDiv}>
+                            <img src={search} alt="" />
+                            <InputField
+                                placeholder={"A-Z"} />
+                        </p>
+
+                    </div>
                 </div>
-                {/* </div> */}
 
                 {isGridView ?
                     <div id={Style.Online_Players_Card}>
@@ -204,7 +216,7 @@ const Online_Players = () => {
 
                 {
                     !isGridView ?
-                        <List_viewTable listView_arr = {Online_Players_arr}/> : ""
+                        <List_viewTable listView_arr={Online_Players_arr} /> : ""
                 }
             </div>
         </div>

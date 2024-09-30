@@ -6,7 +6,7 @@
     position: absolute;
     /* top: 0; */
     /* bottom: 0; */
-    z-index: 999;
+    z-index: 50;
 }
 #Performance_Details_wrapperDiv{
     width: 100%;
@@ -80,11 +80,11 @@
 }
 
 #Performance_Details_table_wrapperDiv th, td{
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 #Performance_Details_table_wrapperDiv th{
-    /* text-align: left; */
+    text-align: left;
 }
 .User_detail_td{
     font-size: 0.9rem;
@@ -108,7 +108,10 @@
 .recording_text{
     font-weight: 600;
 }
-
+#queryText{
+    width: 15rem;
+    cursor: pointer;
+}
 .statusText{
     width: 4.53rem;
     height: 1.62rem;

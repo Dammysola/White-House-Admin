@@ -4,8 +4,47 @@ import Header from '../../../../../components/header/Header'
 import gray_delete from '../../../../../assets/svg/gray_delete.svg'
 import red_delete from '../../../../../assets/svg/red_delete.svg'
 import { Link } from 'react-router-dom'
+import { PopupContextHook } from '../../../../../WhiteHouse_PopupContext'
 
 const Pending_Request = () => {
+
+    const {updateConfirmPendingPopup, updateConfirmTrashPopup} = PopupContextHook()
+
+    const confirm =()=>{
+        updateConfirmPendingPopup(true)
+    }
+
+    const approve =()=>{
+        updateConfirmTrashPopup(true)
+    }
+
+    const arr = [
+
+        {
+            fullName: "John Doe",
+            email: "johndoe@gmail.com",
+            phone: "+2344816273888",
+            nationality: "Nigerian",
+            roo: "Ikeja",
+            action: "Approve"
+        },
+        {
+            fullName: "John Doe",
+            email: "johndoe@gmail.com",
+            phone: "+2344816273888",
+            nationality: "Nigerian",
+            roo: "Ikeja",
+            action: "Approve"
+        },
+        {
+            fullName: "John Doe",
+            email: "johndoe@gmail.com",
+            phone: "+2344816273888",
+            nationality: "Nigerian",
+            roo: "Ikeja",
+            action: "Approve"
+        }
+    ]
     return (
         <div id={Style.Pending_Request_mainDiv}>
             <Header
@@ -31,35 +70,31 @@ const Pending_Request = () => {
                         </tr>
 
                         <tbody>
-                        <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>johndoe@gmail.com</td>
-                                <td>+2344816273888</td>
-                                <td>Nigerian</td>
-                                <td>Ikeja</td>
-                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={red_delete} alt="" /></div></td>
-                            </tr>
 
-                            <tr>
-                                <td>2</td>
-                                <td>John Doe</td>
-                                <td>johndoe@gmail.com</td>
-                                <td>+2344816273888</td>
-                                <td>Nigerian</td>
-                                <td>Ikeja</td>
-                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={red_delete} alt="" /></div></td>
-                            </tr>
+                            {
+                                arr.map((obj, index) => {
 
-                            <tr>
-                                <td>3</td>
-                                <td>John Doe</td>
-                                <td>johndoe@gmail.com</td>
-                                <td>+2344816273888</td>
-                                <td>Nigerian</td>
-                                <td>Ikeja</td>
-                                <td><div className={Style.ActionDiv}><button className={Style.Action_button}>Approve</button> <img src={red_delete} alt="" /></div></td>
-                            </tr>
+                                    return (
+                                        <tr>
+                                            <td>{index + 1}</td>
+                                            <td>{obj.fullName}</td>
+                                            <td>{obj.email}</td>
+                                            <td>{obj.phone}</td>
+                                            <td>{obj.nationality}</td>
+                                            <td>{obj.roo}</td>
+                                            <td>
+                                                <div className={Style.ActionDiv}>
+
+                                                    <button onClick={confirm} className={Style.Action_button}>{obj.action}</button> 
+
+                                                    <img onClick={approve} src={red_delete} alt="" />
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            }
+
                         </tbody>
 
                     </table>

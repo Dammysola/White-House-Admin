@@ -19,7 +19,7 @@ import game_pad from '../../../../../assets/svg/game_pad.svg'
 
 
 const Personal_Info = () => {
-    const arr = []
+    const arr = [""]
 
     const line_data = [
         {

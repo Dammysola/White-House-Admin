@@ -6,6 +6,7 @@ import white_edit from '../../../../assets/svg/white_edit.svg'
 import capture_two from '../../../../assets/svg/capture_two.svg'
 import Input from '../../../../components/SignUp_input/Input'
 import Button from '../../../../components/button/Button'
+import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
 
 
 
@@ -14,13 +15,20 @@ const Profile = () => {
     const [editState, setEditState] = useState(false)
     const [imgUrl, SetImgUrl] = useState("")
 
+    const {updateProfilePopup} = PopupContextHook()
+
+    const successPopup =()=>{
+
+        updateProfilePopup(true)
+    }
+
     const handleFile = (e)=>{
             const file = e.target.files[0]
             // convert the file to a string and assign
             // and append the name of the file you are working with to a URL
             const url = URL.createObjectURL(file)
             SetImgUrl(url)
-        }
+    }
 
 
     const [profileUpdate, setProfileUpdate] = useState({
@@ -183,9 +191,11 @@ const Profile = () => {
                                 <Button
                                     type={"submit"}
                                     text={"Upload Profile"}
-                                    onSubmit ={HandleSubmit} />
+                                    onSubmit ={HandleSubmit}
+                                    />
                             </form> : ""
-                    }
+                    } 
+
                 </div>
             </div>
         </div>

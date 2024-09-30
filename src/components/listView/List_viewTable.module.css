@@ -14,13 +14,8 @@
 
 #All_FootSoldiers_tableDiv th,
 td {
-    padding: 0 1.5rem;
-    box-sizing: border-box;
+    padding: 1rem;
 
-}
-
-#All_FootSoldiers_tableDiv th {
-    text-align: left;
 }
 
 #All_FootSoldiers_tableDiv button {
@@ -32,7 +27,7 @@ td {
     box-sizing: border-box;
 }
 
-#All_FootSoldiers_tableDiv tr {
+#All_FootSoldiers_tableDiv tbody tr {
     color: #666666;
     height: 3.43rem;
     font-size: 0.95rem;
@@ -47,6 +42,7 @@ td {
     color: #000000;
     font-size: 1.2rem;
     border-bottom: none;
+    text-align: left;
 }
 
 #All_FootSoldiers_tableDiv .number {
@@ -55,14 +51,12 @@ td {
     font-size: 1rem;
 }
 
-.person_name_td{
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-}
 .person_name_td img{
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 0.4rem;
+    box-sizing: border-box;
 }
 

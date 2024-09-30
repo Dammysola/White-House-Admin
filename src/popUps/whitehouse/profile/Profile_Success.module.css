@@ -5,6 +5,10 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    bottom: 0;
 
 }
 #Approve_wrapperDiv{
@@ -19,6 +23,9 @@
     justify-content: space-between;
     padding: 0.5rem 0.5rem 2rem;
     box-sizing: border-box;
+    margin-top: -10rem;
+    /* z-index: 50; */
+
 }
 #Approve_wrapperDiv #success_img{
     position: relative;

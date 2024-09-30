@@ -61,14 +61,12 @@
 
 #Winner_loser_tableDiv th,
 td {
-    padding: 0 1.5rem;
-    box-sizing: border-box;
+    /* padding: 0 1.5rem;
+    box-sizing: border-box; */
+    padding: 15px;
 
 }
 
-#Winner_loser_tableDiv th {
-    text-align: left;
-}
 
 #Winner_loser_tableDiv button {
     width: 5.3rem;
@@ -80,7 +78,7 @@ td {
     box-sizing: border-box;
 }
 
-#Winner_loser_tableDiv tr {
+#Winner_loser_tableDiv tbody tr {
     color: #666666;
     height: 3.43rem;
     font-size: 0.95rem;
@@ -91,8 +89,10 @@ td {
     background-color: #E8E3F9;
     height: 2.75rem;
     color: #000000;
+    font-weight: bold;
     font-size: 1.2rem;
     border-bottom: none;
+    text-align: left;
 }
 
 #Winner_loser_tableDiv .number {

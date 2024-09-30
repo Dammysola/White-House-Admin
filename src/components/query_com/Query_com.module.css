@@ -1,11 +1,13 @@
-#Message_Queries_mainDiv {
+/* #Message_Queries_mainDiv {
     width: 100%;
     min-height: 100vh;
     background-color: #F9F9F9;
-}
+} */
 
 #Message_Queries_wrapperDiv {
     padding: 5rem 7.5rem;
+    /* background-color: #FFFFFF; */
+    /* background-color: #FFFFFF; */
 }
 
 .ticketButton {

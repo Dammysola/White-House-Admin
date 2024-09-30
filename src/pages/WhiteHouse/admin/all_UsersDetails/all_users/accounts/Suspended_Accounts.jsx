@@ -1,21 +1,17 @@
 import React, { useState } from 'react'
-import Style from '../all_users/All_Users.module.css'
-import Staff_Card from '../../staff/all_staff/component/Staff_Card'
-import person from '../../../../../assets/images/Person1.png'
-import arrow_down from '../../../../../assets/svg/arrow_down-dark.svg'
-import search from '../../../../../assets/svg/Search.svg'
-import InputField from '../../../../../components/input/InputField'
-import filter_img from '../../../../../assets/svg/Complete_filter_img.svg'
-import download from '../../../../../assets/svg/download_img.svg'
-import Header from '../../../../../components/header/Header'
-import { Link } from 'react-router-dom'
+import Style from "../All_Users.module.css"
+import InputField from '../../../../../../components/input/InputField'
+import Staff_Card from '../../../staff/all_staff/component/Staff_Card'
+import Header from '../../../../../../components/header/Header'
+import person from '../../../../../../assets/images/Person1.png'
+import arrow_down from '../../../../../../assets/svg/arrow_down-dark.svg'
+import search from '../../../../../../assets/svg/Search.svg'
+import Accounts_Card from './accounts_card/Accounts_Card'
 
 
-
-const All_Users = () => {
+const Suspended_Accounts = () => {
 
     const [toggleIndex, setToggleIndex] = useState(0)
-
 
     const transactionToggle = (index) => {
 
@@ -23,100 +19,88 @@ const All_Users = () => {
 
     }
 
+
     const all_Users_arr = [
         {
             img: person,
             name: "John Doe",
             position: "Nigeria",
             status: "Online",
+            account: "Suspended",
             to: "/userDetails"
         },
         {
             img: person,
             name: "John Doe",
             position: "Nigeria",
+            account: "Suspended",
+            status: "Offline"
+        },
+        {
+            img: person,
+            name: "John Doe",
+            position: "Nigeria",
+            account: "Suspended",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
             position: "Nigeria",
+            account: "Suspended",
+            status: "Offline"
+        },
+        {
+            img: person,
+            name: "John Doe",
+            position: "Nigeria",
+            account: "Suspended",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
             position: "Nigeria",
+            account: "Suspended",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
             position: "Nigeria",
+            account: "Suspended",
+            status: "Offline"
+        },
+        {
+            img: person,
+            name: "John Doe",
+            position: "Nigeria",
+            account: "Suspended",
             status: "Online"
         },
         {
             img: person,
             name: "John Doe",
             position: "Nigeria",
+            account: "Suspended",
             status: "Online"
         },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
+   
+       
 
     ]
+
     return (
+
         <div id={Style.All_Users_mainDiv}>
             <Header
-                headerText={"All Users"}
-                headerInfo={"Here’s an information on all Users"} />
+                headerText={"Suspended Accounts"}
+                headerInfo={"Here’s an information on all Suspended Accounts"} />
 
             <div id={Style.All_Users_wrapperDiv}>
 
                 <div id={Style.button_Div}>
-
-                    <Link to={"/freezedAccounts"}>
-                        <button id={Style.button}>Freezed Accounts</button>
-
-                    </Link>
-                    <Link to={"/suspendedAccounts"}>
-                        <button id={Style.accounts_btn}>Suspended Accounts</button>
-
-                    </Link>
+                    <button id={Style.accounts_btn}>Suspended Accounts</button>
                 </div>
 
                 <div id={Style.All_Users_toggle_dateDiv}>
@@ -134,28 +118,29 @@ const All_Users = () => {
                             <InputField
                                 placeholder={"A-Z"} />
                         </div>
-                        {/* 
-                        <div id={Style.InputField_images}>
-                            <img src={filter_img} alt="" />
-                            <img id={Style.download_img} src={download} alt="" />
-                        </div> */}
 
                     </div>
+                
                 </div>
 
+
                 <div id={Style.All_Users_Card}>
+              
+
                     {
                         all_Users_arr.map((object) => {
-                            let statusColor = object.status === "Online" ? true : false
+                        
+                            let statusColor =  object.status === "Online" ? true : false
 
                             return (
-                                <Staff_Card
+                                <Accounts_Card
                                     img={object.img}
                                     status={object.status}
                                     name={object.name}
                                     position={object.position}
                                     to={object.to}
-                                    statusColor={statusColor} />
+                                    account ={object.account}
+                                    statusColor ={statusColor} />
                             )
                         })
                     }
@@ -165,4 +150,4 @@ const All_Users = () => {
     )
 }
 
-export default All_Users
+export default Suspended_Accounts

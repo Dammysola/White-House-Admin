@@ -30,7 +30,10 @@ const List_viewTable = (props) => {
 
                                     <tr>
                                         <td className={Style.number}>{index + 1}</td>
-                                        <td > <div className={Style.person_name_td}><img src={obj.name.img} alt="" /> {obj.name.name}</div></td>
+                                        <td > <div className={Style.person_name_td}>
+                                            <img src={obj.name.img} alt="" /> {obj.name.name}
+                                            </div>
+                                        </td>
                                         <td>{obj.countries}</td>
                                         <td><img src={obj.flag} alt="" /></td>
                                         <td>

@@ -74,111 +74,98 @@ import Soldiers_details from  "./pages/WhiteHouse/admin/foot_soldiers/soldiers_p
 import Solider_OnboardedUsers from "./pages/WhiteHouse/admin/foot_soldiers/soldier_onboardedUsers/Solider_OnboardedUsers";
 import Profile from "./pages/WhiteHouse/admin/profile/Profile";
 import CC_Profile from "./pages/WhiteHouse/customerCare/profile/CC_Profile"
+import Suspended_Accounts from "./pages/WhiteHouse/admin/all_UsersDetails/all_users/accounts/Suspended_Accounts";
+import Freezed_Accounts from "./pages/WhiteHouse/admin/all_UsersDetails/all_users/accounts/Freezed_Accounts";
+import Country_Users from "./pages/WhiteHouse/admin/placeBet/countries/country_details/Country_Users";
+
+
+
 
 const router = createBrowserRouter([
 
     
-    {
-        path: "/",
-        element: <WhiteHouse_PopupContext><MainLayout /></WhiteHouse_PopupContext> ,
-        children: [
+    // {
+    //     path: "/",
+    //     element: <WhiteHouse_PopupContext><MainLayout /></WhiteHouse_PopupContext> ,
+    //     children: [
 
-            {
-                index: true,
-                element: <CustomerCare_Dashboard />
-            },
-            {
-                path: "/customerCare_queries",
-                element: <CustomerCare_Queries />
-            },
-            {
-                path: "/QueryReview",
-                element: <Query_Review />
-            },
-            {
-                path: "/performance",
-                element: <Performance />
-            },
-            {
-                path: "/performanceDetails",
-                element: <Performance_Details />
-            },
+    //         {
+    //             index: true,
+    //             element: <CustomerCare_Dashboard />
+    //         },
+    //         {
+    //             path: "/customerCare_queries",
+    //             element: <CustomerCare_Queries />
+    //         },
+    //         {
+    //             path: "/QueryReview",
+    //             element: <Query_Review />
+    //         },
+    //         {
+    //             path: "/performance",
+    //             element: <Performance />
+    //         },
+    //         {
+    //             path: "/performanceDetails",
+    //             element: <Performance_Details />
+    //         },
+
+    //         {
+    //             path: "/signIn",
+    //             element: <CC_SignIn/>
+    //         },
+    //         {
+    //             path: "/incomingQueries",
+    //             element: <Incoming_Queries/>
+    //         },
+    //         {
+    //             path: "/allUsers_cc",
+    //             element: <CC_All_Users/>
+    //         },
+    //          {
+    //             path: "/message_queries",
+    //             element: <Message_Queries/>
+    //         },
+    //         {
+    //             path: "/mailQueries",
+    //             element: <Mail_Queries/>
+    //         },
+    //         {
+    //             path: "/callQueries",
+    //             element: <InApp_Calls/>
+    //         },
+    //          {
+    //             path: "/resolvedQueries",
+    //             element: <InProgress_Queries/>
+    //         },
+    //         {
+    //             path: "/escalatedQueries",
+    //             element: <Escalated_Queries/>
+    //         },
+    //         {
+    //             path: "/closedQueries",
+    //             element: <Closed_Queries/>
+    //         },
+    //         {
+    //             path: "/cc_profile",
+    //             element: <CC_Profile/>
+    //         },
+    //     ]
+
+    // },
 
 
-            //         {
-            //             path: "/businessTransaction",
-            //             element: <Business_Transaction />
-            //         },
-            //         {
-            //             path: "/directorDetails",
-            //             element: <Director_Details />
-            //         },
-            //         {
-            //             path: "/success",
-            //             element: <Congratulation />
-            //         },
-            //         {
-            //             path: "/signIn",
-            //             element: <SignIn />
-            //         }
-
-
-
-            {
-                path: "/signIn",
-                element: <CC_SignIn/>
-            },
-            {
-                path: "/incomingQueries",
-                element: <Incoming_Queries/>
-            },
-            {
-                path: "/allUsers_cc",
-                element: <CC_All_Users/>
-            },
-             {
-                path: "/message_queries",
-                element: <Message_Queries/>
-            },
-            {
-                path: "/mailQueries",
-                element: <Mail_Queries/>
-            },
-            {
-                path: "/callQueries",
-                element: <InApp_Calls/>
-            },
-             {
-                path: "/resolvedQueries",
-                element: <InProgress_Queries/>
-            },
-            {
-                path: "/escalatedQueries",
-                element: <Escalated_Queries/>
-            },
-            {
-                path: "/closedQueries",
-                element: <Closed_Queries/>
-            },
-            {
-                path: "/cc_profile",
-                element: <CC_Profile/>
-            },
-        ]
-
-    },
     {
         path: "/",
         element: <WhiteHouse_PopupContext><MainLayout_Two /></WhiteHouse_PopupContext>,
         children: [
 
+            
             {
-                path: "/admin_signIn",
+                index: "/signIn",
                 element: <Admin_SignIn/>
             },
-
             {
-                // index: true,
                 path: "/whiteHouseDashboard",
                 element: <WhiteHouse_Dashboard />
             },
@@ -347,13 +334,25 @@ const router = createBrowserRouter([
                 element: <Solider_OnboardedUsers />
             },
             {
+                path: "/countryUsers",
+                element: <Country_Users/>
+            },
+            {
                 path: "/trash",
                 element: <Trash />
             },
             {
                 path: "/profile",
                 element: <Profile/>
-            }
+            },
+            {
+                path: "/suspendedAccounts",
+                element: <Suspended_Accounts/>
+            },
+            {
+                path: "/freezedAccounts",
+                element: <Freezed_Accounts/>
+            },
 
 
 

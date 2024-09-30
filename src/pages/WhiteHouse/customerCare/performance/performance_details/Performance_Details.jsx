@@ -10,7 +10,12 @@ import { PopupContextHook } from '../../../../../WhiteHouse_PopupContext'
 
 const Performance_Details = () => {
 
-    const {updateFilterPopup} = PopupContextHook()
+    const {updateFilterPopup, updatePerformancePopup} = PopupContextHook()
+
+
+    const query =()=>{
+        updatePerformancePopup(true)
+    }
 
 
     const arr = [
@@ -30,6 +35,7 @@ const Performance_Details = () => {
                 time2: "Play Recording"
             },
             status: "Resolved",
+            query: "Lorem ipsum dolor sitc  tetur. Odio oare id enm vupte.....",
             action: "Re-access"
         },
 
@@ -48,6 +54,7 @@ const Performance_Details = () => {
                 time2: "Play Recording"
             },
             status: "Resolved",
+            query: "Lorem ipsum dolor sitc  tetur. Odio oare id enm vupte.....",
             action: "Re-access"
         },
 
@@ -66,6 +73,7 @@ const Performance_Details = () => {
                 time2: "Play Recording"
             },
             status: "Resolved",
+            query: "Lorem ipsum dolor sitc  tetur. Odio oare id enm vupte.....",
             action: "Re-access"
         },
 
@@ -158,7 +166,7 @@ const Performance_Details = () => {
                                 <th>User ID</th>
                                 <th>Ticket ID</th>
                                 <th>Query Category</th>
-                                <th>Recording</th>
+                                <th>Query</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -180,9 +188,9 @@ const Performance_Details = () => {
                                             <td>{user.TicketID}</td>
                                             <td>{user.QueryCat}</td>
                                             <td>
-                                                <div id={Style.recordingDiv}>
-                                                    <p className={Style.recording_text}><img src={user.recording.img} alt="" />{user.recording.time}</p>
-                                                    <p><img src={user.recording.img2} alt="" />{user.recording.time2}</p>
+                                                
+                                                <div id={Style.queryText} onClick={query}>
+                                                    {user.query}
                                                 </div>
                                             </td>
                                             <td><div className={Style.statusText}>{user.status}</div></td>

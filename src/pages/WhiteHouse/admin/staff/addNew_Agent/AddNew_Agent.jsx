@@ -2,12 +2,21 @@ import React from 'react'
 import Input from '../../../../../components/SignUp_input/Input'
 import Style from '../addNew_Agent/AddNew_Agent.module.css'
 import Button from '../../../../../components/button/Button'
+import { PopupContextHook } from '../../../../../WhiteHouse_PopupContext'
 
 
 const AddNew_Agent = () => {
 
+        const {updateSignUpPopup} = PopupContextHook()
+
+        const confirm = ()=>{
+
+            updateSignUpPopup(true)
+        }
+
 
     return (
+
         <div id={Style.AddNew_Agent_mainDiv}>
             {/* <label htmlFor="date">Date:</label>
 
@@ -41,6 +50,8 @@ const AddNew_Agent = () => {
                             <div id={Style.generatePassword}>Auto Generate Password</div>
                         </div>
                         <div id={Style.AddNew_Agent_buttonDiv}><Button text = {"Save Details"}/></div>
+
+                        
                     </div>
                 </form>
             </div>

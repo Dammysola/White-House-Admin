@@ -42,7 +42,7 @@ const Query_com = (props) => {
                 <InputField
                     placeholder={"Search ticket no"} />
             </div>
-            <img id={Style.filter_img} src={filter} alt="" />
+            {/* <img id={Style.filter_img} src={filter} alt="" /> */}
         </div>
     </div>
 

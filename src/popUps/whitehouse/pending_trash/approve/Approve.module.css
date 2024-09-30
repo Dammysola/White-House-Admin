@@ -5,6 +5,10 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
 
 }
 #Approve_wrapperDiv{

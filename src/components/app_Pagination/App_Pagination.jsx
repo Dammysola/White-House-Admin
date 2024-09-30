@@ -14,14 +14,14 @@ const App_Pagination = ({postsPerPage, totalPosts, paginate}) => {
   return (
 
     <div id="Style2">
-      {/* <ul> */}
         {pageNumbers.map(number =>(
-          <button key={number}>
-            <a onClick={()=>paginate(number)} href="!#">{number}</a>
+          <button key={number} 
+          // style={{backgroundColor: number ? "#000" : "transparent", color: paginate ? "#FFFFFF" : ""}}
+          >
+            <p onClick={()=>paginate(number)} >{number}</p>
             
           </button>
         ))}
-      {/* </ul> */}
     </div>
   )
 }

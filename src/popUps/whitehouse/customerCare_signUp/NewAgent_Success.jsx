@@ -2,13 +2,23 @@ import React from 'react'
 import Style from './NewAgent_Success.module.css'
 import copy from '../../../assets/svg/copy.svg'
 import success from '../../../assets/svg/white_success.svg'
+import { PopupContextHook } from '../../../WhiteHouse_PopupContext'
 
 
 
 
 const NewAgent_Success = () => {
+
+  const {updateSignUpPopup} = PopupContextHook()
+
+  const cancel = ()=>{
+
+    updateSignUpPopup(false)
+  }
+
   return (
-    <div id={Style.NewAgent_Success_mainDiv}>
+
+    <div id={Style.NewAgent_Success_mainDiv} onClick={cancel}>
       <div id={Style.NewAgent_Success_wrapperDiv}>
        <div id={Style.imgDiv}><img id={Style.success_img} src={success} alt="" /></div> 
         <p id={Style.NewAgent_Success_headerText}>Staff account created successfully</p>

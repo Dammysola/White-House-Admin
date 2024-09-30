@@ -1,10 +1,14 @@
 #NewAgent_Success_mainDiv {
     width: 100%;
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .4);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 55;
 }
 
 #NewAgent_Success_wrapperDiv {

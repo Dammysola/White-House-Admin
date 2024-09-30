@@ -5,8 +5,8 @@ import Header from '../../../../components/header/Header'
 import Total_Card from '../../../../components/total_Card/Total_Card'
 import smiley from '../../../../assets/svg/gray_smiley.svg'
 import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
-
-
+import activity from '../../../../assets/svg/Activity.svg'
+import users from '../../../../assets/svg/three_users.svg'
 
 
 const Revenue = () => {
@@ -17,16 +17,19 @@ const Revenue = () => {
 
     const total_Card2 = [
         {
-            image1: './src/assets/svg/Activity.svg',
-            text: 'Total Players',
-            divText: 'View all',
-            price: '$25,052,985'
+            image1: users,
+            text: "All Users",
+            divText: "View all",
+            price: "2m",
+            view_div: false
         },
         {
-            image1: './src/assets/svg/Activity.svg',
-            text: 'Total Bet Placed',
-            divText: 'View all',
-            price: '2m'
+            image1: activity,
+            text: "Total Bet Placed",
+            divText: "View all",
+            price: "$25,052,985",
+            to: `/totalBetPlaced/${0}`
+
         }
     ]
 
@@ -128,6 +131,8 @@ const Revenue = () => {
                                             text={object.text}
                                             divText={object.divText}
                                             price={object.price}
+                                            view_div={object.view_div}
+                                            to = {object.to}
                                         />
                                     )
                                 })

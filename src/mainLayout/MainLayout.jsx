@@ -7,6 +7,7 @@ import { PopupContextHook } from '../WhiteHouse_PopupContext'
 import Performance_Details from '../pages/WhiteHouse/customerCare/performance/performance_details/Performance_Details'
 import Revenue_Details from '../pages/WhiteHouse/admin/foot_soldiers/revenue_details/Revenue_Details'
 import ForgotPassword from '../popUps/whitehouse/forgotPassword/ForgotPassword'
+import Performance_Popup from '../popUps/whitehouse/performance/Performance_Popup'
 // import SignIn from '../pages/signUp/SignIn'
 
 
@@ -15,7 +16,7 @@ const MainLayout = () => {
   const location = useLocation();
   const showNavbar = location.pathname !== '/signIn';
 
-  const {filterPopup, passwordPopup} = PopupContextHook()
+  const {filterPopup, passwordPopup, performancePopup} = PopupContextHook()
 
 
   return (
@@ -27,6 +28,9 @@ const MainLayout = () => {
       {filterPopup && <Performance_Details/>}
       
       {passwordPopup && <ForgotPassword/>}
+      
+      {performancePopup && <Performance_Popup/>}
+
 
       
 
