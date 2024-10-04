@@ -20,12 +20,8 @@ Nav_Bar_Wrapper p{
     justify-content: center;
     column-gap: 0.5rem; 
     cursor: pointer;
-    /* margin-right: -3.5rem;*/
 }
-#NavBar_textDiv img{
-    /* margin-right: 2.6rem;
-    box-sizing: border-box; */
-}
+
 #NavBar_ContactDiv{
     display: flex;
     column-gap: 1.5rem;
@@ -86,7 +82,6 @@ Nav_Bar_Wrapper p{
     display: flex;
     justify-content: center;
     position: absolute;
-    /* margin-left: -50px; */
     color: #353535;
     background-color: #FFFFFF;
     border-radius: 1rem;
@@ -94,7 +89,7 @@ Nav_Bar_Wrapper p{
     box-shadow: 0.5rem 0.5rem 1rem 0 rgb(0, 0, 0, .2);
 }
 
-ul{
+#dropdown ul{
     display: flex;
     flex-direction: column;
     row-gap: 0.6rem;
@@ -106,9 +101,7 @@ ul{
     font-size: 1rem;
     color: #000000;
 }
-/* #NavBar_businessName{
-    width: 10rem;
-} */
+
 #Business_name_dropdown{
     display: none;
 }

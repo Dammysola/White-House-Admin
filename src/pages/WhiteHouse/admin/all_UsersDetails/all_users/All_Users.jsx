@@ -9,19 +9,13 @@ import filter_img from '../../../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../../../assets/svg/download_img.svg'
 import Header from '../../../../../components/header/Header'
 import { Link } from 'react-router-dom'
+import AllUsers_com from '../../../../../components/allUsers_com/AllUsers_com'
+import Date_Picker from '../../../../../components/date_picker/Date_Picker'
 
 
 
 const All_Users = () => {
 
-    const [toggleIndex, setToggleIndex] = useState(0)
-
-
-    const transactionToggle = (index) => {
-
-        setToggleIndex(index)
-
-    }
 
     const all_Users_arr = [
         {
@@ -99,6 +93,26 @@ const All_Users = () => {
         },
 
     ]
+
+    const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
+
+
+
+    const handleDateChange = (newDate) => {
+
+        setSelectedDate(newDate);  // Update selectedDate when newDate is received
+
+        console.log("New selected date:", newDate);  // This should log the new date when clicked
+
+        setIsCalendarOpen(false)
+    };
+
+    const toggleCalendar = () => {
+        setIsCalendarOpen(true)
+    }
+
+
     return (
         <div id={Style.All_Users_mainDiv}>
             <Header
@@ -106,6 +120,18 @@ const All_Users = () => {
                 headerInfo={"Here’s an information on all Users"} />
 
             <div id={Style.All_Users_wrapperDiv}>
+
+                <h1>Selected Date: {selectedDate.toDateString()} <img src={arrow_down} onClick={toggleCalendar} alt="" /></h1>
+
+                {
+                    isCalendarOpen && (
+                        <div id={Style.calendar_popup}>
+                            <Date_Picker onDateChange={handleDateChange} />
+                        </div>
+                    )
+                }
+
+
 
                 <div id={Style.button_Div}>
 
@@ -119,47 +145,8 @@ const All_Users = () => {
                     </Link>
                 </div>
 
-                <div id={Style.All_Users_toggle_dateDiv}>
-                    <div id={Style.All_Users_toggleDiv}>
-                        <button onClick={() => transactionToggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>All</button>
-                        <button onClick={() => transactionToggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Subscribed</button>
-                        <button onClick={() => transactionToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Unsubscribed</button>
-                        <button onClick={() => transactionToggle(3)} className={toggleIndex == 3 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Not-Subscribed</button>
-                    </div>
-                    <div id={Style.input_FilterDiv}>
+                <AllUsers_com arr={all_Users_arr} />
 
-                        <p>3rd July, 2024 <img src={arrow_down} alt="" /></p>
-                        <div id={Style.searchDiv}>
-                            <img src={search} alt="" />
-                            <InputField
-                                placeholder={"A-Z"} />
-                        </div>
-                        {/* 
-                        <div id={Style.InputField_images}>
-                            <img src={filter_img} alt="" />
-                            <img id={Style.download_img} src={download} alt="" />
-                        </div> */}
-
-                    </div>
-                </div>
-
-                <div id={Style.All_Users_Card}>
-                    {
-                        all_Users_arr.map((object) => {
-                            let statusColor = object.status === "Online" ? true : false
-
-                            return (
-                                <Staff_Card
-                                    img={object.img}
-                                    status={object.status}
-                                    name={object.name}
-                                    position={object.position}
-                                    to={object.to}
-                                    statusColor={statusColor} />
-                            )
-                        })
-                    }
-                </div>
             </div>
         </div>
     )

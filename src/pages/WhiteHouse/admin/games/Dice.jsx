@@ -28,78 +28,83 @@ const DiceGame = () => {
   const total_Card2 = [
     {
       image1: Activity,
-      text: 'Total Bet Placed',
-      divText: 'View all',
-      price: '$25,052,985',
+      text: "Total Bet Placed",
+      divText: "View all",
+      price: "$25,052,985",
       to: `/totalBetPlaced/${0}`
     },
     {
       image1: three_users,
-      text: 'Total Players',
-      divText: 'View all',
-      price: '2m'
+      text: "Total Players",
+      divText: "View all",
+      price: "2m",
+      view_div: false
     },
     {
       image1: winner,
-      text: 'Winners',
-      divText: 'View all',
-      price: '345,000',
+      text: "Winners",
+      divText: "View all",
+      price: "345,000",
       to: `/totalBetPlaced/${1}`
     },
     {
       image1: loosers,
-      text: 'Loosers',
-      divText: 'View all',
-      price: '23,000',
+      text: "Loosers",
+      divText: "View all",
+      price: "23,000",
       to: `/totalBetPlaced/${2}`
     },
   ]
 
+
+
   const data = [
+
+
     {
-      name: 'Mon',
+      name: "Mon",
       month: "Jan",
       uv: 50,
       pv: 40,
       amt: 2400,
     },
     {
-      name: 'Tue',
+      name: "Tue",
       month: "Feb",
       uv: 70,
       pv: 60,
       amt: 2210,
     },
     {
-      name: 'Wed',
+      name: "Wed",
       month: "Mar",
       uv: 80,
       pv: 40,
       amt: 2290,
     },
     {
-      name: 'Thur',
+      name: "Thur",
       month: "Apr",
       uv: 65,
       pv: 20,
       amt: 2000,
     },
     {
-      name: 'Fri',
+      name: "Fri",
       month: "May",
       uv: 84,
       pv: 50,
       amt: 2181,
     },
     {
-      name: 'Sat',
+      name: "Sat",
       month: "Jun",
       uv: 100,
       pv: 60,
       amt: 2500,
     },
     {
-      name: 'Sun',
+      name: "Sun",
       month: "Jul",
       uv: 60,
       pv: 40,
@@ -108,18 +113,12 @@ const DiceGame = () => {
   ]
 
   const stats_card2 = [
-    // {
-    //   img: rise,
-    //   figure: "200k",
-    //   text: "Bet Placed",
-    //   to: "/diceBetPlaced"
-
-    // },
+ 
     {
       img: person,
       figure: "2m",
       text: "All Users",
-      to: "/allUsers"
+      to: "/gameUsers"
     },
     {
       img: flag,
@@ -127,14 +126,10 @@ const DiceGame = () => {
       text: "Reg Countries",
       to: "/"
     },
-    // {
-    //   img: rise,
-    //   figure: "200k",
-    //   text: "Bet Placed",
-    //   to: "/placebet"
-
-    // },
+   
   ]
+
+  
 
 
   return (
@@ -146,8 +141,11 @@ const DiceGame = () => {
 
       <div id={Style.DiceGame_wrapperDiv}>
         <p className={Style.PlaceBet_headerText}>Today's Summary</p>
+
         <div id={Style.DiceGame_Card_mapDiv}>
+
           {
+            
             total_Card2.map((object) => {
               return (
                 <Total_Card
@@ -156,6 +154,7 @@ const DiceGame = () => {
                   divText={object.divText}
                   price={object.price}
                   to = {object.to}
+                  view_div ={object.view_div}
                 />
               )
             })

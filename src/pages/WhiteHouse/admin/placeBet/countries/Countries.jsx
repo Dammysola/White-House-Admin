@@ -83,16 +83,16 @@ const Countries = () => {
                 headerInfo={"Here’s an information on all Countries"} />
 
             <div id={Style.Winner_loser_wrapperDiv}>
-
-                <div id={Style.input_FilterDiv}>
-                    <p>3rd July, 2024 <img src={arrow_down} alt="" /></p>
+ 
+               {/* <div id={Style.input_FilterDiv}>
+                    <p>3rd July, 2024 <img src={arrow_down} alt="" /></p> */}
 
                     <div id={Style.searchDiv}>
                         <img src={search} alt="" />
                         <InputField
                             placeholder={"Search Countries"} />
                     </div>
-                </div>
+                {/* </div> */}
 
                 <div id={Style.Winner_loser_wrapper}>
                     <div id={Style.Winner_loser_tableDiv}>

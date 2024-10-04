@@ -186,7 +186,7 @@ const Online_Players = () => {
                             {isGridView ? <div className={Style.footsoldier_listGrid_view}><img src={list_view} alt="" /> List View</div> : <div className={Style.footsoldier_listGrid_view}><img src={Category_Grid} alt="" /> Grid View</div>}
                         </p>
 
-                        <p id={Style.dateText}>3rd July, 2024 <img src={arrow_down} alt="" /></p>
+                    
 
                         <p id={Style.searchDiv}>
                             <img src={search} alt="" />
@@ -200,14 +200,18 @@ const Online_Players = () => {
                 {isGridView ?
                     <div id={Style.Online_Players_Card}>
                         {
-                            Online_Players_arr.map((object) => {
+                            Online_Players_arr.map((obj) => {
+                               
+                            let statusColor = obj.status === "Online" ? true : false
+                               
                                 return (
                                     <Staff_Card
-                                        img={object.name.img}
-                                        status={object.status}
-                                        name={object.name.name}
-                                        position={object.countries}
-                                        to={object.to} />
+                                        img={obj.name.img}
+                                        status={obj.status}
+                                        name={obj.name.name}
+                                        position={obj.countries}
+                                        to={obj.to} 
+                                        statusColor ={statusColor}/>
                                 )
                             })
                         }

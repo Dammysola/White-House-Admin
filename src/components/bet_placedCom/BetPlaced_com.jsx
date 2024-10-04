@@ -6,6 +6,7 @@ import search from '../../assets/svg/Search.svg'
 import filter_img from '../../assets/svg/Complete_filter_img.svg'
 import download from '../../assets/svg/download_img.svg'
 import InputField from '../../components/input/InputField'
+import Date_Picker from '../date_picker/Date_Picker'
 
 const BetPlaced_com = (props) => {
 
@@ -16,6 +17,9 @@ const BetPlaced_com = (props) => {
 
 
     let [toggleIndex, setToggleIndex] = useState(0);
+    const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
+
 
 
     const toggle = (index) => {
@@ -24,11 +28,26 @@ const BetPlaced_com = (props) => {
 
     }
 
-    
-  useEffect(() => {
-    
-    setToggleIndex(initialIndex)
-  }, [])
+
+    useEffect(() => {
+
+        setToggleIndex(initialIndex)
+    }, [])
+
+
+    const handleDateChange = (newDate) => {
+
+        setSelectedDate(newDate);  // Update selectedDate when newDate is received
+
+        console.log("New selected date:", newDate);  // This should log the new date when clicked
+
+        setIsCalendarOpen(false)
+    };
+
+    const toggleCalendar = () => {
+        setIsCalendarOpen(true)
+    }
+
 
 
     return (
@@ -56,7 +75,15 @@ const BetPlaced_com = (props) => {
                     </div>
 
                     <div id={Style.Amount_Paid_input_FilterDiv}>
-                        <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
+                        <h1>{selectedDate.toDateString()} <img onClick={toggleCalendar} src={arrow_down} alt="" /></h1>
+
+                        {
+                            isCalendarOpen && (
+                                <div id={Style.calendar_popup}>
+                                    <Date_Picker onDateChange={handleDateChange} />
+                                </div>
+                            )
+                        }
 
                         <div id={Style.searchDiv}>
                             <img src={search} alt="" />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from '../conversation/Conversation.module.css'
 import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
 import InputField from '../../../../components/input/InputField'
@@ -9,11 +9,32 @@ import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
 import person from '../../../../assets/images/person_img.png'
 import person2 from '../../../../assets/images/Person1.png'
 import { Link } from 'react-router-dom'
+import Date_Picker from '../../../../components/date_picker/Date_Picker'
 
 
 
 
 const Conversation = () => {
+
+  const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
+
+
+
+  const handleDateChange = (newDate) => {
+
+    setSelectedDate(newDate);  // Update selectedDate when newDate is received
+
+    console.log("New selected date:", newDate);  // This should log the new date when clicked
+
+    setIsCalendarOpen(false)
+  };
+
+  const toggleCalendar = () => {
+    setIsCalendarOpen(true)
+  }
+
+
   return (
     <div id={Style.Conversation_mainDiv}>
       <Header
@@ -21,9 +42,21 @@ const Conversation = () => {
         headerInfo={"Here’s an information on all conversation"} />
 
       <div id={Style.Conversation_WrapperDiv}>
+        
         <div id={Style.Conversation_input_FilterDiv}>
 
-          <p>3rd July, 2024 <img src={arrow_down} alt="" /></p>
+          <span>{selectedDate.toDateString()} <img onClick={toggleCalendar} src={arrow_down} alt="" /></span>
+
+          {
+            isCalendarOpen && (
+              <div id={Style.calendar_popup}>
+
+              <Date_Picker onDateChange={handleDateChange} />
+               </div>
+            )
+          }
+
+
           <div id={Style.searchDiv}>
             <img src={search} alt="" />
             <InputField
@@ -34,7 +67,10 @@ const Conversation = () => {
             <img src={filter_img} alt="" />
             <img src={download} alt="" />
           </div>
+
         </div>
+
+
         <div id={Style.Conversation_tableDiv}>
           <table>
             <tr id={Style.headerTable}>
@@ -57,13 +93,13 @@ const Conversation = () => {
               <td>Nigeria</td>
               <td>
                 <div id={Style.playerImg_Div}>
-                  
+
                   <img src={person} alt="" />
-                    <img src={person2} alt="" />
-                    <img src={person} alt="" />
-                    <img src={person2} alt="" />
-                    <img src={person} alt="" />
-                  
+                  <img src={person2} alt="" />
+                  <img src={person} alt="" />
+                  <img src={person2} alt="" />
+                  <img src={person} alt="" />
+
                 </div>
               </td>
               <td>
@@ -72,9 +108,9 @@ const Conversation = () => {
               <td>50000</td>
               <td>
                 <Link to={"/chatHistory"}>
-                 <button style={{ backgroundColor: "#075070", border: "none", width: "4.5rem", height: "1.37rem", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px" }}>View Chat</button>
+                  <button style={{ backgroundColor: "#075070", border: "none", width: "4.5rem", height: "1.37rem", color: "#FFFFFF", fontSize: "0.7rem", borderRadius: "8px" }}>View Chat</button>
                 </Link>
-               </td>
+              </td>
             </tr>
 
             <tr>
@@ -84,14 +120,14 @@ const Conversation = () => {
               <td>Dice</td>
               <td>Nigeria</td>
               <td>
-              <div id={Style.playerImg_Div}>
-                  
+                <div id={Style.playerImg_Div}>
+
                   <img src={person} alt="" />
-                    <img src={person2} alt="" />
-                    <img src={person} alt="" />
-                    <img src={person2} alt="" />
-                    <img src={person} alt="" />
-                  
+                  <img src={person2} alt="" />
+                  <img src={person} alt="" />
+                  <img src={person2} alt="" />
+                  <img src={person} alt="" />
+
                 </div>
               </td>
               <td>
@@ -108,14 +144,14 @@ const Conversation = () => {
               <td>Dice</td>
               <td>Nigeria</td>
               <td>
-              <div id={Style.playerImg_Div}>
-                  
+                <div id={Style.playerImg_Div}>
+
                   <img src={person} alt="" />
-                    <img src={person2} alt="" />
-                    <img src={person} alt="" />
-                    <img src={person2} alt="" />
-                    <img src={person} alt="" />
-                  
+                  <img src={person2} alt="" />
+                  <img src={person} alt="" />
+                  <img src={person2} alt="" />
+                  <img src={person} alt="" />
+
                 </div>
               </td>
               <td>

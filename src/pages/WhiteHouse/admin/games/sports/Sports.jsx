@@ -17,88 +17,92 @@ import sports from '../../../../../assets/svg/sport.svg'
 
 
 
+
+
 const Sports = () => {
 
   const customTickFormatter = (tick) => {
     return `${tick}k`;
   }
 
+
+
   const total_Card2 = [
     {
       image1: Activity,
-      text: 'Total Bet Placed',
-      divText: 'View all',
-      price: '$25,052,985',
+      text: "Total Bet Placed",
+      divText: "View all",
+      price: "$25,052,985",
       to: `/totalBetPlaced/${0}`
 
     },
     {
       image1: three_users,
-      text: 'Total Players',
-      divText: 'View all',
-      price: '2m'
+      text: "Total Players",
+      divText: "View all",
+      price: "2m"
     },
     {
       image1: winner,
-      text: 'Winners',
-      divText: 'View all',
-      price: '345,000',
+      text: "Winners",
+      divText: "View all",
+      price: "345,000",
       to: `/totalBetPlaced/${1}`
     },
     {
       image1: loosers,
-      text: 'Loosers',
-      divText: 'View all',
-      price: '23,000',
+      text: "Loosers",
+      divText: "View all",
+      price: "23,000",
       to: `/totalBetPlaced/${2}`
     },
   ]
 
   const data = [
     {
-      name: 'Mon',
+      name: "Mon",
       month: "Jan",
       uv: 50,
       pv: 40,
       amt: 2400,
     },
     {
-      name: 'Tue',
+      name: "Tue",
       month: "Feb",
       uv: 70,
       pv: 60,
       amt: 2210,
     },
     {
-      name: 'Wed',
+      name: "Wed",
       month: "Mar",
       uv: 80,
       pv: 40,
       amt: 2290,
     },
     {
-      name: 'Thur',
+      name: "Thur",
       month: "Apr",
       uv: 65,
       pv: 20,
       amt: 2000,
     },
     {
-      name: 'Fri',
+      name: "Fri",
       month: "May",
       uv: 84,
       pv: 50,
       amt: 2181,
     },
     {
-      name: 'Sat',
+      name: "Sat",
       month: "Jun",
       uv: 100,
       pv: 60,
       amt: 2500,
     },
     {
-      name: 'Sun',
+      name: "Sun",
       month: "Jul",
       uv: 60,
       pv: 40,
@@ -106,18 +110,97 @@ const Sports = () => {
     },
   ]
 
+
   const stats_card2 = [
     {
       img: person,
       figure: "2m",
       text: "All Users",
-      to: "/allUsers"
+      to: "/gameUsers"
     },
     {
       img: flag,
       figure: "14",
       text: "Reg Countries",
       to: "/"
+    },
+  ]
+
+
+
+  const all_Users_arr = [
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online",
+        to: "/userDetails"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
+    },
+    {
+        img: person,
+        name: "John Doe",
+        position: "Nigeria",
+        status: "Online"
     },
   ]
 
@@ -134,14 +217,19 @@ const Sports = () => {
       <div id={Style.DiceGame_wrapperDiv}>
 
         <div id={Style.Sports_selection_wrapperDiv}>
+
           <button className={Style.Sports_selectionDiv}>Football</button>
+          
           <div className={Style.Sports_selectionDiv}>Basketball</div>
           <div className={Style.Sports_selectionDiv}>Tennis</div>
           <div className={Style.Sports_selectionDiv}>8 balls</div>
           <div className={Style.Sports_selectionDiv}> 9 balls</div>
           {/* <div className={Style.Sports_selectionDiv} id={Style.basket}>Basketball</div> */}
+       
         </div>
+
         <p className={Style.PlaceBet_headerText}>Today's Summary</p>
+        
         <div id={Style.DiceGame_Card_mapDiv}>
           {
             total_Card2.map((object) => {

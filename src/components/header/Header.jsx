@@ -31,7 +31,9 @@ const Header = (props) => {
                 </div>
             </div>
 
-            {back1 == true ?  <img id={Style.back_img} onClick={goBack} src={back} alt="" />: ""}
+            {back1 == true ? 
+             <img id={Style.back_img} onClick={goBack} src={back} alt="" />
+             : ""}
         </>
     )
 }

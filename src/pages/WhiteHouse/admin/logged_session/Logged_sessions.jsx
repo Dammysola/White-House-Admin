@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from '../logged_session/Logged_sessions.module.css'
 import filter_img from '../../../../assets/svg/Complete_filter_img.svg'
 import InputField from '../../../../components/input/InputField'
@@ -7,11 +7,33 @@ import search from '../../../../assets/svg/Search.svg'
 import person from '../../../../assets/images/person_img.png'
 import download from '../../../../assets/svg/download_img.svg'
 import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
+import Date_Picker from '../../../../components/date_picker/Date_Picker'
 
 
 
 
 const Logged_sessions = () => {
+
+    
+    const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
+
+
+
+    const handleDateChange = (newDate) => {
+
+        setSelectedDate(newDate);  // Update selectedDate when newDate is received
+        
+        console.log("New selected date:", newDate);  // This should log the new date when clicked
+        
+        setIsCalendarOpen(false)
+    };
+
+    const toggleCalendar = () => {
+        setIsCalendarOpen(true)
+    }
+
+
     return (
         <div id={Style.Logged_sessions_mainDiv}>
             <Header
@@ -19,9 +41,20 @@ const Logged_sessions = () => {
                 headerInfo={"Here’s an information on all logged sessions"} />
 
             <div id={Style.Logged_sessions_WrapperDiv}>
+
                 <div id={Style.Logged_sessions_input_FilterDiv}>
 
-                    <p>3rd July, 2024 <img src={arrow_down} alt="" /></p>
+                    <span>{selectedDate.toDateString()} <img src={arrow_down} onClick={toggleCalendar} alt="" /></span>
+
+                    {
+                        isCalendarOpen && (
+
+                            <div id={Style.calendar_popup}>
+                                <Date_Picker onDateChange={handleDateChange} />
+                            </div>
+                        )
+                    }
+
                     <div id={Style.searchDiv}>
                         <img src={search} alt="" />
                         <InputField
@@ -58,7 +91,7 @@ const Logged_sessions = () => {
                                 <div>
                                     <p className={Style.players_info}><img src={person} alt="" />John Doe</p>
                                     <p className={Style.players_info}><img src={person} alt="" />John Doe</p>
-                                    <p className={Style.players_info}><img src={person} alt="" />John Doe</p>                                 
+                                    <p className={Style.players_info}><img src={person} alt="" />John Doe</p>
                                     <p className={Style.players_info}><img src={person} alt="" />John Doe</p>
                                 </div>
 
@@ -88,7 +121,7 @@ const Logged_sessions = () => {
 
                             </td>
                             <td>
-                            <div className={Style.WinnerText}><img src={person} alt="" /> John Doe</div>
+                                <div className={Style.WinnerText}><img src={person} alt="" /> John Doe</div>
                             </td>
                             <td>50000</td>
                         </tr>
@@ -110,7 +143,7 @@ const Logged_sessions = () => {
 
                             </td>
                             <td>
-                            <div className={Style.WinnerText}><img src={person} alt="" /> John Doe</div>
+                                <div className={Style.WinnerText}><img src={person} alt="" /> John Doe</div>
 
                                 {/* <div id={Style.action_field}>
                                     <div className={Style.WinnerText}>John Doe</div>

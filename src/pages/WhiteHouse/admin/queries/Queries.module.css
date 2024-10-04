@@ -108,7 +108,7 @@
 
 #Reports_Table_WrapperDiv th,
 td {
-    padding: 0 2rem;
+    padding: 0 1rem;
     box-sizing: border-box;
 
 }
@@ -118,7 +118,7 @@ td {
 }
 
 .statusText {
-    background-color: rgba(252, 158, 47, 0.2);
+    background-color: #fc9e2f33;
     border: none;
     color: #FC9E2F;
     display: flex;
@@ -129,8 +129,11 @@ td {
     border-radius: 0.25rem;
     height: 1.62rem;
 }
+.tableText{
+    width: 10rem;
+}
 #statusText2{
-    background-color:rgba(49, 195, 100, .2);
+    background-color:#31c36433;
     border: none;
     color: #31C364;
     display: flex;

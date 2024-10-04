@@ -21,7 +21,7 @@ import Personal_Info from "./pages/WhiteHouse/admin/all_UsersDetails/personal_in
 import Users_placedbets from "./pages/WhiteHouse/admin/all_UsersDetails/user_placebets/Users_placedbets";
 import Complain_Details from "./pages/WhiteHouse/admin/all_UsersDetails/complain_details/Complain_Details";
 import Staff_Details from "./pages/WhiteHouse/admin/staff/staff_details/Staff_Details";
-import Total_Players from "./pages/WhiteHouse/admin/total_players/Total_Players";
+// import Total_Players from "./pages/WhiteHouse/admin/total_players/Total_Players";
 import Total_BetPlaced from "./pages/WhiteHouse/admin/totalBet/Total_BetPlaced"
 import Winner_loser from "./pages/WhiteHouse/admin/placeBet/winner/Winner_loser"
 import Countries from "./pages/WhiteHouse/admin/placeBet/countries/Countries"
@@ -47,7 +47,6 @@ import Soldier_Transaction from "./pages/WhiteHouse/admin/foot_soldiers/footSold
 import Pending_Request from "./pages/WhiteHouse/admin/foot_soldiers/pending_requests/Pending_Request";
 import Amount_Paid from "./pages/WhiteHouse/admin/foot_soldiers/amount_paid/Amount_Paid";
 import All_Transaction from "./pages/WhiteHouse/admin/foot_soldiers/all_transactions/All_Transaction";
-import Dice_BetPlaced from "./pages/WhiteHouse/admin/games/Dice_BetPlaced";
 import Users_From_Soldiers from "./pages/WhiteHouse/admin/foot_soldiers/users_from_soldiers/Users_From_Soldiers"
 import Trash from "./pages/WhiteHouse/admin/foot_soldiers/trash/Trash"
 import Game_History from "./pages/WhiteHouse/admin/games/game_history/Game_History";
@@ -77,6 +76,8 @@ import CC_Profile from "./pages/WhiteHouse/customerCare/profile/CC_Profile"
 import Suspended_Accounts from "./pages/WhiteHouse/admin/all_UsersDetails/all_users/accounts/Suspended_Accounts";
 import Freezed_Accounts from "./pages/WhiteHouse/admin/all_UsersDetails/all_users/accounts/Freezed_Accounts";
 import Country_Users from "./pages/WhiteHouse/admin/placeBet/countries/country_details/Country_Users";
+import Game_Users from "./pages/WhiteHouse/admin/games/game_Users/Game_Users";
+import Soldiers_CountryDetails from "./pages/WhiteHouse/admin/foot_soldiers/countries/soldiers_CountryDetails/Soldiers_CountryDetails";
 
 
 
@@ -177,13 +178,14 @@ const router = createBrowserRouter([
                 path: "/sports",
                 element: <Sports />
             },
-            {
-                path: "/diceBetPlaced",
-                element: <Dice_BetPlaced />
-            },
+       
             {
                 path: "/gameHistory",
                 element: <Game_History />
+            },
+            {
+                path: "/gameUsers",
+                element: <Game_Users/>
             },
             {
                 path: "/customerCare",
@@ -233,10 +235,10 @@ const router = createBrowserRouter([
                 path: "/staffDetails",
                 element: <Staff_Details />
             },
-            {
-                path: "/totalPlayers",
-                element: <Total_Players />
-            },
+            // {
+            //     path: "/totalPlayers",
+            //     element: <Total_Players />
+            // },
             {
                 path: "/totalBetPlaced/:indexParams",
                 element: <Total_BetPlaced />
@@ -332,6 +334,10 @@ const router = createBrowserRouter([
             {
                 path: "/soldierOnboardedUsers",
                 element: <Solider_OnboardedUsers />
+            },
+            {
+                path: "/soldiers_CountryDetails",
+                element: <Soldiers_CountryDetails/>
             },
             {
                 path: "/countryUsers",

@@ -8,7 +8,6 @@ import betCoin from '../../../../assets/svg/betCoin.svg'
 import total_users from '../../../../assets/svg/total_users.svg'
 import winner from '../../../../assets/svg/winner.svg'
 import Total_Card from '../../../../components/total_Card/Total_Card'
-import winners_background from '../../../../assets/svg/winners_background.svg'
 import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
 import search from '../../../../assets/svg/Search.svg'
 import green_eyes from '../../../../assets/svg/green_eyes.svg'
@@ -18,6 +17,7 @@ import person from '../../../../assets/images/person_img.png'
 import avatar from '../../../../assets/images/avatar.png'
 import Button from '../../../../components/button/Button'
 import { Link } from 'react-router-dom'
+import BetPlaced_com from '../../../../components/bet_placedCom/BetPlaced_com'
 
 
 
@@ -31,18 +31,14 @@ const Transaction = () => {
 
 
 
-    const transactionToggle = (index) => {
-
-        setToggleIndex(index)
-
-    }
+  
 
     const toggle = (index) => {
 
         setCardToggleIndex(index)
     }
 
-    
+
 
 
 
@@ -165,7 +161,7 @@ const Transaction = () => {
             SN: "4",
             userID: "5466FH",
             BetID: "6458575RFG",
-            game: "tr",
+            game: "DiceRoom344",
             amount: "1000",
             players: person,
             status: "Lost",
@@ -352,15 +348,21 @@ const Transaction = () => {
 
     return (
         <div id={Style.Transaction_mainDiv}>
+
             <Header
                 headerText={"Transactions"}
                 headerInfo={"Here is a list of all transactions"} />
+
+
             <div id={Style.Transaction_wrapperDiv}>
 
                 <div id={Style.Transaction_mapDiv}>
+
                     {
                         stats_card6.map((obj, index) => {
+
                             let isBlack = index == cardToggleIndex ? true : false;
+
                             return (
                                 <Total_Card
                                     key={index}
@@ -376,13 +378,7 @@ const Transaction = () => {
                     }
                 </div>
 
-                <div>
-                    {
-                        toggleIndex == 1 && cardToggleIndex == 0 ?
-                            <img id={Style.winners_background} src={winners_background} alt="" />
-                            : " "
-                    }
-                </div>
+                
                 {
                     cardToggleIndex !== 0 ?
 
@@ -408,181 +404,17 @@ const Transaction = () => {
                         </div> : ""
                 }
                 <div id={Style.Transaction_tableWrapperDiv}>
+
                     {
-                        cardToggleIndex == 0 ?
+                        toggleIndex === 0 && cardToggleIndex === 0 ?
 
-                            <>
-                                <div id={Style.BetText}>Bet Lists <span>(1,355)</span></div>
-
-                                <div id={Style.Transaction_listCalendar_Div}>
-
-                                    <div id={Style.Transaction_listDiv}>
-
-                                        <button onClick={() => transactionToggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>All</button>
-                                        <button onClick={() => transactionToggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>Winning Bets</button>
-                                        <button onClick={() => transactionToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.Transaction_listDiv_button}>Losing Bets</button>
-
-                                    </div>
-
-                                    <div id={Style.Amount_Paid_input_FilterDiv}>
-                                        <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
-
-                                        <div id={Style.searchDiv}>
-                                            <img src={search} alt="" />
-                                            <InputField />
-                                        </div>
-                                        <div id={Style.imgDiv}>
-                                            <img src={filter_img} alt="" />
-                                            <img src={download} alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </> : ""
+                            <BetPlaced_com arr={arr} initialIndex={0} /> : ""
                     }
-
-
-                    {cardToggleIndex == 0 ?
-                        <table>
-                            <tr id={Style.headerTable}>
-                                <th>S/N</th>
-                                <th>User ID</th>
-                                <th>Bet ID</th>
-                                <th>Game</th>
-                                <th>Amount Staked</th>
-                                <th>Players</th>
-                                <th>Status</th>
-                                <th>Amount Won</th>
-                                <th>Action</th>
-                            </tr>
-
-
-                            {
-                                toggleIndex == 0 ?
-
-
-                                    <tbody>
-                                        {
-                                            arr.map((user, index) => {
-                                                let lost = user.status == "Lost" ? true : false
-                                                return (
-                                                    <tr >
-                                                        <td>{index + 1}</td>
-                                                        <td>{user.userID}</td>
-                                                        <td>{user.BetID}</td>
-                                                        <td>{user.game}</td>
-                                                        <td>{user.amount}</td>
-                                                        <td>
-                                                            <div id={Style.players_imgDiv}>
-                                                                <img src={user.players} alt="" />
-                                                                <img src={user.players} alt="" />
-                                                                <img src={user.players} alt="" />
-                                                                <img src={user.players} alt="" />
-                                                            </div>
-                                                        </td>
-                                                        <td><div id={Style.statusText_td} style={{ backgroundColor: lost ? "#11000033" : "#31c36433", color: lost ? "#110000" : "#31C364" }}>{user.status}</div></td>
-                                                        <td>{user.win}</td>
-                                                        <td>
-                                                            <div id={Style.action_field}>
-                                                                <img src={user.action.eye} alt="" />
-                                                                <img src={user.action.warning} alt="" />
-                                                                <img src={user.action.delete} alt="" />
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                )
-                                            })
-                                        }
-
-                                    </tbody> :
-                                    toggleIndex == 1 && cardToggleIndex == 0 ?
-
-
-
-                                        //winner Bet
-
-                                        <tbody>
-                                            {
-                                                dev.map((user, index) => {
-                                                    // let lost = user.status == "Lost" ? true : false
-                                                    return (
-                                                        <tr>
-                                                            <td>{index + 1}</td>
-                                                            <td>{user.userID}</td>
-                                                            <td>{user.BetID}</td>
-                                                            <td>{user.game}</td>
-                                                            <td>{user.amount}</td>
-                                                            <td>
-                                                                <div id={Style.players_imgDiv}>
-                                                                    <img src={user.players} alt="" />
-                                                                    <img src={user.players} alt="" />
-                                                                    <img src={user.players} alt="" />
-                                                                    <img src={user.players} alt="" />
-                                                                </div>
-                                                            </td>
-                                                            <td><div id={Style.statusText_td}>{user.status}</div></td>
-                                                            <td>{user.win}</td>
-                                                            <td>
-                                                                <div id={Style.action_field}>
-                                                                    <img src={user.action.eye} alt="" />
-                                                                    <img src={user.action.warning} alt="" />
-                                                                    <img src={user.action.delete} alt="" />
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
-
-                                        </tbody> :
-
-                                        toggleIndex == 2 ?
-                                            //Dice_Bet_Placed Lost screen
-
-                                            <tbody>
-                                                {
-                                                    arr.filter((p) => p.status === "Lost").map((user, index) => {
-                                                        let lost = user.status == "Lost" ? true : false
-
-                                                        return (
-                                                            <tr >
-                                                                <td>{index + 1}</td>
-                                                                <td>{user.userID}</td>
-                                                                <td>{user.BetID}</td>
-                                                                <td>{user.game}</td>
-                                                                <td>{user.amount}</td>
-                                                                <td>
-                                                                    <div id={Style.players_imgDiv}>
-                                                                        <img src={user.players} alt="" />
-                                                                        <img src={user.players} alt="" />
-                                                                        <img src={user.players} alt="" />
-                                                                        <img src={user.players} alt="" />
-                                                                    </div>
-                                                                </td>
-                                                                <td><div id={Style.statusText_td} style={{ backgroundColor: lost ? "#11000033" : "#31c36433", color: lost ? "#110000" : "#31C364" }}>{user.status}</div></td>
-                                                                <td>{user.win}</td>
-                                                                <td>
-                                                                    <div id={Style.action_field}>
-                                                                        <img src={user.action.eye} alt="" />
-                                                                        <img src={user.action.warning} alt="" />
-                                                                        <img src={user.action.delete} alt="" />
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        )
-                                                    })
-                                                }
-                                            </tbody>
-                                            : ""
-
-                            }
-
-                        </table>
-                        : ""}
 
                     {
                         cardToggleIndex == 1 ?
 
-                            <div id={Style.Card_table_wrapperDiv}>
+                            // <div id={Style.Card_table_wrapperDiv}>
                                 <table>
                                     <tr id={Style.headerTable_tr}>
                                         <th>S/N</th>
@@ -646,15 +478,17 @@ const Transaction = () => {
 
                                     </tbody>
                                 </table>
-                                {filteredData_two.length === 0 && <p>No matching records found</p>}
-                            </div> : ""
+
+                           
+                            // </div>
+                             : ""
                     }
 
 
                     {
                         cardToggleIndex == 2 ?
 
-                            <div id={Style.Card_table_wrapperDiv}>
+                            // <div id={Style.Card_table_wrapperDiv}>
                                 <table>
                                     <tr id={Style.headerTable_tr}>
                                         <th>S/N</th>
@@ -721,14 +555,15 @@ const Transaction = () => {
 
                                     </tbody>
                                 </table>
-                            </div> : ""
+                            // </div> 
+                            : ""
                     }
 
 
                     {
                         cardToggleIndex == 3 ?
 
-                            <div id={Style.Card_table_wrapperDiv}>
+                            // <div id={Style.Card_table_wrapperDiv}>
 
                                 <table>
                                     <tr id={Style.headerTable_tr}>
@@ -772,14 +607,15 @@ const Transaction = () => {
                                                             <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
                                                         </td>
                                                         <td>{user.balance}</td>
-                                                        <td id={Style.btn}> <Link to={"/unsettledBet"}><Button text={user.action}/></Link></td>
+                                                        <td id={Style.btn}> <Link to={"/unsettledBet"}><Button text={user.action} /></Link></td>
                                                     </tr>
                                                 )
                                             })
                                         }
                                     </tbody>
                                 </table>
-                            </div> : ""
+                            // </div> 
+                            : ""
                     }
 
                 </div>

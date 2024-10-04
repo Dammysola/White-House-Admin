@@ -6,7 +6,7 @@ import user from '../../assets/svg/transparent_contact.svg'
 import alphaBet_logo from '../../assets/svg/Alpha_Bet_Black_Logo.svg'
 import mail_two from '../../assets/svg/staff_mail.svg'
 import person from '../../assets/svg/staff_person.svg'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -24,6 +24,7 @@ const NavBar = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
+  const location = useLocation()
 
 
   return (
@@ -54,7 +55,7 @@ const NavBar = () => {
           </div>
 
 
-          <NavLink to={'/allusers'} className={`${Style.NavBar_text} ${activeNav === 'users' ? Style.Nav_styled_Link : ''}`} onClick={() => handleNavClick('users')}>
+          <NavLink to={'/allusers'} className={`${Style.NavBar_text}  ${location.pathname === "/allusers" ?  Style.Nav_styled_Link : ""}`} >
             <p>Users</p>
           </NavLink>
 

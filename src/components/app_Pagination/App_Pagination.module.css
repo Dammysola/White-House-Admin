@@ -1,0 +1,28 @@
+
+#App_Pagination_mainDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+#App_Pagination_mainDiv button {
+    width: 1.6rem;
+    height: 1.7rem;
+    border-radius: 0.3rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#pagination_Div img{
+    transform: rotate(270deg);
+    transition: transform 0.5s ease-in-out;
+}
+#pagination_Div{
+     /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+
