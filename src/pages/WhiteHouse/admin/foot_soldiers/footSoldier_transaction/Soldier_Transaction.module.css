@@ -51,7 +51,7 @@
     margin-top: 2.5rem;
 }
 
-#InputField_Div p {
+#InputField_Div span {
     height: 0;
     color: #707070;
     font-size: 0.93rem;
@@ -103,7 +103,7 @@ td {
     padding: 0 1rem;
 }
 
-#Soldier_Transaction_Table_WrapperDiv th{
+#Soldier_Transaction_Table_WrapperDiv th {
     text-align: left;
 }
 
@@ -126,6 +126,14 @@ td {
 
 #Soldier_Transaction_Table_WrapperDiv .BankDetails_BoldText {
     font-weight: bold;
-    /* margin-top: -10px;
-    line-height: 0.9rem; */
+
+}
+
+#calendar_popup {
+    position: absolute;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 27rem;
+    z-index: 1000;
 }

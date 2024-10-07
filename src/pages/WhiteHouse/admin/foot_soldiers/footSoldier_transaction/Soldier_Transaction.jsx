@@ -5,6 +5,7 @@ import arrow_down from '../../../../../assets/svg/arrow_down-dark.svg'
 import InputField from '../../../../../components/input/InputField'
 import search from '../../../../../assets/svg/Search.svg'
 import { useParams } from 'react-router-dom'
+import Date_Picker from '../../../../../components/date_picker/Date_Picker'
 
 const Soldier_Transaction = () => {
 
@@ -13,6 +14,26 @@ const Soldier_Transaction = () => {
     const toggle = (index) => {
         setToggleIndex(index)
     }
+
+    
+    const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
+
+
+
+    const handleDateChange = (newDate) => {
+
+        setSelectedDate(newDate);  // Update selectedDate when newDate is received
+
+        console.log("New selected date:", newDate);  // This should log the new date when clicked
+
+        setIsCalendarOpen(false)
+    };
+
+    const toggleCalendar = () => {
+        setIsCalendarOpen(true)
+    }
+
 
 
     // let [toggleIndex, setToggleIndex] = useState(0);
@@ -185,7 +206,18 @@ const Soldier_Transaction = () => {
                 </div>
 
                 <div id={Style.InputField_Div}>
-                    <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
+
+                     <span>{selectedDate.toDateString()} <img src={arrow_down} onClick={toggleCalendar} alt="" /></span>
+
+                        {
+                            isCalendarOpen && (
+
+                                <div id={Style.calendar_popup}>
+                                    <Date_Picker onDateChange={handleDateChange} />
+                                </div>
+                            )
+                        }
+
                     <div id={Style.searchDiv}>
                         <img src={search} alt="" />
                         <InputField />

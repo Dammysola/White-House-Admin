@@ -28,7 +28,7 @@ const All_FootSoldiers = () => {
             img: person,
             name: "John Doe",
             position: "Nigeria",
-            status: "Online",
+            status: "Offline",
             to: "/soldiersDetails"
         },
         {
@@ -200,7 +200,7 @@ const All_FootSoldiers = () => {
                             {isGridView ? <div className={Style.footsoldier_listGrid_view}><img src={list_view} alt="" /> List View</div> : <div className={Style.footsoldier_listGrid_view}><img src={Category_Grid} alt="" /> Grid View</div>}
                         </p>
 
-                        <p id={Style.dateText}>3rd July, 2024 <img src={arrow_down} alt="" /></p>
+                        {/* <p id={Style.dateText}>3rd July, 2024 <img src={arrow_down} alt="" /></p> */}
                         
                         <p id={Style.searchDiv}>
                             <img src={search} alt="" />
@@ -218,6 +218,9 @@ const All_FootSoldiers = () => {
                         <div id={Style.All_Users_Card}>
                             {
                                 all_soldiers_arr.map((object) => {
+
+                        let statusColor = object.status === "Online" ? true : false
+
                                     return (
                                         <Staff_Card
                                             img={object.img}
@@ -225,6 +228,7 @@ const All_FootSoldiers = () => {
                                             name={object.name}
                                             position={object.position}
                                             to={object.to}
+                                            statusColor ={statusColor}
                                         />
                                     )
                                 })

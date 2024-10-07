@@ -11,19 +11,28 @@
     column-gap: 2rem;
     margin-bottom: 3.3rem;
 }
-
+#TransactionText{
+    color: #003E79;
+    font-size: 1.2rem;
+    /* padding: 2.5rem  0 0.81rem 3.5rem; */
+    box-sizing: border-box;
+}
+#TransactionText span{
+    color: #7429E8;
+}
 #Amount_Paid_input_FilterDiv{
     display: flex;
     align-items: center;
+    justify-content: end;
     column-gap: 1rem;
 }
-#Amount_Paid_input_FilterDiv p{
+#Amount_Paid_input_FilterDiv span{
     display: flex;
     column-gap: 0.2rem;
     font-size: 0.93rem;
     color: #707070;
 }
-#Amount_Paid_input_FilterDiv p img{
+#Amount_Paid_input_FilterDiv span img{
     width: 1rem;
 }
 #Amount_Paid_input_FilterDiv #searchDiv img{
@@ -41,6 +50,7 @@
     border-radius: 0.75rem;
     padding-left:2.5rem;
     box-sizing: border-box;
+    background-color: #FFFFFF;
     height: 2.47rem; 
 }
 #imgDiv img{
@@ -117,5 +127,13 @@
     height: 1.37rem;
     padding: 0.2rem;
     font-size: 0.75rem;
-
+}
+#calendar_popup {
+    position: absolute;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 27rem;
+    margin-right: 19rem;
+    z-index: 1000;
 }

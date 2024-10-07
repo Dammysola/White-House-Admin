@@ -181,8 +181,8 @@ const Country_Users = () => {
         <div id={Style.FootSoldiers_mainDiv}>
 
             <Header
-                headerText={"Foot Soldiers"}
-                headerInfo={"Here’s an information on all Foot Soldiers"} />
+                headerText={"Country"}
+                headerInfo={"Here’s an information on country"} />
 
             <div id={Style.FootSoldiers_wrapperDiv}>
 
@@ -193,18 +193,15 @@ const Country_Users = () => {
 
                 <div id={Style.FootSoldiers_header_dateDiv}>
 
-                    <p id={Style.headerText}>All Foot Soldiers Nigeria</p>
+                    <p id={Style.headerText}>All Users in Nigeria</p>
 
-                    {/* <div id={Style.input_FilterDiv}> */}
-
-                        {/* <p>3rd July, 2024 <img src={arrow_down} alt="" /></p> */}
+ 
                         <div id={Style.searchDiv}>
                             <img src={search} alt="" />
                             <InputField
                                 placeholder={"A-Z"} />
                         </div>
 
-                    {/* </div> */}
                 </div>
 
                 <div id={Style.footSoldiers_Card}>

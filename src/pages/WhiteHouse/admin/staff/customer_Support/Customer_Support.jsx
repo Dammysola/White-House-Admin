@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from '../customer_Support/Customer_Support.module.css'
 import { BarChart, YAxis, XAxis, Bar, Tooltip, ResponsiveContainer } from 'recharts'
 import Header from '../../../../../components/header/Header'
@@ -19,6 +19,7 @@ import mail from '../../../../../assets/svg/mail.svg'
 // import call from '../../../../../assets/svg/call.svg'
 import { Link } from 'react-router-dom'
 import Button from '../../../../../components/button/Button'
+import Month_Picker from '../../../../../components/month_picker/Month_Picker'
 
 
 
@@ -26,8 +27,47 @@ import Button from '../../../../../components/button/Button'
 
 const Customer_Support = () => {
 
+
+    // const [selectedMonth, setSelectedMonth] = useState('');
+    // const [ShowMonths, setShowMonths] = useState(false);
+    // const [monthsIndex, setMonthsIndex] = useState(0);
+
+
+
+    // Get the current month name
+    const getCurrentMonth = () => {
+
+        const currentMonthIndex = new Date().getMonth(); // Returns month index (0-11)
+        const months = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        return months[currentMonthIndex];
+    };
+    
+
+    const [selectedMonth, setSelectedMonth] = useState(getCurrentMonth());
+    // const [monthsIndex, setMonthsIndex] = useState(true);
+    const [ShowMonths, setShowMonths] = useState(true);
+
+
+
+    const handleMonthSelect = (month) => {
+
+        setSelectedMonth(month);
+        setShowMonths(false)
+
+        console.log("Selected Month: ", month); // Optional, logs the selected month
+    };
+
+    const toggle = () => {
+        setShowMonths((prev) => !prev)
+    }
+
     const stats_card5 = [
         {
+
             image1: three_users,
             price: "400",
             text: "All Agents",
@@ -127,13 +167,13 @@ const Customer_Support = () => {
                                     divText={obj.divText}
                                     price={obj.price}
                                     to={obj.to}
-                                    price2 ={obj.price2}
-                                    price3 = {obj.price3}
-                                    price4 = {obj.price4}
-                                    image2 = {obj.image2}
-                                    image3 = {obj.image3}
-                                    image4 = {obj.image4}
-                                    all = {obj.all} />
+                                    price2={obj.price2}
+                                    price3={obj.price3}
+                                    price4={obj.price4}
+                                    image2={obj.image2}
+                                    image3={obj.image3}
+                                    image4={obj.image4}
+                                    all={obj.all} />
                             )
                         })
                     }
@@ -197,7 +237,7 @@ const Customer_Support = () => {
                             <div id={Style.date_viewDiv}>
                                 <p id={Style.dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
                                 <Link to={'/TotalTopAgents'}>
-                                <Button text ={"View All"}/>
+                                    <Button text={"View All"} />
                                 </Link>
                             </div>
                         </div>
@@ -214,49 +254,49 @@ const Customer_Support = () => {
                                 <td className={Style.performing_agentText}>46</td>
                                 <td className={Style.performing_agentText}>5</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><Link to={'/topAgent'}><Button text ={"View Details"}/></Link></td>
+                                <td><Link to={'/topAgent'}><Button text={"View Details"} /></Link></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>22</td>
                                 <td className={Style.performing_agentText}>13</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><Button text ={"View Details"}/></td>
+                                <td><Button text={"View Details"} /></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>45</td>
                                 <td className={Style.performing_agentText}>8</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><Button text ={"View Details"}/></td>
+                                <td><Button text={"View Details"} /></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>34</td>
                                 <td className={Style.performing_agentText}>77</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><Button text ={"View Details"}/></td>
+                                <td><Button text={"View Details"} /></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>89</td>
                                 <td className={Style.performing_agentText}>5</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><Button text ={"View Details"}/></td>
+                                <td><Button text={"View Details"} /></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>33</td>
                                 <td className={Style.performing_agentText}>566</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><Button text ={"View Details"}/></td>
+                                <td><Button text={"View Details"} /></td>
                             </tr>
                             <tr>
                                 <td>John Doe</td>
                                 <td className={Style.performing_agentText}>21</td>
                                 <td className={Style.performing_agentText}>44</td>
                                 <td className={Style.performing_agentText}>5</td>
-                                <td><Button text ={"View Details"}/></td>
+                                <td><Button text={"View Details"} /></td>
                             </tr>
                         </table>
                     </div>
@@ -265,9 +305,26 @@ const Customer_Support = () => {
                     <div id={Style.CustomerCare_Progress_Wrapper}>
                         <div id={Style.CustomerCare_textDiv}>
                             <p>Average Customer Satisfaction Score</p>
-                            <div id={Style.monthDiv}>Month <img src={arrow_down} alt="" /></div>
+
+
+
+                            <div id={Style.monthDiv} onClick={toggle}>{selectedMonth} <img src={arrow_down} alt="" /></div>
+
+
+                            {
+                                ShowMonths && (
+
+                                    <div id={Style.month_pickerDiv}>
+
+                                        <Month_Picker onMonthSelect={handleMonthSelect} defaultMonth={selectedMonth} />
+
+                                    </div>
+                                )
+                            }
+
                         </div>
                         <div>
+
                             <div className={Style.Staff_progress}>
                                 <div id={Style.Staff_details}>
                                     <div id={Style.imgDiv}>
@@ -277,6 +334,7 @@ const Customer_Support = () => {
                                 </div>
                                 <div id={Style.progressDiv}></div>
                             </div>
+
                             <div className={Style.Staff_progress}>
                                 <div id={Style.Staff_details}>
                                     <div id={Style.imgDiv}>
@@ -286,6 +344,7 @@ const Customer_Support = () => {
                                 </div>
                                 <div id={Style.progressDiv}></div>
                             </div>
+
                             <div className={Style.Staff_progress}>
                                 <div id={Style.Staff_details}>
                                     <div id={Style.imgDiv}>
@@ -307,6 +366,7 @@ const Customer_Support = () => {
                                 </div>
                                 <div id={Style.progressDiv}></div>
                             </div>
+
                         </div>
 
                     </div>
@@ -316,7 +376,19 @@ const Customer_Support = () => {
                     <div id={Style.Report_WrapperDiv}>
                         <div id={Style.CustomerCare_textDiv}>
                             <p>Common Reports</p>
-                            <div id={Style.monthDiv}>Month <img src={arrow_down} alt="" /></div>
+
+
+                            <div id={Style.monthDiv} onClick={toggle}>{selectedMonth} <img src={arrow_down} alt="" /></div>
+
+
+                            {
+                                ShowMonths && (
+                                    <div id={Style.month_pickerDiv}>
+                                        <Month_Picker onMonthSelect={handleMonthSelect} defaultMonth={getCurrentMonth()} />
+                                    </div>
+                                )
+                            }
+
                         </div>
                         <div className={Style.ReportsDiv}>
                             <p className={Style.ReportText}>Reports</p>

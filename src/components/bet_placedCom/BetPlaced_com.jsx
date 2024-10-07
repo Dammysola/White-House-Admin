@@ -32,6 +32,11 @@ const BetPlaced_com = (props) => {
     useEffect(() => {
 
         setToggleIndex(initialIndex)
+        // if(initialIndex == 0){
+        //     diceTransactionProvider
+        // }else if(initialIndex == 1){
+            
+        // }
     }, [])
 
 

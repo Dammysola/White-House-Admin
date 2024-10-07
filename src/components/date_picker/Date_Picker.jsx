@@ -32,11 +32,11 @@ const Date_Picker = ({ onDateChange }) => {
   ];
 
 
-  useEffect(() => {
-    if (onDateChange) {
-      onDateChange(date); // Trigger the date change in the parent component
-    }
-  }, [date]);
+  // useEffect(() => {
+  //   if (onDateChange) {
+  //     onDateChange(date); // Trigger the date change in the parent component
+  //   }
+  // }, [selectedDate]);
 
 
 

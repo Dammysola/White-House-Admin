@@ -18,6 +18,7 @@ import avatar from '../../../../assets/images/avatar.png'
 import Button from '../../../../components/button/Button'
 import { Link } from 'react-router-dom'
 import BetPlaced_com from '../../../../components/bet_placedCom/BetPlaced_com'
+import Date_Picker from '../../../../components/date_picker/Date_Picker'
 
 
 
@@ -31,11 +32,30 @@ const Transaction = () => {
 
 
 
-  
+
 
     const toggle = (index) => {
 
         setCardToggleIndex(index)
+    }
+
+
+    const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
+  
+  
+  
+    const handleDateChange = (newDate) => {
+  
+      setSelectedDate(newDate);  // Update selectedDate when newDate is received
+  
+      console.log("New selected date:", newDate);  // This should log the new date when clicked
+  
+      setIsCalendarOpen(false)
+    };
+  
+    const toggleCalendar = () => {
+      setIsCalendarOpen(true)
     }
 
 
@@ -378,7 +398,7 @@ const Transaction = () => {
                     }
                 </div>
 
-                
+
                 {
                     cardToggleIndex !== 0 ?
 
@@ -387,7 +407,17 @@ const Transaction = () => {
                             <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>
 
                             <div id={Style.Amount_Paid_input_FilterDiv}>
-                                <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
+
+                                <span>{selectedDate.toDateString()} <img onClick={toggleCalendar} src={arrow_down} alt="" /></span>
+
+                                {
+                                    isCalendarOpen && (
+                                        <div id={Style.calendar_popup}>
+
+                                            <Date_Picker onDateChange={handleDateChange} />
+                                        </div>
+                                    )
+                                }
 
                                 <div id={Style.searchDiv}>
                                     <img src={search} alt="" />
@@ -415,73 +445,73 @@ const Transaction = () => {
                         cardToggleIndex == 1 ?
 
                             // <div id={Style.Card_table_wrapperDiv}>
-                                <table>
-                                    <tr id={Style.headerTable_tr}>
-                                        <th>S/N</th>
-                                        <th>User</th>
-                                        <th>Ref Number</th>
-                                        <th>Time</th>
-                                        <th>Country</th>
-                                        <th>Amount Paid</th>
-                                        <th>Coin Received </th>
-                                        <th>Payment Type</th>
-                                        <th>Status</th>
-                                    </tr>
+                            <table>
+                                <tr id={Style.headerTable_tr}>
+                                    <th>S/N</th>
+                                    <th>User</th>
+                                    <th>Ref Number</th>
+                                    <th>Time</th>
+                                    <th>Country</th>
+                                    <th>Amount Paid</th>
+                                    <th>Coin Received </th>
+                                    <th>Payment Type</th>
+                                    <th>Status</th>
+                                </tr>
 
-                                    <tbody>
+                                <tbody>
 
-                                        {filteredData_two.length > 0 ? (
+                                    {filteredData_two.length > 0 ? (
 
 
-                                            filteredData_two.map((user, index) => {
-                                                let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
-                                                let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
+                                        filteredData_two.map((user, index) => {
+                                            let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
+                                            let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
 
-                                                // let lost = user.status == "Lost" ? true : false
-                                                return (
-                                                    <tr>
-                                                        <td>{index + 1}</td>
-                                                        <td>
+                                            // let lost = user.status == "Lost" ? true : false
+                                            return (
+                                                <tr>
+                                                    <td>{index + 1}</td>
+                                                    <td>
+                                                        <div>
+                                                            <p>{user.user.id}</p>
+                                                            <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>{user.RefNo}</td>
+                                                    <td>{user.time}</td>
+                                                    <td>{user.country}</td>
+                                                    <td>{user.amount}</td>
+                                                    <td>{user.coinRd}</td>
+                                                    <td>
+                                                        <div id={Style.BankDetails_Div}>
                                                             <div>
-                                                                <p>{user.user.id}</p>
-                                                                <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                                <p>Bank</p>
+                                                                <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
                                                             </div>
-                                                        </td>
-                                                        <td>{user.RefNo}</td>
-                                                        <td>{user.time}</td>
-                                                        <td>{user.country}</td>
-                                                        <td>{user.amount}</td>
-                                                        <td>{user.coinRd}</td>
-                                                        <td>
-                                                            <div id={Style.BankDetails_Div}>
-                                                                <div>
-                                                                    <p>Bank</p>
-                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
-                                                                </div>
-                                                                <div>
-                                                                    <p>Account Number</p>
-                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
-                                                                </div><div>
-                                                                    <p>Account Name</p>
-                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
-                                                                </div>
+                                                            <div>
+                                                                <p>Account Number</p>
+                                                                <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
+                                                            </div><div>
+                                                                <p>Account Name</p>
+                                                                <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
                                                             </div>
-                                                        </td>
-                                                        <td>
-                                                            <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
-                                                        </td>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                    </td>
 
-                                                    </tr>
-                                                )
-                                            })
-                                        ) : ""}
+                                                </tr>
+                                            )
+                                        })
+                                    ) : ""}
 
-                                    </tbody>
-                                </table>
+                                </tbody>
+                            </table>
 
-                           
+
                             // </div>
-                             : ""
+                            : ""
                     }
 
 
@@ -489,72 +519,72 @@ const Transaction = () => {
                         cardToggleIndex == 2 ?
 
                             // <div id={Style.Card_table_wrapperDiv}>
-                                <table>
-                                    <tr id={Style.headerTable_tr}>
-                                        <th>S/N</th>
-                                        <th>User</th>
-                                        <th>Ref Number</th>
-                                        <th>Time</th>
-                                        <th>Country</th>
-                                        <th>Coin Converted</th>
-                                        <th>Amount Withdrawn </th>
-                                        <th>Payment Type</th>
-                                        <th>Status</th>
-                                    </tr>
+                            <table>
+                                <tr id={Style.headerTable_tr}>
+                                    <th>S/N</th>
+                                    <th>User</th>
+                                    <th>Ref Number</th>
+                                    <th>Time</th>
+                                    <th>Country</th>
+                                    <th>Coin Converted</th>
+                                    <th>Amount Withdrawn </th>
+                                    <th>Payment Type</th>
+                                    <th>Status</th>
+                                </tr>
 
-                                    <tbody>
+                                <tbody>
 
 
                                            //Withdrawal
 
 
-                                        {
-                                            coin_arr.map((user, index) => {
-                                                let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
-                                                let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
+                                    {
+                                        coin_arr.map((user, index) => {
+                                            let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
+                                            let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
 
-                                                // let lost = user.status == "Lost" ? true : false
-                                                return (
-                                                    <tr>
-                                                        <td>{index + 1}</td>
-                                                        <td>
+                                            // let lost = user.status == "Lost" ? true : false
+                                            return (
+                                                <tr>
+                                                    <td>{index + 1}</td>
+                                                    <td>
+                                                        <div>
+                                                            <p>{user.user.id}</p>
+                                                            <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>{user.RefNo}</td>
+                                                    <td>{user.time}</td>
+                                                    <td>{user.country}</td>
+                                                    <td>{user.amount}</td>
+                                                    <td>{user.coinRd}</td>
+                                                    <td>
+                                                        <div id={Style.BankDetails_Div}>
                                                             <div>
-                                                                <p>{user.user.id}</p>
-                                                                <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                                <p>Bank</p>
+                                                                <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
                                                             </div>
-                                                        </td>
-                                                        <td>{user.RefNo}</td>
-                                                        <td>{user.time}</td>
-                                                        <td>{user.country}</td>
-                                                        <td>{user.amount}</td>
-                                                        <td>{user.coinRd}</td>
-                                                        <td>
-                                                            <div id={Style.BankDetails_Div}>
-                                                                <div>
-                                                                    <p>Bank</p>
-                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
-                                                                </div>
-                                                                <div>
-                                                                    <p>Account Number</p>
-                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
-                                                                </div><div>
-                                                                    <p>Account Name</p>
-                                                                    <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
-                                                                </div>
+                                                            <div>
+                                                                <p>Account Number</p>
+                                                                <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
+                                                            </div><div>
+                                                                <p>Account Name</p>
+                                                                <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
                                                             </div>
-                                                        </td>
-                                                        <td>
-                                                            <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
-                                                        </td>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                    </td>
 
-                                                    </tr>
-                                                )
-                                            })
+                                                </tr>
+                                            )
+                                        })
 
-                                        }
+                                    }
 
-                                    </tbody>
-                                </table>
+                                </tbody>
+                            </table>
                             // </div> 
                             : ""
                     }
@@ -565,55 +595,55 @@ const Transaction = () => {
 
                             // <div id={Style.Card_table_wrapperDiv}>
 
-                                <table>
-                                    <tr id={Style.headerTable_tr}>
-                                        <th>S/N</th>
-                                        <th>User</th>
-                                        <th>Ref Number</th>
-                                        <th>Date</th>
-                                        <th>Time</th>
-                                        <th>Game</th>
-                                        <th>Amount</th>
-                                        <th>Status</th>
-                                        <th>Balance</th>
-                                        <th>Action</th>
-                                    </tr>
+                            <table>
+                                <tr id={Style.headerTable_tr}>
+                                    <th>S/N</th>
+                                    <th>User</th>
+                                    <th>Ref Number</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Game</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Balance</th>
+                                    <th>Action</th>
+                                </tr>
 
-                                    <tbody>
-                                        {         //Unsettled
+                                <tbody>
+                                    {         //Unsettled
 
 
 
-                                            unsettled.map((user, index) => {
-                                                let bGcolor = user.status == "Used" ? "#00800033" : user.status == "Pending" ? "#eb575733" : ""
-                                                let color = user.status == "Used" ? "green" : user.status == "Pending" ? "#EB5757" : ""
+                                        unsettled.map((user, index) => {
+                                            let bGcolor = user.status == "Used" ? "#00800033" : user.status == "Pending" ? "#eb575733" : ""
+                                            let color = user.status == "Used" ? "green" : user.status == "Pending" ? "#EB5757" : ""
 
-                                                // let lost = user.status == "Lost" ? true : false
-                                                return (
-                                                    <tr>
-                                                        <td>{index + 1}</td>
-                                                        <td>
-                                                            <div>
-                                                                <p>{user.user.id}</p>
-                                                                <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
-                                                            </div>
-                                                        </td>
-                                                        <td>{user.RefNo}</td>
-                                                        <td>{user.date}</td>
-                                                        <td>{user.time}</td>
-                                                        <td>{user.game}</td>
-                                                        <td>{user.amount}</td>
-                                                        <td>
-                                                            <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
-                                                        </td>
-                                                        <td>{user.balance}</td>
-                                                        <td id={Style.btn}> <Link to={"/unsettledBet"}><Button text={user.action} /></Link></td>
-                                                    </tr>
-                                                )
-                                            })
-                                        }
-                                    </tbody>
-                                </table>
+                                            // let lost = user.status == "Lost" ? true : false
+                                            return (
+                                                <tr>
+                                                    <td>{index + 1}</td>
+                                                    <td>
+                                                        <div>
+                                                            <p>{user.user.id}</p>
+                                                            <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                        </div>
+                                                    </td>
+                                                    <td>{user.RefNo}</td>
+                                                    <td>{user.date}</td>
+                                                    <td>{user.time}</td>
+                                                    <td>{user.game}</td>
+                                                    <td>{user.amount}</td>
+                                                    <td>
+                                                        <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                    </td>
+                                                    <td>{user.balance}</td>
+                                                    <td id={Style.btn}> <Link to={"/unsettledBet"}><Button text={user.action} /></Link></td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </table>
                             // </div> 
                             : ""
                     }

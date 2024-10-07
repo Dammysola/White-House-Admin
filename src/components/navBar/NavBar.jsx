@@ -47,8 +47,9 @@ const NavBar = () => {
             <p className={Style.game}>Games <img src={arrowDown} alt="" /></p>
             <div id={Style.dropdown}>
               <ul>
-                <NavLink to={'/dice'} onClick={() => handleNavClick('game')}><li><input type="radio" name="game" value="dice" id={Style.radio_input} /> Dice</li></NavLink>
-                <NavLink to={'/sports'} onClick={() => handleNavClick('game')}><li><input type="radio" name="game" id="" value="sport" />Sports</li></NavLink>
+                <NavLink to={'/dice'} onClick={() => handleNavClick('game')}><li><input type="radio" name="dice" value="dice" 
+                            checked={location.pathname === "/dice"} id={Style.radio_input} /> Dice</li></NavLink>
+                <NavLink to={'/sports'} onClick={() => handleNavClick('game')}><li><input type="radio" name="game" id="" value="sport" checked={location.pathname === "/sports"} />Sports</li></NavLink>
               </ul>
 
             </div>

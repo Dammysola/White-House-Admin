@@ -6,6 +6,7 @@ import InputField from '../../../../../components/input/InputField'
 import filter from '../../../../../assets/svg/Complete_filter_img.svg'
 import download from '../../../../../assets/svg/download_img.svg'
 import Header from '../../../../../components/header/Header'
+import Date_Picker from '../../../../../components/date_picker/Date_Picker'
 
 
 
@@ -18,6 +19,68 @@ const All_Transaction = () => {
         setToggleIndex(index)
     }
 
+
+    const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
+    const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
+
+
+
+    const handleDateChange = (newDate) => {
+
+        setSelectedDate(newDate);  // Update selectedDate when newDate is received
+        
+        console.log("New selected date:", newDate);  // This should log the new date when clicked
+        
+        setIsCalendarOpen(false)
+    };
+
+    const toggleCalendar = () => {
+        setIsCalendarOpen(true)
+    }
+
+
+    
+
+
+    const arr = [
+
+        {
+            refNumber: "UA 123476689",
+            timeStamp: {
+                date: "24 Aug, 2024",
+                time: "13:53"
+            },
+            paymentType: "WHAgent",
+            amountPaid: "WHC 500",
+            receipt: "John Doe",
+            account: "WHAgent Account",
+            status: "Successful"
+        },
+        {
+            refNumber: "UA 123476689",
+            timeStamp: {
+                date: "24 Aug, 2024",
+                time: "13:53"
+            },
+            paymentType: "WHAgent",
+            amountPaid: "WHC 500",
+            receipt: "John Doe",
+            account: "WHAgent Account",
+            status: "Successful"
+        },
+        {
+            refNumber: "UA 123476689",
+            timeStamp: {
+                date: "24 Aug, 2024",
+                time: "13:53"
+            },
+            paymentType: "WHAgent",
+            amountPaid: "WHC 500",
+            receipt: "John Doe",
+            account: "WHAgent Account",
+            status: "Successful"
+        },
+    ]
 
     return (
         <div id={Style.All_Transaction_mainDiv} >
@@ -33,8 +96,18 @@ const All_Transaction = () => {
                     </div>
 
                     <div id={Style.Amount_Paid_input_FilterDiv}>
-                        <p>3rd October, 2024 <img src={arrow_down} alt="" /></p>
+                        
+                    <span>{selectedDate.toDateString()} <img src={arrow_down} onClick={toggleCalendar} alt="" /></span>
+                    {
+                            isCalendarOpen && (
 
+                                <div id={Style.calendar_popup}>
+                                    <Date_Picker onDateChange={handleDateChange} />
+                                </div>
+                            )
+                        }
+
+                      
                         <div id={Style.searchDiv}>
                             <img src={search} alt="" />
                             <InputField />
@@ -48,62 +121,44 @@ const All_Transaction = () => {
 
                 <div id={Style.All_Transaction_table_WrapperDiv}>
                     <table>
-                        <tr id={Style.headerTable}>
-                            <th>S/N</th>
-                            <th>Ref Number</th>
-                            <th>Time Stamp</th>
-                            <th>Payment Type</th>
-                            <th>Amount Paid</th>
-                            <th>Receipt</th>
-                            <th>Account</th>
-                            <th>Status</th>
-                        </tr>
+                        <thead>
+                            <tr id={Style.headerTable}>
+                                <th>S/N</th>
+                                <th>Ref Number</th>
+                                <th>Time Stamp</th>
+                                <th>Payment Type</th>
+                                <th>Amount Paid</th>
+                                <th>Recipient</th>
+                                <th>Account</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
 
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>UA 123476689</td>
-                                <td><div>
-                                    <p>24 Aug, 2024</p>
-                                    <p>13:53</p>
-                                    </div>
-                                </td>
-                                <td>WHAgent</td>
-                                <td>WHC 500</td>
-                                <td>John Doe</td>
-                                <td>WHAgent Account</td>
-                                <td><div id={Style.status_td}>Successful</div></td>
-                            </tr>
+                            {
+                                arr.map((obj, index) => {
 
-                            <tr>
-                                <td>2</td>
-                                <td>UA 123476689</td>
-                                <td><div>
-                                    <p>24 Aug, 2024</p>
-                                    <p>13:53</p>
-                                    </div>
-                                </td>
-                                <td>WHAgent</td>
-                                <td>WHC 500</td>
-                                <td>John Doe</td>
-                                <td>WHAgent Account</td>
-                                <td><div id={Style.status_td}>Successful</div></td>
-                            </tr>
+                                    return (
+                                        <tr>
+                                            <td>{index + 1}</td>
+                                            <td>{obj.refNumber}</td>
+                                            <td><div>
+                                                <p>{obj.timeStamp.date}</p>
+                                                <p>{obj.timeStamp.time}</p>
+                                            </div>
+                                            </td>
+                                            <td>{obj.paymentType}</td>
+                                            <td>{obj.amountPaid}</td>
+                                            <td>{obj.receipt}</td>
+                                            <td>{obj.account}</td>
+                                            <td><div id={Style.status_td}>{obj.status}</div></td>
+                                        </tr>
+                                    )
+                                })
+                            }
 
-                            <tr>
-                                <td>3</td>
-                                <td>UA 123476689</td>
-                                <td><div>
-                                    <p>24 Aug, 2024</p>
-                                    <p>13:53</p>
-                                    </div>
-                                </td>
-                                <td>WHAgent</td>
-                                <td>WHC 500</td>
-                                <td>John Doe</td>
-                                <td>WHAgent Account</td>
-                                <td><div id={Style.status_td}>Successful</div></td>
-                            </tr>
+
+  
                         </tbody>
                     </table>
                 </div>
