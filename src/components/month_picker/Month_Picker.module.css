@@ -1,7 +1,3 @@
-#Month_Picker_mainDiv {
-
-}
-
 #Month_Picker_wrapperDiv {
     width: 10rem;
     height: 10rem;
@@ -22,8 +18,6 @@
     display: flex;
     column-gap: 0.5rem;
     text-align: left;
-
-    /* height: 0; */
 }
 #Month_PickerDiv {
     width: 6rem;

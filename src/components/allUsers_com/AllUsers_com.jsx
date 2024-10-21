@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import Style from "./AllUsers_com.module.css"
 import InputField from '../input/InputField'
-import arrow_down from "../../assets/svg/arrow_down-dark.svg"
 import search from "../../assets/svg/Search.svg"
-import Staff_Card from '../../pages/WhiteHouse/admin/staff/all_staff/component/Staff_Card'
+import Staff_Card from '../userStaff_Card/Staff_Card'
 
 
 

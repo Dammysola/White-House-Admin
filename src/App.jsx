@@ -1,8 +1,9 @@
 import { RouterProvider } from 'react-router-dom'
 import router from './router'
-import Testing from './components/Testing'
-import Date_Picker from './components/date_picker/Date_Picker'
-import Month_Picker from './components/month_picker/Month_Picker'
+import Suspend_Reason from './popUps/suspendReason/Suspend_Reason'
+import Account_Suspended from './popUps/accountSuspended/Account_Suspended'
+import Error from './popUps/error/Error'
+
 
 
 
@@ -11,15 +12,8 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
-
-        {/* <Month_Picker/> */}
-
-    {/* <Date_Picker/> */}
     
-      {/* <Testing/> */}
-{/*       
-      <Performance_Popup/> */}
+      <RouterProvider router={router} />
 
     </>
   )

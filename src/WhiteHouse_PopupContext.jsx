@@ -21,6 +21,8 @@ const WhiteHouse_PopupContext = ({children}) => {
     const [approveTrashPopup, setApproveTrashPopup] = useState(false)
     const [approvePendingPopup, setApprovePendingPopup] = useState(false)
     const [signUpPopup, setSignUpPopup] = useState(false)
+  const [loadingPopup, setLoadingPopup] = useState(false);
+
 
 
 
@@ -67,6 +69,10 @@ const WhiteHouse_PopupContext = ({children}) => {
         setSignUpPopup(data)
     }
 
+    const updateLoadingPopup = (data) => {
+        setLoadingPopup(data)
+      }
+
 
   return (
     <myContext.Provider value={{
@@ -93,7 +99,9 @@ const WhiteHouse_PopupContext = ({children}) => {
         approveTrashPopup,
         updateApproveTrashPopup,
         signUpPopup,
-        updateSignUpPopup
+        updateSignUpPopup,
+        loadingPopup,
+        updateLoadingPopup
     }}>
         {children}
     </myContext.Provider>

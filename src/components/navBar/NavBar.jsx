@@ -35,7 +35,7 @@ const NavBar = () => {
           {/* <img src={alphaBet_logo} alt="" /> */}
           <p id={Style.logo}>Logo</p>
 
-          <NavLink to={"/whiteHouseDashboard"} className={`${Style.NavBar_text} ${activeNav === 'dashboard' ? Style.Nav_styled_Link : ''}`} onClick={() => handleNavClick('dashboard')}>
+          <NavLink to={"/dashboard"} className={`${Style.NavBar_text} ${activeNav === 'dashboard' ? Style.Nav_styled_Link : ''}`} onClick={() => handleNavClick('dashboard')}>
             <p>Dashboard</p>
           </NavLink>
 
