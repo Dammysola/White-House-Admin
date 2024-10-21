@@ -135,11 +135,11 @@ const Admin_SignIn = () => {
 
           </div>
 
-          {/* <Link to={"/dashboard"}> */}
+          <Link to={"/dashboard"}>
             <div id={Style.btnDiv}>
               <Button type={"submit"} text={"Sign In"} />
             </div>
-          {/* </Link> */}
+          </Link>
 
         </form>
       </div>
