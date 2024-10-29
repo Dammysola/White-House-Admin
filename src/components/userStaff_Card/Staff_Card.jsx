@@ -5,18 +5,29 @@ import { Link } from 'react-router-dom'
 
 
 const Staff_Card = (props) => {
-    const { img, status, position, name, to, statusColor } = props
-   
+    
+    const { img, status, position, name, to, statusColor, verified } = props
+
     return (
-        
+
         <div id={Style.Staff_Card_mainDiv}>
 
             <div id={Style.Staff_Card_WrapperDiv}>
-                <img src={img} alt="" />
+
+                <div>
+                    <div id={Style.verified_img_div}>
+
+                        {verified && <img src={verified} alt="" />}
+
+                    </div>
+
+                    <img src={img} alt="" />
+                </div>
+
                 <div id={Style.Staff_Card_textDiv}>
                     <p className={Style.Staff_Card_nameText}>{name}</p>
                     <p className={Style.Staff_Card_careRep}>{position}</p>
-                    <p className={Style.Staff_Card_onlineDiv}> <div className={Style.Staff_Card_online_signalDiv} style={{backgroundColor: statusColor ? "#59C150" : "#999999" }}></div>{status}</p>
+                    <p className={Style.Staff_Card_onlineDiv}> <div className={Style.Staff_Card_online_signalDiv} style={{ backgroundColor: statusColor ? "#59C150" : "#999999" }}></div>{status}</p>
                     <Link to={to}>
                         <Button
                             text={"View More Details"} />

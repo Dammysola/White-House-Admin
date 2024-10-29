@@ -1,7 +1,4 @@
-#Staff_Card_mainDiv{
-    
-}
-#Staff_Card_WrapperDiv{
+#Staff_Card_WrapperDiv {
     background-color: #FFFFFF;
     border-radius: 1rem;
     padding: 2rem;
@@ -13,12 +10,14 @@
     font-size: 1rem;
     color: #000000;
 }
-#Staff_Card_WrapperDiv img{
+
+#Staff_Card_WrapperDiv img {
     width: 7.5rem;
     height: 7.5rem;
     border-radius: 8px;
 }
-#Staff_Card_WrapperDiv button{
+
+#Staff_Card_WrapperDiv button {
     width: 6.93rem;
     height: 1.87rem;
     font-size: 0.75rem;
@@ -26,32 +25,42 @@
     padding: 0.45rem;
     box-sizing: border-box;
 }
-.Staff_Card_careRep{
+
+.Staff_Card_careRep {
     min-height: 0.5rem;
     color: #000000;
 }
-.Staff_Card_nameText{
+
+.Staff_Card_nameText {
     font-size: 1.1rem;
-    height: 0.5rem; 
+    height: 0.5rem;
 }
-.Staff_Card_online_signalDiv{
+
+.Staff_Card_online_signalDiv {
     width: 1rem;
     height: 1rem;
     background-color: #59C150;
     border-radius: 100%;
 }
-.Staff_Card_onlineDiv{
+
+.Staff_Card_onlineDiv {
     display: flex;
     column-gap: 0.5rem;
     align-items: center;
 }
-#verified_img{
-    position: relative;
-}
-#imgDiv{
-    text-align: end;
+
+#verified_img_div {
+    position: absolute;
+    margin-top: -1rem;
+    margin-left: 5rem;
     box-sizing: border-box;
 }
+
+#verified_img_div img {
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
 
 
 

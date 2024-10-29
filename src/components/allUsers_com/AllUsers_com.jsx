@@ -3,13 +3,22 @@ import Style from "./AllUsers_com.module.css"
 import InputField from '../input/InputField'
 import search from "../../assets/svg/Search.svg"
 import Staff_Card from '../userStaff_Card/Staff_Card'
+import blue from "../../assets/svg/blue.svg"
+import gold from "../../assets/svg/gold.svg"
+import black from "../../assets/svg/black.svg"
+import empty_user from "../../assets/svg/empty_user.svg"
+
+
+
 
 
 
 const AllUsers_com = (props) => {
 
     const { arr } = props
-    let array = [...arr]
+    let array = { ...arr }
+
+    const { allUsers, subscribedUsers, unsubscribedUsers } = array
 
 
     const [toggleIndex, setToggleIndex] = useState(0)
@@ -49,21 +58,96 @@ const AllUsers_com = (props) => {
             </div>
 
             <div id={Style.All_Users_Card}>
+
                 {
-                    arr.map((object) => {
+                    toggleIndex === 0 &&
+
+                    allUsers.map((object) => {
+
                         let statusColor = object.status === "Online" ? true : false
+
+                        let verify = object.subscription_type == "blue" ? blue
+                            : object.subscription_type == "gold" ? gold
+                                : object.subscription_type == "black" ? black
+                                    : ""
 
                         return (
                             <Staff_Card
-                                img={object.img}
+                                img={object.profile_picture}
                                 status={object.status}
-                                name={object.name}
-                                position={object.position}
+                                name={object.username}
+                                position={object.country}
+                                verified={verify}
+                                to={`/userDetails/${object.phone}`}
+                                statusColor={statusColor} />
+                        )
+                    })
+
+                }
+
+                {
+                    toggleIndex === 1 &&
+
+                    subscribedUsers.map((object) => {
+
+                        let statusColor = object.status === "Online" ? true : false
+
+                        let verify = object.subscription_type == "blue" ? blue
+                            : object.subscription_type == "gold" ? gold
+                                : object.subscription_type == "black" ? black
+                                    : ""
+
+                        return (
+                            <Staff_Card
+                                img={object.profile_picture}
+                                status={object.status}
+                                name={object.username}
+                                position={object.country}
+                                verified={verify}
                                 to={object.to}
                                 statusColor={statusColor} />
                         )
                     })
+
+
                 }
+
+
+                {
+                    toggleIndex == 2 &&
+
+                    unsubscribedUsers.map((object) => {
+
+                        let statusColor = object.status === "Online" ? true : false
+
+                        let verify = object.subscription_type == "blue" ? blue
+                            : object.subscription_type == "gold" ? gold
+                                : object.subscription_type == "black" ? black
+                                    : ""
+
+                        return (
+                            <Staff_Card
+                                img={object.profile_picture}
+                                status={object.status}
+                                name={object.username}
+                                position={object.country}
+                                verified={verify}
+                                to={object.to}
+                                statusColor={statusColor} />
+                        )
+                    })
+
+
+                }
+
+                {/* {
+                    allUsers === 0 || unsubscribedUsers === 0 &&
+                    <div className={Style.empty_userDiv}>
+                        <img src={empty_user} alt="" />
+                        <p>No Subscribed Users</p>
+                    </div>
+                } */}
+
             </div>
         </div>
     )

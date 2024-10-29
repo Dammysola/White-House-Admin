@@ -3,6 +3,8 @@ import Style from './MainLayout.module.css'
 import { Outlet, useLocation } from 'react-router-dom'
 import NavBar from '../components/navBar/NavBar'
 import { PopupContextHook } from '../WhiteHouse_PopupContext'
+import Error from '../popUps/error/Error'
+import Loading from '../popUps/loading/Loading'
 // import Revenue_Details from '../pages/WhiteHouse/admin/foot_soldiers/revenue_details/Revenue_Details'
 // import ForgotPassword from '../popUps/whitehouse/forgotPassword/ForgotPassword'
 // import Online_PlayersCount from '../pages/WhiteHouse/admin/placeBet/totalOnline_players/online_playersCount/Online_PlayersCount'
@@ -24,8 +26,8 @@ const MainLayout = () => {
   const location = useLocation();
   const showNavbar = location.pathname !== '/';
 
-  const { revenuePopup, passwordPopup, onlineCountPopup, profilePopup, reAccessPopup, confirmPendingPopup, approvePendingPopup, approveTrashPopup,
-    confirmTrashPopup, signUpPopup, loadingPopup } = PopupContextHook()
+  const {errorPopup, loadingPopup, revenuePopup, passwordPopup, onlineCountPopup, profilePopup, reAccessPopup, confirmPendingPopup, approvePendingPopup, approveTrashPopup,
+    confirmTrashPopup, signUpPopup } = PopupContextHook()
 
 
 
@@ -35,6 +37,10 @@ const MainLayout = () => {
     <div id={Style.wrapper}>
 
       {showNavbar && <NavBar />}
+
+      {loadingPopup && <Loading/> }
+
+      {errorPopup && <Error/>}
 
       {/* {revenuePopup && <Revenue_Details />}
 

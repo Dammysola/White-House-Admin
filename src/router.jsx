@@ -114,7 +114,7 @@ const router = createBrowserRouter([
                 element: <All_Users />
             },
             {
-                path: "/userDetails",
+                path: "/userDetails/:phoneNumber",
                 element: <Personal_Info />
             },
             {

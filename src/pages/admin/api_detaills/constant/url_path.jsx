@@ -1,5 +1,9 @@
-export const base_url = "https://white-house-api.onrender.com/";
+export const base_url = "https://white-house-api.onrender.com/admin/";
 export const login_url = `${base_url}api/login`;
 export const getUsers = `${base_url}api/get-all-users`;
-export const players = `${base_url}api/game/get-players/2348114528984`;
- 
+export const getUserDetails = `${base_url}api/get-user-details`;
+export const getSuspendedUsers = `${base_url}api/get-suspended-user`
+export const getFreezedUsers = `${base_url}api/get-freezed-user`
+export const postFreezedAccounts = `${base_url}api/freeze-or-unfreeze-user`
+export const postSuspendAccounts = `${base_url}api/suspend-or-activate-user`
+export const getRegCountries = `${base_url}api/registered-countries`

@@ -30,6 +30,8 @@ const Admin_SignIn = () => {
     email: false,
     password: false,
   })
+
+
   const Details = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -49,7 +51,7 @@ const Admin_SignIn = () => {
     let body = signIn;
 
     //This initiates the provider that handles the login API.
-    login_provider(body, navigate, updateLoadingPopup);
+    login_provider(body, navigate, updateLoadingPopup, updateErrorPopup, updateErrorText);
 
   }
   const handleSubmit = (e) => {
@@ -106,7 +108,7 @@ const Admin_SignIn = () => {
           <p id={Style.login_detailsText}>Sign in by filling your administrator login details below</p>
         </div>
 
-        <form action="" onSubmit={handleSubmit}>
+        <form action=""  onSubmit={handleSubmit}>
 
           <div id={Style.inputDiv}>
 
@@ -116,7 +118,8 @@ const Admin_SignIn = () => {
               name="email"
               value={signIn.email}
               error={validation.email}
-              onChange={Details} />
+              onChange={Details}
+               />
 
             <Input
               placeholder={"Password"}
@@ -135,11 +138,11 @@ const Admin_SignIn = () => {
 
           </div>
 
-          <Link to={"/dashboard"}>
+          {/* <Link to={"/dashboard"}> */}
             <div id={Style.btnDiv}>
               <Button type={"submit"} text={"Sign In"} />
             </div>
-          </Link>
+          {/* </Link> */}
 
         </form>
       </div>

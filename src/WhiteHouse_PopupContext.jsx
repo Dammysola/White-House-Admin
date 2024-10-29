@@ -8,7 +8,13 @@ export const PopupContextHook = ()=> useContext(myContext)
 
 
 const WhiteHouse_PopupContext = ({children}) => {
+    // const [phoneState, setPhoneState] = useState({
+    //     phone: ""
+    // })
 
+    // const updatePhoneState = (data)=>{
+    //     setPhoneState(data)
+    // }
     const [filterPopup, setFilterPopup] = useState(false)
     const [revenuePopup, setRevenuePopup] = useState(false)
     const [passwordPopup, setPasswordPopup] = useState(false)
@@ -22,7 +28,8 @@ const WhiteHouse_PopupContext = ({children}) => {
     const [approvePendingPopup, setApprovePendingPopup] = useState(false)
     const [signUpPopup, setSignUpPopup] = useState(false)
   const [loadingPopup, setLoadingPopup] = useState(false);
-
+  const [errorPopup, setErrorPopup] = useState(false);
+  const [errorText, setErrorText] = useState("");
 
 
 
@@ -63,7 +70,7 @@ const WhiteHouse_PopupContext = ({children}) => {
         setConfirmTrashPopup(data)
     }
     const updateApproveTrashPopup = (data)=>{
-        setApprovePendingPopup(data)
+        setApproveTrashPopup(data)
     }
     const updateSignUpPopup = (data)=>{
         setSignUpPopup(data)
@@ -72,7 +79,12 @@ const WhiteHouse_PopupContext = ({children}) => {
     const updateLoadingPopup = (data) => {
         setLoadingPopup(data)
       }
-
+      const updateErrorPopup = (data) => {
+        setErrorPopup(data)
+      }
+      const updateErrorText = (data) => {
+        setErrorText(data)
+    }
 
   return (
     <myContext.Provider value={{
@@ -101,7 +113,13 @@ const WhiteHouse_PopupContext = ({children}) => {
         signUpPopup,
         updateSignUpPopup,
         loadingPopup,
-        updateLoadingPopup
+        updateLoadingPopup,
+        errorPopup,
+        updateErrorPopup,
+        errorText,
+        updateErrorText
+        // phoneState,
+        // updatePhoneState
     }}>
         {children}
     </myContext.Provider>

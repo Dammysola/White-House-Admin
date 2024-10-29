@@ -81,3 +81,16 @@
     column-gap: 1.5rem;
     position: absolute;
 }
+
+#verified_img_div{
+    position: absolute; 
+    margin-top: -5.7rem;
+     margin-left: 5.5rem;
+      box-sizing: border-box;
+   }
+   #verified_img_div img{
+       width: 3rem;
+       height: 3rem;
+       /* height: 4rem; */
+       /* border: none; */
+   }

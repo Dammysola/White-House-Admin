@@ -1,5 +1,5 @@
 import React from 'react'
-import Style from '../Suspend_Users/Suspension.module.css'
+import Style from './Suspension.module.css'
 
 
 const Suspended = () => {

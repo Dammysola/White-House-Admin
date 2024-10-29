@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Style from './Personal_Info.module.css'
 import { BarChart, YAxis, XAxis, Bar, Tooltip, ResponsiveContainer } from 'recharts'
 import Header from '../../../../components/header/Header'
@@ -9,7 +9,7 @@ import rise from '../../../../assets/svg/rise.svg'
 import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
 import Button from '../../../../components/button/Button'
 import no_complaint from '../../../../assets/svg/no_complaint.svg'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Stats_Card from '../../../../components/stats_card/Stats_Card'
 import search from '../../../../assets/svg/Search.svg'
 import InputField from '../../../../components/input/InputField'
@@ -17,10 +17,31 @@ import download from '../../../../assets/svg/download_img.svg'
 import coin from '../../../../assets/svg/coin.svg'
 import game_pad from '../../../../assets/svg/game_pad.svg'
 import Date_Picker from '../../../../components/date_picker/Date_Picker'
+import { getUserDetailsProvider } from '../../api_detaills/provider/auth_provider'
+import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
+import App_Pagination from '../../../../components/app_Pagination/App_Pagination'
+
+
 
 
 const Personal_Info = () => {
 
+    const { phoneNumber } = useParams()
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage] = useState(10)
+
+    const { updateErrorText, updateErrorPopup, updatePhoneState } = PopupContextHook()
+
+
+    const [userDetails, setUserDetails] = useState({
+
+        personalInformation: [],
+        // gameInformation: [],
+        coinPurchaseHistory: [],
+        withdrawalHistory: [],
+        subscriptionHistory: [],
+    })
 
     const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
@@ -41,8 +62,57 @@ const Personal_Info = () => {
     }
 
 
+    useEffect(() => {
+        const phone = phoneNumber
+
+        getUserDetailsProvider({
+            updateUserDetails: (data) => {
+                setUserDetails({
+                    personalInformation: data.personalInformation,
+                    coinPurchaseHistory: data.coinPurchaseHistory,
+                    withdrawalHistory: data.withdrawalHistory,
+                    subscriptionHistory: data.subscriptionHistory,
+                })
+            },
+            phone,
+            updateErrorPopup,
+            updateErrorText
+        })
+    }, [])
+
+    // console.log(userDetails);
+
+    const { personalInformation, subscriptionHistory } = userDetails
+
+
+    // const { coin_balance, status, subscription_type, bankDetails, email, phone, country } = personalInformation
 
     const arr = [""]
+
+    // const coinPurchaseHistory_arr = coinPurchaseHistory
+    // const withdrawalHistory_arr = withdrawalHistory
+    // const subscriptionHistory_arr = subscriptionHistory
+
+    // console.log(coinPurchaseHistory);
+    // console.log(withdrawalHistory);
+    // console.log(subscriptionHistory);
+    // console.log(personalInformation);
+
+
+
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const coinPurchaseHistory = userDetails.coinPurchaseHistory.slice(indexOfFirstPost, indexOfLastPost);
+    const withdrawalHistory = userDetails.withdrawalHistory.slice(indexOfFirstPost, indexOfLastPost);
+
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
+    // updatePhoneState({
+    //     phone: personalInformation.phone
+    // })
+
+
 
     const line_data = [
         {
@@ -202,6 +272,7 @@ const Personal_Info = () => {
 
 
     return (
+
         <div id={Style.Personal_Info_mainDiv}>
             <Header
                 headerText={"Personal Information"}
@@ -218,7 +289,7 @@ const Personal_Info = () => {
                                 <img src={coin} alt="" />
                             </div>
                             <div>
-                                <p>3K</p>
+                                <p>{personalInformation.balance}</p>
                                 <p>Coin Balance</p>
                             </div>
                         </div>
@@ -256,45 +327,64 @@ const Personal_Info = () => {
                     <div id={Style.Personal_Info_tableDiv}>
 
                         <table>
-                            <tr id={Style.headerTable}>
-                                <th>S/N</th>
-                                <th>User ID</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Country</th>
-                                <th>Bank Detail</th>
-                                <th>Status</th>
-                                <th>Subscription</th>
 
-                            </tr>
-                            <tr id={Style.Personal_Info_tr}>
-                                <td>1</td>
-                                <td>SA 123476689</td>
-                                <td>johndoe@gmail.com</td>
-                                <td>+2344816273888</td>
-                                <td>Nigeria</td>
-                                <td>
-                                    <div id={Style.BankDetails_Div}>
-                                        <div>
-                                            <p>Bank</p>
-                                            <p className={Style.BankDetails_BoldText}>Access Bank</p>
-                                        </div>
-                                        <div>
-                                            <p>Account Number</p>
-                                            <p className={Style.BankDetails_BoldText}>0123456789</p>
-                                        </div><div>
-                                            <p>Account Name</p>
-                                            <p className={Style.BankDetails_BoldText}>John Doe</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div id={Style.statusText}>Online</div>
-                                </td>
-                                <td>
-                                    <div id={Style.Subscription}>Gold</div>
-                                </td>
-                            </tr>
+                            <thead>
+                                <tr id={Style.headerTable}>
+                                    <th>S/N</th>
+                                    <th>User ID</th>
+                                    <th>Username</th>
+                                    <th>Phone</th>
+                                    <th>Country</th>
+                                    <th>Bank Detail</th>
+                                    <th>Status</th>
+                                    <th>Subscription</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {
+                                    // personalInformatio.map((obj, index) => { 
+
+                                    //     return ( 
+                                    //     {
+
+                                    //     }
+
+
+                                    <tr id={Style.Personal_Info_tr}>
+                                        <td>1</td>
+                                        <td>SA 123476689</td>
+                                        <td>{personalInformation.username}</td>
+                                        <td>+{personalInformation.phone}</td>
+                                        <td>{personalInformation.country}</td>
+                                        <td>
+                                            <div id={Style.BankDetails_Div}>
+                                                <div>
+                                                    <p>Bank</p>
+                                                    <p className={Style.BankDetails_BoldText}>{personalInformation.bankDetails?.bank_name}</p>
+                                                </div>
+                                                <div>
+                                                    <p>Account Number</p>
+                                                    <p className={Style.BankDetails_BoldText}>{personalInformation.bankDetails?.account_number}</p>
+                                                </div><div>
+                                                    <p>Account Name</p>
+                                                    <p className={Style.BankDetails_BoldText}>{personalInformation.bankDetails?.account_name}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div id={Style.statusText}>{personalInformation.status}</div>
+                                        </td>
+                                        <td>
+                                            <div id={Style.Subscription} >{personalInformation.subscription_type}</div>
+                                        </td>
+                                    </tr>
+                                    //     )
+                                    // })
+                                }
+                            </tbody>
+
                         </table>
                     </div>
                 </div>
@@ -303,10 +393,11 @@ const Personal_Info = () => {
                 <div id={Style.Personal_Info_Card_wrapper}>
 
                     {
-                        users_stats_card.map((obj) => {
+                        users_stats_card.map((obj, index) => {
 
                             return (
                                 <Stats_Card
+                                    key={index}
                                     figure={obj.figure}
                                     img={obj.img}
                                     text={obj.text}
@@ -436,39 +527,50 @@ const Personal_Info = () => {
                                     <th>Payment Type</th>
                                     <th>Status</th>
                                 </tr>
+
                             </thead>
 
                             <tbody>
 
                                 {
-                                    transaction.map((obj, index) => {
+                                    coinPurchaseHistory.map((obj, index) => {
+
+                                        const serialNumber = indexOfFirstPost + index + 1; // Calculate the correct serial number
+
+                                        let statusColor = obj.status === "success" ? "#31C364" : obj.status === "failed" ? "red" : obj.status === "pending" ? "#FC9E2F" : obj.status === "reversed" ? "#939393" : ""
+                                        let statusBG = obj.status === "success" ? "#31c36433" : obj.status === "failed" ? "#ff000033" : obj.status === "pending" ? "#fc9e2f33" : obj.status === "reversed" ? "#93939333" : ""
 
                                         return (
 
-                                            <tr>
-                                                <td>{index + 1}</td>
+                                            <tr key={index}>
+                                                <td>{serialNumber}</td>
                                                 <td>{obj.refNumber}</td>
                                                 <td>{obj.time}</td>
                                                 <td>{obj.country}</td>
                                                 <td>{obj.amountPaid}</td>
                                                 <td>{obj.coinReceived}</td>
                                                 <td>
-                                                    <div id={Style.BankDetails_Div}>
-                                                        <div>
-                                                            <p>Bank</p>
-                                                            <p className={Style.BankDetails_BoldText}>{obj.paymentType.bank}</p>
+                                                    {
+                                                        obj.bank &&
+
+                                                        <div id={Style.BankDetails_Div}>
+                                                            <div>
+                                                                <p>Bank</p>
+                                                                <p className={Style.BankDetails_BoldText}>{obj.paymentType.bank}</p>
+                                                            </div>
+                                                            <div>
+                                                                <p>Account Number</p>
+                                                                <p className={Style.BankDetails_BoldText}>{obj.paymentType.accNo}</p>
+                                                            </div><div>
+                                                                <p>Account Name</p>
+                                                                <p className={Style.BankDetails_BoldText}>{obj.paymentType.accName}</p>
+                                                            </div>
                                                         </div>
-                                                        <div>
-                                                            <p>Account Number</p>
-                                                            <p className={Style.BankDetails_BoldText}>{obj.paymentType.accNo}</p>
-                                                        </div><div>
-                                                            <p>Account Name</p>
-                                                            <p className={Style.BankDetails_BoldText}>{obj.paymentType.accName}</p>
-                                                        </div>
-                                                    </div>
+                                                    }
+                                                    <p className={Style.paymentText}>{obj.paymentMethod}</p>
                                                 </td>
                                                 <td>
-                                                    <div id={Style.statusText}>{obj.status}</div>
+                                                    <div id={Style.statusText} style={{ backgroundColor: statusBG, color: statusColor }}>{obj.status}</div>
                                                 </td>
 
                                             </tr>
@@ -477,10 +579,26 @@ const Personal_Info = () => {
                                 }
 
 
-                                
+
                             </tbody>
                         </table>
+                        {
+
+                            coinPurchaseHistory.length == 0 ?
+
+                                <div className={Style.no_queryDiv}>
+
+                                    <p>No Recent Coin Purchase</p>
+                                </div> : ""
+                        }
                     </div>
+
+                    <App_Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={userDetails.coinPurchaseHistory.length}
+                        paginate={paginate}
+                        currentPage={currentPage}
+                    />
 
                     <p className={Style.Personal_Info_headerText}>Withdrawal History</p>
 
@@ -505,48 +623,59 @@ const Personal_Info = () => {
                     </div>
 
                     <div id={Style.Personal_Info_tableDiv}>
+
                         <table>
-                            <tr id={Style.headerTable}>
-                                <th>S/N</th>
-                                <th>Ref Number</th>
-                                <th>Time</th>
-                                <th>Country</th>
-                                <th>Coin Converted</th>
-                                <th>Amount Received</th>
-                                <th>Bank Details</th>
-                                <th>Status</th>
-                            </tr>
+
+                            <thead>
+                                <tr id={Style.headerTable}>
+                                    <th>S/N</th>
+                                    <th>Ref Number</th>
+                                    <th>Time</th>
+                                    <th>Country</th>
+                                    <th>Coin Converted</th>
+                                    <th>Amount Received</th>
+                                    <th>Bank Details</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
 
                             <tbody>
-                            {
-                                    transaction.map((obj, index) => {
+
+                                {
+                                    withdrawalHistory.map((obj, index) => {
+
+                                        const serialNumber = indexOfFirstPost + index + 1; // Calculate the correct serial number
+
+                                        let statusColor = obj.status === "success" ? "#31C364" : obj.status === "failed" ? "red" : obj.status === "pending" ? "#FC9E2F" : obj.status === "reversed" ? "#939393" : ""
+                                        let statusBG = obj.status === "success" ? "#31c36433" : obj.status === "failed" ? "#ff000033" : obj.status === "pending" ? "#fc9e2f33" : obj.status === "reversed" ? "#93939333" : ""
+
 
                                         return (
 
-                                            <tr>
-                                                <td>{index + 1}</td>
+                                            <tr key={index}>
+                                                <td>{serialNumber}</td>
                                                 <td>{obj.refNumber}</td>
                                                 <td>{obj.time}</td>
                                                 <td>{obj.country}</td>
-                                                <td>{obj.amountPaid}</td>
-                                                <td>{obj.coinReceived}</td>
+                                                <td>{obj.coinConverted}</td>
+                                                <td>{obj.amountReceived}</td>
                                                 <td>
                                                     <div id={Style.BankDetails_Div}>
                                                         <div>
                                                             <p>Bank</p>
-                                                            <p className={Style.BankDetails_BoldText}>{obj.paymentType.bank}</p>
+                                                            <p className={Style.BankDetails_BoldText}>{obj.bankDetails.bank_name}</p>
                                                         </div>
                                                         <div>
                                                             <p>Account Number</p>
-                                                            <p className={Style.BankDetails_BoldText}>{obj.paymentType.accNo}</p>
+                                                            <p className={Style.BankDetails_BoldText}>{obj.bankDetails.account_number}</p>
                                                         </div><div>
                                                             <p>Account Name</p>
-                                                            <p className={Style.BankDetails_BoldText}>{obj.paymentType.accName}</p>
+                                                            <p className={Style.BankDetails_BoldText}>{obj.bankDetails.account_name}</p>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div id={Style.statusText}>{obj.status}</div>
+                                                    <div id={Style.statusText} style={{ backgroundColor: statusBG, color: statusColor }}>{obj.status}</div>
                                                 </td>
 
                                             </tr>
@@ -554,10 +683,27 @@ const Personal_Info = () => {
                                     })
                                 }
 
-                               
+
                             </tbody>
                         </table>
+
+                        {
+
+                            userDetails.withdrawalHistory.length == 0 ?
+
+                                <div className={Style.no_queryDiv}>
+
+                                    <p>No Recent Withdrawal</p>
+                                </div> : ""
+                        }
                     </div>
+
+                    <App_Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={userDetails.withdrawalHistory.length}
+                        paginate={paginate}
+                        currentPage={currentPage}
+                    />
 
                     <p className={Style.Personal_Info_headerText}>Subscription History</p>
 
@@ -572,23 +718,25 @@ const Personal_Info = () => {
 
                     <div id={Style.Personal_Info_tableDiv}>
                         <table>
-                            <tr id={Style.headerTable}>
-                                <th>S/N</th>
-                                <th>Date</th>
-                                <th>Ref Number</th>
-                                <th>Subscription Type</th>
-                                <th>Amount Paid</th>
-                                <th>Payment Type</th>
-                                <th>Status</th>
-                            </tr>
+                            <thead>
+                                <tr id={Style.headerTable}>
+                                    <th>S/N</th>
+                                    <th>Date</th>
+                                    <th>Ref Number</th>
+                                    <th>Subscription Type</th>
+                                    <th>Amount Paid</th>
+                                    <th>Payment Type</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
 
                             <tbody>
-                            {
+                                {
                                     transaction.map((obj, index) => {
 
                                         return (
 
-                                            <tr>
+                                            <tr key={index}>
                                                 <td>{index + 1}</td>
                                                 <td>{obj.refNumber}</td>
                                                 <td>{obj.time}</td>
@@ -619,7 +767,7 @@ const Personal_Info = () => {
                                     })
                                 }
 
-                                
+
                             </tbody>
                         </table>
                     </div>
