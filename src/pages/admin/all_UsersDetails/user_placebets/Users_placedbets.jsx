@@ -214,6 +214,9 @@ const Users_placedbets = () => {
                 </div>
                 <p id={Style.headerText}>All Bets Overview</p>
 
+
+                {/* betplaced components */}
+
                 <BetPlaced_com arr= {arr} initialIndex= {0}/>
             
             </div>

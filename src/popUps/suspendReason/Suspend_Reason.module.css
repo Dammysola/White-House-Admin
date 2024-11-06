@@ -1,16 +1,23 @@
 #suspend_reason_mainDiv{
+    width: 100%;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    /* align-items: center; */
+    background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 55;
 }
 #suspend_reason_container{
     width: 41.1rem;
     height: 24.5rem;
     border-radius: 1rem;
     padding: 2rem;
+    margin-top: 10rem;
     box-sizing: border-box;
-    background-color: #d4a0a0;
+    background-color: #FFFFFF;
 }
 #suspend_reason_container #reasonText{
     color: #1A1A1A;
@@ -67,4 +74,44 @@
     font-size: 1rem;
     padding: 0.5rem;
     box-sizing: border-box;
+}
+
+
+#Query_wrapperDiv{
+    background-color: #FFFFFF;
+    width: 24.9rem;
+    height: 7.5rem;
+    margin-top: 10rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.8rem 2rem;
+    box-sizing: border-box;
+}
+#Query_wrapperDiv p{
+    text-align: center;
+    font-size: 1.25rem;
+
+    color: #000000;
+}
+#Query_wrapperDiv button{
+    width: 4.25rem;
+    height: 1.3rem;
+    border: 1px solid #0E093C;
+    background-color: #0E093C ;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    color: #FFFFFF;
+}
+#Query_wrapperDiv button:nth-child(2){
+    background-color: transparent;
+    color: #0E093C;
+}
+#btnDiv{
+    display: flex;
+    column-gap: 1rem;
+    justify-content: center;
 }

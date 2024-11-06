@@ -19,7 +19,7 @@ const Input = (props) => {
         value={value}
         name={name}
         onChange={onChange}
-        style={{ border: `${error ? "1px solid red" : "1px solid #FFFFFF"}` }}
+        style={{ border: `${error ? "1px solid red" : ""}` }}
       />
 
       <label className={Style.label}>{label}</label>

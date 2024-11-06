@@ -40,6 +40,7 @@
 }
 #errorText{
     word-break: break-all;
+    color: #FFFFFF;
 }
 #wrapper img{
     width: 40px;

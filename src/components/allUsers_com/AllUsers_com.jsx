@@ -45,7 +45,7 @@ const AllUsers_com = (props) => {
                     <button onClick={() => transactionToggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>All</button>
                     <button onClick={() => transactionToggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Subscribed</button>
                     <button onClick={() => transactionToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Unsubscribed</button>
-                    <button onClick={() => transactionToggle(3)} className={toggleIndex == 3 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Not-Subscribed</button>
+                    {/* <button onClick={() => transactionToggle(3)} className={toggleIndex == 3 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Not-Subscribed</button> */}
                 </div>
 
                 <div id={Style.searchDiv}>
@@ -104,7 +104,7 @@ const AllUsers_com = (props) => {
                                 name={object.username}
                                 position={object.country}
                                 verified={verify}
-                                to={object.to}
+                                to={`/userDetails/${object.phone}`}
                                 statusColor={statusColor} />
                         )
                     })
@@ -132,7 +132,7 @@ const AllUsers_com = (props) => {
                                 name={object.username}
                                 position={object.country}
                                 verified={verify}
-                                to={object.to}
+                                to={`/userDetails/${object.phone}`}
                                 statusColor={statusColor} />
                         )
                     })

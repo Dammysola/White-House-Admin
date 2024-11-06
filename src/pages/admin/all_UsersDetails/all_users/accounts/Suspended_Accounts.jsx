@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Style from "./Accounts.module.css"
-import InputField from '../../../../../components/input/InputField'
 import Header from '../../../../../components/header/Header'
-import person from '../../../../../assets/images/Person1.png'
-import arrow_down from '../../../../../assets/svg/arrow_down-dark.svg'
-import search from '../../../../../assets/svg/Search.svg'
+import blue from '../../../../../assets/svg/blue.svg'
+import black from '../../../../../assets/svg/black.svg'
+import gold from '../../../../../assets/svg/gold.svg'
 import Accounts_Card from './accounts_card/Accounts_Card'
 import { getSuspendedUsersProvider } from '../../../api_detaills/provider/auth_provider'
 import { PopupContextHook } from '../../../../../WhiteHouse_PopupContext'

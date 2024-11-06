@@ -5,10 +5,14 @@ import NavBar from '../components/navBar/NavBar'
 import { PopupContextHook } from '../WhiteHouse_PopupContext'
 import Error from '../popUps/error/Error'
 import Loading from '../popUps/loading/Loading'
+import Suspend_Reason from '../popUps/suspendReason/Suspend_Reason'
+import SuspendUser_Success from '../popUps/suspendReason/sucess/SuspendUser_Success'
+import Profile_Success from "../popUps/profile/Profile_Success"
+
 // import Revenue_Details from '../pages/WhiteHouse/admin/foot_soldiers/revenue_details/Revenue_Details'
 // import ForgotPassword from '../popUps/whitehouse/forgotPassword/ForgotPassword'
 // import Online_PlayersCount from '../pages/WhiteHouse/admin/placeBet/totalOnline_players/online_playersCount/Online_PlayersCount'
-// import Profile_Success from "../popUps/profile/Profile_Success"
+
 // import ReAccess_Query from "../popUps/whitehouse/reviewQuery/ReAccess_Query"
 // import Confirm_Pending from "../popUps/whitehouse/pending_trash/Confirm_Pending"
 // import Confirm_Trash from "../popUps/whitehouse/pending_trash/Confirm_Trash"
@@ -26,7 +30,7 @@ const MainLayout = () => {
   const location = useLocation();
   const showNavbar = location.pathname !== '/';
 
-  const {errorPopup, loadingPopup, revenuePopup, passwordPopup, onlineCountPopup, profilePopup, reAccessPopup, confirmPendingPopup, approvePendingPopup, approveTrashPopup,
+  const { errorPopup, loadingPopup, suspendUsers, suspendSuccess, profilePopup, revenuePopup, passwordPopup, onlineCountPopup, reAccessPopup, confirmPendingPopup, approvePendingPopup, approveTrashPopup,
     confirmTrashPopup, signUpPopup } = PopupContextHook()
 
 
@@ -38,9 +42,15 @@ const MainLayout = () => {
 
       {showNavbar && <NavBar />}
 
-      {loadingPopup && <Loading/> }
+      {loadingPopup && <Loading />}
 
-      {errorPopup && <Error/>}
+      {errorPopup && <Error />}
+
+      {suspendUsers && <Suspend_Reason />}
+
+      {suspendSuccess && <SuspendUser_Success />}
+
+      {profilePopup && <Profile_Success />}
 
       {/* {revenuePopup && <Revenue_Details />}
 
@@ -48,7 +58,7 @@ const MainLayout = () => {
 
       {onlineCountPopup && <Online_PlayersCount />}
 
-      {profilePopup && <Profile_Success />}
+     
 
       {reAccessPopup && <ReAccess_Query />}
 

@@ -1,34 +1,47 @@
 import React from 'react'
 import Style from '../pending_requests/Pending_Request.module.css'
 import Header from '../../../../components/header/Header'
-import red_delete from '../../../../assets/svg/red_delete.svg'
 import refresh from '../../../../assets/svg/refresh.svg'
+
+
+
 const Pending_Request = () => {
+
+
     return (
         <div id={Style.Pending_Request_mainDiv}>
             <Header
                 headerText={"Trash"}
                 headerInfo={"Here’s an information on all Trash"} />
 
+
             <div id={Style.Pending_Request_wrapperDiv}>
-                    <p id={Style.Pending_Request_HeaderText}>Trash Lists <span>(2000)</span></p>
-                
+
+                <p id={Style.Pending_Request_HeaderText}>Trash Lists <span>(2000)</span></p>
+
 
                 <div id={Style.Pending_Request_table_wrapperDiv}>
+
                     <table>
-                        <tr id={Style.headerTable}>
-                            <th>S/N</th>
-                            <th>Full Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Country</th>
-                            <th>Bank Details</th>
-                            <th>Region of Operation</th>
-                            <th>Action</th>
-                        </tr>
+
+                        <thead>
+
+                            <tr id={Style.headerTable}>
+                                <th>S/N</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Country</th>
+                                <th>Bank Details</th>
+                                <th>Region of Operation</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
 
                         <tbody>
-                        <tr>
+
+                            <tr>
                                 <td>1</td>
                                 <td>John Doe</td>
                                 <td>johndoe@gmail.com</td>
@@ -50,6 +63,7 @@ const Pending_Request = () => {
                                     </div>
                                 </td>
                                 <td>Ikeja</td>
+
                                 <td><div className={Style.ActionDiv}><button className={Style.trash_Action_button}>Restore</button> <img src={refresh} alt="" /></div></td>
                             </tr>
 

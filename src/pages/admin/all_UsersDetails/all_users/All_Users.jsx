@@ -11,113 +11,34 @@ import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
 
 const All_Users = () => {
 
+    // Extracting functions from PopupContextHook for error handling
     const { updateErrorText, updateErrorPopup } = PopupContextHook()
 
+    // State to hold user data
     const [users, setUsers] = useState({
         allUsers: [],
         subscribedUsers: [],
         unsubscribedUsers: []
     })
 
-
-
-
+    // Effect to fetch all users when the component mounts
     useEffect(() => {
 
         getAllUsersProvider({
             updateUsers: (data) => {
+                // Update the users state with the fetched data
                 setUsers({
                     allUsers: data.allUsers,
                     subscribedUsers: data.subscribedUsers,
                     unsubscribedUsers: data.unsubscribedUsers
                 })
             }, 
-            updateErrorPopup,
-            updateErrorText
+            updateErrorPopup, // Function to update error popup
+            updateErrorText // Function to update error text
         })
-    }, [])
+    }, []) // Empty dependency array means this runs once on mount
 
-    // const { allUsers, subscribedUsers, unsubscribedUsers } = users
-
-
-    const all_Users_arr = [
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online",
-            to: "/userDetails"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-        {
-            img: person,
-            name: "John Doe",
-            position: "Nigeria",
-            status: "Online"
-        },
-
-    ]
-
-
+    
     return (
         <div id={Style.All_Users_mainDiv}>
 
@@ -129,16 +50,17 @@ const All_Users = () => {
 
                 <div id={Style.button_Div}>
 
-                    <Link to={"/freezedAccounts"}>
+                    {/* <Link to={"/freezedAccounts"}>
                         <button id={Style.button}>Freezed Accounts</button>
 
-                    </Link>
+                    </Link> */}
                     <Link to={"/suspendedAccounts"}>
                         <button id={Style.accounts_btn}>Suspended Accounts</button>
 
                     </Link>
                 </div>
 
+        {/* component AllUsers*/}
                 <AllUsers_com arr={users} />
 
             </div>

@@ -31,7 +31,7 @@ const Personal_Info = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage] = useState(10)
 
-    const { updateErrorText, updateErrorPopup, updatePhoneState } = PopupContextHook()
+    const { updateErrorText, updateErrorPopup, updatePhoneState, updateSuspendUserPopup } = PopupContextHook()
 
 
     const [userDetails, setUserDetails] = useState({
@@ -43,10 +43,14 @@ const Personal_Info = () => {
         subscriptionHistory: [],
     })
 
+
+    // State to manage selected date for filtering
+
     const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
 
 
+    // Function to handle date changes
 
     const handleDateChange = (newDate) => {
 
@@ -57,16 +61,24 @@ const Personal_Info = () => {
         setIsCalendarOpen(false)
     };
 
+    // Function to toggle the calendar visibility
+
     const toggleCalendar = () => {
         setIsCalendarOpen(true)
     }
 
 
+
+    // Fetch user details when the component mounts
+
     useEffect(() => {
-        const phone = phoneNumber
+        const phone = phoneNumber   // Get the phone number from params
 
         getUserDetailsProvider({
             updateUserDetails: (data) => {
+
+                // Update user details state with fetched data
+
                 setUserDetails({
                     personalInformation: data.personalInformation,
                     coinPurchaseHistory: data.coinPurchaseHistory,
@@ -78,27 +90,20 @@ const Personal_Info = () => {
             updateErrorPopup,
             updateErrorText
         })
+
     }, [])
 
-    // console.log(userDetails);
+
+
+    // Destructure user details for easier access
 
     const { personalInformation, subscriptionHistory } = userDetails
 
 
-    // const { coin_balance, status, subscription_type, bankDetails, email, phone, country } = personalInformation
 
     const arr = [""]
 
-    // const coinPurchaseHistory_arr = coinPurchaseHistory
-    // const withdrawalHistory_arr = withdrawalHistory
-    // const subscriptionHistory_arr = subscriptionHistory
-
-    // console.log(coinPurchaseHistory);
-    // console.log(withdrawalHistory);
-    // console.log(subscriptionHistory);
-    // console.log(personalInformation);
-
-
+    // Pagination logic
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -106,13 +111,27 @@ const Personal_Info = () => {
     const withdrawalHistory = userDetails.withdrawalHistory.slice(indexOfFirstPost, indexOfLastPost);
 
 
+    // Function to handle pagination
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
-    // updatePhoneState({
-    //     phone: personalInformation.phone
-    // })
+    const suspendUser = () => {
+
+        updatePhoneState({
+            phone: phoneNumber,
+            details: personalInformation.map(user => user.status)
+
+        })
 
 
+
+        updateSuspendUserPopup(true)
+
+    }
+
+    const balance = personalInformation.map(user => user.balance);
+
+
+    // Sample data for line chart
 
     const line_data = [
         {
@@ -279,17 +298,21 @@ const Personal_Info = () => {
                 headerInfo={"Here’s an information on this User"} />
 
             <div id={Style.Personal_Info_wrapperDiv}>
+
                 <p id={Style.Onboarded_Text}>Onboarded By: <span>John Doe</span></p>
 
                 <div id={Style.balance_buttonDiv}>
 
                     <div id={Style.balance_game_HistoryDiv}>
+
                         <div id={Style.Coin_BalanceDiv}>
+
                             <div id={Style.coinDiv}>
+
                                 <img src={coin} alt="" />
                             </div>
                             <div>
-                                <p>{personalInformation.balance}</p>
+                                <p>{balance}</p>
                                 <p>Coin Balance</p>
                             </div>
                         </div>
@@ -315,8 +338,18 @@ const Personal_Info = () => {
                     </div>
 
                     <div id={Style.Personal_Info_buttonDiv}>
-                        <button>Freeze Account</button>
-                        <button>Suspend Account</button>
+
+                        {/* <button>Freeze Account</button> */}
+
+
+                        <button onClick={suspendUser} style={{backgroundColor: personalInformation.length > 0 && personalInformation[0].status === "active" ? "#FC9E2F" : "#A8E6A1"}}>
+                            {personalInformation.length > 0 && personalInformation[0].status === "active" ? "Suspend Account" : "Unsuspend Account"}
+                        </button>
+
+
+
+
+
                         <button>Fund Account</button>
                     </div>
                 </div>
@@ -343,45 +376,55 @@ const Personal_Info = () => {
                             </thead>
 
                             <tbody>
+
                                 {
-                                    // personalInformatio.map((obj, index) => { 
+                                    personalInformation.map((obj, index) => {
 
-                                    //     return ( 
-                                    //     {
+                                        let subscribedColor = obj.subscription_type === "blue" ? "#0B438D"
+                                            : obj.subscription_type === "gold" ? "#D6AB1B" : obj.subscription_type === "black" ? "black" : ""
 
-                                    //     }
+                                        let statusColor = obj.status === "active" ? "#31C364"
+                                            : obj.status === "suspended" ? "red" : ""
 
 
-                                    <tr id={Style.Personal_Info_tr}>
-                                        <td>1</td>
-                                        <td>SA 123476689</td>
-                                        <td>{personalInformation.username}</td>
-                                        <td>+{personalInformation.phone}</td>
-                                        <td>{personalInformation.country}</td>
-                                        <td>
-                                            <div id={Style.BankDetails_Div}>
-                                                <div>
-                                                    <p>Bank</p>
-                                                    <p className={Style.BankDetails_BoldText}>{personalInformation.bankDetails?.bank_name}</p>
-                                                </div>
-                                                <div>
-                                                    <p>Account Number</p>
-                                                    <p className={Style.BankDetails_BoldText}>{personalInformation.bankDetails?.account_number}</p>
-                                                </div><div>
-                                                    <p>Account Name</p>
-                                                    <p className={Style.BankDetails_BoldText}>{personalInformation.bankDetails?.account_name}</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div id={Style.statusText}>{personalInformation.status}</div>
-                                        </td>
-                                        <td>
-                                            <div id={Style.Subscription} >{personalInformation.subscription_type}</div>
-                                        </td>
-                                    </tr>
-                                    //     )
-                                    // })
+                                        let statusBG = obj.status === "active" ? "#31c36433"
+                                            : obj.status === "suspended" ? "#ff000033" : ""
+
+                                        return (
+
+                                            <tr id={Style.Personal_Info_tr} key={index}>
+                                                <td>1</td>
+                                                <td>SA 123476689</td>
+                                                <td>{obj.username}</td>
+                                                <td>+{obj.phone}</td>
+                                                <td>{obj.country}</td>
+                                                <td>
+                                                    <div id={Style.BankDetails_Div}>
+                                                        <div>
+                                                            <p>Bank</p>
+                                                            <p className={Style.BankDetails_BoldText}>{obj.bankDetails?.bank_name}</p>
+                                                        </div>
+                                                        <div>
+                                                            <p>Account Number</p>
+                                                            <p className={Style.BankDetails_BoldText}>{obj.bankDetails?.account_number}</p>
+                                                        </div><div>
+                                                            <p>Account Name</p>
+                                                            <p className={Style.BankDetails_BoldText}>{obj.bankDetails?.account_name}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div id={Style.statusText} style={{ backgroundColor: statusBG, color: statusColor }}>{obj.status}</div>
+                                                </td>
+                                                <td>
+                                                    <div id={Style.Subscription} style={{ backgroundColor: subscribedColor }}>{obj.subscription_type}</div>
+                                                </td>
+                                            </tr>
+                                        )
+                                    })
+
+
+
                                 }
                             </tbody>
 

@@ -166,7 +166,7 @@ const Customer_Support = () => {
                         stats_card5.map((obj, index) => {
 
                             return (
-                                
+
                                 <Total_Card
                                     key={index}
                                     text={obj.text}
@@ -188,6 +188,7 @@ const Customer_Support = () => {
                 </div>
 
                 <div id={Style.Customer_Support_rating_wrapperDiv}>
+                    
                     <div className={Style.Customer_Support_ratingDiv}>
                         <p className={Style.RatingText}>First Contact Resolution Rate</p>
                         <p className={Style.percentText}>70%</p>
@@ -320,29 +321,21 @@ const Customer_Support = () => {
 
                             <div id={Style.monthDiv} onClick={toggle}>{selectedMonth} <img src={arrow_down} alt="" /></div>
 
-                            {/* 
-                            {
-                                ShowMonths && (
-
-                                    <div id={Style.month_pickerDiv}>
-                                 
-                                            <Month_Picker onMonthSelect={handleMonthSelect} defaultMonth={selectedMonth} />
-
-                                    </div>
-                                )
-                            } */}
 
                         </div>
                         <div>
 
                             <div className={Style.Staff_progress}>
+
                                 <div id={Style.Staff_details}>
                                     <div id={Style.imgDiv}>
                                         <img src={amazing} alt="" />
                                         <p>Amazing</p></div>
                                     <p>76.5%</p>
                                 </div>
+
                                 <div id={Style.progressDiv}></div>
+                            
                             </div>
 
                             <div className={Style.Staff_progress}>
@@ -367,6 +360,7 @@ const Customer_Support = () => {
                             </div>
 
                             <div className={Style.Staff_progress}>
+
                                 <div id={Style.Staff_details}>
                                     <div id={Style.imgDiv}>
                                         <img src={sad} alt="" />

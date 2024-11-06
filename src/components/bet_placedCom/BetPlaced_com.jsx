@@ -35,7 +35,7 @@ const BetPlaced_com = (props) => {
         // if(initialIndex == 0){
         //     diceTransactionProvider
         // }else if(initialIndex == 1){
-            
+
         // }
     }, [])
 
@@ -103,17 +103,20 @@ const BetPlaced_com = (props) => {
 
                 {/* {toggleIndex == 0 ? */}
                 <table>
-                    <tr id={Style.headerTable}>
-                        <th>S/N</th>
-                        <th>User ID</th>
-                        <th>Bet ID</th>
-                        <th>Game</th>
-                        <th>Amount Staked</th>
-                        <th>Players</th>
-                        <th>Status</th>
-                        <th>Amount Won</th>
-                        <th>Action</th>
-                    </tr>
+
+                    <thead>
+                        <tr id={Style.headerTable}>
+                            <th>S/N</th>
+                            <th>User ID</th>
+                            <th>Bet ID</th>
+                            <th>Game</th>
+                            <th>Amount Staked</th>
+                            <th>Players</th>
+                            <th>Status</th>
+                            <th>Amount Won</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
 
 
                     {
@@ -123,8 +126,11 @@ const BetPlaced_com = (props) => {
                                 {
                                     array.map((user, index) => {
                                         let lost = user.status == "Lost" ? true : false
+                                       
                                         return (
-                                            <tr >
+
+                                            <tr key={index}>
+
                                                 <td>{index + 1}</td>
                                                 <td>{user.userID}</td>
                                                 <td>{user.BetID}</td>
@@ -153,6 +159,7 @@ const BetPlaced_com = (props) => {
                                 }
 
                             </tbody> :
+                            
                             toggleIndex == 1 ?
 
 
@@ -163,8 +170,11 @@ const BetPlaced_com = (props) => {
                                     {
                                         array.filter((p) => p.status === "Won").map((user, index) => {
                                             // let lost = user.status == "Lost" ? true : false
+                                            
                                             return (
-                                                <tr>
+
+                                                <tr key={index}>
+
                                                     <td>{index + 1}</td>
                                                     <td>{user.userID}</td>
                                                     <td>{user.BetID}</td>
@@ -201,8 +211,11 @@ const BetPlaced_com = (props) => {
                                         {
                                             array.filter((p) => p.status === "Lost").map((user, index) => {
                                                 let lost = user.status == "Lost" ? true : false
+                                               
                                                 return (
-                                                    <tr >
+
+                                                    <tr key={index}>
+
                                                         <td>{index + 1}</td>
                                                         <td>{user.userID}</td>
                                                         <td>{user.BetID}</td>

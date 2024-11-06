@@ -163,8 +163,7 @@ const User_Friends = () => {
                 headerInfo={"Here’s an information on all John Doe's friends"} />
 
             <div id={Style.All_Users_wrapperDiv}>
-                {/* <div id={Style.All_Users_toggle_dateDiv}> */}
-                {/* <p id={Style.All_FootSoldiers_headerText}>All Foot Soldiers</p> */}
+           
 
                 <div id={Style.input_FilterDiv}>
 
@@ -181,9 +180,10 @@ const User_Friends = () => {
                     </p>
 
                 </div>
-                {/* </div> */}
+           
 
                 {isGridView ?
+
                     <div id={Style.Online_Players_Card}>
                         {
                             user_friends_arr.map((object) => {
@@ -202,6 +202,7 @@ const User_Friends = () => {
 
                 {
                     !isGridView ?
+                    
                         <List_viewTable listView_arr = {user_friends_arr}/> : ""
                 }
             </div>

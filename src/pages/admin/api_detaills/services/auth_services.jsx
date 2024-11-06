@@ -1,7 +1,8 @@
 import React from 'react'
-import { login_url, getUsers, getUserDetails, getSuspendedUsers, 
-    getFreezedUsers, postSuspendAccounts, getRegCountries } from "../constant/url_path"
+import { login_url, getUsers, getUserDetails, getSuspendedUsers, transactionSummary,
+    getFreezedUsers, suspendUser, getRegCountries, profile } from "../constant/url_path"
 import axios from 'axios';
+import { setToken, setEmail} from '../constant/local_storage';
 
 
 
@@ -17,19 +18,20 @@ export const login_service = async (body) => {
         console.log('Success:', response.data);
 
 
-                // Assuming the token is in response.data.token
-                // if (response.data["responseBody"]) {
+                //Assuming the token is in response.data.token
+                if (response.data["responseBody"]) {
 
-                //     setToken(response.data["responseBody"]);
+                    setToken(response.data["responseBody"]);
         
-                //     // Store the email in local storage
-                //     if (body.email) {
-                //         setEmail(body.email);
-                //     }
-                // } else {
-                //     console.warn('Token not found in response');
-                // }
-                // console.log(response.data["responseBody"]);
+                    // Store the email in local storage
+                    if (body.email) {
+                        setEmail(body.email);
+                    }
+                } else {
+                    console.warn('Token not found in response');
+                }
+                console.log(response.data["responseBody"]);
+
         return response;
 
     } else {
@@ -43,12 +45,12 @@ export const login_service = async (body) => {
 };
 
 // Modify other service functions to include the token in the request header
-const authAxios = axios.create({
+// const authAxios = axios.create({
 
-    headers: {
-        Authorization: `Bearer ${getToken()}`
-    }
-});
+//     headers: {
+//         Authorization: `Bearer ${getToken()}`
+//     }
+// });
 
 export const getAllUsersService = async () => {
 
@@ -93,13 +95,13 @@ export const getFreezedUsersService = async () => {
 };
 
 
-export const postSuspendService = async (phone) => {
+export const suspendUserService = async (body) => {
 
-    const response = await axios.get(`${postSuspendAccounts}/${phone}`);
-
+    const response = await axios.post(suspendUser, body);
 
     console.log(response);
     
+
     return response;
 };
 
@@ -109,7 +111,29 @@ export const getRegCountriesService = async ()=>{
 
     console.log(response);
 
-    
+
     return response
     
 }
+
+export const getprofileService = async (email) => {
+
+    const response = await axios.get(`${profile}/${email}`);
+
+
+    console.log(response);
+    
+    return response;
+};
+
+
+
+export const TransactionSummaryService = async () => {
+
+    const response = await axios.get(transactionSummary);
+
+
+    console.log(response);
+    
+    return response;
+};

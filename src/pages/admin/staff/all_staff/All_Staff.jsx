@@ -95,6 +95,7 @@ const All_Staff = () => {
         }
     ]
     return (
+
         <div id={Style.All_Staff_mainDiv}>
 
             <Header
@@ -108,8 +109,10 @@ const All_Staff = () => {
                     {
                         staff_stats_card.map((obj, index) => {
                             let colourChange = index == toggleStatsIndex ? true : false
+
                             return (
                                 <Stats_Card
+                                    key={index}
                                     img={obj.img}
                                     figure={obj.figure}
                                     text={obj.text}
@@ -145,11 +148,13 @@ const All_Staff = () => {
 
                         <div id={Style.All_Staff_Card}>
                             {
-                                all_Staffs.map((object) => {
+                                all_Staffs.map((object, index) => {
                         let statusColor = object.status === "Online" ? true : false
 
                                     return (
                                         <Staff_Card
+                                        
+                                            key= {index}
                                             img={object.img}
                                             status={object.status}
                                             name={object.name}

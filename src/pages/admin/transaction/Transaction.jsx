@@ -19,20 +19,40 @@ import Button from '../../../components/button/Button'
 import { Link } from 'react-router-dom'
 import BetPlaced_com from '../../../components/bet_placedCom/BetPlaced_com'
 import Date_Picker from '../../../components/date_picker/Date_Picker'
+import { transactionSummaryProvider } from '../api_detaills/provider/auth_provider'
+import { PopupContextHook } from '../../../WhiteHouse_PopupContext'
 
 
 
 
 const Transaction = () => {
+
+    const { updateErrorText, updateErrorPopup } = PopupContextHook()
+
     let [toggleIndex, setToggleIndex] = useState(0);
     let [cardToggleIndex, setCardToggleIndex] = useState(0);
     // let [filterData, setFilterData] = useState(arr);
     const [searchTerm, setSearchTerm] = useState('');
     let [dev, setDev] = useState([]);
 
+    const [transactions, setTransactions] = useState({})
 
 
+    useEffect(() => {
 
+        transactionSummaryProvider({
+
+            updateTransaction: (data) => {
+
+                setTransactions(data)
+            },
+            updateErrorPopup,
+            updateErrorText
+        })
+    }, [])
+
+
+    const {totalCoinPurchase, totalCoinWithdrawal} = transactions
 
     const toggle = (index) => {
 
@@ -42,20 +62,20 @@ const Transaction = () => {
 
     const [selectedDate, setSelectedDate] = useState(new Date());  // Initialize with current date
     const [isCalendarOpen, setIsCalendarOpen] = useState(false);  // Initialize with current date
-  
-  
-  
+
+
+
     const handleDateChange = (newDate) => {
-  
-      setSelectedDate(newDate);  // Update selectedDate when newDate is received
-  
-      console.log("New selected date:", newDate);  // This should log the new date when clicked
-  
-      setIsCalendarOpen(false)
+
+        setSelectedDate(newDate);  // Update selectedDate when newDate is received
+
+        console.log("New selected date:", newDate);  // This should log the new date when clicked
+
+        setIsCalendarOpen(false)
     };
-  
+
     const toggleCalendar = () => {
-      setIsCalendarOpen(true)
+        setIsCalendarOpen(true)
     }
 
 
@@ -74,14 +94,14 @@ const Transaction = () => {
         },
         {
             image1: total_users,
-            price: "20K",
+            price: totalCoinPurchase,
             text: "Coin Purchase",
             to: "",
             divText: "View All",
         },
         {
             image1: winner,
-            price: "345,000",
+            price: totalCoinWithdrawal,
             text: "Withdrawals",
             to: "",
             divText: "View All"
@@ -446,17 +466,19 @@ const Transaction = () => {
 
                             // <div id={Style.Card_table_wrapperDiv}>
                             <table>
-                                <tr id={Style.headerTable_tr}>
-                                    <th>S/N</th>
-                                    <th>User</th>
-                                    <th>Ref Number</th>
-                                    <th>Time</th>
-                                    <th>Country</th>
-                                    <th>Amount Paid</th>
-                                    <th>Coin Received </th>
-                                    <th>Payment Type</th>
-                                    <th>Status</th>
-                                </tr>
+                                <thead>
+                                    <tr id={Style.headerTable_tr}>
+                                        <th>S/N</th>
+                                        <th>User</th>
+                                        <th>Ref Number</th>
+                                        <th>Time</th>
+                                        <th>Country</th>
+                                        <th>Amount Paid</th>
+                                        <th>Coin Received </th>
+                                        <th>Payment Type</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
 
                                 <tbody>
 
@@ -469,7 +491,8 @@ const Transaction = () => {
 
                                             // let lost = user.status == "Lost" ? true : false
                                             return (
-                                                <tr>
+                                                <tr key={index}>
+
                                                     <td>{index + 1}</td>
                                                     <td>
                                                         <div>
@@ -520,17 +543,19 @@ const Transaction = () => {
 
                             // <div id={Style.Card_table_wrapperDiv}>
                             <table>
-                                <tr id={Style.headerTable_tr}>
-                                    <th>S/N</th>
-                                    <th>User</th>
-                                    <th>Ref Number</th>
-                                    <th>Time</th>
-                                    <th>Country</th>
-                                    <th>Coin Converted</th>
-                                    <th>Amount Withdrawn </th>
-                                    <th>Payment Type</th>
-                                    <th>Status</th>
-                                </tr>
+                                <thead>
+                                    <tr id={Style.headerTable_tr}>
+                                        <th>S/N</th>
+                                        <th>User</th>
+                                        <th>Ref Number</th>
+                                        <th>Time</th>
+                                        <th>Country</th>
+                                        <th>Coin Converted</th>
+                                        <th>Amount Withdrawn </th>
+                                        <th>Payment Type</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
 
                                 <tbody>
 
@@ -545,7 +570,9 @@ const Transaction = () => {
 
                                             // let lost = user.status == "Lost" ? true : false
                                             return (
-                                                <tr>
+
+                                                <tr key={index}>
+
                                                     <td>{index + 1}</td>
                                                     <td>
                                                         <div>
@@ -596,18 +623,20 @@ const Transaction = () => {
                             // <div id={Style.Card_table_wrapperDiv}>
 
                             <table>
-                                <tr id={Style.headerTable_tr}>
-                                    <th>S/N</th>
-                                    <th>User</th>
-                                    <th>Ref Number</th>
-                                    <th>Date</th>
-                                    <th>Time</th>
-                                    <th>Game</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                    <th>Balance</th>
-                                    <th>Action</th>
-                                </tr>
+                                <thead>
+                                    <tr id={Style.headerTable_tr}>
+                                        <th>S/N</th>
+                                        <th>User</th>
+                                        <th>Ref Number</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Game</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Balance</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
 
                                 <tbody>
                                     {         //Unsettled
@@ -620,7 +649,7 @@ const Transaction = () => {
 
                                             // let lost = user.status == "Lost" ? true : false
                                             return (
-                                                <tr>
+                                                <tr key={index}>
                                                     <td>{index + 1}</td>
                                                     <td>
                                                         <div>

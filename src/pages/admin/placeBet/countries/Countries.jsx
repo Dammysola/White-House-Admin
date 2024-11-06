@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Style from '../countries/Countries.module.css'
 import search from '../../../../assets/svg/Search.svg'
 import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
@@ -9,70 +9,38 @@ import country_flag from '../../../../assets/svg/country_flag.svg'
 import nig_flag from '../../../../assets/svg/nig_flag.svg'
 import Header from '../../../../components/header/Header'
 import { Link } from 'react-router-dom'
+import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
+import { getRegCountriesProvider } from '../../api_detaills/provider/auth_provider'
 
 
 
 const Countries = () => {
 
-    const countries_arr = [
 
-        {
-            countries: "Nigeria",
-            users: "20,000",
-            flag: nig_flag,
-            action: "View Users"
-        },
+    const { updateErrorPopup, updateErrorText } = PopupContextHook()
 
-        {
 
-            countries: "USA",
-            users: "20,000",
-            flag: country_flag,
-            action: "View Users"
-        },
-        {
 
-            users: "20,000",
-            countries: "Nigeria",
-            flag: nig_flag,
-            action: "View Users"
-        },
-        {
+    const [countries, setCountries] = useState([])
 
-            countries: "Nigeria",
-            users: "20,000",
-            flag: country_flag2,
-            action: "View Users"
-        },
-        {
 
-            countries: "Nigeria",
-            users: "20,000",
-            flag: nig_flag,
-            action: "View Users"
-        },
-        {
+    // Effect to fetch all countries when the component mounts
+    useEffect(() => {
 
-            countries: "Nigeria",
-            users: "20,000",
-            flag: country_flag,
-            action: "View Users"
-        },
-        {
+        getRegCountriesProvider({
+            updateCountries: (data) => {
+                // Update the country state with the fetched data
 
-            countries: "Nigeria",
-            users: "20,000",
-            flag: country_flag2,
-            action: "View Users"
-        },
-        {
+                setCountries(data)
+            },
+            updateErrorPopup, // Function to update error popup
+            updateErrorText // Function to update error text
+        })
+    }, []) // Empty dependency array means this runs once on mount
 
-            countries: "Nigeria",
-            users: "20,000",
-            flag: country_flag2,
-            action: "View Users"
-        }
-    ]
+    console.log(countries);
+
+
 
 
 
@@ -82,17 +50,15 @@ const Countries = () => {
                 headerText={"Total Countries"}
                 headerInfo={"Here’s an information on all Countries"} />
 
-            <div id={Style.Winner_loser_wrapperDiv}>
- 
-               {/* <div id={Style.input_FilterDiv}>
-                    <p>3rd July, 2024 <img src={arrow_down} alt="" /></p> */}
 
-                    <div id={Style.searchDiv}>
-                        <img src={search} alt="" />
-                        <InputField
-                            placeholder={"Search Countries"} />
-                    </div>
-                {/* </div> */}
+            <div id={Style.Winner_loser_wrapperDiv}>
+
+                <div id={Style.searchDiv}>
+                    <img src={search} alt="" />
+                    <InputField
+                        placeholder={"Search Countries"} />
+                </div>
+
 
                 <div id={Style.Winner_loser_wrapper}>
                     <div id={Style.Winner_loser_tableDiv}>
@@ -110,19 +76,19 @@ const Countries = () => {
                             <tbody>
 
                                 {
-                                    countries_arr.map((obj, index) => {
+                                    countries.map((obj, index) => {
 
                                         return (
 
                                             <tr>
                                                 <td className={Style.number}>{index + 1}</td>
-                                                <td>{obj.countries}</td>
+                                                <td>{obj.name}</td>
                                                 <td>{obj.users}</td>
                                                 <td><img src={obj.flag} alt="" /></td>
                                                 <td>
                                                     <Link to={"/countryUsers"}>
                                                         <Button
-                                                            text={obj.action} />
+                                                            text={"View Users"} />
                                                     </Link>
                                                 </td>
                                             </tr>

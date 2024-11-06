@@ -1,11 +1,13 @@
 import React from 'react'
 import Style from "../pending_trash/approve/Approve.module.css"
-import blue_success from "../../../assets/svg/blue_success.svg"
+import blue_success from "../../assets/svg/blue_success.svg"
 
 
 
 const Suspend_Success = () => {
+
     return (
+        
         <div id={Style.Approve_mainDiv}>
             <div id={Style.Approve_wrapperDiv}>
 

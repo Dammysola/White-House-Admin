@@ -110,7 +110,6 @@
     box-sizing: border-box;
     box-shadow: 0.5rem 0.5rem 1rem 0 rgb(0, 0, 0, .1);
     position: absolute;
-
 }
 
 #Personal_Info_buttonDiv {
@@ -119,11 +118,11 @@
 }
 
 #Personal_Info_buttonDiv button {
-    width: 7.93rem;
+    width: 8.5rem;
     height: 2.3rem;
     border-radius: 0.5rem;
     border: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #FFFFFF;
     background-color: #FC9E2F;
 }
@@ -181,16 +180,9 @@
     border-bottom: none;
 }
 
-/* #Personal_Info_tableDiv #BankDetails_Div {
-    display: flex;
-    flex-direction: column;   
-} */
-
 #Personal_Info_tableDiv .BankDetails_BoldText {
     font-weight: bold;
-    /* margin-top: -10px; */
     line-height: 0rem;
-    /* height: 0.9rem; */
     margin-bottom: 1.5rem;
   
 }
@@ -210,13 +202,13 @@ td {
 
 #Personal_Info_tableDiv #statusText {
     min-width: 2rem;
-    max-width: 4.5rem;
+    max-width: 5.5rem;
     height: 26px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    padding: 5px;
+    padding: 0.5rem;
     box-sizing: border-box;
     color: #2575b7;
     background-color:rgba(37, 117, 183, .2);
@@ -225,7 +217,7 @@ td {
 #Subscription {
     width: 2.8rem;
     height: 1.3rem;
-    background-color: #D6AB1B;
+    /* background-color: #D6AB1B; */
     color: #FFFFFF;
     font-size: 0.75rem;
     border-radius: 0.5rem;
