@@ -6,12 +6,13 @@ import {
 
 
 
-export const login_provider = async (body, navigate, updateLoadingPopup, updateErrorText, updateErrorPopup) => {
+export const login_provider = async (body, navigate, updateLoadingPopup, updateSignInSuccess, updateErrorText, updateErrorPopup) => {
 
 
     try {
 
         updateLoadingPopup(true);
+
         let response = await login_service(body);
 
 
@@ -23,13 +24,23 @@ export const login_provider = async (body, navigate, updateLoadingPopup, updateE
 
             updateLoadingPopup(false);
 
+            // updateSignInSuccess(true)
+
+            // console.log("not showing", response.data["responseMessage"]);
+            
+
+            setTimeout(() => {
+                updateSignInSuccess(false)
+            }, 2000)
+
             navigate("/dashboard");
 
         } else {
             updateLoadingPopup(false)
             updateErrorText(response.data["responseMessage"]);
+
             console.log(response.data["responseMessage"]);
-            
+
             updateErrorPopup(true)
             setTimeout(() => {
                 updateErrorPopup(false)
@@ -211,7 +222,7 @@ export const getFreezedUsersProvider = async ({ updateFreezed, updateErrorText, 
 
 // }
 
-export const postSuspendProvider = async (body, updateLoadingPopup,updateSuspendUserSuccess, updateSuspendUserPopup, updateErrorPopup, updateErrorText) => {
+export const postSuspendProvider = async (body, updateLoadingPopup, updateSuspendUserSuccess, updateSuspendUserPopup, updateErrorPopup, updateErrorText) => {
 
     try {
 
@@ -224,13 +235,13 @@ export const postSuspendProvider = async (body, updateLoadingPopup,updateSuspend
 
             updateLoadingPopup(false);
 
-           
-                updateSuspendUserPopup(false) 
-            
 
-           
+            updateSuspendUserPopup(false)
 
-            updateSuspendUserSuccess(true) 
+
+
+
+            updateSuspendUserSuccess(true)
 
         } else {
             updateLoadingPopup(false);
@@ -302,7 +313,7 @@ export const getRegCountriesProvider = async ({ updateCountries, updateErrorText
 }
 
 
-export const getprofileProvider = async ({ email,updateProfile, updateErrorText, updateErrorPopup }) => {
+export const getprofileProvider = async ({ email, updateProfile, updateErrorText, updateErrorPopup }) => {
 
 
     try {

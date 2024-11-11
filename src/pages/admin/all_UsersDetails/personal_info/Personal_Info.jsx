@@ -37,7 +37,7 @@ const Personal_Info = () => {
     const [userDetails, setUserDetails] = useState({
 
         personalInformation: [],
-        // gameInformation: [],
+        gameInformation: {},
         coinPurchaseHistory: [],
         withdrawalHistory: [],
         subscriptionHistory: [],
@@ -84,6 +84,7 @@ const Personal_Info = () => {
                     coinPurchaseHistory: data.coinPurchaseHistory,
                     withdrawalHistory: data.withdrawalHistory,
                     subscriptionHistory: data.subscriptionHistory,
+                    gameInformation: data.gameInformation
                 })
             },
             phone,
@@ -97,7 +98,17 @@ const Personal_Info = () => {
 
     // Destructure user details for easier access
 
-    const { personalInformation, subscriptionHistory } = userDetails
+    const { personalInformation, gameInformation } = userDetails || {}
+
+    // console.log(gameInformation);
+    
+
+    const { logSessions, betPlaced, friends } = gameInformation || {};
+
+
+ // Check if friends is defined before accessing its properties
+ const totalFriends = friends ? friends.friends : 0; // Default to 0 if undefined
+ const friendList = friends ? friends.friendList : []; // Default to empty array if undefined
 
 
 
@@ -109,7 +120,6 @@ const Personal_Info = () => {
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const coinPurchaseHistory = userDetails.coinPurchaseHistory.slice(indexOfFirstPost, indexOfLastPost);
     const withdrawalHistory = userDetails.withdrawalHistory.slice(indexOfFirstPost, indexOfLastPost);
-
 
     // Function to handle pagination
     const paginate = (pageNumber) => setCurrentPage(pageNumber)
@@ -129,6 +139,9 @@ const Personal_Info = () => {
     }
 
     const balance = personalInformation.map(user => user.balance);
+
+// Serialize and encode the friendList
+const friendListString = encodeURIComponent(JSON.stringify(friendList));
 
 
     // Sample data for line chart
@@ -212,16 +225,16 @@ const Personal_Info = () => {
     const users_stats_card = [
         {
             img: clock,
-            figure: "3k",
+            figure: logSessions,
             text: "Logged Sessions",
             to: "/loggedsession"
 
         },
         {
             img: users,
-            figure: "34",
+            figure: totalFriends,
             text: "Friends",
-            to: "/userFriends"
+            to: `/userFriends/${friendListString}`
         },
         {
             img: chat,
@@ -231,7 +244,7 @@ const Personal_Info = () => {
         },
         {
             img: rise,
-            figure: "2k",
+            figure: betPlaced,
             text: "Placed Bets",
             to: "/userplacedbet"
 
@@ -342,7 +355,7 @@ const Personal_Info = () => {
                         {/* <button>Freeze Account</button> */}
 
 
-                        <button onClick={suspendUser} style={{backgroundColor: personalInformation.length > 0 && personalInformation[0].status === "active" ? "#FC9E2F" : "#A8E6A1"}}>
+                        <button onClick={suspendUser} style={{ backgroundColor: personalInformation.length > 0 && personalInformation[0].status === "active" ? "#FC9E2F" : "#A8E6A1" }}>
                             {personalInformation.length > 0 && personalInformation[0].status === "active" ? "Suspend Account" : "Unsuspend Account"}
                         </button>
 
@@ -621,10 +634,9 @@ const Personal_Info = () => {
                                     })
                                 }
 
-
-
                             </tbody>
                         </table>
+
                         {
 
                             coinPurchaseHistory.length == 0 ?
@@ -634,6 +646,7 @@ const Personal_Info = () => {
                                     <p>No Recent Coin Purchase</p>
                                 </div> : ""
                         }
+
                     </div>
 
                     <App_Pagination
@@ -696,6 +709,7 @@ const Personal_Info = () => {
                                         return (
 
                                             <tr key={index}>
+
                                                 <td>{serialNumber}</td>
                                                 <td>{obj.refNumber}</td>
                                                 <td>{obj.time}</td>

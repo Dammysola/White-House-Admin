@@ -12,6 +12,9 @@ import arrow_down from '../../../assets/svg/arrow_down-dark.svg'
 import search from '../../../assets/svg/Search.svg'
 import green_eyes from '../../../assets/svg/green_eyes.svg'
 import warning from '../../../assets/svg/yellow_warning.svg'
+import blue from '../../../assets/svg/blue.svg'
+import black from '../../../assets/svg/black.svg'
+import gold from '../../../assets/svg/gold.svg'
 import delete_list from '../../../assets/svg/product_delete.svg'
 import person from '../../../assets/images/person_img.png'
 import avatar from '../../../assets/images/avatar.png'
@@ -21,21 +24,36 @@ import BetPlaced_com from '../../../components/bet_placedCom/BetPlaced_com'
 import Date_Picker from '../../../components/date_picker/Date_Picker'
 import { transactionSummaryProvider } from '../api_detaills/provider/auth_provider'
 import { PopupContextHook } from '../../../WhiteHouse_PopupContext'
+import App_Pagination from '../../../components/app_Pagination/App_Pagination'
 
 
 
 
 const Transaction = () => {
 
-    const { updateErrorText, updateErrorPopup } = PopupContextHook()
+    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage2, setCurrentPage2] = useState(1);
+    const [postsPerPage] = useState(10);
+
+    const { updateErrorText, updateErrorPopup } = PopupContextHook();
 
     let [toggleIndex, setToggleIndex] = useState(0);
+
     let [cardToggleIndex, setCardToggleIndex] = useState(0);
-    // let [filterData, setFilterData] = useState(arr);
+
     const [searchTerm, setSearchTerm] = useState('');
+
     let [dev, setDev] = useState([]);
 
-    const [transactions, setTransactions] = useState({})
+
+
+    const [transactions, setTransactions] = useState({
+        totalCoinPurchase: "",
+        totalCoinWithdrawal: "",
+        coinPurchaseHistory: [],
+        coinWithdrawHistory: []
+
+    })
 
 
     useEffect(() => {
@@ -44,7 +62,12 @@ const Transaction = () => {
 
             updateTransaction: (data) => {
 
-                setTransactions(data)
+                setTransactions({
+                    totalCoinPurchase: data.totalCoinPurchase,
+                    totalCoinWithdrawal: data.totalCoinWithdrawal,
+                    coinPurchaseHistory: data.coinPurchaseHistory,
+                    coinWithdrawHistory: data.coinWithdrawHistory
+                })
             },
             updateErrorPopup,
             updateErrorText
@@ -52,7 +75,30 @@ const Transaction = () => {
     }, [])
 
 
-    const {totalCoinPurchase, totalCoinWithdrawal} = transactions
+    const { totalCoinPurchase, totalCoinWithdrawal} = transactions
+
+
+
+
+    // Pagination logic
+
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfLastPost2 = currentPage2 * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const indexOfFirstPost2 = indexOfLastPost2 - postsPerPage;
+    const coinWithdrawHistory = transactions.coinWithdrawHistory.slice(indexOfFirstPost2, indexOfLastPost2);
+    const coinPurchaseHistory = transactions.coinPurchaseHistory.slice(indexOfFirstPost, indexOfLastPost);
+
+
+    // Function to handle pagination
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const paginate2 = (pageNumber) => {
+        setCurrentPage2(pageNumber);
+    };
+
 
     const toggle = (index) => {
 
@@ -81,10 +127,8 @@ const Transaction = () => {
 
 
 
-
-
-
     const stats_card6 = [
+
         {
             image1: betCoin,
             price: "23,000",
@@ -106,13 +150,7 @@ const Transaction = () => {
             to: "",
             divText: "View All"
         },
-        {
-            image1: betCoin,
-            price: "23,000",
-            text: "Unsettled Bets",
-            to: "",
-            divText: "View All"
-        },
+
     ]
 
 
@@ -247,146 +285,27 @@ const Transaction = () => {
     ]
 
 
-    useEffect(() => {
-        let d = arr.filter((a) => a.status === "Won")
-        console.log(d);
+    // useEffect(() => {
+    //     let d = arr.filter((a) => a.status === "Won")
+    //     console.log(d);
 
-        setDev(d)
-    }, [])
-
-
+    //     setDev(d)
+    // }, [])
 
 
 
 
-    const coin_arr = [
-
-        {
-            user: {
-                id: "UA 123476689",
-                img: person,
-                name: "Lighty"
-            },
-            RefNo: "AU 123476689",
-            time: "13:45",
-            country: "Nigeria",
-            amount: "20000",
-            coinRd: "500",
-            payType: {
-                bank: "Access Bank",
-                accNo: "0123456789",
-                accName: "John Doe"
-            },
-            status: "Successful"
-
-        },
-        {
-            user: {
-                id: "UA 123476689",
-                img: avatar,
-                name: "Lighty"
-            },
-            RefNo: "UA 123476689",
-            time: "13:45",
-            country: "USA",
-            amount: "20000",
-            coinRd: "500",
-            payType: {
-                bank: "Access Bank",
-                accNo: "0123456789",
-                accName: "John Doe"
-            },
-            status: "Pending"
-
-        },
-        {
-            user: {
-                id: "UA 123476689",
-                img: person,
-                name: "Lighty"
-            },
-            RefNo: "UA 123476689",
-            time: "13:45",
-            country: "Nigeria",
-            amount: "20000",
-            coinRd: "500",
-            payType: {
-                bank: "Access Bank",
-                accNo: "0123456789",
-                accName: "John Doe"
-            },
-            status: "Successful"
-
-        },
-        {
-            user: {
-                id: "UA 123476689",
-                img: avatar,
-                name: "Lighty"
-            },
-            RefNo: "UA 123476689",
-            time: "13:45",
-            date: "Oct 4",
-            game: "DiceRoom13",
-            country: "Nigeria",
-            amount: "20000",
-            coinRd: "500",
-            payType: {
-                bank: "Access Bank",
-                accNo: "0123456789",
-                accName: "John Doe"
-            },
-            status: "Failed"
-
-        },
-
-    ]
-
-    const unsettled = [
-        {
-            user: {
-                id: "UA 123476689",
-                img: avatar,
-                name: "Lighty"
-            },
-            RefNo: "UA 123476689",
-            time: "13:45",
-            date: "Oct 4",
-            game: "DiceRoom13",
-            country: "Nigeria",
-            amount: "20000",
-            balance: "200",
-            status: "Used",
-            action: "View Details"
-        },
-        {
-            user: {
-                id: "UA 123476689",
-                img: avatar,
-                name: "Lighty"
-            },
-            RefNo: "UA 123476689",
-            time: "13:45",
-            date: "Oct 4",
-            game: "DiceRoom13",
-            country: "Nigeria",
-            amount: "20000",
-            balance: "200",
-            status: "Pending",
-            action: "View Details"
-        },
-    ]
-
-    const filteredData_two = coin_arr.filter(item =>
-        item.RefNo.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.amount.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.coinRd.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.status.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    // const filteredData_two = coin_arr.filter(item =>
+    //     item.RefNo.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //     item.amount.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //     item.coinRd.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //     item.status.toLowerCase().includes(searchTerm.toLowerCase())
+    // );
 
 
 
     return (
+
         <div id={Style.Transaction_mainDiv}>
 
             <Header
@@ -420,39 +339,41 @@ const Transaction = () => {
 
 
                 {
-                    cardToggleIndex !== 0 ?
+                    cardToggleIndex !== 0 &&
 
 
-                        <div id={Style.transaction_header_inputfield_Div}>
-                            <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>
+                    <div id={Style.transaction_header_inputfield_Div}>
+                        <div id={Style.TransactionText}>Transaction Lists <span>(1,355)</span></div>
 
-                            <div id={Style.Amount_Paid_input_FilterDiv}>
+                        <div id={Style.Amount_Paid_input_FilterDiv}>
 
-                                <span>{selectedDate.toDateString()} <img onClick={toggleCalendar} src={arrow_down} alt="" /></span>
+                            <span>{selectedDate.toDateString()} <img onClick={toggleCalendar} src={arrow_down} alt="" /></span>
 
-                                {
-                                    isCalendarOpen && (
-                                        <div id={Style.calendar_popup}>
+                            {
+                                isCalendarOpen && (
+                                    <div id={Style.calendar_popup}>
 
-                                            <Date_Picker onDateChange={handleDateChange} />
-                                        </div>
-                                    )
-                                }
+                                        <Date_Picker onDateChange={handleDateChange} />
+                                    </div>
+                                )
+                            }
 
-                                <div id={Style.searchDiv}>
-                                    <img src={search} alt="" />
-                                    <InputField type={"text"}
-                                        value={searchTerm}
-                                        OnChange={(e) => setSearchTerm(e.target.value)}
-                                    />
-                                </div>
-                                <div id={Style.imgDiv}>
-                                    <img src={filter_img} alt="" />
-                                    <img src={download} alt="" />
-                                </div>
+                            <div id={Style.searchDiv}>
+                                <img src={search} alt="" />
+                                <InputField type={"text"}
+                                    value={searchTerm}
+                                    OnChange={(e) => setSearchTerm(e.target.value)}
+                                />
                             </div>
-                        </div> : ""
+                            <div id={Style.imgDiv}>
+                                <img src={filter_img} alt="" />
+                                <img src={download} alt="" />
+                            </div>
+                        </div>
+                    </div>
                 }
+
+
                 <div id={Style.Transaction_tableWrapperDiv}>
 
                     {
@@ -461,224 +382,226 @@ const Transaction = () => {
                             <BetPlaced_com arr={arr} initialIndex={0} /> : ""
                     }
 
+
                     {
-                        cardToggleIndex == 1 ?
+                        cardToggleIndex == 1 &&
 
-                            // <div id={Style.Card_table_wrapperDiv}>
-                            <table>
-                                <thead>
-                                    <tr id={Style.headerTable_tr}>
-                                        <th>S/N</th>
-                                        <th>User</th>
-                                        <th>Ref Number</th>
-                                        <th>Time</th>
-                                        <th>Country</th>
-                                        <th>Amount Paid</th>
-                                        <th>Coin Received </th>
-                                        <th>Payment Type</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
+                        <table>
 
-                                <tbody>
+                            <thead>
 
-                                    {filteredData_two.length > 0 ? (
+                                <tr id={Style.headerTable_tr}>
+                                    <th>S/N</th>
+                                    <th>User</th>
+                                    <th>Ref Number</th>
+                                    <th>Time</th>
+                                    <th>Country</th>
+                                    <th>Amount Paid</th>
+                                    <th>Coin Received </th>
+                                    <th>Payment Type</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                {
 
 
-                                        filteredData_two.map((user, index) => {
-                                            let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
-                                            let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
+                                    coinPurchaseHistory.map((user, index) => {
 
-                                            // let lost = user.status == "Lost" ? true : false
-                                            return (
-                                                <tr key={index}>
+                                        let bGcolor = user.status == "success" ? "#00800033" : user.status == "pending" ? "#fc9e2f33" : user.status == "failed" ? "#ff000033" : ""
+                                        let color = user.status == "success" ? "green" : user.status == "pending" ? "#FC9E2F" : user.status == "failed" ? "red" : ""
 
-                                                    <td>{index + 1}</td>
-                                                    <td>
+                                        let verify = user.user.subscription_type == "blue" ? blue
+                                            : user.user.subscription_type == "gold" ? gold
+                                                : user.user.subscription_type == "black" ? black : ""
+
+                                        const serialNumber = indexOfFirstPost + index + 1; // Calculate the correct serial number
+
+
+                                        return (
+                                            <tr key={index}>
+
+                                                <td>{serialNumber}</td>
+                                                <td>
+                                                    <div>
+                                                        {/* <p>{user.user.id}</p> */}
+
+                                                        <div className={Style.userDetail_Text}>
+
+                                                            <div id={Style.imgDiv}>
+
+                                                                <img id={Style.profile_picture} src={avatar} alt="" />
+
+                                                                {verify && <img id={Style.verified_img} src={verify} alt="" />}
+
+                                                            </div>
+                                                            <p> {user.user.username}</p>
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+                                                <td>{user.refNumber}</td>
+                                                <td>{user.time}</td>
+                                                <td>{user.country}</td>
+                                                <td>{user.amountPaid}</td>
+                                                <td>{user.coinReceived}</td>
+                                                <td>
+                                                    <div id={Style.BankDetails_Div}>
                                                         <div>
-                                                            <p>{user.user.id}</p>
-                                                            <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                            <p className={Style.bank_details_header}>Bank</p>
+                                                            <p className={Style.BankDetails_BoldText}>{user.paymentType.bank_name}</p>
                                                         </div>
-                                                    </td>
-                                                    <td>{user.RefNo}</td>
-                                                    <td>{user.time}</td>
-                                                    <td>{user.country}</td>
-                                                    <td>{user.amount}</td>
-                                                    <td>{user.coinRd}</td>
-                                                    <td>
-                                                        <div id={Style.BankDetails_Div}>
-                                                            <div>
-                                                                <p>Bank</p>
-                                                                <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
-                                                            </div>
-                                                            <div>
-                                                                <p>Account Number</p>
-                                                                <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
-                                                            </div><div>
-                                                                <p>Account Name</p>
-                                                                <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
-                                                            </div>
+                                                        <div>
+                                                            <p className={Style.bank_details_header}>Account Number</p>
+                                                            <p className={Style.BankDetails_BoldText}>{user.paymentType.account_number}</p>
                                                         </div>
-                                                    </td>
-                                                    <td>
-                                                        <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
-                                                    </td>
+                                                        <div>
+                                                            <p className={Style.bank_details_header}>Account Name</p>
+                                                            <p className={Style.BankDetails_BoldText}>{user.paymentType.account_name}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                </td>
 
-                                                </tr>
-                                            )
-                                        })
-                                    ) : ""}
+                                            </tr>
+                                        )
+                                    })
+                                }
 
-                                </tbody>
-                            </table>
+                            </tbody>
+                        </table>
 
-
-                            // </div>
-                            : ""
                     }
 
 
                     {
-                        cardToggleIndex == 2 ?
 
-                            // <div id={Style.Card_table_wrapperDiv}>
-                            <table>
-                                <thead>
-                                    <tr id={Style.headerTable_tr}>
-                                        <th>S/N</th>
-                                        <th>User</th>
-                                        <th>Ref Number</th>
-                                        <th>Time</th>
-                                        <th>Country</th>
-                                        <th>Coin Converted</th>
-                                        <th>Amount Withdrawn </th>
-                                        <th>Payment Type</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
+                        cardToggleIndex == 2 &&
 
-                                <tbody>
+                        <table>
+
+                            <thead>
+
+                                <tr id={Style.headerTable_tr}>
+                                    <th>S/N</th>
+                                    <th>User</th>
+                                    <th>Ref Number</th>
+                                    <th>Time</th>
+                                    <th>Country</th>
+                                    <th>Coin Converted</th>
+                                    <th>Amount Withdrawn </th>
+                                    <th>Payment Type</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
 
 
-                                           //Withdrawal
+                                {/* Withdrawal */}
 
 
-                                    {
-                                        coin_arr.map((user, index) => {
-                                            let bGcolor = user.status == "Successful" ? "#00800033" : user.status == "Pending" ? "#fc9e2f33" : user.status == "Failed" ? "#ff000033" : ""
-                                            let color = user.status == "Successful" ? "green" : user.status == "Pending" ? "#FC9E2F" : user.status == "Failed" ? "red" : ""
+                                {
+                                    coinWithdrawHistory.map((user, index) => {
 
-                                            // let lost = user.status == "Lost" ? true : false
-                                            return (
+                                        let bGcolor = user.status == "success" ? "#00800033" : user.status == "pending" ? "#fc9e2f33" : user.status == "failed" ? "#ff000033" : ""
+                                        let color = user.status == "success" ? "green" : user.status == "pending" ? "#FC9E2F" : user.status == "failed" ? "red" : ""
 
-                                                <tr key={index}>
 
-                                                    <td>{index + 1}</td>
-                                                    <td>
+                                        let verify = user.user.subscription_type == "blue" ? blue
+                                            : user.user.subscription_type == "gold" ? gold
+                                                : user.user.subscription_type == "black" ? black : ""
+
+                                        const serialNumber = indexOfFirstPost + index + 1; // Calculate the correct serial number
+
+
+                                        return (
+
+                                            <tr key={index}>
+
+                                                <td>{serialNumber}</td>
+                                                <td>
+                                                    <div className={Style.userDetail_Text}>
+
+                                                        <div id={Style.imgDiv}>
+
+                                                            <img id={Style.profile_picture} src={avatar} alt="" />
+
+                                                            {verify && <img id={Style.verified_img} src={verify} alt="" />}
+
+                                                        </div>
+                                                        <p> {user.user.username}</p>
+                                                    </div>
+                                                </td>
+                                                <td>{user.refNumber}</td>
+                                                <td>{user.time}</td>
+                                                <td>{user.country}</td>
+                                                <td>{user.amountPaid}</td>
+                                                <td>{user.coinReceived}</td>
+                                                <td>
+                                                    <div id={Style.BankDetails_Div}>
                                                         <div>
-                                                            <p>{user.user.id}</p>
-                                                            <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
+                                                            <p className={Style.bank_details_header}>Bank</p>
+                                                            <p className={Style.BankDetails_BoldText}>{user.paymentType.bank_name}</p>
                                                         </div>
-                                                    </td>
-                                                    <td>{user.RefNo}</td>
-                                                    <td>{user.time}</td>
-                                                    <td>{user.country}</td>
-                                                    <td>{user.amount}</td>
-                                                    <td>{user.coinRd}</td>
-                                                    <td>
-                                                        <div id={Style.BankDetails_Div}>
-                                                            <div>
-                                                                <p>Bank</p>
-                                                                <p className={Style.BankDetails_BoldText}>{user.payType.bank}</p>
-                                                            </div>
-                                                            <div>
-                                                                <p>Account Number</p>
-                                                                <p className={Style.BankDetails_BoldText}>{user.payType.accNo}</p>
-                                                            </div><div>
-                                                                <p>Account Name</p>
-                                                                <p className={Style.BankDetails_BoldText}>{user.payType.accName}</p>
-                                                            </div>
+                                                        <div>
+                                                            <p className={Style.bank_details_header}>Account Number</p>
+                                                            <p className={Style.BankDetails_BoldText}>{user.paymentType.account_number}</p>
                                                         </div>
-                                                    </td>
-                                                    <td>
-                                                        <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
-                                                    </td>
+                                                        <div>
+                                                            <p className={Style.bank_details_header}>Account Name</p>
+                                                            <p className={Style.BankDetails_BoldText}>{user.paymentType.account_name}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
+                                                </td>
 
-                                                </tr>
-                                            )
-                                        })
+                                            </tr>
+                                        )
+                                    })
 
-                                    }
+                                }
 
-                                </tbody>
-                            </table>
-                            // </div> 
-                            : ""
+                            </tbody>
+                        </table>
+
                     }
 
 
-                    {
-                        cardToggleIndex == 3 ?
-
-                            // <div id={Style.Card_table_wrapperDiv}>
-
-                            <table>
-                                <thead>
-                                    <tr id={Style.headerTable_tr}>
-                                        <th>S/N</th>
-                                        <th>User</th>
-                                        <th>Ref Number</th>
-                                        <th>Date</th>
-                                        <th>Time</th>
-                                        <th>Game</th>
-                                        <th>Amount</th>
-                                        <th>Status</th>
-                                        <th>Balance</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    {         //Unsettled
 
 
-
-                                        unsettled.map((user, index) => {
-                                            let bGcolor = user.status == "Used" ? "#00800033" : user.status == "Pending" ? "#eb575733" : ""
-                                            let color = user.status == "Used" ? "green" : user.status == "Pending" ? "#EB5757" : ""
-
-                                            // let lost = user.status == "Lost" ? true : false
-                                            return (
-                                                <tr key={index}>
-                                                    <td>{index + 1}</td>
-                                                    <td>
-                                                        <div>
-                                                            <p>{user.user.id}</p>
-                                                            <p className={Style.userDetail_Text}><img src={user.user.img} alt="" /> {user.user.name}</p>
-                                                        </div>
-                                                    </td>
-                                                    <td>{user.RefNo}</td>
-                                                    <td>{user.date}</td>
-                                                    <td>{user.time}</td>
-                                                    <td>{user.game}</td>
-                                                    <td>{user.amount}</td>
-                                                    <td>
-                                                        <div id={Style.statusText} style={{ backgroundColor: bGcolor, color: color }}>{user.status}</div>
-                                                    </td>
-                                                    <td>{user.balance}</td>
-                                                    <td id={Style.btn}> <Link to={"/unsettledBet"}><Button text={user.action} /></Link></td>
-                                                </tr>
-                                            )
-                                        })
-                                    }
-                                </tbody>
-                            </table>
-                            // </div> 
-                            : ""
-                    }
 
                 </div>
+                
+                {
+                    cardToggleIndex == 1 &&
 
+                    <App_Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={transactions.coinPurchaseHistory.length}
+                        paginate={paginate}
+                        currentPage={currentPage}
+                    />
+                }
+
+                {
+                    cardToggleIndex == 2 &&
+
+                    <App_Pagination
+                        postsPerPage={postsPerPage}
+                        totalPosts={transactions.coinWithdrawHistory.length}
+                        paginate={paginate2}
+                        currentPage={currentPage2}
+                    />
+                }
 
 
             </div>

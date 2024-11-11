@@ -33,6 +33,7 @@ const WhiteHouse_PopupContext = ({ children }) => {
     const [errorPopup, setErrorPopup] = useState(false);
     const [suspendUsers, setSuspendUsers] = useState(false);
     const [suspendSuccess, setSuspendSuccess] = useState(false);
+    const [signInSuccess, setSignInSuccess] = useState(false);
     const [errorText, setErrorText] = useState("");
 
 
@@ -97,6 +98,10 @@ const WhiteHouse_PopupContext = ({ children }) => {
         setSuspendSuccess(data)
     }
 
+    const updateSignInSuccess = (data) => {
+        setSignInSuccess(data)
+    }
+
 
 
     return (
@@ -136,7 +141,9 @@ const WhiteHouse_PopupContext = ({ children }) => {
             suspendUsers,
             updateSuspendUserPopup,
             suspendSuccess,
-            updateSuspendSuccess
+            updateSuspendSuccess,
+            signInSuccess,
+            updateSignInSuccess
         }}>
             {children}
         </myContext.Provider>

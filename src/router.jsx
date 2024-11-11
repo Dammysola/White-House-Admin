@@ -155,7 +155,7 @@ const router = createBrowserRouter([
                 element: <Department />
             },
             {
-                path: "/userFriends",
+                path: "/userFriends/:friendListString",
                 element: <User_Friends />
             },
             {

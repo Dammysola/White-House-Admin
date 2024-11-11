@@ -1,19 +1,14 @@
 import React from 'react'
-import Style from "./Profile_Success.module.css"
+import Style from "./SignIn_Success.module.css"
 import blue_success from "../../assets/svg/blue_success.svg"
-import { PopupContextHook } from '../../WhiteHouse_PopupContext'
 
 
 
-
-const Profile_Success = () => {
-
-  const { updateProfilePopup } = PopupContextHook()
-
+const SignIn_Success = () => {
 
   return (
 
-    <div id={Style.Approve_mainDiv} onClick={()=>updateProfilePopup(false)}>
+     <div id={Style.Approve_mainDiv}>
             <div id={Style.Approve_wrapperDiv}>
 
                 <img id={Style.success_img} src={blue_success} alt="" />
@@ -21,7 +16,7 @@ const Profile_Success = () => {
 
             </div>
         </div>
-)
+  )
 }
 
-export default Profile_Success
+export default SignIn_Success

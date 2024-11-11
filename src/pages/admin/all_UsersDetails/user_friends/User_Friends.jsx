@@ -12,11 +12,24 @@ import Category_Grid from '../../../../assets/svg/Category_Grid.svg'
 import Header from '../../../../components/header/Header'
 import List_viewTable from '../../../../components/listView/List_viewTable'
 import Staff_Card from '../../../../components/userStaff_Card/Staff_Card'
+import { useParams } from 'react-router-dom'
 
 
 
 
 const User_Friends = () => {
+
+    const { friendListString } = useParams()
+
+    // Decode and parse the friendListString back into an array
+    let friendList = [];
+    try {
+        friendList = JSON.parse(decodeURIComponent(friendListString));
+    } catch (error) {
+        console.error("Error parsing friendList:", error);
+    }
+    console.log(friendList);
+
 
     const [isGridView, setIsGridView] = useState(true);
 
@@ -163,7 +176,7 @@ const User_Friends = () => {
                 headerInfo={"Here’s an information on all John Doe's friends"} />
 
             <div id={Style.All_Users_wrapperDiv}>
-           
+
 
                 <div id={Style.input_FilterDiv}>
 
@@ -180,30 +193,32 @@ const User_Friends = () => {
                     </p>
 
                 </div>
-           
 
-                {isGridView ?
+
+                {
+                    isGridView &&
 
                     <div id={Style.Online_Players_Card}>
+
                         {
-                            user_friends_arr.map((object) => {
+                            friendList.map((object) => {
                                 return (
                                     <Staff_Card
-                                        img={object.name.img}
+                                        img={object.img}
                                         status={object.status}
-                                        name={object.name.name}
+                                        name={object.username}
                                         position={object.countries}
                                         to={object.to} />
                                 )
                             })
                         }
-                    </div> : ""
+                    </div> 
                 }
 
                 {
                     !isGridView ?
-                    
-                        <List_viewTable listView_arr = {user_friends_arr}/> : ""
+
+                        <List_viewTable listView_arr={user_friends_arr} /> : ""
                 }
             </div>
         </div>

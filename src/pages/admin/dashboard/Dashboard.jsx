@@ -8,12 +8,17 @@ import Header from '../../../components/header/Header'
 import Stats_Card from '../../../components/stats_card/Stats_Card'
 import foot from '../../../assets/svg/foot.svg'
 import { Link } from 'react-router-dom'
+import { dashboardProvider } from '../api_detaills/provider/user_provider'
+import { PopupContextHook } from '../../../WhiteHouse_PopupContext'
 
 
 
 
 
 const Dashboard = () => {
+
+    const { updateErrorText, updateErrorPopup } = PopupContextHook()
+
 
     const customTickFormatter = (tick) => {
         return `${tick}k`;
@@ -30,6 +35,26 @@ const Dashboard = () => {
     //     }
     //     FetchData()
     // }, [])
+
+
+    const [dashboardCount, setDashboardCount] = useState({})
+
+
+    useEffect(() => {
+
+        dashboardProvider({
+
+            updateDashboard: (data) => {
+
+                setDashboardCount(data)
+            },
+            updateErrorPopup,
+            updateErrorText
+        })
+    }, [])
+   
+    const {totalBetPlaced, totalUsers, totalCountries, totalFootSoldiers} = dashboardCount
+    
 
     const line_data = [
         {
@@ -108,26 +133,26 @@ const Dashboard = () => {
     const stats_card1 = [
         {
             img: rise,
-            figure: "200k",
+            figure: totalBetPlaced,
             text: "Total Bets Placed",
             to: `/totalBetPlaced/${0}`
 
         },
         {
             img: person,
-            figure: "2m",
+            figure: totalUsers,
             text: "All Users",
             to: "/allUsers"
         },
         {
             img: flag,
-            figure: "14",
+            figure: totalCountries,
             text: "Reg Countries",
             to: "/countries"
         },
         {
             img: foot,
-            figure: "200k",
+            figure: totalFootSoldiers,
             text: "Foot Soldiers",
             to: "/footSoldiers"
 

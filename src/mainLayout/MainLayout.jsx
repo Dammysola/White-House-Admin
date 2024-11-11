@@ -8,6 +8,7 @@ import Loading from '../popUps/loading/Loading'
 import Suspend_Reason from '../popUps/suspendReason/Suspend_Reason'
 import SuspendUser_Success from '../popUps/suspendReason/sucess/SuspendUser_Success'
 import Profile_Success from "../popUps/profile/Profile_Success"
+import SignIn_Success from '../popUps/signIn_success/SignIn_Success'
 
 // import Revenue_Details from '../pages/WhiteHouse/admin/foot_soldiers/revenue_details/Revenue_Details'
 // import ForgotPassword from '../popUps/whitehouse/forgotPassword/ForgotPassword'
@@ -30,7 +31,7 @@ const MainLayout = () => {
   const location = useLocation();
   const showNavbar = location.pathname !== '/';
 
-  const { errorPopup, loadingPopup, suspendUsers, suspendSuccess, profilePopup, revenuePopup, passwordPopup, onlineCountPopup, reAccessPopup, confirmPendingPopup, approvePendingPopup, approveTrashPopup,
+  const { errorPopup, loadingPopup, suspendUsers, suspendSuccess, profilePopup, signInSuccess, revenuePopup, passwordPopup, onlineCountPopup, reAccessPopup, confirmPendingPopup, approvePendingPopup, approveTrashPopup,
     confirmTrashPopup, signUpPopup } = PopupContextHook()
 
 
@@ -51,6 +52,8 @@ const MainLayout = () => {
       {suspendSuccess && <SuspendUser_Success />}
 
       {profilePopup && <Profile_Success />}
+
+      {signInSuccess && <SignIn_Success/>}
 
       {/* {revenuePopup && <Revenue_Details />}
 

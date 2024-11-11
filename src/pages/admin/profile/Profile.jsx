@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Style from './Profile.module.css'
 import profile_img from '../../../assets/images/profile_img.png'
 import edit from '../../../assets/svg/edit.svg'
@@ -9,22 +9,38 @@ import Button from '../../../components/button/Button'
 import { PopupContextHook } from '../../../WhiteHouse_PopupContext'
 import { getEmail } from '../api_detaills/constant/local_storage'
 import { getprofileProvider } from '../api_detaills/provider/auth_provider'
-import { updateProfile_Provider } from '../api_detaills/provider/user_provider'
+import { updatePicture_Provider, updateProfile_Provider } from '../api_detaills/provider/user_provider'
+
+
 
 
 
 const Profile = () => {
 
+
     // Hook to manage error text and popup state
-    const { updateErrorText, updateErrorPopup, updateLoadingPopup } = PopupContextHook()
+    const { updateErrorText, updateErrorPopup, updateLoadingPopup, updateProfilePopup } = PopupContextHook()
+
+
+    // Toggle edit state
+    const editFun = () => {
+        setEditState(!editState)
+    }
 
     // Retrieve email from local storage
     const email = getEmail()
-    // console.log(caemail); // Log the retrieved email
 
     // State to manage edit mode and image URL
     const [editState, setEditState] = useState(false)
-    const [imgUrl, SetImgUrl] = useState("")
+
+    const [imgUrl, setImgUrl] = useState({ profilePicture: '' });
+
+ // State to manage profile update fields
+    const [profileUpdate, setProfileUpdate] = useState({
+        fullname: "",
+        phone_number: "",
+    })
+
     const [profile, setProfile] = useState({
         details: {}
     })
@@ -37,6 +53,7 @@ const Profile = () => {
             updateProfile: (data) => {
 
                 setProfile({
+
                     details: data.details
                 })
             },
@@ -51,62 +68,79 @@ const Profile = () => {
 
     const { details } = profile
 
-    // Function to show success popup
-    // const successPopup = () => {
-    //     updateProfilePopup(true)
-    // }
+
+
+    const MAX_FILE_SIZE_MB = 1.5;
+    const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
+
+
+    useEffect(() => {
+
+        return () => {
+            // Cleanup the object URL when the component unmounts
+            if (imgUrl.profilePicture) URL.revokeObjectURL(imgUrl.profilePicture);
+        };
+    }, [imgUrl.profilePicture]);
 
 
 
+    const handleFile = useCallback((e) => {
 
-    // Handle file input change
-    const handleFile = (e) => {
+        const file = e.target.files[0];
 
-        const file = e.target.files[0]
+        if (!file) {
+            console.error('No file selected');
+            return;
+        }
 
-        // Create a URL for the selected file
+        if (file.size > MAX_FILE_SIZE_BYTES) {
+            alert(`File size exceeds ${MAX_FILE_SIZE_MB} MB. Please select a smaller file.`);
+            return;
+        }
 
-        const url = URL.createObjectURL(file)
-        SetImgUrl(url) // Set the image URL state
-    }
+        const url = URL.createObjectURL(file);
+        setImgUrl((prevState) => ({ ...prevState, profilePicture: url }));
+        changePicture(file);
 
-    // State to manage profile update fields
-    const [profileUpdate, setProfileUpdate] = useState({
-        fullName: "",
-        phone: "",
-        img: imgUrl
-    })
+    }, []);
 
 
-    // Toggle edit state
-    const editFun = () => {
-        setEditState(!editState)
-    }
+    const changePicture = (file) => {
+
+        const body = new FormData();
+        body.append('profilePicture', file); // Match the key name from Postman
+
+        updatePicture_Provider(email, body, updateErrorPopup, updateErrorText, updateLoadingPopup);
+
+    };
+
 
     // Handle input changes for profile update
+
     const HandleChange = (e) => {
-        const { value, name, files } = e.target
+
+        const { value, name } = e.target
+
         setProfileUpdate((prev) => ({
             ...prev,
-            [name]: name === "imgURL" ? URL.createObjectURL(files[0]) : value
+            [name]: value
+
         }))
     }
 
 
-    const updateProfile = ()=>{
-
-        let email = getEmail()
-        
-        let body = profileUpdate
-        
-        updateProfile_Provider(email, body, updateErrorPopup, updateErrorText, updateLoadingPopup )
-
-    }
     // Handle form submission
     const HandleSubmit = (e) => {
 
-        e.preventDefault()
-        console.log(profileUpdate); // Log the profile update data
+        e.preventDefault(e)
+
+        let email = details.email
+
+
+        let body = profileUpdate
+
+        updateProfile_Provider(email, body, updateErrorPopup, updateErrorText, updateLoadingPopup, updateProfilePopup)
+
     }
 
     return (
@@ -159,7 +193,7 @@ const Profile = () => {
 
                         {/* Display profile image */}
 
-                        {imgUrl ? <img id={Style.profile_img} src={imgUrl} alt="" /> : <img id={Style.profile_img} src={profile_img} alt="" />}
+                        {imgUrl ? <img id={Style.profile_img} src={imgUrl.profilePicture} alt="" /> : <img id={Style.profile_img} src={profile_img} alt="" />}
 
                         {/* Edit button */}
 
@@ -189,7 +223,7 @@ const Profile = () => {
 
                             <div id={Style.settings_informations}>
                                 <div>
-                                    <p className={Style.settings_headerText}>First Name</p>
+                                    <p className={Style.settings_headerText}>Full Name</p>
                                     <p className={Style.settings_detailsText}>{details.fullname}</p>
                                 </div>
 
@@ -204,7 +238,7 @@ const Profile = () => {
 
                                 <div>
                                     <p className={Style.settings_headerText}>Phone</p>
-                                    <p className={Style.settings_detailsText}>+{details.phone_number}</p>
+                                    <p className={Style.settings_detailsText}>{details.phone_number}</p>
                                 </div>
 
                             </div>
@@ -217,7 +251,7 @@ const Profile = () => {
                     {
                         editState &&
 
-                        <form action="">
+                        <form action="" onSubmit={HandleSubmit}>
 
                             <div id={Style.Input_mainDiv}>
 
@@ -225,8 +259,8 @@ const Profile = () => {
                                     type={"text"}
                                     placeholder={"Type your full name"}
                                     label={"Full Name"}
-                                    name={"fullName"}
-                                    value={profileUpdate.fullName}
+                                    name={"fullname"}
+                                    value={profileUpdate.fullname}
                                     onChange={HandleChange}
                                 />
 
@@ -234,8 +268,8 @@ const Profile = () => {
                                     type={"tel"}
                                     placeholder={"Type your phone number"}
                                     label={"Phone"}
-                                    name={"phone"}
-                                    value={profileUpdate.phone}
+                                    name={"phone_number"}
+                                    value={profileUpdate.phone_number}
                                     onChange={HandleChange}
                                 />
 
@@ -244,9 +278,8 @@ const Profile = () => {
                             <Button
                                 type={"submit"}
                                 text={"Upload Profile"}
-                                onSubmit={HandleSubmit}
                             />
-                            <button type='submit'></button>
+
 
                         </form>
                     }

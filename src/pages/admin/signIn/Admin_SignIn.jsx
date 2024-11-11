@@ -15,7 +15,7 @@ import { PopupContextHook } from '../../../WhiteHouse_PopupContext'
 const Admin_SignIn = () => {
 
   const navigate = useNavigate();
-  const { updateLoadingPopup, updateErrorText, updateErrorPopup } = PopupContextHook();
+  const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateSignInSuccess } = PopupContextHook();
 
 
 
@@ -51,7 +51,7 @@ const Admin_SignIn = () => {
     let body = signIn;
 
     //This initiates the provider that handles the login API.
-    login_provider(body, navigate, updateLoadingPopup, updateErrorPopup, updateErrorText);
+    login_provider(body, navigate, updateLoadingPopup, updateErrorPopup, updateSignInSuccess, updateErrorText);
 
   }
 

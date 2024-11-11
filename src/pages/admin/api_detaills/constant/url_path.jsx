@@ -10,3 +10,5 @@ export const getRegCountries = `${base_url}api/registered-countries`
 export const transactionSummary = `${base_url}api/all-transactions`  
 export const profile = `${base_url}api/profile` 
 export const updateProfile = `${base_url}api/update-profile`
+export const updatePicture = `${base_url}api/update-picture`
+export const dashboard = `${base_url}api/dashboard-revenue`  
