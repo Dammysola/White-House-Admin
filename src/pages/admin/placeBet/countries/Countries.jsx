@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Style from '../countries/Countries.module.css'
 import search from '../../../../assets/svg/Search.svg'
-import arrow_down from '../../../../assets/svg/arrow_down-dark.svg'
 import InputField from '../../../../components/input/InputField'
 import Button from '../../../../components/button/Button'
-import country_flag2 from '../../../../assets/svg/country_flag2.svg'
-import country_flag from '../../../../assets/svg/country_flag.svg'
-import nig_flag from '../../../../assets/svg/nig_flag.svg'
 import Header from '../../../../components/header/Header'
 import { Link } from 'react-router-dom'
 import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
-import { getRegCountriesProvider } from '../../api_detaills/provider/auth_provider'
+import { getRegCountriesProvider } from '../../api_detaills/provider/user_provider'
 
 
 
@@ -36,27 +32,32 @@ const Countries = () => {
             updateErrorPopup, // Function to update error popup
             updateErrorText // Function to update error text
         })
+
     }, []) // Empty dependency array means this runs once on mount
 
-    console.log(countries);
 
 
 
 
 
     return (
+
         <div id={Style.Winner_loser_mainDiv}>
+
             <Header
                 headerText={"Total Countries"}
-                headerInfo={"Here’s an information on all Countries"} />
+                headerInfo={"Here’s an information on all Countries"}
+            />
 
 
             <div id={Style.Winner_loser_wrapperDiv}>
 
                 <div id={Style.searchDiv}>
+
                     <img src={search} alt="" />
                     <InputField
                         placeholder={"Search Countries"} />
+
                 </div>
 
 

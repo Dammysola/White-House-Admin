@@ -18,13 +18,11 @@ import gold from '../../../assets/svg/gold.svg'
 import delete_list from '../../../assets/svg/product_delete.svg'
 import person from '../../../assets/images/person_img.png'
 import avatar from '../../../assets/images/avatar.png'
-import Button from '../../../components/button/Button'
-import { Link } from 'react-router-dom'
 import BetPlaced_com from '../../../components/bet_placedCom/BetPlaced_com'
 import Date_Picker from '../../../components/date_picker/Date_Picker'
-import { transactionSummaryProvider } from '../api_detaills/provider/auth_provider'
 import { PopupContextHook } from '../../../WhiteHouse_PopupContext'
 import App_Pagination from '../../../components/app_Pagination/App_Pagination'
+import { transactionSummaryProvider } from '../api_detaills/provider/user_provider'
 
 
 
@@ -69,15 +67,14 @@ const Transaction = () => {
                     coinWithdrawHistory: data.coinWithdrawHistory
                 })
             },
-            updateErrorPopup,
-            updateErrorText
+            updateErrorText,
+            updateErrorPopup
+            
         })
     }, [])
 
 
     const { totalCoinPurchase, totalCoinWithdrawal} = transactions
-
-
 
 
     // Pagination logic
@@ -123,7 +120,6 @@ const Transaction = () => {
     const toggleCalendar = () => {
         setIsCalendarOpen(true)
     }
-
 
 
 
@@ -359,12 +355,14 @@ const Transaction = () => {
                             }
 
                             <div id={Style.searchDiv}>
+
                                 <img src={search} alt="" />
                                 <InputField type={"text"}
                                     value={searchTerm}
                                     OnChange={(e) => setSearchTerm(e.target.value)}
                                 />
                             </div>
+
                             <div id={Style.imgDiv}>
                                 <img src={filter_img} alt="" />
                                 <img src={download} alt="" />

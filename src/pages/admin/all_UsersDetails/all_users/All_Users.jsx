@@ -4,8 +4,10 @@ import person from '../../../../assets/images/Person1.png'
 import Header from '../../../../components/header/Header'
 import { Link } from 'react-router-dom'
 import AllUsers_com from '../../../../components/allUsers_com/AllUsers_com'
-import { getAllUsersProvider } from '../../api_detaills/provider/auth_provider'
 import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
+import { getAllUsersProvider } from '../../api_detaills/provider/user_provider'
+
+
 
 
 
@@ -25,6 +27,7 @@ const All_Users = () => {
     useEffect(() => {
 
         getAllUsersProvider({
+
             updateUsers: (data) => {
                 // Update the users state with the fetched data
                 setUsers({
@@ -32,35 +35,35 @@ const All_Users = () => {
                     subscribedUsers: data.subscribedUsers,
                     unsubscribedUsers: data.unsubscribedUsers
                 })
-            }, 
+            },
             updateErrorPopup, // Function to update error popup
             updateErrorText // Function to update error text
         })
     }, []) // Empty dependency array means this runs once on mount
 
-    
+
     return (
+
         <div id={Style.All_Users_mainDiv}>
 
             <Header
                 headerText={"All Users"}
-                headerInfo={"Here’s an information on all Users"} />
+                headerInfo={"Here’s an information on all Users"}
+            />
 
             <div id={Style.All_Users_wrapperDiv}>
 
                 <div id={Style.button_Div}>
 
-                    {/* <Link to={"/freezedAccounts"}>
-                        <button id={Style.button}>Freezed Accounts</button>
-
-                    </Link> */}
                     <Link to={"/suspendedAccounts"}>
                         <button id={Style.accounts_btn}>Suspended Accounts</button>
 
                     </Link>
+
                 </div>
 
-        {/* component AllUsers*/}
+                {/* component AllUsers*/}
+                
                 <AllUsers_com arr={users} />
 
             </div>

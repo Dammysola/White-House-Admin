@@ -12,7 +12,7 @@ const SignIn_Success = () => {
             <div id={Style.Approve_wrapperDiv}>
 
                 <img id={Style.success_img} src={blue_success} alt="" />
-                <p>Profile updated Successfully</p>
+                <p>SignIn Successful</p>
 
             </div>
         </div>

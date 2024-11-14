@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Style from "./Accounts.module.css"
+import Style from "./Suspended.module.css"
 import Header from '../../../../../components/header/Header'
 import blue from '../../../../../assets/svg/blue.svg'
 import black from '../../../../../assets/svg/black.svg'
 import gold from '../../../../../assets/svg/gold.svg'
 import Accounts_Card from './accounts_card/Accounts_Card'
-import { getSuspendedUsersProvider } from '../../../api_detaills/provider/auth_provider'
 import { PopupContextHook } from '../../../../../WhiteHouse_PopupContext'
+import { getSuspendedUsersProvider } from '../../../api_detaills/provider/user_provider'
 
 
 const Suspended_Accounts = () => {
@@ -63,7 +63,7 @@ const Suspended_Accounts = () => {
             <div id={Style.All_Users_wrapperDiv}>
 
                 <div id={Style.button_Div}>
-                    
+
                     <button id={Style.accounts_btn}>Suspended Accounts</button>
                 </div>
 
@@ -72,7 +72,6 @@ const Suspended_Accounts = () => {
                     <button onClick={() => transactionToggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>All</button>
                     <button onClick={() => transactionToggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Subscribed</button>
                     <button onClick={() => transactionToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Unsubscribed</button>
-                    <button onClick={() => transactionToggle(3)} className={toggleIndex == 3 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Not-Subscribed</button>
                 </div>
 
 
@@ -84,7 +83,6 @@ const Suspended_Accounts = () => {
 
                         allUsers.map((object, index) => {
 
-                            let BG = object.status === "freezed" ? true : false
                             let statusColor = object.status === "Online" ? true : false
 
                             let verify = object.subscription_type == "blue" ? blue
@@ -99,10 +97,9 @@ const Suspended_Accounts = () => {
                                     online={object.online}
                                     name={object.username}
                                     position={object.country}
-                                    to={object.to}
+                                    to={`/userDetails/${object.phone}`}
                                     status={object.status}
                                     verified={verify}
-                                    BG={BG}
                                     statusColor={statusColor} />
                             )
                         })
@@ -115,7 +112,6 @@ const Suspended_Accounts = () => {
 
                         subscribedUsers.map((object, index) => {
 
-                            let BG = object.status === "freezed" ? true : false
                             let statusColor = object.status === "Online" ? true : false
 
                             let verify = object.subscription_type == "blue" ? blue
@@ -130,10 +126,9 @@ const Suspended_Accounts = () => {
                                     online={object.online}
                                     name={object.username}
                                     position={object.country}
-                                    to={object.to}
+                                    to={`/userDetails/${object.phone}`}
                                     status={object.status}
                                     verified={verify}
-                                    BG={BG}
                                     statusColor={statusColor} />
                             )
                         })
@@ -146,7 +141,6 @@ const Suspended_Accounts = () => {
 
                         unsubscribedUsers.map((object, index) => {
 
-                            // let BG = object.status === "suspended" ? true : false
                             let statusColor = object.status === "Online" ? true : false
 
                             let verify = object.subscription_type == "blue" ? blue
@@ -161,10 +155,9 @@ const Suspended_Accounts = () => {
                                     online={object.online}
                                     name={object.username}
                                     position={object.country}
-                                    to={object.to}
+                                    to={`/userDetails/${object.phone}`}
                                     status={object.status}
                                     verified={verify}
-                                    BG={BG}
                                     statusColor={statusColor} />
                             )
                         })

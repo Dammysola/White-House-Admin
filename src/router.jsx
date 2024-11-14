@@ -23,7 +23,6 @@ import Queries from "./pages/admin/queries/Queries";
 import Customer_Support from "./pages/admin/staff/customer_Support/Customer_Support";
 import Top_Agents from "./pages/admin/staff/top_agents/Top_Agents";
 import Total_Top_Agents from "./pages/admin/staff/top_agents/total_Top_Agents/Total_Top_Agents";
-// import AddNew_Agent from "./pages/admin/staff/addNew_Agent/AddNew_Agent";
 import Sports from "./pages/admin/games/sports/Sports";
 import Foot_Soldiers from "./pages/admin/foot_soldiers/Foot_Soldiers";
 import All_FootSoldiers from "./pages/admin/foot_soldiers/all_footSoldiers/All_FootSoldiers";
@@ -44,7 +43,6 @@ import Soldiers_details from  "./pages/admin/foot_soldiers/soldiers_personalDeta
 import Solider_OnboardedUsers from "./pages/admin/foot_soldiers/soldier_onboardedUsers/Solider_OnboardedUsers";
 import Profile from "./pages/admin/profile/Profile";
 import Suspended_Accounts from "./pages/admin/all_UsersDetails/all_users/accounts/Suspended_Accounts";
-import Freezed_Accounts from "./pages/admin/all_UsersDetails/all_users/accounts/Freezed_Accounts";
 import Country_Users from "./pages/admin/placeBet/countries/country_details/Country_Users";
 import Game_Users from "./pages/admin/games/game_Users/Game_Users";
 import Soldiers_CountryDetails from "./pages/admin/foot_soldiers/countries/soldiers_CountryDetails/Soldiers_CountryDetails";
@@ -246,13 +244,6 @@ const router = createBrowserRouter([
                 path: "/suspendedAccounts",
                 element: <Suspended_Accounts/>
             },
-            {
-                path: "/freezedAccounts",
-                element: <Freezed_Accounts/>
-            },
-
-
-
 
         ]
 

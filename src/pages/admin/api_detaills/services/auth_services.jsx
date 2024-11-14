@@ -1,8 +1,8 @@
 import React from 'react'
-import { login_url, getUsers, getUserDetails, getSuspendedUsers, transactionSummary,
+import { login_url, getUserDetails, getSuspendedUsers, transactionSummary,
     getFreezedUsers, suspendUser, getRegCountries, profile } from "../constant/url_path"
 import axios from 'axios';
-import { setToken, setEmail} from '../constant/local_storage';
+import { setToken, setEmail, getToken} from '../constant/local_storage';
 
 
 
@@ -14,8 +14,6 @@ export const login_service = async (body) => {
     const response = await axios.post(login_url, body);
 
     if (response.status == 200 || response.status == 201) {
-        
-        console.log('Success:', response.data);
 
 
                 //Assuming the token is in response.data.token
@@ -45,95 +43,75 @@ export const login_service = async (body) => {
 };
 
 // Modify other service functions to include the token in the request header
-// const authAxios = axios.create({
+ export const authAxios = axios.create({
 
-//     headers: {
-//         Authorization: `Bearer ${getToken()}`
-//     }
-// });
-
-export const getAllUsersService = async () => {
-
-    console.log("Player Initiated")
-
-    const response = await axios.get(getUsers);
+    headers: {
+        Authorization: `Bearer ${getToken()}`
+    }
+});
 
 
-    return response;
-};
+// export const getUserDetailsService = async (phone) => {
 
-export const getUserDetailsService = async (phone) => {
-
-    const response = await axios.get(`${getUserDetails}/${phone}`);
+//     const response = await axios.get(`${getUserDetails}/${phone}`);
 
 
-    console.log(response);
+//     console.log(response);
     
-    return response;
-};
+//     return response;
+// };
 
-export const getSuspendedUsersService = async () => {
+// export const getSuspendedUsersService = async () => {
 
-    console.log("Player Initiated")
+//     console.log("Player Initiated")
 
-    const response = await axios.get(getSuspendedUsers);
+//     const response = await axios.get(getSuspendedUsers);
 
-    console.log(response);
+//     console.log(response);
     
-    return response;
-};
-
-export const getFreezedUsersService = async () => {
-
-    console.log("Player Initiated")
-
-    const response = await axios.get(getFreezedUsers);
-
-    console.log(response);
-    
-    return response;
-};
+//     return response;
+// };
 
 
-export const suspendUserService = async (body) => {
+// export const suspendUserService = async (body) => {
 
-    const response = await axios.post(suspendUser, body);
+//     const response = await axios.post(suspendUser, body);
 
-    console.log(response);
+//     console.log(response);
     
 
-    return response;
-};
+//     return response;
+// };
 
-export const getRegCountriesService = async ()=>{
+// export const getRegCountriesService = async ()=>{
 
-    const response = await axios.get(getRegCountries)
+//     const response = await axios.get(getRegCountries)
 
-    console.log(response);
+//     console.log(response);
 
 
-    return response
+//     return response
     
-}
+// }
 
-export const getprofileService = async (email) => {
+// export const getprofileService = async (email) => {
 
-    const response = await axios.get(`${profile}/${email}`);
+//     const response = await axios.get(`${profile}/${email}`);
 
 
-    console.log(response);
+//     console.log(response);
     
-    return response;
-};
+//     return response;
+// };
 
 
 
-export const TransactionSummaryService = async () => {
+// export const TransactionSummaryService = async () => {
 
-    const response = await axios.get(transactionSummary);
+//     const response = await axios.get(transactionSummary);
 
 
-    console.log(response);
+//     console.log(response);
     
-    return response;
-};
+//     return response;
+// };

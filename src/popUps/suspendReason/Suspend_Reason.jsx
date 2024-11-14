@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Style from './Suspend_Reason.module.css'
 import Button from '../../components/button/Button'
 import { PopupContextHook } from '../../WhiteHouse_PopupContext'
-import { postSuspendProvider } from '../../pages/admin/api_detaills/provider/auth_provider'
+import { postSuspendProvider } from '../../pages/admin/api_detaills/provider/user_provider'
 
 
 
@@ -15,8 +15,6 @@ const Suspend_Reason = () => {
 
     const { phone, details } = phoneState
 
-    // console.log(phone);
-    console.log(phoneState);
 
     const [status] = details
 
@@ -26,7 +24,6 @@ const Suspend_Reason = () => {
         reason: ""
     })
 
-    console.log(status);
 
     const Details = (e) => {
 
@@ -47,6 +44,7 @@ const Suspend_Reason = () => {
         //The request Body
 
         let body = suspend;
+
 
         //This initiates the provider that handles the login API.
         postSuspendProvider(body, updateLoadingPopup, updateSuspendSuccess,
@@ -81,10 +79,12 @@ const Suspend_Reason = () => {
                     </div> :
 
                     <div id={Style.Query_wrapperDiv}>
+
                         <p>Unsuspend this account?</p>
+                        
                         <div id={Style.btnDiv}>
                             <button type='submit' onClick={suspendFunc}>Yes</button>
-                            <button onClick={()=>updateSuspendUserPopup(false)}>Cancel</button>
+                            <button onClick={() => updateSuspendUserPopup(false)}>Cancel</button>
                         </div>
                     </div>
 

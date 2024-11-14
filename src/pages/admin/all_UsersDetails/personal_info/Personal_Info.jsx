@@ -17,9 +17,9 @@ import download from '../../../../assets/svg/download_img.svg'
 import coin from '../../../../assets/svg/coin.svg'
 import game_pad from '../../../../assets/svg/game_pad.svg'
 import Date_Picker from '../../../../components/date_picker/Date_Picker'
-import { getUserDetailsProvider } from '../../api_detaills/provider/auth_provider'
 import { PopupContextHook } from '../../../../WhiteHouse_PopupContext'
 import App_Pagination from '../../../../components/app_Pagination/App_Pagination'
+import { getUserDetailsProvider } from '../../api_detaills/provider/user_provider'
 
 
 

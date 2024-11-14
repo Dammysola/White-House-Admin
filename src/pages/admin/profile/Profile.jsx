@@ -8,8 +8,7 @@ import Input from '../../../components/SignUp_input/Input'
 import Button from '../../../components/button/Button'
 import { PopupContextHook } from '../../../WhiteHouse_PopupContext'
 import { getEmail } from '../api_detaills/constant/local_storage'
-import { getprofileProvider } from '../api_detaills/provider/auth_provider'
-import { updatePicture_Provider, updateProfile_Provider } from '../api_detaills/provider/user_provider'
+import { getprofileProvider, updatePicture_Provider, updateProfile_Provider } from '../api_detaills/provider/user_provider'
 
 
 
@@ -35,7 +34,7 @@ const Profile = () => {
 
     const [imgUrl, setImgUrl] = useState({ profilePicture: '' });
 
- // State to manage profile update fields
+    // State to manage profile update fields
     const [profileUpdate, setProfileUpdate] = useState({
         fullname: "",
         phone_number: "",
@@ -106,11 +105,10 @@ const Profile = () => {
 
 
     const changePicture = (file) => {
-
         const body = new FormData();
         body.append('profilePicture', file); // Match the key name from Postman
 
-        updatePicture_Provider(email, body, updateErrorPopup, updateErrorText, updateLoadingPopup);
+        updatePicture_Provider(email, body,updateLoadingPopup, updateErrorPopup, updateErrorText );
 
     };
 

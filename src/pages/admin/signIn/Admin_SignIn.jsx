@@ -51,7 +51,7 @@ const Admin_SignIn = () => {
     let body = signIn;
 
     //This initiates the provider that handles the login API.
-    login_provider(body, navigate, updateLoadingPopup, updateErrorPopup, updateSignInSuccess, updateErrorText);
+    login_provider(body, updateSignInSuccess, navigate, updateLoadingPopup, updateErrorText, updateErrorPopup );
 
   }
 

@@ -1,3 +1,4 @@
+
 #mainDiv {
     width: 100%;
     height: 100%;
@@ -15,12 +16,11 @@
 }
 
 #wrapper {
-    
     max-width: 31.8rem;
     min-width: 25rem;
     min-height: 8.6rem;
     max-height: 7rem;
-    background-color: rgba(223, 78, 83, .1);
+    background-color: #FFF4F4;
     padding: 24px 16px;
     box-sizing: border-box;
     border-radius: 32px;
@@ -28,22 +28,23 @@
     -webkit-backdrop-filter: blur(40px);
     display: flex;
     color: #DF4E53;
+    font-weight: 600;
+    font-size: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    row-gap: 16px;
+    row-gap: 1rem;
 }
 #wrapper iframe{
-    width: 200px;
-    height: 200px;
+    width: 12.5rem;
+    height: 12.5rem;
 }
 #errorText{
     word-break: break-all;
-    color: #FFFFFF;
 }
 #wrapper img{
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     object-fit: cover;
 }
